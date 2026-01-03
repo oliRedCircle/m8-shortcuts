@@ -62,6 +62,7 @@ const debugMenuClass = css`
   > .controls {
     flex: 1;
     overflow: auto;
+    scrollbar-gutter: stable;
     
   }
 

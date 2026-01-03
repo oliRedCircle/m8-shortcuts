@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './app/style/style.ts'
+import './app/style/scrollbars.css'
 import { HashRouter } from 'react-router-dom'
 import { App } from './App.tsx'
 import { DebugMenu, DebugPortalContextProvider } from './components/DebugMenu.tsx'

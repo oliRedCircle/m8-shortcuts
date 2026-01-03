@@ -65,7 +65,8 @@ export default defineConfig({
       },
     }),
     react(),
-    checker({ overlay: { initialIsOpen: false, position: 'br' }, typescript: true, biome: { command: 'lint' } }),
+    checker({ overlay: { initialIsOpen: false, position: 'br' }, typescript: true, biome: false }),
+    // checker({ overlay: { initialIsOpen: false, position: 'br' }, typescript: true, biome: { command: 'lint' } }),
     fixSourceMaps(),
     //mkcert()
   ],

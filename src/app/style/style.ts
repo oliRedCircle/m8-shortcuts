@@ -12,94 +12,96 @@ export const style = notCss({
 })
 
 export const globalStyle = css`
-  :global() {
-    :root {
-      ${colorTheme}
+  :global(:root) {
+    ${colorTheme}
 
-      font-family: "${fontName}";
+    font-family: "${fontName}";
 
-      ${fragments.textStyle.body.m.regular};
-      line-height: normal;
-      
-      color-scheme: light dark;
-      color: ${style.themeColors.text.default};
-      background-color: ${style.themeColors.background.default};
+    ${fragments.textStyle.body.m.regular};
+    line-height: normal;
 
-      font-synthesis: none;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    color-scheme: light dark;
+    color: ${style.themeColors.text.default};
+    background-color: ${style.themeColors.background.default};
 
-      interpolate-size: allow-keywords;
-      cursor: default;
-      user-select: none;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-      &:focus {
-        outline: none;
-      }
-    }
+    interpolate-size: allow-keywords;
+    cursor: default;
+    user-select: none;
+  }
 
-    * {
-      font-synthesis: style small-caps weight;
-      font-family: "${fontName}";
-      ${fragments.textStyle.body.m.regular};
-      line-height: normal;
+  :global(:root:focus) {
+    outline: none;
+  }
 
-      &:focus {
-        outline: none;
-      }
-    }
+  :global(*) {
+    font-synthesis: style small-caps weight;
+    font-family: "${fontName}";
+    ${fragments.textStyle.body.m.regular};
+    line-height: normal;
+  }
 
-    body {
-      margin: 0;
-      display: flex;
-      place-items: center;
-      min-width: 320px;
-      min-height: 100vh;
-    }
+  :global(*:focus) {
+    outline: none;
+  }
 
-    a {
-      color: ${style.themeColors.text.link};
-      transition: ${fragments.transition.fast('color')};
-      &:hover {
-        color: ${style.colors.aqua[500]};
-      }
+  :global(body) {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+  }
 
-      &:visited {
-        color: ${style.colors.aqua[600]};
-        &:hover {
-          color: ${style.colors.aqua[700]};
-        }
-      }
-    }
+  :global(a) {
+    color: ${style.themeColors.text.link};
+    transition: ${fragments.transition.fast('color')};
+  }
 
-    h1 {
-      ${fragments.textStyle.heading.xxl}
-    }
-    h2 {
-      ${fragments.textStyle.heading.xl};
-    }
-    h3 {
-      ${fragments.textStyle.heading.l};
-    }
-    h4 {
-      ${fragments.textStyle.heading.m};
-    }
+  :global(a:hover) {
+    color: ${style.colors.aqua[500]};
+  }
 
-    code {
-      white-space: nowrap;
-      border: 1px solid ${style.themeColors.line.default};
-      padding: 0 4px;
-      color: ${style.themeColors.text.important};
-      background-color: ${style.themeColors.background.default};
+  :global(a:visited) {
+    color: ${style.colors.aqua[600]};
+  }
 
-    }
+  :global(a:visited:hover) {
+    color: ${style.colors.aqua[700]};
+  }
 
-    #root {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+  :global(h1) {
+    ${fragments.textStyle.heading.xxl}
+  }
+
+  :global(h2) {
+    ${fragments.textStyle.heading.xl};
+  }
+
+  :global(h3) {
+    ${fragments.textStyle.heading.l};
+  }
+
+  :global(h4) {
+    ${fragments.textStyle.heading.m};
+  }
+
+  :global(code) {
+    white-space: nowrap;
+    border: 1px solid ${style.themeColors.line.default};
+    padding: 0 4px;
+    color: ${style.themeColors.text.important};
+    background-color: ${style.themeColors.background.default};
+  }
+
+  :global(#root) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 `

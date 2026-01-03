@@ -97,7 +97,7 @@ const categoryClass = css`
     display: flex;
     align-items: center;
     position: sticky;
-    top: 25px;
+    top: 0px;
     padding: 24px 4px 4px 4px;
     margin: 0;
     border-bottom: 2px solid ${style.themeColors.line.default};
@@ -129,7 +129,7 @@ const activityClass = css`
     display: flex;
     flex: 1;
     flex-direction: column;
-    min-height: 0;
+    min-height: 100%;
     width: fit-content;
     max-width: 550px;
     max-height: 100vh;

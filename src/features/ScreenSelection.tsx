@@ -67,7 +67,7 @@ const categoryClass = css`
     z-index: 3;
     display: flex;
     align-items: center;
-    top: 25px;
+    top: 0px;
     padding: 24px 16px 4px 4px;
     margin: 0;
     border-bottom: 2px solid ${style.themeColors.line.default};
@@ -94,11 +94,11 @@ const selectionClass = css`
     display: flex;
     flex: 1;
     flex-direction: column;
-    min-height: 0;
+    min-height: 100%;
     width: max-content;
     max-width: 550px;
     margin-left: 20px;
-    max-height: calc(100vh - 45px);
+    max-height: 100%;
     overflow-y: scroll;
     > h3 {
       margin: 0 0 15px 0;

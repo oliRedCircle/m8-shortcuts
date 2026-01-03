@@ -1,0 +1,54 @@
+/* Debug scrollbar styles (plain CSS - not processed by Linaria) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar,
+.panels::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+#root::-webkit-scrollbar-track,
+.panels::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+#root::-webkit-scrollbar-thumb,
+.panels::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 1, 1, 1) !important;
+    border-radius: 8px !important;
+    border: 2px solid transparent !important;
+    background-clip: padding-box !important;
+    transition: background-color 160ms ease, opacity 160ms ease !important;
+    opacity: 0.6 !important;
+}
+
+html:hover::-webkit-scrollbar-thumb,
+body:hover::-webkit-scrollbar-thumb,
+#root:hover::-webkit-scrollbar-thumb,
+.panels:hover::-webkit-scrollbar-thumb,
+html:focus-within::-webkit-scrollbar-thumb,
+body:focus-within::-webkit-scrollbar-thumb,
+#root:focus-within::-webkit-scrollbar-thumb,
+.panels:focus-within::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+#root::-webkit-scrollbar-thumb:hover,
+.panels::-webkit-scrollbar-thumb:hover {
+    opacity: 1 !important;
+    background-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+* :hover {
+    scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
