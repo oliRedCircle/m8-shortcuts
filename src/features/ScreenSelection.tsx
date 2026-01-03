@@ -100,6 +100,7 @@ const selectionClass = css`
     margin-left: 20px;
     max-height: 100%;
     overflow-y: scroll;
+    padding-right: 8px;
     > h3 {
       margin: 0 0 15px 0;
     }

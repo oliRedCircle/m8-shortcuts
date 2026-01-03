@@ -135,6 +135,7 @@ const activityClass = css`
     max-height: 100vh;
     margin-left: 20px;
     overflow-y: scroll;
+    padding-right: 8px;
     > h3 {
       margin: 0 0 15px 0;
     }
