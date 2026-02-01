@@ -8,6 +8,8 @@ export interface Activity {
   categories: ActivityCategoryId[]
   keypress: (Key | Key[] | 'and' | 'after' | 'or' | 'hold' | '2x' | '3x' | 'touch' | 'midi')[]
   description: ReactNode
+  level?: 1 | 2 | 3
+  aliases?: string[]
 }
 
 export type ActivityCategory = (typeof activityCategories)[number]

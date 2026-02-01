@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { fragments } from './app/style/fragments'
 import { style } from './app/style/style'
 import { Layout } from './Layout'
+import { ExportDataset } from './features/ExportDataset'
 
 type UUID = ReturnType<typeof window.crypto.randomUUID>
 const appClass = css`
@@ -118,7 +119,8 @@ export const App: FC = () => {
         <div className="panels">
           <Routes>
             <Route index={true} element={<Navigate to="song" replace />} />
-            <Route path=":screen?/:activity?" element={<Layout />} />
+            <Route path=":screen?/:activity?/:mode?" element={<Layout />} />
+            <Route path="export" element={<ExportDataset />} />
           </Routes>
         </div>
       </main>

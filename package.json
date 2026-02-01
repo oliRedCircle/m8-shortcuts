@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "refactor:data": "node scripts/refactor-dataset.mjs"
   },
   "dependencies": {
     "@babel/helper-string-parser": "^7.27.1",
@@ -27,7 +28,7 @@
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
     "@biomejs/biome": "^2.3.11",
-    "@types/node": "^25.0.3",
+    "@types/node": "^25.1.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "5.1.2",
@@ -40,6 +41,10 @@
     "vite": "npm:rolldown-vite@7.3.0",
     "vite-plugin-checker": "^0.12.0",
     "vite-tsconfig-paths": "^6.0.3"
+  },
+  "imports": {
+    "#assets/*": "./src/assets/*",
+    "#screens/*": "./src/assets/screens/*"
   },
   "overrides": {
     "vite": "npm:rolldown-vite@7.3.0"

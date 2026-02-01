@@ -1,0 +1,5905 @@
+{
+  "screens": [
+    {
+      "id": "project",
+      "name": "Project",
+      "aliases": [
+        "project"
+      ],
+      "categoryIds": [
+        "system",
+        "sequencer",
+        "instrument"
+      ],
+      "description": "Project setup for a song",
+      "img": "/assets/screens/project.png",
+      "activityIds": [
+        "navigate-screen__project",
+        "continue-song__project",
+        "mute-track__project",
+        "solo-track__project",
+        "clear-all-mute-solo__project",
+        "edit-small__project",
+        "edit-large__project",
+        "set-default__project",
+        "name-project__project",
+        "snapshot-create__project",
+        "snapshot-recall__project",
+        "assign-midi__project",
+        "assign-touch__project"
+      ]
+    },
+    {
+      "id": "midi-mappings",
+      "name": "MIDI Mappings",
+      "aliases": [],
+      "categoryIds": [
+        "system"
+      ],
+      "description": "Configures mappings of incoming (through USB, TRS or internal MIDI) messages",
+      "img": "/assets/screens/midi-mappings.png",
+      "activityIds": []
+    },
+    {
+      "id": "midi-settings",
+      "name": "MIDI Settings",
+      "aliases": [],
+      "categoryIds": [
+        "system"
+      ],
+      "description": "Configures general MIDI settings",
+      "img": "/assets/screens/midi-settings.png",
+      "activityIds": []
+    },
+    {
+      "id": "file-browser",
+      "name": "File Browser",
+      "aliases": [
+        "selectsavedirectory",
+        "createdirectory"
+      ],
+      "categoryIds": [
+        "system"
+      ],
+      "description": "Loads a projects, samples and instrument",
+      "img": "/assets/screens/load-project.png",
+      "activityIds": [
+        "step-slow__file-browser",
+        "step-fast__file-browser",
+        "quick-top__file-browser",
+        "sort__file-browser",
+        "preview__file-browser",
+        "exit__file-browser",
+        "delete__file-browser"
+      ]
+    },
+    {
+      "id": "render-audio",
+      "name": "Modulators",
+      "aliases": [],
+      "categoryIds": [
+        "instrument"
+      ],
+      "description": "Configures modulators for an instrument",
+      "img": "/assets/screens/render-audio.png",
+      "activityIds": []
+    },
+    {
+      "id": "song",
+      "name": "Song",
+      "aliases": [
+        "song"
+      ],
+      "categoryIds": [
+        "sequencer"
+      ],
+      "description": "Song screen",
+      "img": "/assets/screens/song.png",
+      "activityIds": [
+        "move-slow__song",
+        "move-fast__song",
+        "insert-new__song",
+        "edit-large__song",
+        "edit-small__song",
+        "edit-multiple__song",
+        "enter-selection__song",
+        "move-selection__song",
+        "copy-value__song",
+        "cut__song",
+        "paste-value__song",
+        "clone__song",
+        "deep-clone__song",
+        "move-track__song",
+        "play__song",
+        "loop-selection-tracks__song",
+        "cue-row__song",
+        "solo-tracks__song",
+        "mute-track__song",
+        "solo-track__song",
+        "clear-all-mute-solo__song",
+        "live-mode__song",
+        "bookmark__song",
+        "render-selection__song",
+        "show-track-time__song"
+      ]
+    },
+    {
+      "id": "chain",
+      "name": "Chain",
+      "aliases": [
+        "chain"
+      ],
+      "categoryIds": [
+        "sequencer"
+      ],
+      "description": "Stringing together phrases into a bar",
+      "img": "/assets/screens/chain.png",
+      "activityIds": [
+        "navigate-screen__chain",
+        "navigate-chain__chain",
+        "navigate-track__chain",
+        "play__chain",
+        "continue-song__chain",
+        "loop__chain",
+        "loop-selection-tracks__chain",
+        "mute-track__chain",
+        "solo-track__chain",
+        "clear-mutes__chain",
+        "insert-new__chain",
+        "edit-small__chain",
+        "edit-large__chain",
+        "insert-unused__chain",
+        "cut__chain",
+        "enter-selection__chain",
+        "copy__chain",
+        "paste-value__chain",
+        "clone__chain"
+      ]
+    },
+    {
+      "id": "phrase",
+      "name": "Phrase",
+      "aliases": [
+        "phrase"
+      ],
+      "categoryIds": [
+        "sequencer"
+      ],
+      "description": "Phrase screen",
+      "img": "/assets/screens/phrase.png",
+      "activityIds": [
+        "navigate-screen__phrase",
+        "navigate-phrase__phrase",
+        "navigate-track__phrase",
+        "play__phrase",
+        "continue-song__phrase",
+        "loop__phrase",
+        "loop-selection-tracks__phrase",
+        "mute-track__phrase",
+        "solo-track__phrase",
+        "clear-all-mute-solo__phrase",
+        "insert-new__phrase",
+        "edit-large__phrase",
+        "edit-octave__phrase",
+        "edit-small__phrase",
+        "edit-note__phrase",
+        "show-fx-help__phrase",
+        "create-new-instrument__phrase",
+        "create-new-table__phrase",
+        "clone__phrase",
+        "enter-selection__phrase",
+        "copy-value__phrase",
+        "cut__phrase",
+        "paste-value__phrase",
+        "shift-selection__phrase",
+        "fill-notes__phrase",
+        "randomize-notes__phrase",
+        "randomize-pattern__phrase",
+        "interpolate__phrase"
+      ]
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "aliases": [
+        "table"
+      ],
+      "categoryIds": [
+        "instrument",
+        "sequencer"
+      ],
+      "description": "Instrument or AUX tables add instrument controls per instrument or track",
+      "img": "/assets/screens/table.png",
+      "activityIds": [
+        "navigate-screen__table",
+        "quick-next-table__table",
+        "next-table__table",
+        "play__table",
+        "continue-song__table",
+        "mute-track__table",
+        "solo-track__table",
+        "clear-all-mute-solo__table",
+        "insert-new__table",
+        "edit-large__table",
+        "edit-octave__table",
+        "edit-small__table",
+        "create-new-instrument__table",
+        "create-new-table__table",
+        "clone__table",
+        "enter-selection__table",
+        "copy-value__table",
+        "cut__table",
+        "paste-value__table",
+        "shift-selection__table",
+        "show-fx-help__table",
+        "interpolate__table"
+      ]
+    },
+    {
+      "id": "groove",
+      "name": "Groove",
+      "aliases": [
+        "groove"
+      ],
+      "categoryIds": [
+        "sequencer"
+      ],
+      "description": "Sets the tick count per step of a phrase",
+      "img": "/assets/screens/groove.png",
+      "activityIds": [
+        "navigate-screen__groove",
+        "next-quick-entry__groove",
+        "next-entry__groove",
+        "play__groove",
+        "continue-song__groove",
+        "mute-track__groove",
+        "solo-track__groove",
+        "clear-mutes__groove",
+        "insert-new__groove",
+        "edit-small__groove",
+        "edit-related__groove",
+        "edit-multiple__groove",
+        "edit-multiple-quick__groove",
+        "enter-selection__groove",
+        "copy__groove",
+        "cut__groove",
+        "paste-value__groove",
+        "interpolate__groove"
+      ]
+    },
+    {
+      "id": "scale",
+      "name": "Scale",
+      "aliases": [
+        "scale"
+      ],
+      "categoryIds": [
+        "sequencer",
+        "instrument"
+      ],
+      "description": "Sets the root scale, which changes how the sequencer applies notes to a TSP enabled instrument",
+      "img": "/assets/screens/scale.png",
+      "activityIds": [
+        "navigate-screen__scale",
+        "next-entry__scale",
+        "next-quick-entry__scale",
+        "change-root-key__scale",
+        "enable-key__scale",
+        "edit-small__scale",
+        "edit-large__scale",
+        "name-scale__scale"
+      ]
+    },
+    {
+      "id": "instrument",
+      "name": "Instrument",
+      "aliases": [
+        "inst",
+        "loadinstrument",
+        "instrumentpool"
+      ],
+      "categoryIds": [
+        "instrument"
+      ],
+      "description": "Configures an instrument, here: a sampler",
+      "img": "/assets/screens/instrument-sampler.png",
+      "activityIds": [
+        "navigate-screen__instrument",
+        "next-instrument__instrument",
+        "next-instrument-quick__instrument",
+        "play__instrument",
+        "continue-song__instrument",
+        "mute-track__instrument",
+        "solo-track__instrument",
+        "clear-mutes__instrument",
+        "preview__instrument",
+        "edit-large__instrument",
+        "edit-small__instrument",
+        "edit-touch__instrument",
+        "set-default__instrument",
+        "copy__instrument",
+        "paste-value__instrument",
+        "undo-paste__instrument",
+        "randomize__instrument",
+        "fm-change-algo__instrument",
+        "fm-change-operator__instrument",
+        "fm-copy-operator__instrument",
+        "fm-paste-operator__instrument",
+        "hyper-add-note__instrument",
+        "hyper-change-chord__instrument",
+        "hyper-copy-chord__instrument",
+        "hyper-paste-value__instrument",
+        "hyper-remove-note__instrument",
+        "assign-midi__instrument",
+        "assign-touch__instrument",
+        "name-instrument__instrument",
+        "assign-eq__instrument"
+      ]
+    },
+    {
+      "id": "instrument-mods",
+      "name": "Modulators",
+      "aliases": [
+        "instmods"
+      ],
+      "categoryIds": [
+        "instrument"
+      ],
+      "description": "Configures modulators for an instrument",
+      "img": "/assets/screens/mod-section.png",
+      "activityIds": []
+    },
+    {
+      "id": "sample-editor",
+      "name": "Sample Editor",
+      "aliases": [],
+      "categoryIds": [
+        "instrument"
+      ],
+      "description": "Changes, cuts or slices a sample to save it on the SD card.",
+      "img": "/assets/screens/sample-editor.png",
+      "activityIds": [
+        "move-small__sample-editor",
+        "move-large__sample-editor",
+        "move-small-steps__sample-editor",
+        "move-large-steps__sample-editor",
+        "move-touch__sample-editor",
+        "preview__sample-editor",
+        "lazy-chop__sample-editor",
+        "record__sample-editor",
+        "delete-slice__sample-editor"
+      ]
+    },
+    {
+      "id": "fx-settings",
+      "name": "FX Settings",
+      "aliases": [
+        "effectsettings"
+      ],
+      "categoryIds": [
+        "mixer",
+        "instrument"
+      ],
+      "description": "Setting equalizer per FX, per instrument or for the entire mix",
+      "img": "/assets/screens/fx-settings.png",
+      "activityIds": [
+        "navigate-screen__fx-settings",
+        "continue-song__fx-settings",
+        "mute-track__fx-settings",
+        "solo-track__fx-settings",
+        "clear-mutes__fx-settings",
+        "edit-small__fx-settings",
+        "edit-large__fx-settings",
+        "set-default__fx-settings",
+        "assign-midi__fx-settings",
+        "assign-touch__fx-settings"
+      ]
+    },
+    {
+      "id": "mixer",
+      "name": "Mixer",
+      "aliases": [
+        "mixer"
+      ],
+      "categoryIds": [
+        "mixer"
+      ],
+      "description": "Mixer for individual channels, incoming audio and audio fx, limiter and OTT.",
+      "img": "/assets/screens/mixer.png",
+      "activityIds": [
+        "navigate-screen__mixer",
+        "enter-mix-scope__mixer",
+        "enter-limiter-scope__mixer",
+        "continue-song__mixer",
+        "mute-track__mixer",
+        "solo-track__mixer",
+        "clear-all-mute-solo__mixer",
+        "edit-small__mixer",
+        "edit-large__mixer",
+        "set-default__mixer",
+        "snapshot-create__mixer",
+        "snapshot-recall__mixer",
+        "assign-touch__mixer",
+        "assign-midi__mixer"
+      ]
+    },
+    {
+      "id": "scope",
+      "name": "Limiter & Mix Scope",
+      "aliases": [
+        "limiterscope",
+        "mixscope"
+      ],
+      "categoryIds": [
+        "mixer"
+      ],
+      "description": "Limiter scope shows the loudness dampening of the current audio loudness",
+      "img": "/assets/screens/limiter-scope.png",
+      "activityIds": [
+        "navigate-screen__scope",
+        "exit__scope",
+        "continue-song__scope",
+        "mute-track__scope",
+        "solo-track__scope",
+        "clear-all-mute-solo__scope",
+        "edit-small__scope",
+        "edit-large__scope",
+        "set-default__scope",
+        "assign-midi__scope",
+        "assign-touch__scope"
+      ]
+    },
+    {
+      "id": "equalizer-bank",
+      "name": "Equalizer",
+      "aliases": [
+        "mixeq",
+        "modfxeq",
+        "delayeq",
+        "reverbeq"
+      ],
+      "categoryIds": [
+        "instrument",
+        "mixer"
+      ],
+      "description": "Setting equalizer per FX, per instrument or for the entire mix",
+      "img": "/assets/screens/eq-bank.png",
+      "activityIds": [
+        "exit__equalizer-bank",
+        "mute-eq__equalizer-bank",
+        "continue-song__equalizer-bank",
+        "mute-track__equalizer-bank",
+        "solo-track__equalizer-bank",
+        "clear-mutes__equalizer-bank",
+        "edit-small__equalizer-bank",
+        "edit-large__equalizer-bank",
+        "set-default__equalizer-bank",
+        "copy__equalizer-bank",
+        "paste-value__equalizer-bank",
+        "assign-touch__equalizer-bank",
+        "assign-midi__equalizer-bank"
+      ]
+    },
+    {
+      "id": "system-settings",
+      "name": "System Settings",
+      "aliases": [
+        "systemsettings"
+      ],
+      "categoryIds": [
+        "system"
+      ],
+      "description": "Various configurations of the M8",
+      "img": "/assets/screens/system-settings.png",
+      "activityIds": []
+    },
+    {
+      "id": "theme",
+      "name": "Theme",
+      "aliases": [],
+      "categoryIds": [
+        "system"
+      ],
+      "description": "Sets the color theme of the M8",
+      "img": "/assets/screens/theme-settings.png",
+      "activityIds": []
+    },
+    {
+      "id": "time-stats",
+      "name": "Time Stats",
+      "aliases": [],
+      "categoryIds": [
+        "system"
+      ],
+      "description": "Shows misc time statistics (time does not advance when the device is turned off)",
+      "img": "/assets/screens/time-stats.png",
+      "activityIds": []
+    }
+  ],
+  "activities": [
+    {
+      "id": "navigate-screen__project",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/project/navigate.mp4",
+        "eventsUrl": "/assets/activity/project/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__project",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        "play",
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position.",
+      "media": {
+        "video": "/assets/activity/project/continue-play.mp4",
+        "eventsUrl": "/assets/activity/project/continue-play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__project",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/project/mute-track.mp4",
+        "eventsUrl": "/assets/activity/project/mute-track.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "solo-track__project",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/project/solo-track.mp4",
+        "eventsUrl": "/assets/activity/project/solo-track.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "clear-all-mute-solo__project",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-all-mute-solo"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/project/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/project/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-small__project",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits a all values (notes, volume, instrument, fx command and fx value) in small increments.",
+      "media": {
+        "video": "/assets/activity/project/edit-small.mp4",
+        "eventsUrl": "/assets/activity/project/edit-small.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-large__project",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a volume, instrument number or FX value in large increments (16 steps, the left, most significant byte)",
+      "media": {
+        "video": "/assets/activity/project/edit-large.mp4",
+        "eventsUrl": "/assets/activity/project/edit-large.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "set-default__project",
+      "name": "Set default value",
+      "aliases": [
+        "set-default"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "opt"
+        ]
+      ],
+      "description": "Sets the default value for the highlighted setting",
+      "media": {
+        "video": "/assets/activity/project/set-default.mp4",
+        "eventsUrl": "/assets/activity/project/set-default.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "name-project__project",
+      "name": "Name Project",
+      "aliases": [
+        "name-project"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "after",
+        [
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      ],
+      "description": "Naming the Project by holding edit, navigating to the letter and releasing the edit key.",
+      "media": {
+        "video": "/assets/activity/project/name-project.mp4",
+        "eventsUrl": "/assets/activity/project/name-project.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "snapshot-create__project",
+      "name": "Create Snapshot",
+      "aliases": [
+        "snapshot-create"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ]
+      ],
+      "description": "Creates a song snapshot for temporarily storing the entire song to recall at a later point.",
+      "media": {
+        "video": "/assets/activity/project/store-snapshot.mp4",
+        "eventsUrl": "/assets/activity/project/store-snapshot.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "snapshot-recall__project",
+      "name": "Recall Snapshot",
+      "aliases": [
+        "snapshot-recall"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "Recall the song snapshot previously created.",
+      "media": {
+        "video": "/assets/activity/project/recall-snapshot.mp4",
+        "eventsUrl": "/assets/activity/project/recall-snapshot.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "assign-midi__project",
+      "name": "Assign MIDI CC to Tempo",
+      "aliases": [
+        "assign-midi"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "midi"
+      ],
+      "description": "Assign a MIDI CC to a selected parameter",
+      "media": {
+        "video": "/assets/activity/project/assign-midi.mp4",
+        "eventsUrl": "/assets/activity/project/assign-midi.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "assign-touch__project",
+      "name": "Assign Touch-Axis as MIDI to Tempo",
+      "aliases": [
+        "assign-touch"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "touch"
+      ],
+      "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
+      "media": {
+        "video": "/assets/activity/project/assign-touch.mp4",
+        "eventsUrl": "/assets/activity/project/assign-touch.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "step-slow__file-browser",
+      "name": "Navigate next/prev",
+      "aliases": [
+        "step-slow"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "down"
+      ],
+      "description": "Navigates to the next or previous entry",
+      "media": {
+        "video": "/assets/activity/fileBrowser/navigate-slow.mp4",
+        "eventsUrl": "/assets/activity/fileBrowser/navigate-slow.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "step-fast__file-browser",
+      "name": "Skip over 8 entries",
+      "aliases": [
+        "step-fast"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "up"
+        ],
+        "or",
+        [
+          "opt",
+          "down"
+        ]
+      ],
+      "description": "Skips over 8 entries in the list",
+      "media": {
+        "video": "/assets/activity/fileBrowser/navigate-fast.mp4",
+        "eventsUrl": "/assets/activity/fileBrowser/navigate-fast.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "quick-top__file-browser",
+      "name": "Go to top / bottom",
+      "aliases": [
+        "quick-top"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "left",
+        "or",
+        "right"
+      ],
+      "description": "Navigates immediately to the top or bottom of the screen",
+      "media": {
+        "video": "/assets/activity/fileBrowser/go-top.mp4",
+        "eventsUrl": "/assets/activity/fileBrowser/go-top.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "sort__file-browser",
+      "name": "Sort directory",
+      "aliases": [
+        "sort"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ]
+      ],
+      "description": "Sorts the directory in lexographic order (by incrementing number and alphabet)",
+      "media": {
+        "video": "/assets/activity/fileBrowser/sort.mp4",
+        "eventsUrl": "/assets/activity/fileBrowser/sort.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "preview__file-browser",
+      "name": "Preview",
+      "aliases": [
+        "preview"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "play"
+      ],
+      "description": "Previews the song",
+      "media": {
+        "video": "/assets/activity/fileBrowser/preview.mp4",
+        "eventsUrl": "/assets/activity/fileBrowser/preview.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "exit__file-browser",
+      "name": "Exit",
+      "aliases": [
+        "exit"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "opt"
+      ],
+      "description": "Exits the file browser",
+      "media": {
+        "video": "/assets/activity/fileBrowser/exit.mp4",
+        "eventsUrl": "/assets/activity/fileBrowser/exit.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "delete__file-browser",
+      "name": "Delete",
+      "aliases": [
+        "delete"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "edit"
+        ]
+      ],
+      "description": "Deletes the highlighted file",
+      "media": {
+        "video": "/assets/activity/fileBrowser/delete.mp4",
+        "eventsUrl": "/assets/activity/fileBrowser/delete.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "move-slow__song",
+      "name": "Navigate",
+      "aliases": [
+        "move-slow"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "down",
+        "or",
+        "left",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor on the screen",
+      "media": {
+        "video": "/assets/activity/song/navigate.mp4",
+        "eventsUrl": "/assets/activity/song/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "move-fast__song",
+      "name": "Move 16 Rows",
+      "aliases": [
+        "move-fast"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "up"
+        ],
+        "or",
+        [
+          "opt",
+          "down"
+        ]
+      ],
+      "description": "Moves / scrolls the cursor 16 rows up or down",
+      "media": {
+        "video": "/assets/activity/song/navigate-quick.mp4",
+        "eventsUrl": "/assets/activity/song/navigate-quick.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "insert-new__song",
+      "name": "Insert New",
+      "aliases": [
+        "insert-new"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit"
+      ],
+      "description": "Inserts a new value into an empty cell (--). The value is either the default value (00) or the last picked, edited or deleted value",
+      "media": {
+        "video": "/assets/activity/song/insert-new.mp4",
+        "eventsUrl": "/assets/activity/song/insert-new.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-large__song",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a value in large increments (16 steps, the left, most significant byte)",
+      "media": {
+        "video": "/assets/activity/song/edit-large.mp4",
+        "eventsUrl": "/assets/activity/song/edit-large.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-small__song",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits a value in small increments (1 step)",
+      "media": {
+        "video": "/assets/activity/song/edit-small.mp4",
+        "eventsUrl": "/assets/activity/song/edit-small.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-multiple__song",
+      "name": "Edit multiple selections",
+      "aliases": [
+        "edit-multiple"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits the current selection by incrementing or decrementing the value by one. Only works when a single row is selected.",
+      "media": {
+        "video": "/assets/activity/song/edit-multiple.mp4",
+        "eventsUrl": "/assets/activity/song/edit-multiple.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "enter-selection__song",
+      "name": "Enter Selection Mode",
+      "aliases": [
+        "enter-selection"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ]
+      ],
+      "description": "Enters Selection mode, which then can be expanded by using the directional keys",
+      "media": {
+        "video": "/assets/activity/song/enter-selection.mp4",
+        "eventsUrl": "/assets/activity/song/enter-selection.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "move-selection__song",
+      "name": "Move selection up / down",
+      "aliases": [
+        "move-selection"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Moves the selection up or down",
+      "media": {
+        "video": "/assets/activity/song/move-selection.mp4",
+        "eventsUrl": "/assets/activity/song/move-selection.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "copy-value__song",
+      "name": "Copy",
+      "aliases": [
+        "copy-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        "opt"
+      ],
+      "description": "When one or more values are selected, copies the selection into the clipboard",
+      "media": {
+        "video": "/assets/activity/song/copy.mp4",
+        "eventsUrl": "/assets/activity/song/copy.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "cut__song",
+      "name": "Cut",
+      "aliases": [
+        "cut"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "edit"
+        ]
+      ],
+      "description": "Cuts out the value on the cursor or the entire selection. Note: This moves the rows after the value or selection.",
+      "media": {
+        "video": "/assets/activity/song/cut.mp4",
+        "eventsUrl": "/assets/activity/song/cut.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "paste-value__song",
+      "name": "Paste",
+      "aliases": [
+        "paste-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "When there are values in the clipboard, paste the selection. Note: this moves the affected rows down in the song view.",
+      "media": {
+        "video": "/assets/activity/song/paste.mp4",
+        "eventsUrl": "/assets/activity/song/paste.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "clone__song",
+      "name": "Clone selection",
+      "aliases": [
+        "clone"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ],
+        "after",
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "Clones the selected chains into new chains, keeping the phrase numbers.",
+      "media": {
+        "video": "/assets/activity/song/clone.mp4",
+        "eventsUrl": "/assets/activity/song/clone.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "deep-clone__song",
+      "name": "Deep clone selection",
+      "aliases": [
+        "deep-clone"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ],
+        "after",
+        "2x",
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "Deep clones the selected chains into new chains, copying the phrases contained into new phrases.",
+      "media": {
+        "video": "/assets/activity/song/deep-clone.mp4",
+        "eventsUrl": "/assets/activity/song/deep-clone.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "move-track__song",
+      "name": "Move Track",
+      "aliases": [
+        "move-track"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "2x",
+        "up",
+        "after",
+        [
+          "edit",
+          "left",
+          "right"
+        ]
+      ],
+      "description": "If the cursor is on Row 00, enters into track reordering mode, which allows to swap all chains of one track with another track. Can be exited with [DOWN]",
+      "media": {
+        "video": "/assets/activity/song/move-track.mp4",
+        "eventsUrl": "/assets/activity/song/move-track.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "play__song",
+      "name": "Play",
+      "aliases": [
+        "play"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "play"
+        ]
+      ],
+      "description": "Plays / stops all tracks. When in Live Mode, the current selection will be queued.",
+      "media": {
+        "video": "/assets/activity/song/play.mp4",
+        "eventsUrl": "/assets/activity/song/play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "loop-selection-tracks__song",
+      "name": "Loop Selection with Track",
+      "aliases": [
+        "loop-selection-tracks"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        "play",
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Loops the selected chains with the remaining tracks looping the same chains.",
+      "media": {
+        "video": "/assets/activity/song/loop-selection.mp4",
+        "eventsUrl": "/assets/activity/song/loop-selection.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "cue-row__song",
+      "name": "Cue Row",
+      "aliases": [
+        "cue-row"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "play",
+          "left"
+        ]
+      ],
+      "description": "Cue the selected song row for playback, regardless of Live Mode.",
+      "media": {
+        "video": "/assets/activity/song/cue-row.mp4",
+        "eventsUrl": "/assets/activity/song/cue-row.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "solo-tracks__song",
+      "name": "Solo tracks to the left / right",
+      "aliases": [
+        "solo-tracks"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "left"
+        ],
+        "or",
+        [
+          "opt",
+          "right"
+        ]
+      ],
+      "description": "Solo all tracks to the left or right side of the cursor's position.",
+      "media": {
+        "video": "/assets/activity/song/solo-side.mp4",
+        "eventsUrl": "/assets/activity/song/solo-side.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "mute-track__song",
+      "name": "Mute current track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mutes the current track. If you release option first, then you keep the track muted (or remove the mute, if it was being held).",
+      "media": {
+        "video": "/assets/activity/song/mute-track.mp4",
+        "eventsUrl": "/assets/activity/song/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__song",
+      "name": "Solo current track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solos the current track. If you release option first, then you keep the track solo (or remove the solo, if it was being held).",
+      "media": {
+        "video": "/assets/activity/song/solo-track.mp4",
+        "eventsUrl": "/assets/activity/song/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-all-mute-solo__song",
+      "name": "Clear all mute and solos",
+      "aliases": [
+        "clear-all-mute-solo"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/song/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/song/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "live-mode__song",
+      "name": "Live Mode",
+      "aliases": [
+        "live-mode"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "left"
+        ]
+      ],
+      "description": "Enters and exists into live mode. Live mode allows playing, cueing or stopping each track independently and from anywhere in the song structure. When a track is cued for playback via pressing [PLAY] the sequencer will wait for the currently playing chain to finish before activating the newly cued chain by default. You can change this behavior on the Project View under \"Live Quantize\".",
+      "media": {
+        "video": "/assets/activity/song/live-mode.mp4",
+        "eventsUrl": "/assets/activity/song/live-mode.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "bookmark__song",
+      "name": "Bookmark",
+      "aliases": [
+        "bookmark"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "3x",
+        "opt"
+      ],
+      "description": "Bookmarks the chain at the cursor. If the chain is already bookmarked, removes the bookmark.",
+      "media": {
+        "video": "/assets/activity/song/bookmark.mp4",
+        "eventsUrl": "/assets/activity/song/bookmark.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "render-selection__song",
+      "name": "Render selection",
+      "aliases": [
+        "render-selection"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ],
+        "after",
+        "edit",
+        "after",
+        "edit"
+      ],
+      "description": "Only when playback is stopped, allows the selected chains to be quickly rendered into a new instrument.",
+      "media": {
+        "video": "/assets/activity/song/quick-render.mp4",
+        "eventsUrl": "/assets/activity/song/quick-render.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "show-track-time__song",
+      "name": "Show Track Time",
+      "aliases": [
+        "show-track-time"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "hold",
+        "opt"
+      ],
+      "description": "Shows the track time of that song island to the cursor. This only works when the song is currently not playing",
+      "media": {
+        "video": "/assets/activity/song/track-time.mp4",
+        "eventsUrl": "/assets/activity/song/track-time.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "navigate-screen__chain",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/chain/navigate.mp4",
+        "eventsUrl": "/assets/activity/chain/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "navigate-chain__chain",
+      "name": "Next / prev chain",
+      "aliases": [
+        "navigate-chain"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "up"
+        ],
+        "or",
+        [
+          "opt-hold",
+          "down"
+        ]
+      ],
+      "description": "Navigates to previous or next chain in the song",
+      "media": {
+        "video": "/assets/activity/chain/next-chain.mp4",
+        "eventsUrl": "/assets/activity/chain/next-chain.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "navigate-track__chain",
+      "name": "Next / prev track",
+      "aliases": [
+        "navigate-track"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "left"
+        ],
+        "or",
+        [
+          "opt-hold",
+          "right"
+        ]
+      ],
+      "description": "Navigates to previous or next track",
+      "media": {
+        "video": "/assets/activity/chain/next-track.mp4",
+        "eventsUrl": "/assets/activity/chain/next-track.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "play__chain",
+      "name": "Play",
+      "aliases": [
+        "play"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "play"
+        ]
+      ],
+      "description": "Plays / stops the current track without the other tracks.",
+      "media": {
+        "video": "/assets/activity/chain/play.mp4",
+        "eventsUrl": "/assets/activity/chain/play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__chain",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position with the other tracks.",
+      "media": {
+        "video": "/assets/activity/chain/continue-track.mp4",
+        "eventsUrl": "/assets/activity/chain/continue-track.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "loop__chain",
+      "name": "Loop Selection",
+      "aliases": [
+        "loop"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        "play"
+      ],
+      "description": "When a few chains are currently selected, loops these chains.",
+      "media": {
+        "video": "/assets/activity/chain/loop-selection.mp4",
+        "eventsUrl": "/assets/activity/chain/loop-selection.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "loop-selection-tracks__chain",
+      "name": "Loop Selection with Track",
+      "aliases": [
+        "loop-selection-tracks"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Loops the selected chains with the remaining tracks looping the same chains.",
+      "media": {
+        "video": "/assets/activity/chain/loop-track.mp4",
+        "eventsUrl": "/assets/activity/chain/loop-track.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__chain",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/chain/mute-track.mp4",
+        "eventsUrl": "/assets/activity/chain/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__chain",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/chain/solo-track.mp4",
+        "eventsUrl": "/assets/activity/chain/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-mutes__chain",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-mutes"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/chain/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/chain/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "insert-new__chain",
+      "name": "Insert New",
+      "aliases": [
+        "insert-new"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit"
+      ],
+      "description": "Inserts a new value into an empty cell (--). The value is either the default value (00) or the last picked, edited or deleted value",
+      "media": {
+        "video": "/assets/activity/chain/insert-new.mp4",
+        "eventsUrl": "/assets/activity/chain/insert-new.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-small__chain",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits the value at the cursor position by one step.",
+      "media": {
+        "video": "/assets/activity/chain/edit-small.mp4",
+        "eventsUrl": "/assets/activity/chain/edit-small.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-large__chain",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a value at the cursor position in large steps.",
+      "media": {
+        "video": "/assets/activity/chain/edit-large.mp4",
+        "eventsUrl": "/assets/activity/chain/edit-large.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "insert-unused__chain",
+      "name": "Insert unused Phrase",
+      "aliases": [
+        "insert-unused"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "2x",
+        "edit"
+      ],
+      "description": "Inserts a new, unused phrase into the current cell.",
+      "media": {
+        "video": "/assets/activity/chain/insert-unused.mp4",
+        "eventsUrl": "/assets/activity/chain/insert-unused.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "cut__chain",
+      "name": "Cut",
+      "aliases": [
+        "cut"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "edit"
+        ]
+      ],
+      "description": "Cuts out the value on the cursor or the entire selection.",
+      "media": {
+        "video": "/assets/activity/chain/cut.mp4",
+        "eventsUrl": "/assets/activity/chain/cut.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "enter-selection__chain",
+      "name": "Enter Selection Mode",
+      "aliases": [
+        "enter-selection"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "opt"
+        ]
+      ],
+      "description": "Enters Selection mode, which then can be expanded by using the directional keys",
+      "media": {
+        "video": "/assets/activity/chain/enter-selection.mp4",
+        "eventsUrl": "/assets/activity/chain/enter-selection.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "copy__chain",
+      "name": "Copy",
+      "aliases": [
+        "copy"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "opt"
+        ]
+      ],
+      "description": "When one or more values are selected, copies the selection into the clipboard",
+      "media": {
+        "video": "/assets/activity/chain/copy.mp4",
+        "eventsUrl": "/assets/activity/chain/copy.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "paste-value__chain",
+      "name": "Paste",
+      "aliases": [
+        "paste-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "edit"
+        ]
+      ],
+      "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo.",
+      "media": {
+        "video": "/assets/activity/chain/paste.mp4",
+        "eventsUrl": "/assets/activity/chain/paste.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clone__chain",
+      "name": "Clone selection",
+      "aliases": [
+        "clone"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "edit"
+        ]
+      ],
+      "description": "Clones the selected chains into new chains, keeping the phrase numbers.",
+      "media": {
+        "video": "/assets/activity/chain/clone.mp4",
+        "eventsUrl": "/assets/activity/chain/clone.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "navigate-screen__phrase",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/phrase/navigate.mp4",
+        "eventsUrl": "/assets/activity/phrase/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "navigate-phrase__phrase",
+      "name": "Next / prev phrase",
+      "aliases": [
+        "navigate-phrase"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "up"
+        ],
+        "or",
+        [
+          "shift",
+          "down"
+        ]
+      ],
+      "description": "Navigates to previous or next phrase in the song. The triangle on the side indicates which phrase of a chain it is.",
+      "media": {
+        "video": "/assets/activity/phrase/next-phrase.mp4",
+        "eventsUrl": "/assets/activity/phrase/next-phrase.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "navigate-track__phrase",
+      "name": "Next / prev track",
+      "aliases": [
+        "navigate-track"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "left"
+        ],
+        "or",
+        [
+          "shift",
+          "right"
+        ]
+      ],
+      "description": "Navigates to previous or next track",
+      "media": {
+        "video": "/assets/activity/phrase/next-track.mp4",
+        "eventsUrl": "/assets/activity/phrase/next-track.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "play__phrase",
+      "name": "Play",
+      "aliases": [
+        "play"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        "play"
+      ],
+      "description": "Starts / stops playing phrase at current cursor position, repeats the same phrase endlessly.",
+      "media": {
+        "video": "/assets/activity/phrase/play.mp4",
+        "eventsUrl": "/assets/activity/phrase/play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__phrase",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position.",
+      "media": {
+        "video": "/assets/activity/phrase/continue-play.mp4",
+        "eventsUrl": "/assets/activity/phrase/continue-play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "loop__phrase",
+      "name": "Loop Selection",
+      "aliases": [
+        "loop"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        "play"
+      ],
+      "description": "When a few steps are currently selected, loops that selection.",
+      "media": {
+        "video": "/assets/activity/phrase/loop-selection.mp4",
+        "eventsUrl": "/assets/activity/phrase/loop-selection.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "loop-selection-tracks__phrase",
+      "name": "Loop Selection with Track",
+      "aliases": [
+        "loop-selection-tracks"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Loops the selected steps with the remaining tracks looping the same steps.",
+      "media": {
+        "video": "/assets/activity/phrase/loop-selection-tracks.mp4",
+        "eventsUrl": "/assets/activity/phrase/loop-selection-tracks.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__phrase",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/phrase/mute-track.mp4",
+        "eventsUrl": "/assets/activity/phrase/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__phrase",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/phrase/solo-track.mp4",
+        "eventsUrl": "/assets/activity/phrase/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-all-mute-solo__phrase",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-all-mute-solo"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/phrase/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/phrase/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "insert-new__phrase",
+      "name": "Insert New",
+      "aliases": [
+        "insert-new"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit"
+      ],
+      "description": "Inserts a new value into an empty cell (--). The value is either the default value (00) or the last picked, edited or deleted value",
+      "media": {
+        "video": "/assets/activity/phrase/insert-new.mp4",
+        "eventsUrl": "/assets/activity/phrase/insert-new.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-large__phrase",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a volume, instrument number or FX value in large increments (16 steps, the left, most significant byte)",
+      "media": {
+        "video": "/assets/activity/phrase/edit-large.mp4",
+        "eventsUrl": "/assets/activity/phrase/edit-large.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-octave__phrase",
+      "name": "Edit Octave",
+      "aliases": [
+        "edit-octave"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "With the cursor on the note, changes the octave on the note.",
+      "media": {
+        "video": "/assets/activity/phrase/edit-octave.mp4",
+        "eventsUrl": "/assets/activity/phrase/edit-octave.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-small__phrase",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits a all values (notes, volume, instrument, fx command and fx value) in small increments.",
+      "media": {
+        "video": "/assets/activity/phrase/edit-small.mp4",
+        "eventsUrl": "/assets/activity/phrase/edit-small.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-note__phrase",
+      "name": "Edit Note",
+      "aliases": [
+        "edit-note"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "With the cursor on the note, changes the note based on the scale of that track.",
+      "media": {
+        "video": "/assets/activity/phrase/edit-note.mp4",
+        "eventsUrl": "/assets/activity/phrase/edit-note.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "show-fx-help__phrase",
+      "name": "Show FX Help",
+      "aliases": [
+        "show-fx-help"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "With the cursor on an FX row, shows the effect help and sections.",
+      "media": {
+        "video": "/assets/activity/phrase/show-fx-help.mp4",
+        "eventsUrl": "/assets/activity/phrase/show-fx-help.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "create-new-instrument__phrase",
+      "name": "Assign new Instrument",
+      "aliases": [
+        "create-new-instrument"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "2x",
+        "edit"
+      ],
+      "description": "When the cursor is on an instrument row or the NXT command, assigns a new instrument with an unused slot.",
+      "media": {
+        "video": "/assets/activity/phrase/new-instrument.mp4",
+        "eventsUrl": "/assets/activity/phrase/new-instrument.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "create-new-table__phrase",
+      "name": "Assign new Table",
+      "aliases": [
+        "create-new-table"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "2x",
+        "edit"
+      ],
+      "description": "When the cursor is on an FX Value of TBL, TBX, GRV or GGR, assigns an unassigned table number.",
+      "media": {
+        "video": "/assets/activity/phrase/new-table.mp4",
+        "eventsUrl": "/assets/activity/phrase/new-table.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "clone__phrase",
+      "name": "Clone selection",
+      "aliases": [
+        "clone"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ],
+        "after",
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "When the cursor is on an instrument value, instrument command value (NXT) or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table.",
+      "media": {
+        "video": "/assets/activity/phrase/clone.mp4",
+        "eventsUrl": "/assets/activity/phrase/clone.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "enter-selection__phrase",
+      "name": "Enter Selection Mode",
+      "aliases": [
+        "enter-selection"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ]
+      ],
+      "description": "Enters Selection mode, which then can be expanded by using the directional keys",
+      "media": {
+        "video": "/assets/activity/phrase/enter-selection.mp4",
+        "eventsUrl": "/assets/activity/phrase/enter-selection.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "copy-value__phrase",
+      "name": "Copy",
+      "aliases": [
+        "copy-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        "opt"
+      ],
+      "description": "When one or more values are selected, copies the selection into the clipboard",
+      "media": {
+        "video": "/assets/activity/phrase/copy.mp4",
+        "eventsUrl": "/assets/activity/phrase/copy.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "cut__phrase",
+      "name": "Cut",
+      "aliases": [
+        "cut"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "edit"
+        ]
+      ],
+      "description": "Cuts out the value on the cursor or the entire selection.",
+      "media": {
+        "video": "/assets/activity/phrase/cut.mp4",
+        "eventsUrl": "/assets/activity/phrase/cut.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "paste-value__phrase",
+      "name": "Paste",
+      "aliases": [
+        "paste-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "When there are values in the clipboard, paste the selection and overwrites values.",
+      "media": {
+        "video": "/assets/activity/phrase/paste.mp4",
+        "eventsUrl": "/assets/activity/phrase/paste.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "shift-selection__phrase",
+      "name": "Shift Selection",
+      "aliases": [
+        "shift-selection"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Shifts the selection up or down.",
+      "media": {
+        "video": "/assets/activity/phrase/shift-selection.mp4",
+        "eventsUrl": "/assets/activity/phrase/shift-selection.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "fill-notes__phrase",
+      "name": "Fill Notes",
+      "aliases": [
+        "fill-notes"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "left"
+        ]
+      ],
+      "description": "When the selection includes notes, fills the selection with notes.",
+      "media": {
+        "video": "/assets/activity/phrase/fill.mp4",
+        "eventsUrl": "/assets/activity/phrase/fill.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "randomize-notes__phrase",
+      "name": "Randomize Notes",
+      "aliases": [
+        "randomize-notes"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "up"
+        ],
+        "or",
+        [
+          "opt",
+          "down"
+        ]
+      ],
+      "description": "When the selection includes notes, randomizes the note value up or down.",
+      "media": {
+        "video": "/assets/activity/phrase/randomize-notes.mp4",
+        "eventsUrl": "/assets/activity/phrase/randomize-notes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "randomize-pattern__phrase",
+      "name": "Randomize Pattern",
+      "aliases": [
+        "randomize-pattern"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "right"
+        ]
+      ],
+      "description": "When the selection includes notes, randomizes note triggers.",
+      "media": {
+        "video": "/assets/activity/phrase/randomize-pattern.mp4",
+        "eventsUrl": "/assets/activity/phrase/randomize-pattern.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "interpolate__phrase",
+      "name": "Interpolate Values",
+      "aliases": [
+        "interpolate"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "With a column of values selected, interpolate the values from the first to last selection. This works for FX, but only when row has the same FX command inserted.",
+      "media": {
+        "video": "/assets/activity/phrase/interpolate-values.mp4",
+        "eventsUrl": "/assets/activity/phrase/interpolate-values.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "navigate-screen__table",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/table/navigate.mp4",
+        "eventsUrl": "/assets/activity/table/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "quick-next-table__table",
+      "name": "Next / prev 16 Tables",
+      "aliases": [
+        "quick-next-table"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "up"
+        ],
+        "or",
+        [
+          "shift",
+          "down"
+        ]
+      ],
+      "description": "Moves 16 tables at a time.",
+      "media": {
+        "video": "/assets/activity/table/next-table-quick.mp4",
+        "eventsUrl": "/assets/activity/table/next-table-quick.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "next-table__table",
+      "name": "Next / prev table",
+      "aliases": [
+        "next-table"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "left"
+        ],
+        "or",
+        [
+          "shift",
+          "right"
+        ]
+      ],
+      "description": "Navigates to previous or next table",
+      "media": {
+        "video": "/assets/activity/table/next-table.mp4",
+        "eventsUrl": "/assets/activity/table/next-table.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "play__table",
+      "name": "Play",
+      "aliases": [
+        "play"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        "play"
+      ],
+      "description": "Starts / stops playing phrase, repeats the same phrase endlessly.",
+      "media": {
+        "video": "/assets/activity/table/play.mp4",
+        "eventsUrl": "/assets/activity/table/play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__table",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position.",
+      "media": {
+        "video": "/assets/activity/table/continue-play.mp4",
+        "eventsUrl": "/assets/activity/table/continue-play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__table",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/table/mute-track.mp4",
+        "eventsUrl": "/assets/activity/table/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__table",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/table/solo-track.mp4",
+        "eventsUrl": "/assets/activity/table/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-all-mute-solo__table",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-all-mute-solo"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/table/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/table/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "insert-new__table",
+      "name": "Insert New",
+      "aliases": [
+        "insert-new"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit"
+      ],
+      "description": "Inserts a new value into an empty cell (--). The value is either the default value (00) or the last picked, edited or deleted value",
+      "media": {
+        "video": "/assets/activity/table/insert-new.mp4",
+        "eventsUrl": "/assets/activity/table/insert-new.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-large__table",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a volume, instrument number or FX value in large increments (16 steps, the left, most significant byte)",
+      "media": {
+        "video": "/assets/activity/table/edit-large.mp4",
+        "eventsUrl": "/assets/activity/table/edit-large.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-octave__table",
+      "name": "Edit Octave",
+      "aliases": [
+        "edit-octave"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "With the cursor on the note, changes the octave on the note.",
+      "media": {
+        "video": "/assets/activity/table/edit-octave.mp4",
+        "eventsUrl": "/assets/activity/table/edit-octave.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-small__table",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits a all values (notes, volume, instrument, fx command and fx value) in small increments.",
+      "media": {
+        "video": "/assets/activity/table/edit-small.mp4",
+        "eventsUrl": "/assets/activity/table/edit-small.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "create-new-instrument__table",
+      "name": "Assign new Instrument",
+      "aliases": [
+        "create-new-instrument"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "2x",
+        "edit"
+      ],
+      "description": "When the cursor is on an instrument row, assigns a new instrument with an unused slot.",
+      "media": {
+        "video": "/assets/activity/table/new-instrument.mp4",
+        "eventsUrl": "/assets/activity/table/new-instrument.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "create-new-table__table",
+      "name": "Assign new Table",
+      "aliases": [
+        "create-new-table"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "2x",
+        "edit"
+      ],
+      "description": "When the cursor is on an FX Value of TBL, TBX, GRV or GGR, assigns an unassigned table number.",
+      "media": {
+        "video": "/assets/activity/table/new-table.mp4",
+        "eventsUrl": "/assets/activity/table/new-table.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "clone__table",
+      "name": "Clone selection",
+      "aliases": [
+        "clone"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ],
+        "after",
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "When the cursor is on an instrument command (NXT) value or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table.",
+      "media": {
+        "video": "/assets/activity/table/clone.mp4",
+        "eventsUrl": "/assets/activity/table/clone.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "enter-selection__table",
+      "name": "Enter Selection Mode",
+      "aliases": [
+        "enter-selection"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ]
+      ],
+      "description": "Enters Selection mode, which then can be expanded by using the directional keys",
+      "media": {
+        "video": "/assets/activity/table/enter-selection.mp4",
+        "eventsUrl": "/assets/activity/table/enter-selection.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "copy-value__table",
+      "name": "Copy",
+      "aliases": [
+        "copy-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        "opt"
+      ],
+      "description": "When one or more values are selected, copies the selection into the clipboard",
+      "media": {
+        "video": "/assets/activity/table/copy.mp4",
+        "eventsUrl": "/assets/activity/table/copy.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "cut__table",
+      "name": "Cut",
+      "aliases": [
+        "cut"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "edit"
+        ]
+      ],
+      "description": "Cuts out the value on the cursor or the entire selection.",
+      "media": {
+        "video": "/assets/activity/table/cut.mp4",
+        "eventsUrl": "/assets/activity/table/cut.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "paste-value__table",
+      "name": "Paste",
+      "aliases": [
+        "paste-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "When there are values in the clipboard, paste the selection and overwrites values.",
+      "media": {
+        "video": "/assets/activity/table/paste.mp4",
+        "eventsUrl": "/assets/activity/table/paste.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "shift-selection__table",
+      "name": "Shift Selection",
+      "aliases": [
+        "shift-selection"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Shifts the selection up or down.",
+      "media": {
+        "video": "/assets/activity/table/shift-selection.mp4",
+        "eventsUrl": "/assets/activity/table/shift-selection.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "show-fx-help__table",
+      "name": "Show FX Help",
+      "aliases": [
+        "show-fx-help"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "With the cursor on an FX row, shows the effect help and sections.",
+      "media": {
+        "video": "/assets/activity/table/show-fx-help.mp4",
+        "eventsUrl": "/assets/activity/table/show-fx-help.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "interpolate__table",
+      "name": "Interpolate Values",
+      "aliases": [
+        "interpolate"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "With a column of values selected, interpolate the values from the first to last selection. This works for FX, but only when row has the same FX command inserted.",
+      "media": {
+        "video": "/assets/activity/table/interpolate.mp4",
+        "eventsUrl": "/assets/activity/table/interpolate.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "navigate-screen__groove",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/groove/navigate.mp4",
+        "eventsUrl": "/assets/activity/groove/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "next-quick-entry__groove",
+      "name": "Next / prev 16 Grooves",
+      "aliases": [
+        "next-quick-entry"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "up"
+        ],
+        "or",
+        [
+          "opt",
+          "down"
+        ]
+      ],
+      "description": "Moves 16 grooves at a time.",
+      "media": {
+        "video": "/assets/activity/groove/next-entry-quick.mp4",
+        "eventsUrl": "/assets/activity/groove/next-entry-quick.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "next-entry__groove",
+      "name": "Next / prev groove",
+      "aliases": [
+        "next-entry"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "left"
+        ],
+        "or",
+        [
+          "opt",
+          "right"
+        ]
+      ],
+      "description": "Navigates to previous or next groove",
+      "media": {
+        "video": "/assets/activity/groove/next-entry.mp4",
+        "eventsUrl": "/assets/activity/groove/next-entry.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "play__groove",
+      "name": "Play",
+      "aliases": [
+        "play"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "play"
+        ]
+      ],
+      "description": "Plays / stops the current track without the other tracks.",
+      "media": {
+        "video": "/assets/activity/groove/play.mp4",
+        "eventsUrl": "/assets/activity/groove/play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__groove",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position with the other tracks.",
+      "media": {
+        "video": "/assets/activity/groove/continue-track.mp4",
+        "eventsUrl": "/assets/activity/groove/continue-track.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__groove",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/groove/mute-track.mp4",
+        "eventsUrl": "/assets/activity/groove/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__groove",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/groove/solo-track.mp4",
+        "eventsUrl": "/assets/activity/groove/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-mutes__groove",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-mutes"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/groove/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/groove/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "insert-new__groove",
+      "name": "Insert New",
+      "aliases": [
+        "insert-new"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit"
+      ],
+      "description": "Inserts a new value into an empty cell (--). The value is either the default value (00) or the last picked, edited or deleted value",
+      "media": {
+        "video": "/assets/activity/groove/insert-new.mp4",
+        "eventsUrl": "/assets/activity/groove/insert-new.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-small__groove",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits the value at the cursor position by one step.",
+      "media": {
+        "video": "/assets/activity/groove/edit-small.mp4",
+        "eventsUrl": "/assets/activity/groove/edit-small.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-related__groove",
+      "name": "Change value with adjacent entry",
+      "aliases": [
+        "edit-related"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Increments or decrements the current value with the next adjacent value, keeping the total tick number even. This helps in making swings without increasing the total ticks of a groove.",
+      "media": {
+        "video": "/assets/activity/groove/edit-adjacent.mp4",
+        "eventsUrl": "/assets/activity/groove/edit-adjacent.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-multiple__groove",
+      "name": "Edit multiple values",
+      "aliases": [
+        "edit-multiple"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Increments or decrements the selection",
+      "media": {
+        "video": "/assets/activity/groove/edit-multiple.mp4",
+        "eventsUrl": "/assets/activity/groove/edit-multiple.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-multiple-quick__groove",
+      "name": "Edit multiple values in large steps",
+      "aliases": [
+        "edit-multiple-quick"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Increments or decrements the selection in large (16) steps",
+      "media": {
+        "video": "/assets/activity/groove/edit-multiple-fast.mp4",
+        "eventsUrl": "/assets/activity/groove/edit-multiple-fast.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "enter-selection__groove",
+      "name": "Enter Selection Mode",
+      "aliases": [
+        "enter-selection"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "opt"
+        ]
+      ],
+      "description": "Enters Selection mode, which then can be expanded by using the directional keys",
+      "media": {
+        "video": "/assets/activity/groove/enter-selection.mp4",
+        "eventsUrl": "/assets/activity/groove/enter-selection.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "copy__groove",
+      "name": "Copy",
+      "aliases": [
+        "copy"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "opt"
+        ]
+      ],
+      "description": "When one or more values are selected, copies the selection into the clipboard",
+      "media": {
+        "video": "/assets/activity/groove/copy.mp4",
+        "eventsUrl": "/assets/activity/groove/copy.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "cut__groove",
+      "name": "Cut",
+      "aliases": [
+        "cut"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "edit"
+        ]
+      ],
+      "description": "Cuts out the value on the cursor or the entire selection.",
+      "media": {
+        "video": "/assets/activity/groove/cut.mp4",
+        "eventsUrl": "/assets/activity/groove/cut.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "paste-value__groove",
+      "name": "Paste",
+      "aliases": [
+        "paste-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "edit"
+        ]
+      ],
+      "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo.",
+      "media": {
+        "video": "/assets/activity/groove/paste.mp4",
+        "eventsUrl": "/assets/activity/groove/paste.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "interpolate__groove",
+      "name": "Interpolate Values",
+      "aliases": [
+        "interpolate"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "With a column of values selected, interpolate the values from the first to last selection. This works for FX, but only when row has the same FX command inserted.",
+      "media": {
+        "video": "/assets/activity/groove/interpolate.mp4",
+        "eventsUrl": "/assets/activity/groove/interpolate.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "navigate-screen__scale",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/scale/navigate.mp4",
+        "eventsUrl": "/assets/activity/scale/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "next-entry__scale",
+      "name": "Next / prev scale",
+      "aliases": [
+        "next-entry"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "left"
+        ],
+        "or",
+        [
+          "shift",
+          "right"
+        ]
+      ],
+      "description": "Navigates to previous or next scale",
+      "media": {
+        "video": "/assets/activity/scale/next-scale.mp4",
+        "eventsUrl": "/assets/activity/scale/next-scale.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "next-quick-entry__scale",
+      "name": "First / last scale",
+      "aliases": [
+        "next-quick-entry"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "up"
+        ],
+        "or",
+        [
+          "shift",
+          "down"
+        ]
+      ],
+      "description": "Moves to the first or last groove",
+      "media": {
+        "video": "/assets/activity/scale/next-scale-quick.mp4",
+        "eventsUrl": "/assets/activity/scale/next-scale-quick.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "change-root-key__scale",
+      "name": "Change Root Key",
+      "aliases": [
+        "change-root-key"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ],
+        "or",
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "When the key-entry is selected, offsets the root key to the desired note",
+      "media": {
+        "video": "/assets/activity/scale/edit-root-key.mp4",
+        "eventsUrl": "/assets/activity/scale/edit-root-key.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "enable-key__scale",
+      "name": "Enable Key",
+      "aliases": [
+        "enable-key"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit"
+      ],
+      "description": "When the cursor is on the enable column, enables or disables the key of that row",
+      "media": {
+        "video": "/assets/activity/scale/enable-key.mp4",
+        "eventsUrl": "/assets/activity/scale/enable-key.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-small__scale",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits an instrument parameter in small steps.",
+      "media": {
+        "video": "/assets/activity/scale/edit-small.mp4",
+        "eventsUrl": "/assets/activity/scale/edit-small.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-large__scale",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits an instrument parameter in large steps (16 steps, the left, most significant byte)",
+      "media": {
+        "video": "/assets/activity/scale/edit-large.mp4",
+        "eventsUrl": "/assets/activity/scale/edit-large.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "name-scale__scale",
+      "name": "Name Scale",
+      "aliases": [
+        "name-scale"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "after",
+        [
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      ],
+      "description": "Naming the scale by holding edit, navigating to the letter and releasing the edit key.",
+      "media": {
+        "video": "/assets/activity/scale/name-scale.mp4",
+        "eventsUrl": "/assets/activity/scale/name-scale.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "navigate-screen__instrument",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/instrument/navigate.mp4",
+        "eventsUrl": "/assets/activity/instrument/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "next-instrument__instrument",
+      "name": "Next / prev instrument",
+      "aliases": [
+        "next-instrument"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "left"
+        ],
+        "or",
+        [
+          "opt",
+          "right"
+        ]
+      ],
+      "description": "Goes to the next or previous instrument",
+      "media": {
+        "video": "/assets/activity/instrument/next-instrument.mp4",
+        "eventsUrl": "/assets/activity/instrument/next-instrument.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "next-instrument-quick__instrument",
+      "name": "Quick next / prev instrument",
+      "aliases": [
+        "next-instrument-quick"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "up"
+        ],
+        "or",
+        [
+          "opt",
+          "down"
+        ]
+      ],
+      "description": "Steps in large increments to the next instrument (16 instruments)",
+      "media": {
+        "video": "/assets/activity/instrument/next-instrument-quick.mp4",
+        "eventsUrl": "/assets/activity/instrument/next-instrument-quick.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "play__instrument",
+      "name": "Play",
+      "aliases": [
+        "play"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "play"
+        ]
+      ],
+      "description": "Plays / stops the current track without the other tracks.",
+      "media": {
+        "video": "/assets/activity/instrument/play.mp4",
+        "eventsUrl": "/assets/activity/instrument/play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__instrument",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position with the other tracks.",
+      "media": {
+        "video": "/assets/activity/instrument/continue-track.mp4",
+        "eventsUrl": "/assets/activity/instrument/continue-track.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__instrument",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/instrument/mute-track.mp4",
+        "eventsUrl": "/assets/activity/instrument/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__instrument",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/instrument/solo-track.mp4",
+        "eventsUrl": "/assets/activity/instrument/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-mutes__instrument",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-mutes"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/instrument/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/instrument/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "preview__instrument",
+      "name": "Preview Instrument",
+      "aliases": [
+        "preview"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "play"
+        ]
+      ],
+      "description": "Previews the instrument by triggering it once and keeping it on until either key is released.",
+      "media": {
+        "video": "/assets/activity/instrument/preview.mp4",
+        "eventsUrl": "/assets/activity/instrument/preview.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-large__instrument",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a value at the cursor position in large steps.",
+      "media": {
+        "video": "/assets/activity/instrument/edit-large.mp4",
+        "eventsUrl": "/assets/activity/instrument/edit-large.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-small__instrument",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits the value at the cursor position by one step.",
+      "media": {
+        "video": "/assets/activity/instrument/edit-small.mp4",
+        "eventsUrl": "/assets/activity/instrument/edit-small.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-touch__instrument",
+      "name": "Edit with touchscreen",
+      "aliases": [
+        "edit-touch"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit",
+        "touch"
+      ],
+      "description": "Edits the selected parameter by horizontal sliding",
+      "media": {
+        "video": "/assets/activity/instrument/edit-touch.mp4",
+        "eventsUrl": "/assets/activity/instrument/edit-touch.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "set-default__instrument",
+      "name": "Set default value",
+      "aliases": [
+        "set-default"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "opt"
+        ]
+      ],
+      "description": "Sets the default value for the highlighted setting",
+      "media": {
+        "video": "/assets/activity/instrument/set-default.mp4",
+        "eventsUrl": "/assets/activity/instrument/set-default.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "copy__instrument",
+      "name": "Copy",
+      "aliases": [
+        "copy"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "opt"
+        ]
+      ],
+      "description": "When one or more values are selected, copies the selection into the clipboard",
+      "media": {
+        "video": "/assets/activity/instrument/copy.mp4",
+        "eventsUrl": "/assets/activity/instrument/copy.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "paste-value__instrument",
+      "name": "Paste",
+      "aliases": [
+        "paste-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "edit"
+        ]
+      ],
+      "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo.",
+      "media": {
+        "video": "/assets/activity/instrument/paste.mp4",
+        "eventsUrl": "/assets/activity/instrument/paste.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "undo-paste__instrument",
+      "name": "Undo Paste",
+      "aliases": [
+        "undo-paste"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ],
+        "after",
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "The pasted instrument can be reverted back by releasing both keys and doing the same combination.",
+      "media": {
+        "video": "/assets/activity/instrument/undo-paste.mp4",
+        "eventsUrl": "/assets/activity/instrument/undo-paste.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "randomize__instrument",
+      "name": "Randomize Instrument",
+      "aliases": [
+        "randomize"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "up",
+          "down",
+          "left",
+          "right",
+          "edit"
+        ]
+      ],
+      "description": "Randomizes all parameters of the instrument",
+      "media": {
+        "video": "/assets/activity/instrument/randomize.mp4",
+        "eventsUrl": "/assets/activity/instrument/randomize.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "fm-change-algo__instrument",
+      "name": "Change FM Algo",
+      "aliases": [
+        "fm-change-algo"
+      ],
+      "categoryIds": [
+        "fm"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ],
+        "or",
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Changes the FM algorithms, from some generators over to a variety of wavetables.",
+      "media": {
+        "video": "/assets/activity/instrument/fm-change-algo.mp4",
+        "eventsUrl": "/assets/activity/instrument/fm-change-algo.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "fm-change-operator__instrument",
+      "name": "Change FM Operator",
+      "aliases": [
+        "fm-change-operator"
+      ],
+      "categoryIds": [
+        "fm"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ],
+        "or",
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Changes the FM Operator between a algorithms. Consult the manual for how they operate.",
+      "media": {
+        "video": "/assets/activity/instrument/fm-change-operator.mp4",
+        "eventsUrl": "/assets/activity/instrument/fm-change-operator.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "fm-copy-operator__instrument",
+      "name": "Copy FM Operator",
+      "aliases": [
+        "fm-copy-operator"
+      ],
+      "categoryIds": [
+        "fm"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ]
+      ],
+      "description": "Copies the selected FM operator to be pasted into another operator slot",
+      "media": {
+        "video": "/assets/activity/instrument/fm-copy-operator.mp4",
+        "eventsUrl": "/assets/activity/instrument/fm-copy-operator.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "fm-paste-operator__instrument",
+      "name": "Paste FM Operator",
+      "aliases": [
+        "fm-paste-operator"
+      ],
+      "categoryIds": [
+        "fm"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "Pastes a prior copied FM operator into the current hovered column.",
+      "media": {
+        "video": "/assets/activity/instrument/fm-paste-operator.mp4",
+        "eventsUrl": "/assets/activity/instrument/fm-paste-operator.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "hyper-add-note__instrument",
+      "name": "Add Note",
+      "aliases": [
+        "hyper-add-note"
+      ],
+      "categoryIds": [
+        "hyper"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ],
+        "or",
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "With the cursor on top of a hypersynth note of a chord, adds a note into it.",
+      "media": {
+        "video": "/assets/activity/instrument/hyper-add-note.mp4",
+        "eventsUrl": "/assets/activity/instrument/hyper-add-note.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "hyper-change-chord__instrument",
+      "name": "Change Chord",
+      "aliases": [
+        "hyper-change-chord"
+      ],
+      "categoryIds": [
+        "hyper"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ],
+        "or",
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "With the cursor on the chord number, changes to another chord. Chords can be changed with the CRD command in a phrase or table.",
+      "media": {
+        "video": "/assets/activity/instrument/hyper-change-chord.mp4",
+        "eventsUrl": "/assets/activity/instrument/hyper-change-chord.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "hyper-copy-chord__instrument",
+      "name": "Copy Chord",
+      "aliases": [
+        "hyper-copy-chord"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ]
+      ],
+      "description": "With the cursor on the chord, copies the chord into the clipboard",
+      "media": {
+        "video": "/assets/activity/instrument/hyper-copy-chord.mp4",
+        "eventsUrl": "/assets/activity/instrument/hyper-copy-chord.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "hyper-paste-value__instrument",
+      "name": "Paste",
+      "aliases": [
+        "hyper-paste-value"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "With the cursor on the chord, pastes the chord from the clipboard.",
+      "media": {
+        "video": "/assets/activity/instrument/hyper-paste-chord.mp4",
+        "eventsUrl": "/assets/activity/instrument/hyper-paste-chord.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "hyper-remove-note__instrument",
+      "name": "Remove Note from Chord",
+      "aliases": [
+        "hyper-remove-note"
+      ],
+      "categoryIds": [
+        "hyper"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "edit"
+        ]
+      ],
+      "description": "With the cursor on a hypersynth note, removes the note from the chord.",
+      "media": {
+        "video": "/assets/activity/instrument/hyper-remove-chord.mp4",
+        "eventsUrl": "/assets/activity/instrument/hyper-remove-chord.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "assign-midi__instrument",
+      "name": "Assign Touch-Axis to MIDI",
+      "aliases": [
+        "assign-midi"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "opt-hold",
+        "touch"
+      ],
+      "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
+      "media": {
+        "video": "/assets/activity/instrument/assign-midi.mp4",
+        "eventsUrl": "/assets/activity/instrument/assign-midi.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "assign-touch__instrument",
+      "name": "Assign Touch-Axis as MIDI to Parameter",
+      "aliases": [
+        "assign-touch"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "opt-hold",
+        "touch"
+      ],
+      "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
+      "media": {
+        "video": "/assets/activity/instrument/assign-touch.mp4",
+        "eventsUrl": "/assets/activity/instrument/assign-touch.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "name-instrument__instrument",
+      "name": "Name Instrument",
+      "aliases": [
+        "name-instrument"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "after",
+        [
+          "up",
+          "down",
+          "left",
+          "right"
+        ]
+      ],
+      "description": "Naming the instrument by holding edit, navigating to the letter and releasing the edit key.",
+      "media": {
+        "video": "/assets/activity/instrument/name-instrument.mp4",
+        "eventsUrl": "/assets/activity/instrument/name-instrument.json"
+      },
+      "level": 3
+    },
+    {
+      "id": "assign-eq__instrument",
+      "name": "Assign EQ",
+      "aliases": [
+        "assign-eq"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "after",
+        "edit"
+      ],
+      "description": "With the cursor on the EQ, assigns an EQ bank to the instrument - which can be edited by pressing edit again",
+      "media": {
+        "video": "/assets/activity/instrument/assign-eq.mp4",
+        "eventsUrl": "/assets/activity/instrument/assign-eq.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "move-small__sample-editor",
+      "name": "Slow Move",
+      "aliases": [
+        "move-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Moves the hovered marker slowly by time, independent from phrase length.",
+      "media": {
+        "video": "/assets/activity/sample-editor/move-slow.mp4",
+        "eventsUrl": "/assets/activity/sample-editor/move-slow.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "move-large__sample-editor",
+      "name": "Fast Move",
+      "aliases": [
+        "move-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Moves the hovered marker quickly by time, independent from phrase length.",
+      "media": {
+        "video": "/assets/activity/sample-editor/move-fast.mp4",
+        "eventsUrl": "/assets/activity/sample-editor/move-fast.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "move-small-steps__sample-editor",
+      "name": "Move 1 Step",
+      "aliases": [
+        "move-small-steps"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "left"
+        ],
+        "or",
+        [
+          "opt",
+          "right"
+        ]
+      ],
+      "description": "Moves 4 steps based on the tempo of the project.",
+      "media": {
+        "video": "/assets/activity/sample-editor/move-step-slow.mp4",
+        "eventsUrl": "/assets/activity/sample-editor/move-step-slow.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "move-large-steps__sample-editor",
+      "name": "Move 4 Steps",
+      "aliases": [
+        "move-large-steps"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "opt",
+          "up"
+        ],
+        "or",
+        [
+          "opt",
+          "down"
+        ]
+      ],
+      "description": "Moves 4 steps based on the tempo of the project.",
+      "media": {
+        "video": "/assets/activity/sample-editor/move-step-fast.mp4",
+        "eventsUrl": "/assets/activity/sample-editor/move-step-fast.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "move-touch__sample-editor",
+      "name": "Move by Touch",
+      "aliases": [
+        "move-touch"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit",
+        "touch"
+      ],
+      "description": "Moves the selected marker to the position where you touch the screen.",
+      "media": {
+        "video": "/assets/activity/sample-editor/move-touch.mp4",
+        "eventsUrl": "/assets/activity/sample-editor/move-touch.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "preview__sample-editor",
+      "name": "Preview Sample",
+      "aliases": [
+        "preview"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "hold",
+        "play"
+      ],
+      "description": "Previews the sample, which can be used for lazy chopping",
+      "media": {
+        "video": "/assets/activity/sample-editor/preview.mp4",
+        "eventsUrl": "/assets/activity/sample-editor/preview.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "lazy-chop__sample-editor",
+      "name": "Lazy Chop",
+      "aliases": [
+        "lazy-chop"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "play",
+        "after",
+        "edit"
+      ],
+      "description": "Inserts slice markers at the play head while previewing the sample.",
+      "media": {
+        "video": "/assets/activity/sample-editor/lazy-chop.mp4",
+        "eventsUrl": "/assets/activity/sample-editor/lazy-chop.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "record__sample-editor",
+      "name": "Record sample",
+      "aliases": [
+        "record"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit"
+      ],
+      "description": "Records a sample. Use the ARM to set a minimum threshold before a recording starts.",
+      "media": {
+        "video": "/assets/activity/sample-editor/record.mp4",
+        "eventsUrl": "/assets/activity/sample-editor/record.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "delete-slice__sample-editor",
+      "name": "Delete Slice",
+      "aliases": [
+        "delete-slice"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        "edit"
+      ],
+      "description": "Delete a slice.",
+      "media": {
+        "video": "/assets/activity/sample-editor/delete-slice.mp4",
+        "eventsUrl": "/assets/activity/sample-editor/delete-slice.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "navigate-screen__fx-settings",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/fx/navigate.mp4",
+        "eventsUrl": "/assets/activity/fx/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__fx-settings",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position with the other tracks.",
+      "media": {
+        "video": "/assets/activity/fx/continue-track.mp4",
+        "eventsUrl": "/assets/activity/fx/continue-track.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__fx-settings",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/fx/mute-track.mp4",
+        "eventsUrl": "/assets/activity/fx/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__fx-settings",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/fx/solo-track.mp4",
+        "eventsUrl": "/assets/activity/fx/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-mutes__fx-settings",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-mutes"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/fx/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/fx/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-small__fx-settings",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits the value at the cursor position by one step.",
+      "media": {
+        "video": "/assets/activity/fx/edit-small.mp4",
+        "eventsUrl": "/assets/activity/fx/edit-small.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-large__fx-settings",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a value at the cursor position in large steps.",
+      "media": {
+        "video": "/assets/activity/fx/edit-large.mp4",
+        "eventsUrl": "/assets/activity/fx/edit-large.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "set-default__fx-settings",
+      "name": "Set default value",
+      "aliases": [
+        "set-default"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "opt"
+        ]
+      ],
+      "description": "Sets the default value for the highlighted setting",
+      "media": {
+        "video": "/assets/activity/fx/set-default.mp4",
+        "eventsUrl": "/assets/activity/fx/set-default.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "assign-midi__fx-settings",
+      "name": "Assign Touch-Axis to MIDI",
+      "aliases": [
+        "assign-midi"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "opt-hold",
+        "touch"
+      ],
+      "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
+      "media": {
+        "video": "/assets/activity/fx/assign-midi.mp4",
+        "eventsUrl": "/assets/activity/fx/assign-midi.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "assign-touch__fx-settings",
+      "name": "Assign Touch-Axis as MIDI to Parameter",
+      "aliases": [
+        "assign-touch"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "opt-hold",
+        "touch"
+      ],
+      "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
+      "media": {
+        "video": "/assets/activity/fx/assign-touch.mp4",
+        "eventsUrl": "/assets/activity/fx/assign-touch.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "navigate-screen__mixer",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/mixer/navigate.mp4",
+        "eventsUrl": "/assets/activity/mixer/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "enter-mix-scope__mixer",
+      "name": "Enter Mix Scope",
+      "aliases": [
+        "enter-mix-scope"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "edit",
+        "after",
+        "edit"
+      ],
+      "description": "With the cursor on the MIX parameter, enters the limiter scope. It details how the limiter operates and allows for tuning the limiter parameters.",
+      "media": {
+        "video": "/assets/activity/mixer/edit-small.mp4",
+        "eventsUrl": "/assets/activity/mixer/edit-small.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "enter-limiter-scope__mixer",
+      "name": "Enter Limiter Scope",
+      "aliases": [
+        "enter-limiter-scope"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "edit",
+        "after",
+        "edit"
+      ],
+      "description": "With the cursor on the LIM, DJF or OTT parameter, enters the limiter scope. It details how the limiter operates and allows for tuning the limiter parameters.",
+      "media": {
+        "video": "/assets/activity/mixer/edit-small.mp4",
+        "eventsUrl": "/assets/activity/mixer/edit-small.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__mixer",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        "play",
+        "or",
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position.",
+      "media": {
+        "video": "/assets/activity/mixer/continue-song.mp4",
+        "eventsUrl": "/assets/activity/mixer/continue-song.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__mixer",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/mixer/mute-track.mp4",
+        "eventsUrl": "/assets/activity/mixer/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__mixer",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/mixer/solo-track.mp4",
+        "eventsUrl": "/assets/activity/mixer/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-all-mute-solo__mixer",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-all-mute-solo"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/mixer/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/mixer/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-small__mixer",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits a all values (notes, volume, instrument, fx command and fx value) in small increments.",
+      "media": {
+        "video": "/assets/activity/mixer/edit-small.mp4",
+        "eventsUrl": "/assets/activity/mixer/edit-small.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-large__mixer",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a volume, instrument number or FX value in large increments (16 steps, the left, most significant byte)",
+      "media": {
+        "video": "/assets/activity/mixer/edit-large.mp4",
+        "eventsUrl": "/assets/activity/mixer/edit-large.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "set-default__mixer",
+      "name": "Set default value",
+      "aliases": [
+        "set-default"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "opt"
+        ]
+      ],
+      "description": "Sets the default value for the highlighted setting",
+      "media": {
+        "video": "/assets/activity/mixer/set-default.mp4",
+        "eventsUrl": "/assets/activity/mixer/set-default.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "snapshot-create__mixer",
+      "name": "Create Snapshot",
+      "aliases": [
+        "snapshot-create"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "opt"
+        ]
+      ],
+      "description": "Creates a song snapshot for temporarily storing the entire song to recall at a later point.",
+      "media": {
+        "video": "/assets/activity/mixer/snapshot-create.mp4",
+        "eventsUrl": "/assets/activity/mixer/snapshot-create.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "snapshot-recall__mixer",
+      "name": "Recall Snapshot",
+      "aliases": [
+        "snapshot-recall"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "edit"
+        ]
+      ],
+      "description": "Recall the song snapshot previously created.",
+      "media": {
+        "video": "/assets/activity/mixer/snapshot-recall.mp4",
+        "eventsUrl": "/assets/activity/mixer/snapshot-recall.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "assign-touch__mixer",
+      "name": "Assign Touch-Axis as MIDI to Parameter",
+      "aliases": [
+        "assign-touch"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "touch"
+      ],
+      "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
+      "media": {
+        "video": "/assets/activity/mixer/assign-touch.mp4",
+        "eventsUrl": "/assets/activity/mixer/assign-touch.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "assign-midi__mixer",
+      "name": "Assign MIDI CC to Parameter",
+      "aliases": [
+        "assign-midi"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "midi"
+      ],
+      "description": "Assign a MIDI CC to a selected parameter",
+      "media": {
+        "video": "/assets/activity/mixer/assign-midi.mp4",
+        "eventsUrl": "/assets/activity/mixer/assign-midi.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "navigate-screen__scope",
+      "name": "Navigate",
+      "aliases": [
+        "navigate-screen"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "up",
+        "or",
+        "left",
+        "or",
+        "down",
+        "or",
+        "right"
+      ],
+      "description": "Moves the cursor up or down, left or right",
+      "media": {
+        "video": "/assets/activity/scope/navigate.mp4",
+        "eventsUrl": "/assets/activity/scope/navigate.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "exit__scope",
+      "name": "Exit EQ",
+      "aliases": [
+        "exit"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "opt"
+      ],
+      "description": "Exits and returns to the screen it was entered from",
+      "media": {
+        "video": "/assets/activity/scope/exit.mp4",
+        "eventsUrl": "/assets/activity/scope/exit.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__scope",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position.",
+      "media": {
+        "video": "/assets/activity/scope/continue-play.mp4",
+        "eventsUrl": "/assets/activity/scope/continue-play.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__scope",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/scope/mute-track.mp4",
+        "eventsUrl": "/assets/activity/scope/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__scope",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/scope/solo-track.mp4",
+        "eventsUrl": "/assets/activity/scope/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-all-mute-solo__scope",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-all-mute-solo"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/scope/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/scope/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-small__scope",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits a all values (notes, volume, instrument, fx command and fx value) in small increments.",
+      "media": {
+        "video": "/assets/activity/scope/edit-small.mp4",
+        "eventsUrl": "/assets/activity/scope/edit-small.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-large__scope",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a volume, instrument number or FX value in large increments (16 steps, the left, most significant byte)",
+      "media": {
+        "video": "/assets/activity/scope/edit-large.mp4",
+        "eventsUrl": "/assets/activity/scope/edit-large.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "set-default__scope",
+      "name": "Set default value",
+      "aliases": [
+        "set-default"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "opt"
+        ]
+      ],
+      "description": "Sets the default value for the highlighted setting",
+      "media": {
+        "video": "/assets/activity/scope/set-default.mp4",
+        "eventsUrl": "/assets/activity/scope/set-default.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "assign-midi__scope",
+      "name": "Assign MIDI CC to Parameter",
+      "aliases": [
+        "assign-midi"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "midi"
+      ],
+      "description": "Assign a MIDI CC to a selected parameter",
+      "media": {
+        "video": "/assets/activity/scope/assign-midi.mp4",
+        "eventsUrl": "/assets/activity/scope/assign-midi.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "assign-touch__scope",
+      "name": "Assign Touch-Axis as MIDI to Parameter",
+      "aliases": [
+        "assign-touch"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit",
+        "touch"
+      ],
+      "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
+      "media": {
+        "video": "/assets/activity/scope/assign-touch.mp4",
+        "eventsUrl": "/assets/activity/scope/assign-touch.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "exit__equalizer-bank",
+      "name": "Exit EQ",
+      "aliases": [
+        "exit"
+      ],
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        "opt"
+      ],
+      "description": "Exits and returns to the screen it was entered from",
+      "media": {
+        "video": "/assets/activity/eq/exit.mp4",
+        "eventsUrl": "/assets/activity/eq/exit.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-eq__equalizer-bank",
+      "name": "Mute EQ",
+      "aliases": [
+        "mute-eq"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "2x",
+        "edit"
+      ],
+      "description": "Enables / disables the current EQ",
+      "media": {
+        "video": "/assets/activity/eq/mute-eq.mp4",
+        "eventsUrl": "/assets/activity/eq/mute-eq.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "continue-song__equalizer-bank",
+      "name": "Continue song",
+      "aliases": [
+        "continue-song"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Continues song at the cursor position with the other tracks.",
+      "media": {
+        "video": "/assets/activity/eq/continue-track.mp4",
+        "eventsUrl": "/assets/activity/eq/continue-track.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "mute-track__equalizer-bank",
+      "name": "Mute Track",
+      "aliases": [
+        "mute-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift"
+        ]
+      ],
+      "description": "Mute current track - if you release option first, holds the mute",
+      "media": {
+        "video": "/assets/activity/eq/mute-track.mp4",
+        "eventsUrl": "/assets/activity/eq/mute-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "solo-track__equalizer-bank",
+      "name": "Solo Track",
+      "aliases": [
+        "solo-track"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "play"
+        ]
+      ],
+      "description": "Solo current track, release option first to hold the solo.",
+      "media": {
+        "video": "/assets/activity/eq/solo-track.mp4",
+        "eventsUrl": "/assets/activity/eq/solo-track.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "clear-mutes__equalizer-bank",
+      "name": "Clear mutes and solos",
+      "aliases": [
+        "clear-mutes"
+      ],
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "opt-hold",
+          "shift",
+          "play"
+        ]
+      ],
+      "description": "Clears all mute and solos that are being held by any track.",
+      "media": {
+        "video": "/assets/activity/eq/clear-mutes.mp4",
+        "eventsUrl": "/assets/activity/eq/clear-mutes.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "edit-small__equalizer-bank",
+      "name": "Edit in small increments",
+      "aliases": [
+        "edit-small"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "left"
+        ],
+        "or",
+        [
+          "edit",
+          "right"
+        ]
+      ],
+      "description": "Edits the value at the cursor position by one step.",
+      "media": {
+        "video": "/assets/activity/eq/edit-small.mp4",
+        "eventsUrl": "/assets/activity/eq/edit-small.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "edit-large__equalizer-bank",
+      "name": "Edit in large increments",
+      "aliases": [
+        "edit-large"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "up"
+        ],
+        "or",
+        [
+          "edit",
+          "down"
+        ]
+      ],
+      "description": "Edits a value at the cursor position in large steps.",
+      "media": {
+        "video": "/assets/activity/eq/edit-large.mp4",
+        "eventsUrl": "/assets/activity/eq/edit-large.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "set-default__equalizer-bank",
+      "name": "Set default value",
+      "aliases": [
+        "set-default"
+      ],
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit",
+          "opt"
+        ]
+      ],
+      "description": "Sets the default value for the highlighted setting",
+      "media": {
+        "video": "/assets/activity/eq/set-default.mp4",
+        "eventsUrl": "/assets/activity/eq/set-default.json"
+      },
+      "level": 1
+    },
+    {
+      "id": "copy__equalizer-bank",
+      "name": "Copy",
+      "aliases": [
+        "copy"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "opt"
+        ]
+      ],
+      "description": "When one or more values are selected, copies the selection into the clipboard",
+      "media": {
+        "video": "/assets/activity/eq/copy.mp4",
+        "eventsUrl": "/assets/activity/eq/copy.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "paste-value__equalizer-bank",
+      "name": "Paste",
+      "aliases": [
+        "paste-value"
+      ],
+      "categoryIds": [
+        "selection"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "edit"
+        ]
+      ],
+      "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo.",
+      "media": {
+        "video": "/assets/activity/eq/paste.mp4",
+        "eventsUrl": "/assets/activity/eq/paste.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "assign-touch__equalizer-bank",
+      "name": "Assign Touch-Axis as MIDI to Parameter",
+      "aliases": [
+        "assign-touch"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "opt-hold",
+        "touch"
+      ],
+      "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
+      "media": {
+        "video": "/assets/activity/eq/assign-touch.mp4",
+        "eventsUrl": "/assets/activity/eq/assign-touch.json"
+      },
+      "level": 2
+    },
+    {
+      "id": "assign-midi__equalizer-bank",
+      "name": "Assign Touch-Axis to MIDI",
+      "aliases": [
+        "assign-midi"
+      ],
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "opt-hold",
+        "touch"
+      ],
+      "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
+      "media": {
+        "video": "/assets/activity/eq/assign-midi.mp4",
+        "eventsUrl": "/assets/activity/eq/assign-midi.json"
+      },
+      "level": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": "sequencer",
+      "name": "Sequencer & Song"
+    },
+    {
+      "id": "system",
+      "name": "System & Config"
+    },
+    {
+      "id": "mixer",
+      "name": "Mixer & Effects"
+    },
+    {
+      "id": "instrument",
+      "name": "Instruments"
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation"
+    },
+    {
+      "id": "play",
+      "name": "Playing"
+    },
+    {
+      "id": "edit",
+      "name": "Editing"
+    },
+    {
+      "id": "selection",
+      "name": "Selection"
+    },
+    {
+      "id": "special",
+      "name": "Special Shortcuts"
+    },
+    {
+      "id": "misc",
+      "name": "Miscellaneous"
+    },
+    {
+      "id": "global",
+      "name": "Global Shortcuts"
+    },
+    {
+      "id": "hyper",
+      "name": "Hypersynth"
+    },
+    {
+      "id": "fm",
+      "name": "FM Synth"
+    }
+  ],
+  "keys": [],
+  "assets": []
+}

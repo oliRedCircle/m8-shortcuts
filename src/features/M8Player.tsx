@@ -95,16 +95,37 @@ const SvgComponent: FC<{
   title?: string
   description?: React.ReactNode
   media:
-    | {
-        type: 'video'
-        video: string
-        events?: [number, number][]
-      }
-    | {
-        type: 'image'
-        img: string
-      }
+  | {
+    type: 'video'
+    video: string
+    events?: [number, number][]
+    eventsUrl?: string
+  }
+  | {
+    type: 'image'
+    img: string
+  }
 }> = ({ strokeColor, title, media, description, ...props }) => {
+  const [eventsData, setEventsData] = useState<[number, number][]>([])
+
+  useEffect(() => {
+    if (media.type !== 'video') {
+      setEventsData([])
+      return
+    }
+    if (media.events && media.events.length > 0) {
+      setEventsData(media.events)
+      return
+    }
+    if (media.eventsUrl) {
+      fetch(media.eventsUrl)
+        .then((res) => res.json())
+        .then((json: [number, number][]) => setEventsData(json))
+        .catch(() => setEventsData([]))
+    } else {
+      setEventsData([])
+    }
+  }, [media])
   const [screenEdge, setScreenEdge] = useState<SVGPathElement | null>(null)
   const [video, setVideo] = useState<HTMLVideoElement | null>(null)
   const [image, setImage] = useState<HTMLImageElement | null>(null)
@@ -169,7 +190,7 @@ const SvgComponent: FC<{
         lastIndex = -1
       }
       lastTime = time
-      const data = (media.type === 'video' ? (media.events ?? []) : []).map(([time, value]) => [time / 1000, value])
+      const data = (media.type === 'video' ? eventsData : []).map(([time, value]) => [time / 1000, value])
       const idx = data.findIndex(([time, _value], idx) => idx > lastIndex && video.currentTime >= time)
       const diff = idx - lastIndex
       if (idx < 0 || diff <= 0) {
@@ -197,7 +218,7 @@ const SvgComponent: FC<{
     let num = requestAnimationFrame(onAnimationFrame)
 
     return () => cancelAnimationFrame(num)
-  }, [video, media, buttonOpt, buttonEdit, buttonPlay, buttonUp, buttonRight, buttonShift, buttonLeft, buttonDown])
+  }, [video, media, eventsData, buttonOpt, buttonEdit, buttonPlay, buttonUp, buttonRight, buttonShift, buttonLeft, buttonDown])
 
   return (
     <div ref={setParent} className={containerClass}>
@@ -407,15 +428,16 @@ export const M8Player: FC<{
   title?: string
   description?: React.ReactNode
   media:
-    | {
-        type: 'video'
-        video: string
-        events?: [number, number][]
-      }
-    | {
-        type: 'image'
-        img: string
-      }
+  | {
+    type: 'video'
+    video: string
+    events?: [number, number][]
+    eventsUrl?: string
+  }
+  | {
+    type: 'image'
+    img: string
+  }
 }> = ({ media, title, description }) => {
   return <SvgComponent strokeColor={style.themeColors.text.default} title={title} media={media} description={description} />
 }

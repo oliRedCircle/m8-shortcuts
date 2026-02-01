@@ -28,6 +28,7 @@ export interface M8Screen {
   description: string
   categories: CategoryId[]
   activities: Activity[]
+  aliases?: string[]
 }
 
 export type Category = (typeof categories)[number]
