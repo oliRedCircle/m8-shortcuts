@@ -1,6 +1,7 @@
 import { type FC, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import FallbackScreen from '#assets/activity/no-screen-placeholder.png'
+// Assets served from public; use absolute URL string
+const FALLBACK_SCREEN = '/assets/activity/no-screen-placeholder.png'
 import { ActivitySelection } from './features/ActivitySelection'
 import { M8Player } from './features/M8Player'
 import { ScreenSelection } from './features/ScreenSelection'
@@ -11,7 +12,7 @@ import type { ActivityData } from './data/schema'
 
 const ActivityScreen: FC<{ activity?: ActivityData; fallbackImg?: string }> = ({ activity, fallbackImg }) => {
   const usedActivity = activity
-  const fallbackMedia = { img: fallbackImg ?? FallbackScreen }
+  const fallbackMedia = { img: fallbackImg ?? FALLBACK_SCREEN }
   const media = usedActivity?.media ?? fallbackMedia
   const mediaData = 'img' in media
     ? { type: 'image' as const, img: media.img }

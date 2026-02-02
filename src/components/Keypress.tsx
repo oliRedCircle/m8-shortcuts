@@ -1,7 +1,8 @@
 import { css, cx } from '@linaria/core'
 import type { FC } from 'react'
-import ButtonSprite from '#assets/sprites/button.svg'
-import PressSprite from '#assets/sprites/button-press.svg'
+// Sprites served from public assets
+const ButtonSprite = '/assets/sprites/button.svg'
+const PressSprite = '/assets/sprites/button-press.svg'
 import { style } from '../app/style/style'
 import { Icon } from './Icon'
 
@@ -32,7 +33,7 @@ const keypressClass = css`
     width: 6px;
     height: 6px;
 
-    color: ${style.themeColors.text.default};
+    color: #878d8f; 
 
     &.press {
       animation: 1.0s linear infinite both rotate-opacity;
@@ -91,24 +92,24 @@ const keypressClass = css`
 `
 
 const has = (which: Key, keys: Key[] | Key) => {
- if(keys === which) {
-  return true;
- } 
+  if (keys === which) {
+    return true;
+  }
 
-  if(Array.isArray(keys)) {
+  if (Array.isArray(keys)) {
     return keys.some(x => x.startsWith(which))
-  } 
+  }
   return keys.startsWith(which)
 }
 
 const isHold = (which: Key, keys: Key[] | Key) => {
-  if(Array.isArray(keys)) {
+  if (Array.isArray(keys)) {
     const element = keys.find(x => x.startsWith(which));
     return element?.endsWith('hold')
   }
   return which.endsWith('hold')
 }
- 
+
 export const Keypress: FC<{
   keys: Key[] | Key
 }> = ({ keys }) => {

@@ -2,7 +2,8 @@ import { css, cx } from '@linaria/core'
 import { type FC, useMemo } from 'react'
 import type { Key } from '../components/Keypress'
 import { useNavigate } from 'react-router-dom'
-import FallbackImage from '#assets/activity/no-screen-placeholder.png'
+// Fallback asset served from public (unused, kept for future):
+const FALLBACK_IMAGE = '/assets/activity/no-screen-placeholder.png'
 import { fragments } from '../app/style/fragments'
 import { style } from '../app/style/style'
 import { KeyCombo } from '../components/KeyCombo'
@@ -157,7 +158,7 @@ const ActivityEntry: FC<{ activity: ActivityData; screen: ScreenData; highlightK
           <KeyCombo keypress={activity.keypress} id={`${screen.id}-${activity.id}`} />
         </span>
       </h3>
-      {!activity.media && false && <img src={FallbackImage} />}
+      {!activity.media && false && <img src={FALLBACK_IMAGE} />}
     </div>
   )
 }

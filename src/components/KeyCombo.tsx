@@ -1,7 +1,8 @@
 import type { FC } from 'react'
-import AddIcon from '#assets/icons/add.svg'
-import ArrowRightIcon from '#assets/icons/arrow-right.svg'
-import TouchIcon from '#assets/icons/pan-tool.svg'
+// Icons served from public assets; use URL strings
+const AddIcon = '/assets/icons/add.svg'
+const ArrowRightIcon = '/assets/icons/arrow-right.svg'
+const TouchIcon = '/assets/icons/pan-tool.svg'
 import type { Activity } from '../features/activity'
 import { Icon } from './Icon'
 import { Keypress } from './Keypress'
