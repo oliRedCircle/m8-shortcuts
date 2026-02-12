@@ -26,7 +26,7 @@ export interface ActivityData {
     name: string
     aliases?: string[]
     categoryIds: string[]
-    keypress: (Key | Key[] | 'and' | 'after' | 'or' | 'hold' | '2x' | '3x' | 'touch' | 'midi')[]
+    keypress: (Key | Key[] | 'and' | 'after' | 'or' | 'hold' | '1x' | '2x' | '3x' | 'touch' | 'midi')[]
     description: ReactNode
     assetIds?: string[]
     level?: Level
