@@ -50,13 +50,11 @@ export const KeyCombo: FC<{ keypress: ActivityData['keypress']; id: string }> = 
   }
 
   const elements: ReactElement[] = []
-  let modifier: '1x' | '2x' | '3x' | undefined
 
   for (let i = 0; i < keypress.length; i++) {
     const key = keypress[i]
 
     if (key === 'after' || key === 'and') {
-      // Add connector with timeline connection line
       const icon = key === 'after' ? ArrowRightIcon : AddIcon
       elements.push(
         <div key={`${id}-${i}-${key}`} className={`${connectorClass}`}>
@@ -75,24 +73,15 @@ export const KeyCombo: FC<{ keypress: ActivityData['keypress']; id: string }> = 
           HOLD
         </span>
       )
-    } else if (key === '1x') {
-      modifier = '1x'
-      elements.push(
-        <span key={`${id}-${i}-${key}`} style={{ margin: '0 4px', zoom: 1.5, fontSize: '0.8em' }}>
-          1x
-        </span>
-      )
     } else if (key === '2x') {
-      modifier = '2x'
       elements.push(
-        <span key={`${id}-${i}-${key}`} style={{ margin: '0 4px', zoom: 1.5, fontSize: '0.8em' }}>
+        <span key={`${id}-${i}-${key}`} style={{ margin: '0 4px' }}>
           2x
         </span>
       )
     } else if (key === '3x') {
-      modifier = '3x'
       elements.push(
-        <span key={`${id}-${i}-${key}`} style={{ margin: '0 4px', zoom: 1.5, fontSize: '0.8em' }}>
+        <span key={`${id}-${i}-${key}`} style={{ margin: '0 4px' }}>
           3x
         </span>
       )
@@ -109,10 +98,8 @@ export const KeyCombo: FC<{ keypress: ActivityData['keypress']; id: string }> = 
         </span>
       )
     } else {
-      // It's a Key or Key[] - pass modifier if we have one
-      elements.push(<Keypress key={`${id}-${i}`} keys={key} modifier={modifier} />)
-      // Reset modifier after use
-      modifier = undefined
+      // It's a Key or Key[] - modifier is encoded in each key's suffix
+      elements.push(<Keypress key={`${id}-${i}`} keys={key} />)
     }
   }
 

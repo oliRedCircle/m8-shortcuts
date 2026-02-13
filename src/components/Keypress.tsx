@@ -11,7 +11,9 @@ import { Timeline } from './Timeline'
 
 type KeyDown = 'up' | 'down' | 'left' | 'right' | 'edit' | 'opt' | 'shift' | 'play'
 
-export type Key = KeyDown | `${KeyDown}-hold`
+type KeyModifier = 'hold' | 'first' | 'release-first' | 'not-first' | 'pulses' | '1x' | '2x' | '3x' | '1x-not-first' | '2x-not-first' | '3x-not-first'
+
+export type Key = KeyDown | `${KeyDown}-${KeyModifier}`
 
 
 
@@ -61,7 +63,7 @@ const keypressClass = css`
         animation: key-pulses ${animation.durationCSS} linear infinite;
       }
       
-      /* Pattern: FIRST [1,1,1,1,1,0,0,0] - 5 beats with fade */
+      /* Pattern: FIRST [1,1,1,1,1,1,0,0] - 6 beats with fade */
       &.animated-first {
         animation: key-first ${animation.durationCSS} linear infinite;
       }
@@ -71,12 +73,12 @@ const keypressClass = css`
         animation: key-release-first ${animation.durationCSS} linear infinite;
       }
       
-      /* Pattern: NOT_FIRST [0,0,1,1,1,0,0,0] - starts at beat 3 */
+      /* Pattern: NOT_FIRST [0,0,1,1,1,1,0,0] - starts at beat 3 */
       &.animated-not-first {
         animation: key-not-first ${animation.durationCSS} linear infinite;
       }
       
-      /* Pattern: ONE_X [1,0,0,0,0,0,0,0] - single short press */
+      /* Pattern: ONE_X [1,1,0,0,0,0,0,0] - single held press */
       &.animated-1x {
         animation: key-1x ${animation.durationCSS} linear infinite;
       }
@@ -89,6 +91,21 @@ const keypressClass = css`
       /* Pattern: THREE_X [1,0,1,0,1,0,0,0] - three short presses */
       &.animated-3x {
         animation: key-3x ${animation.durationCSS} linear infinite;
+      }
+
+      /* Pattern: ONE_X_NOT_FIRST [0,0,1,1,0,0,0,0] - single held tap after delay */
+      &.animated-1x-not-first {
+        animation: key-1x-not-first ${animation.durationCSS} linear infinite;
+      }
+
+      /* Pattern: TWO_X_NOT_FIRST [0,0,1,0,1,0,0,0] - double tap after delay */
+      &.animated-2x-not-first {
+        animation: key-2x-not-first ${animation.durationCSS} linear infinite;
+      }
+
+      /* Pattern: THREE_X_NOT_FIRST [0,0,1,0,1,0,1,0] - triple tap after delay */
+      &.animated-3x-not-first {
+        animation: key-3x-not-first ${animation.durationCSS} linear infinite;
       }
     }
     
@@ -144,18 +161,18 @@ const keypressClass = css`
     }
     
     @keyframes key-first {
-      /* Immediate ON - Stay lit for 5 beats (0-62.5%) */
-      0%, 57% {
+      /* Immediate ON - Stay lit for 6 beats (0-75%) */
+      0%, 70% {
         opacity: 1;
         filter: brightness(1.5);
       }
       /* Fade out */
-      62%, 62.5% {
+      74%, 75% {
         opacity: 0;
         filter: brightness(1);
       }
       /* Stay off */
-      62.5%, 100% {
+      75%, 100% {
         opacity: 0;
         filter: brightness(1);
       }
@@ -185,36 +202,36 @@ const keypressClass = css`
         opacity: 0;
         filter: brightness(1);
       }
-      /* Immediate ON - Stay lit for 3 beats (25-62.5%) */
-      25%, 57% {
+      /* Immediate ON - Stay lit for 4 beats (25-75%) */
+      25%, 70% {
         opacity: 1;
         filter: brightness(1.5);
       }
       /* Fade out */
-      62%, 62.5% {
+      74%, 75% {
         opacity: 0;
         filter: brightness(1);
       }
       /* Stay off */
-      62.5%, 100% {
+      75%, 100% {
         opacity: 0;
         filter: brightness(1);
       }
     }
     
     @keyframes key-1x {
-      /* Immediate ON */
-      0%, 5% {
+      /* Immediate ON - Stay lit for 2 beats (0-25%) */
+      0%, 20% {
         opacity: 1;
         filter: brightness(1.5);
       }
       /* Fade out */
-      10%, 12.5% {
+      24%, 25% {
         opacity: 0;
         filter: brightness(1);
       }
       /* Stay off */
-      12.5%, 100% {
+      25%, 100% {
         opacity: 0;
         filter: brightness(1);
       }
@@ -286,6 +303,83 @@ const keypressClass = css`
       }
     }
 
+    /* [0,0,1,1,0,0,0,0] - held tap at beats 3-4 */
+    @keyframes key-1x-not-first {
+      0%, 24.9% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+      /* ON for 2 beats (25-50%) */
+      25%, 45% {
+        opacity: 1;
+        filter: brightness(1.5);
+      }
+      49%, 50% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+      50%, 100% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+    }
+
+    /* [0,0,1,0,1,0,0,0] - double tap at beats 3 and 5 */
+    @keyframes key-2x-not-first {
+      0%, 24.9% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+      25%, 30% {
+        opacity: 1;
+        filter: brightness(1.5);
+      }
+      35%, 37.5% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+      50%, 55% {
+        opacity: 1;
+        filter: brightness(1.5);
+      }
+      60%, 100% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+    }
+
+    /* [0,0,1,0,1,0,1,0] - triple tap at beats 3, 5 and 7 */
+    @keyframes key-3x-not-first {
+      0%, 24.9% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+      25%, 30% {
+        opacity: 1;
+        filter: brightness(1.5);
+      }
+      35%, 37.5% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+      50%, 55% {
+        opacity: 1;
+        filter: brightness(1.5);
+      }
+      60%, 62.5% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+      75%, 80% {
+        opacity: 1;
+        filter: brightness(1.5);
+      }
+      85%, 100% {
+        opacity: 0;
+        filter: brightness(1);
+      }
+    }
+
     > .opt {
       left: 16px;
       top: 0;
@@ -332,68 +426,69 @@ const keypressClass = css`
   }
 `
 
-const has = (which: Key, keys: Key[] | Key) => {
-  if (keys === which) {
-    return true;
-  }
+const BASE_KEYS = ['up', 'down', 'left', 'right', 'edit', 'opt', 'shift', 'play'] as const
 
+/** Extract the base key name (without modifier suffix) */
+export const baseKey = (key: Key): KeyDown => {
+  for (const k of BASE_KEYS) {
+    if (key === k || key.startsWith(`${k}-`)) return k
+  }
+  return key as KeyDown
+}
+
+/** Extract the modifier suffix from a key, or undefined if none */
+export const keyModifier = (key: Key): KeyModifier | undefined => {
+  const base = baseKey(key)
+  if (key === base) return undefined
+  return key.slice(base.length + 1) as KeyModifier
+}
+
+const has = (which: KeyDown, keys: Key[] | Key) => {
   if (Array.isArray(keys)) {
-    return keys.some(x => x.startsWith(which))
+    return keys.some(x => baseKey(x) === which)
   }
-  return keys.startsWith(which)
+  return baseKey(keys) === which
 }
 
-const isDirectionKey = (which: Key): boolean => {
-  const baseKey = which.replace('-hold', '')
-  return ['up', 'down', 'left', 'right'].includes(baseKey)
+const isDirectionKey = (which: KeyDown): boolean => {
+  return ['up', 'down', 'left', 'right'].includes(which)
 }
 
-// Determine animation class based on key position and modifiers
-const getAnimationClass = (which: Key, keys: Key[] | Key, modifier?: '1x' | '2x' | '3x'): string => {
+const MODIFIER_CLASS_MAP: Record<KeyModifier, string> = {
+  'hold': 'animated-hold',
+  'first': 'animated-first',
+  'release-first': 'animated-release-first',
+  'not-first': 'animated-not-first',
+  'pulses': 'animated-pulses',
+  '1x': 'animated-1x',
+  '2x': 'animated-2x',
+  '3x': 'animated-3x',
+  '1x-not-first': 'animated-1x-not-first',
+  '2x-not-first': 'animated-2x-not-first',
+  '3x-not-first': 'animated-3x-not-first',
+}
+
+/** Map modifier to CSS animation class. Falls back to defaults based on key type and position. */
+const getAnimationClass = (which: KeyDown, keys: Key[] | Key): string => {
   const keyArray = Array.isArray(keys) ? keys : [keys]
+  const idx = keyArray.findIndex(k => baseKey(k) === which)
+  if (idx === -1) return ''
 
-  // Find the index of this key in the array
-  const keyIndex = keyArray.findIndex(k => k.startsWith(which))
+  const mod = keyModifier(keyArray[idx])
 
-  if (keyIndex === -1) return ''
+  // Explicit modifier → direct mapping
+  if (mod) return MODIFIER_CLASS_MAP[mod] ?? ''
 
-  const key = keyArray[keyIndex]
-  const isFirst = keyIndex === 0
-
-  // Check if this specific key is a hold key
-  if (key.endsWith('-hold')) {
-    return 'animated-hold'
+  // Default: first position → direction=pulses, other=1x; non-first position → not-first
+  if (idx === 0) {
+    return isDirectionKey(which) ? 'animated-pulses' : 'animated-1x'
   }
-
-  // Direction keys use pulses pattern
-  if (isDirectionKey(key)) {
-    return 'animated-pulses'
-  }
-
-  // Apply modifier animations
-  if (modifier === '1x') {
-    return 'animated-1x'
-  }
-  if (modifier === '2x') {
-    return 'animated-2x'
-  }
-  if (modifier === '3x') {
-    return 'animated-3x'
-  }
-
-  // First key gets FIRST animation
-  if (isFirst) {
-    return 'animated-first'
-  }
-
-  // Subsequent keys use NOT_FIRST
   return 'animated-not-first'
 }
 
 export const Keypress: FC<{
   keys: Key[] | Key
-  modifier?: '1x' | '2x' | '3x'
-}> = ({ keys, modifier }) => {
+}> = ({ keys }) => {
   return (
     <div className={cx(keypressClass, 'keypress')}>
       <div className="keypress-visual">
@@ -406,16 +501,16 @@ export const Keypress: FC<{
         <Icon icon={ButtonSprite} className="shift" />
         <Icon icon={ButtonSprite} className="play" />
 
-        {has('left', keys) && <Icon icon={PressSprite} className={cx("left", "action", getAnimationClass('left', keys, modifier))} />}
-        {has('right', keys) && <Icon icon={PressSprite} className={cx("right", "action", getAnimationClass('right', keys, modifier))} />}
-        {has('up', keys) && <Icon icon={PressSprite} className={cx("up", "action", getAnimationClass('up', keys, modifier))} />}
-        {has('down', keys) && <Icon icon={PressSprite} className={cx("down", "action", getAnimationClass('down', keys, modifier))} />}
-        {has('edit', keys) && <Icon icon={PressSprite} className={cx("edit", "action", getAnimationClass('edit', keys, modifier))} />}
-        {has('opt', keys) && <Icon icon={PressSprite} className={cx("opt", "action", getAnimationClass('opt', keys, modifier))} />}
-        {has('shift', keys) && <Icon icon={PressSprite} className={cx("shift", "action", getAnimationClass('shift', keys, modifier))} />}
-        {has('play', keys) && <Icon icon={PressSprite} className={cx("play", "action", getAnimationClass('play', keys, modifier))} />}
+        {has('left', keys) && <Icon icon={PressSprite} className={cx("left", "action", getAnimationClass('left', keys))} />}
+        {has('right', keys) && <Icon icon={PressSprite} className={cx("right", "action", getAnimationClass('right', keys))} />}
+        {has('up', keys) && <Icon icon={PressSprite} className={cx("up", "action", getAnimationClass('up', keys))} />}
+        {has('down', keys) && <Icon icon={PressSprite} className={cx("down", "action", getAnimationClass('down', keys))} />}
+        {has('edit', keys) && <Icon icon={PressSprite} className={cx("edit", "action", getAnimationClass('edit', keys))} />}
+        {has('opt', keys) && <Icon icon={PressSprite} className={cx("opt", "action", getAnimationClass('opt', keys))} />}
+        {has('shift', keys) && <Icon icon={PressSprite} className={cx("shift", "action", getAnimationClass('shift', keys))} />}
+        {has('play', keys) && <Icon icon={PressSprite} className={cx("play", "action", getAnimationClass('play', keys))} />}
       </div>
-      <Timeline keys={keys} modifier={modifier} />
+      <Timeline keys={keys} />
     </div>
   )
 }

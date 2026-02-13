@@ -108,7 +108,7 @@ const ActivityEntry: FC<{ activity: ActivityData; screen: ScreenData; highlightK
   const level = activity.level ?? 1
   const keys = useMemo(() => {
     const normalize = (s: string) => s.toLowerCase().split('-')[0]
-    const skip = new Set(['or', 'and', 'hold', 'after', '2x', '3x', 'touch', 'midi'])
+    const skip = new Set(['or', 'and', 'hold', 'after', 'touch', 'midi'])
     const set = new Set<string>()
     for (const item of activity.keypress as (string | Key | Key[])[]) {
       if (Array.isArray(item)) {

@@ -21,12 +21,58 @@ export interface KeyDef {
     classes: string[] // includes xx-hold variants
 }
 
+// --- Compact (JSON) types ---
+
+export type KeypressToken = Key | Key[] | '2x' | '3x' | 'and' | 'after' | 'or' | 'hold' | 'touch' | 'midi'
+
+/** Activity template — defined once, shared across screens */
+export interface ActivityTemplate {
+    id: string
+    name: string
+    categoryIds: string[]
+    keypress: KeypressToken[]
+    description: string
+    level?: Level
+}
+
+/** Per-screen activity reference: string = use template as-is; object = override fields */
+export type ScreenActivityRef = string | {
+    id: string
+    media?: string
+    description?: string
+    name?: string
+    level?: Level
+}
+
+/** Screen in the compact JSON format */
+export interface CompactScreenData {
+    id: string
+    name: string
+    aliases?: string[]
+    categoryIds: string[]
+    description: string
+    img: string
+    mediaFolder?: string // defaults to screen.id
+    activities: ScreenActivityRef[]
+}
+
+/** Compact JSON dataset (what's stored in the file) */
+export interface CompactDataset {
+    screens: CompactScreenData[]
+    activities: ActivityTemplate[]
+    categories: Category[]
+    keys: KeyDef[]
+    assets: AssetRef[]
+}
+
+// --- Resolved (runtime) types ---
+
 export interface ActivityData {
     id: string
     name: string
     aliases?: string[]
     categoryIds: string[]
-    keypress: (Key | Key[] | 'and' | 'after' | 'or' | 'hold' | '1x' | '2x' | '3x' | 'touch' | 'midi')[]
+    keypress: KeypressToken[]
     description: ReactNode
     assetIds?: string[]
     level?: Level

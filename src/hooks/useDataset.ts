@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { Dataset, ScreenData, ActivityData, Category } from '../data/schema'
+import type { Dataset, ScreenData, ActivityData, Category, CompactDataset } from '../data/schema'
+import { resolveDataset } from '../data/resolveDataset'
 
 let cached: Dataset | null = null
 
@@ -12,9 +13,9 @@ export const useDataset = () => {
         if (cached) return
         fetch('/m8-shortcuts.dataset.json')
             .then((res) => res.json())
-            .then((json: Dataset) => {
-                cached = json
-                setData(json)
+            .then((json: CompactDataset) => {
+                cached = resolveDataset(json)
+                setData(cached)
                 setLoading(false)
             })
             .catch((err) => {

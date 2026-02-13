@@ -2,12 +2,11 @@ import { css } from '@linaria/core'
 import type { FC } from 'react'
 import { animation } from '../app/style/animation'
 import { style } from '../app/style/style'
-import type { Key } from './Keypress'
+import { baseKey, keyModifier, type Key } from './Keypress'
 
 interface TimelineProps {
     keys: Key[] | Key
     beatWidth?: number
-    modifier?: '1x' | '2x' | '3x'
 }
 
 const timelineClass = css`
@@ -15,7 +14,7 @@ const timelineClass = css`
   margin-top: 2px;
   position: relative;
   border: outset thin rgba(255, 255, 255, 0.2);
-  
+
   .playhead {
     position: absolute;
     top: 0;
@@ -27,7 +26,7 @@ const timelineClass = css`
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
     animation: playhead-sweep ${animation.durationCSS} linear infinite;
   }
-  
+
   @keyframes playhead-sweep {
     0% {
       left: 0;
@@ -42,9 +41,9 @@ const CELL_SIZE = 3 // 3px grid cell
 
 // Map keys to their colors based on the Keypress component
 const getKeyColor = (key: Key): string => {
-    const baseKey = key.replace('-hold', '') as Key
+    const base = baseKey(key)
 
-    switch (baseKey) {
+    switch (base) {
         case 'opt':
             return style.colors.teal.primary
         case 'edit':
@@ -64,21 +63,17 @@ const getKeyColor = (key: Key): string => {
 }
 
 const isDirectionKey = (key: Key): boolean => {
-    const baseKey = key.replace('-hold', '')
-    return ['up', 'down', 'left', 'right'].includes(baseKey)
-}
-
-const isHoldKey = (key: Key): boolean => {
-    return key.endsWith('-hold')
+    const base = baseKey(key)
+    return ['up', 'down', 'left', 'right'].includes(base)
 }
 
 const getArrowPath = (key: Key, x: number, y: number): string => {
-    const baseKey = key.replace('-hold', '')
+    const base = baseKey(key)
     const size = 1.5
     const centerY = y + 1.5 // Center vertically in 3px height
     const arrowX = x + 1
 
-    switch (baseKey) {
+    switch (base) {
         case 'up':
             return `M ${arrowX},${centerY + size} L ${arrowX + size},${centerY} L ${arrowX + size * 2},${centerY + size} Z`
         case 'down':
@@ -95,14 +90,17 @@ const getArrowPath = (key: Key, x: number, y: number): string => {
 // Rule-based patterns: 1 = filled, 0 = empty
 // Each pattern represents 8 cells (24px / 3px per cell)
 const PATTERNS = {
-    PULSES: [1, 0, 1, 0, 1, 0, 1, 0],        // Direction keys - continuous pulses
-    FIRST: [1, 1, 1, 1, 1, 0, 0, 0],         // First key - 5 beats active
-    RELEASE_FIRST: [1, 1, 1, 1, 0, 0, 0, 0], // Released before other key - 4 beats
-    NOT_FIRST: [0, 0, 1, 1, 1, 0, 0, 0],     // Second key - starts at beat 3
-    HOLD: [1, 1, 1, 1, 1, 1, 1, 1],          // Hold key - always active
-    ONE_X: [1, 0, 0, 0, 0, 0, 0, 0],         // Single short press
-    TWO_X: [1, 0, 1, 0, 0, 0, 0, 0],         // Two short presses
-    THREE_X: [1, 0, 1, 0, 1, 0, 0, 0],       // Three short presses
+    'hold': [1, 1, 1, 1, 1, 1, 1, 1],
+    'first': [1, 1, 1, 1, 1, 1, 0, 0],
+    'release-first': [1, 1, 1, 1, 0, 0, 0, 0],
+    'not-first': [0, 0, 1, 1, 1, 1, 0, 0],
+    'pulses': [1, 0, 1, 0, 1, 0, 1, 0],
+    '1x': [1, 1, 0, 0, 0, 0, 0, 0],
+    '2x': [1, 0, 1, 0, 0, 0, 0, 0],
+    '3x': [1, 0, 1, 0, 1, 0, 0, 0],
+    '1x-not-first': [0, 0, 1, 1, 0, 0, 0, 0],
+    '2x-not-first': [0, 0, 1, 0, 1, 0, 0, 0],
+    '3x-not-first': [0, 0, 1, 0, 1, 0, 1, 0],
 } as const
 
 interface Rectangle {
@@ -123,40 +121,20 @@ const createRectangle = (key: Key, x: number, y: number, width: number): Rectang
     isDirection: isDirectionKey(key),
 })
 
-// Determine which pattern to use for a key based on its position and modifiers
-const getPattern = (
-    key: Key,
-    isFirst: boolean,
-    modifier?: '1x' | '2x' | '3x'
-): readonly number[] => {
-    // A key with -hold must use the hold rule
-    if (isHoldKey(key)) {
-        return PATTERNS.HOLD
+// Determine which pattern to use for a key based on its explicit modifier and position
+const getPattern = (key: Key, isFirst: boolean): readonly number[] => {
+    const mod = keyModifier(key)
+
+    // Explicit modifier → direct lookup
+    if (mod && mod in PATTERNS) {
+        return PATTERNS[mod as keyof typeof PATTERNS]
     }
 
-    // Direction keys use pulse pattern
-    if (isDirectionKey(key)) {
-        return PATTERNS.PULSES
-    }
-
-    // Apply modifier patterns
-    if (modifier === '1x') {
-        return PATTERNS.ONE_X
-    }
-    if (modifier === '2x') {
-        return PATTERNS.TWO_X
-    }
-    if (modifier === '3x') {
-        return PATTERNS.THREE_X
-    }
-
-    // First key gets the FIRST pattern
+    // Default: first position → direction=pulses, other=1x; non-first position → not-first
     if (isFirst) {
-        return PATTERNS.FIRST
+        return isDirectionKey(key) ? PATTERNS.pulses : PATTERNS['1x']
     }
-
-    // Subsequent keys use NOT_FIRST
-    return PATTERNS.NOT_FIRST
+    return PATTERNS['not-first']
 }
 
 // Convert a pattern array into rectangles
@@ -197,18 +175,17 @@ const patternToRectangles = (
     return rectangles
 }
 
-export const Timeline: FC<TimelineProps> = ({ keys, beatWidth = 24, modifier }) => {
+export const Timeline: FC<TimelineProps> = ({ keys, beatWidth = 24 }) => {
     const keyArray = Array.isArray(keys) ? keys : [keys]
     const rectangles: Rectangle[] = []
 
     // Stack keys from bottom to top (reverse order for y-positioning)
     for (let i = 0; i < keyArray.length; i++) {
         const key = keyArray[i]
-        const isFirst = i === 0
         const yPosition = (keyArray.length - 1 - i) * CELL_SIZE
 
         // Get the pattern for this key
-        const pattern = getPattern(key, isFirst, modifier)
+        const pattern = getPattern(key, i === 0)
 
         // Convert pattern to rectangles and add to the list
         const keyRectangles = patternToRectangles(pattern, key, yPosition)
