@@ -137,8 +137,8 @@
           "description": "Edits a value in small increments (1 step)",
           "level": 1
         },
-        "edit-multiple",
         "enter-selection",
+        "edit-multiple",
         "move-selection",
         {
           "id": "copy-value",
@@ -1185,7 +1185,7 @@
         "misc"
       ],
       "keypress": [
-        "edit-hold",
+        "opt-hold",
         "touch"
       ],
       "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
@@ -1261,7 +1261,8 @@
         "misc"
       ],
       "keypress": [
-        "play"
+        "hold",
+        "play-hold"
       ],
       "description": "Previews the song",
       "level": 1
@@ -1338,7 +1339,8 @@
         "edit"
       ],
       "keypress": [
-        "edit"
+        "2x",
+        "edit-2x"
       ],
       "description": "Inserts a new value into an empty cell (--). The value is either the default value (00) or the last picked, edited or deleted value",
       "level": 1
@@ -1371,7 +1373,7 @@
       ],
       "keypress": [
         [
-          "shift-hold",
+          "shift-first",
           "opt"
         ]
       ],
@@ -1418,8 +1420,8 @@
       ],
       "keypress": [
         [
-          "edit-hold",
-          "opt"
+          "opt-first",
+          "edit"
         ]
       ],
       "description": "Cuts out the value on the cursor or the entire selection. Note: This moves the rows after the value or selection.",
@@ -1473,7 +1475,10 @@
         ],
         "after",
         "2x",
-        "edit-2x"
+        [
+          "shift-hold",
+          "opt-release-first"
+        ]
       ],
       "description": "Deep clones the selected chains into new chains, copying the phrases contained into new phrases.",
       "level": 3

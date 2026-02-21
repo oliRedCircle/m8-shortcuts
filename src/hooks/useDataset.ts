@@ -1,8 +1,33 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { Dataset, ScreenData, ActivityData, Category, CompactDataset } from '../data/schema'
-import { resolveDataset } from '../data/resolveDataset'
+import type { Dataset, ScreenData, ResolvedActivity, Category, ActivityTemplate, ScreenActivityRef } from '../data/schema'
 
 let cached: Dataset | null = null
+
+/** Extract the activity ID from a screen activity ref */
+const refId = (ref: ScreenActivityRef): string =>
+    typeof ref === 'string' ? ref : ref.id
+
+/** Resolve one activity ref into a ResolvedActivity by merging template + overrides + media paths */
+function resolveRef(
+    ref: ScreenActivityRef,
+    template: ActivityTemplate,
+    screen: ScreenData,
+): ResolvedActivity {
+    const mediaFolder = screen.mediaFolder ?? screen.id
+    const overrides: { name?: string; description?: string; level?: 1 | 2 | 3 } = typeof ref === 'string' ? {} : ref
+    const slug = (typeof ref === 'string' ? undefined : ref.media) ?? template.id
+
+    return {
+        ...template,
+        name: overrides.name ?? template.name,
+        description: overrides.description ?? template.description,
+        level: overrides.level ?? template.level,
+        media: {
+            video: `/assets/activity/${mediaFolder}/${slug}.mp4`,
+            eventsUrl: `/assets/activity/${mediaFolder}/${slug}.json`,
+        },
+    }
+}
 
 export const useDataset = () => {
     const [data, setData] = useState<Dataset | null>(cached)
@@ -13,9 +38,9 @@ export const useDataset = () => {
         if (cached) return
         fetch('/m8-shortcuts.dataset.json')
             .then((res) => res.json())
-            .then((json: CompactDataset) => {
-                cached = resolveDataset(json)
-                setData(cached)
+            .then((json: Dataset) => {
+                cached = json
+                setData(json)
                 setLoading(false)
             })
             .catch((err) => {
@@ -30,8 +55,9 @@ export const useDataset = () => {
         }
         const screenById = new Map<string, ScreenData>()
         for (const s of data.screens) screenById.set(s.id.toLowerCase(), s)
-        const activityById = new Map<string, ActivityData>()
-        for (const a of data.activities) activityById.set(a.id.toLowerCase(), a)
+
+        const templateById = new Map<string, ActivityTemplate>()
+        for (const a of data.activities) templateById.set(a.id, a)
 
         const screenCategories: Category[] = []
         const seenSC = new Set<string>()
@@ -65,26 +91,29 @@ export const useDataset = () => {
             return data.screens.find((s) => (s.aliases ?? []).some((a) => a.toLowerCase() === t))
         }
 
-        const resolveActivity = (idOrAlias?: string): ActivityData | undefined => {
-            if (!idOrAlias) return undefined
-            const t = idOrAlias.toLowerCase()
-            const byId = activityById.get(t)
-            if (byId) return byId
-            return data.activities.find((a) => (a.aliases ?? []).some((al) => al.toLowerCase() === t))
+        const activitiesForScreen = (screen: ScreenData): ResolvedActivity[] => {
+            const result: ResolvedActivity[] = []
+            for (const ref of screen.activities) {
+                const id = refId(ref)
+                const template = templateById.get(id)
+                if (template) {
+                    result.push(resolveRef(ref, template, screen))
+                }
+            }
+            return result
         }
 
-        const resolveActivityForScreen = (screen: ScreenData, idOrAlias?: string): ActivityData | undefined => {
+        const resolveActivityForScreen = (screen: ScreenData, idOrAlias?: string): ResolvedActivity | undefined => {
             if (!idOrAlias) return undefined
             const t = idOrAlias.toLowerCase()
-            // Search within this screen's activities only
-            const acts = activitiesForScreen(screen)
-            return acts.find((a) => a.id.toLowerCase() === t || (a.aliases ?? []).some((al) => al.toLowerCase() === t))
-        }
-
-        const activitiesForScreen = (screen: ScreenData): ActivityData[] => {
-            return screen.activityIds
-                .map((aid) => activityById.get(aid.toLowerCase()))
-                .filter((x): x is ActivityData => !!x)
+            for (const ref of screen.activities) {
+                const id = refId(ref)
+                if (id.toLowerCase() === t) {
+                    const template = templateById.get(id)
+                    if (template) return resolveRef(ref, template, screen)
+                }
+            }
+            return undefined
         }
 
         const activityCategoriesForScreen = (screen: ScreenData): Category[] => {
@@ -107,9 +136,8 @@ export const useDataset = () => {
             screenCategories,
             activityCategories,
             resolveScreen,
-            resolveActivity,
-            resolveActivityForScreen,
             activitiesForScreen,
+            resolveActivityForScreen,
             activityCategoriesForScreen,
         }
     }, [data])

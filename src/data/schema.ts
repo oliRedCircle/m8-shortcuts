@@ -1,5 +1,4 @@
 // Schema types for dynamic dataset
-import type { ReactNode } from 'react'
 import type { Key } from '../components/Keypress'
 
 export type Level = 1 | 2 | 3
@@ -45,7 +44,7 @@ export type ScreenActivityRef = string | {
 }
 
 /** Screen in the compact JSON format */
-export interface CompactScreenData {
+export interface ScreenData {
     id: string
     name: string
     aliases?: string[]
@@ -57,43 +56,17 @@ export interface CompactScreenData {
 }
 
 /** Compact JSON dataset (what's stored in the file) */
-export interface CompactDataset {
-    screens: CompactScreenData[]
+export interface Dataset {
+    screens: ScreenData[]
     activities: ActivityTemplate[]
     categories: Category[]
     keys: KeyDef[]
     assets: AssetRef[]
 }
 
-// --- Resolved (runtime) types ---
+// --- Resolved (runtime) type ---
 
-export interface ActivityData {
-    id: string
-    name: string
-    aliases?: string[]
-    categoryIds: string[]
-    keypress: KeypressToken[]
-    description: ReactNode
-    assetIds?: string[]
-    level?: Level
-    common?: boolean
-    media?: { img: string } | { video: string; events?: [number, number][]; eventsUrl?: string }
-}
-
-export interface ScreenData {
-    id: string
-    name: string
-    aliases?: string[]
-    categoryIds: string[]
-    description: string
-    img: string
-    activityIds: string[]
-}
-
-export interface Dataset {
-    screens: ScreenData[]
-    activities: ActivityData[]
-    categories: Category[]
-    keys: KeyDef[]
-    assets: AssetRef[]
+/** Activity with per-screen overrides applied and media paths resolved */
+export interface ResolvedActivity extends ActivityTemplate {
+    media: { video: string; eventsUrl: string }
 }

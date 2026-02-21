@@ -238,7 +238,7 @@ export const ScreenSelection: FC = () => {
     if (!data || !helper) return [] as { category: Category; screens: ScreenData[] }[]
     return helper.screenCategories.map((cat) => ({
       category: cat,
-      screens: data.screens.filter((s) => s.categoryIds.includes(cat.id) && s.activityIds.length > 0),
+      screens: data.screens.filter((s) => s.categoryIds.includes(cat.id) && s.activities.length > 0),
     }))
   }, [data, helper])
 

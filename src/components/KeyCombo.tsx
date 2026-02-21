@@ -4,13 +4,13 @@ import type { FC, ReactElement } from 'react'
 const AddIcon = '/assets/icons/add.svg'
 const ArrowRightIcon = '/assets/icons/arrow-right.svg'
 const TouchIcon = '/assets/icons/pan-tool.svg'
-import type { ActivityData } from '../data/schema'
+import type { ResolvedActivity } from '../data/schema'
 import { Icon } from './Icon'
 import { Keypress } from './Keypress'
 
 const keyComboClass = css`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0;
 `
@@ -40,11 +40,12 @@ const connectorClass = css`
 
 const orSeparatorClass = css`
   margin: 0 8px;
-  color: #878d8f;
-  zoom: 1.5;
+  opacity: 0.7;
+  // color: #878d8f;
+  // zoom: 1.5;
 `
 
-export const KeyCombo: FC<{ keypress: ActivityData['keypress']; id: string }> = ({ keypress, id }) => {
+export const KeyCombo: FC<{ keypress: ResolvedActivity['keypress']; id: string }> = ({ keypress, id }) => {
   if (!Array.isArray(keypress)) {
     return <Keypress keys={keypress} />
   }
@@ -69,7 +70,7 @@ export const KeyCombo: FC<{ keypress: ActivityData['keypress']; id: string }> = 
       )
     } else if (key === 'hold') {
       elements.push(
-        <span key={`${id}-${i}-${key}`} style={{ margin: '0 4px', zoom: 1.5 }}>
+        <span key={`${id}-${i}-${key}`} style={{ margin: '0 4px' }}>
           HOLD
         </span>
       )

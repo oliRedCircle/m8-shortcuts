@@ -2,14 +2,12 @@ import { css, cx } from '@linaria/core'
 import { type FC, useMemo } from 'react'
 import type { Key } from '../components/Keypress'
 import { useNavigate } from 'react-router-dom'
-// Fallback asset served from public (unused, kept for future):
-const FALLBACK_IMAGE = '/assets/activity/no-screen-placeholder.png'
 import { fragments } from '../app/style/fragments'
 import { style } from '../app/style/style'
 import { KeyCombo } from '../components/KeyCombo'
 import { useAppParams, useAppQuery } from './useAppParams'
 import { useDataset } from '../hooks/useDataset'
-import type { ActivityData, Category, ScreenData } from '../data/schema'
+import type { ResolvedActivity, Category, ScreenData } from '../data/schema'
 
 const entryClass = css`
   cursor: pointer;
@@ -102,7 +100,7 @@ const badgeClass = css`
   &.lvl-3 { }
 `
 
-const ActivityEntry: FC<{ activity: ActivityData; screen: ScreenData; highlightKey?: string; levels?: Set<number>; routedActivityId?: string; modeQuery?: 'min' | 'full' }> = ({ activity, screen, highlightKey, levels, routedActivityId, modeQuery }) => {
+const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highlightKey?: string; levels?: Set<number>; routedActivityId?: string; modeQuery?: 'min' | 'full' }> = ({ activity, screen, highlightKey, levels, routedActivityId, modeQuery }) => {
   const navigate = useNavigate()
   const params = useAppParams()
   const level = activity.level ?? 1
@@ -158,7 +156,6 @@ const ActivityEntry: FC<{ activity: ActivityData; screen: ScreenData; highlightK
           <KeyCombo keypress={activity.keypress} id={`${screen.id}-${activity.id}`} />
         </span>
       </h3>
-      {!activity.media && false && <img src={FALLBACK_IMAGE} />}
     </div>
   )
 }
@@ -181,7 +178,7 @@ const categoryClass = css`
   }
 `
 
-export const ActivityCategory: FC<{ screen: ScreenData; category: Category; activities: ActivityData[]; levels?: Set<number>; routedActivityId?: string; highlightKey?: string; modeQuery?: 'min' | 'full' }> = ({ screen, category, activities, levels, routedActivityId, highlightKey, modeQuery }) => {
+export const ActivityCategory: FC<{ screen: ScreenData; category: Category; activities: ResolvedActivity[]; levels?: Set<number>; routedActivityId?: string; highlightKey?: string; modeQuery?: 'min' | 'full' }> = ({ screen, category, activities, levels, routedActivityId, highlightKey, modeQuery }) => {
   const filtered = activities.filter((x) => {
     const lvl = x.level ?? 1
     if (!levels || levels.size === 0) return true

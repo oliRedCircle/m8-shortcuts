@@ -8,19 +8,14 @@ import { ScreenSelection } from './features/ScreenSelection'
 import { useAppParams } from './features/useAppParams'
 import { useAppQuery } from './features/useAppParams'
 import { useDataset } from './hooks/useDataset'
-import type { ActivityData } from './data/schema'
+import type { ResolvedActivity } from './data/schema'
 
-const ActivityScreen: FC<{ activity?: ActivityData; fallbackImg?: string }> = ({ activity, fallbackImg }) => {
-  const usedActivity = activity
-  const fallbackMedia = { img: fallbackImg ?? FALLBACK_SCREEN }
-  const media = usedActivity?.media ?? fallbackMedia
-  const mediaData = 'img' in media
-    ? { type: 'image' as const, img: media.img }
-    : (() => {
-      const v = media as { video: string; events?: [number, number][]; eventsUrl?: string }
-      return { type: 'video' as const, video: v.video, events: v.events, eventsUrl: v.eventsUrl }
-    })()
-  return <M8Player title={usedActivity?.name ?? ''} media={mediaData} description={usedActivity?.description} />
+const ActivityScreen: FC<{ activity?: ResolvedActivity; fallbackImg?: string }> = ({ activity, fallbackImg }) => {
+  const media = activity?.media
+  if (!media) {
+    return <M8Player title="" media={{ type: 'image', img: fallbackImg ?? FALLBACK_SCREEN }} description={undefined} />
+  }
+  return <M8Player title={activity.name} media={{ type: 'video', video: media.video, eventsUrl: media.eventsUrl }} description={activity.description} />
 }
 
 export const Layout: FC = () => {
