@@ -66,18 +66,28 @@ const entryClass = css`
     }
   }
 
-  /* When any keycolor-* class is present, apply highlight utility */
-  &[class*="keycolor-"] {
+  /* Highlight visual — shared by both URL and SDK paths */
+  &[class*="keycolor-"],
+  :root[data-sdk-key="opt"] &.has-opt,
+  :root[data-sdk-key="shift"] &.has-shift,
+  :root[data-sdk-key="edit"] &.has-edit,
+  :root[data-sdk-key="play"] &.has-play {
     box-shadow: inset 3px 0 var(--keycolor);
     border-left: 2px solid var(--keycolor);
     background-image: linear-gradient(to right, ${style.themeColors.background.defaultHover} 0%, transparent 30%);
   }
 
-  /* per-key color classes, used via CSS var to avoid duplication */
-  &.keycolor-opt { --keycolor: ${style.colors.teal.primary}; }
-  &.keycolor-edit { --keycolor: ${style.colors.ochre.primary}; }
+  /* URL fallback path: keycolor-* class set via React prop */
+  &.keycolor-opt   { --keycolor: ${style.colors.teal.primary}; }
+  &.keycolor-edit  { --keycolor: ${style.colors.ochre.primary}; }
   &.keycolor-shift { --keycolor: ${style.colors.raspberry[500]}; }
-  &.keycolor-play { --keycolor: ${style.colors.lime.primary}; }
+  &.keycolor-play  { --keycolor: ${style.colors.lime.primary}; }
+
+  /* SDK path: data-sdk-key on <html> drives color, has-* classes are pre-computed once */
+  :root[data-sdk-key="opt"]   &.has-opt   { --keycolor: ${style.colors.teal.primary}; }
+  :root[data-sdk-key="shift"] &.has-shift { --keycolor: ${style.colors.raspberry[500]}; }
+  :root[data-sdk-key="edit"]  &.has-edit  { --keycolor: ${style.colors.ochre.primary}; }
+  :root[data-sdk-key="play"]  &.has-play  { --keycolor: ${style.colors.lime.primary}; }
 `
 
 // const badgeClass = css`
@@ -121,6 +131,13 @@ const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highli
     }
     return set
   }, [activity])
+  // Pre-computed, stable flags for the CSS data-attribute SDK path (no re-render on key change)
+  const hasOpt   = keys.has('opt')
+  const hasShift = keys.has('shift')
+  const hasEdit  = keys.has('edit')
+  const hasPlay  = keys.has('play')
+
+  // URL fallback path: matched key class, driven by the highlightKey prop
   const matchedKey = (() => {
     if (!highlightKey) return undefined
     const n = highlightKey.toLowerCase().split('-')[0]
@@ -140,6 +157,10 @@ const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highli
       className={cx(
         entryClass,
         'entry',
+        hasOpt   && 'has-opt',
+        hasShift && 'has-shift',
+        hasEdit  && 'has-edit',
+        hasPlay  && 'has-play',
         matchedKey && `keycolor-${matchedKey}`,
         params.screen === screen.id && routedActivityId === activity.id && 'active',
       )}

@@ -5,6 +5,7 @@ import './app/style/scrollbars.css'
 import { HashRouter } from 'react-router-dom'
 import { App } from './App.tsx'
 import { DebugMenu, DebugPortalContextProvider } from './components/DebugMenu.tsx'
+import { SdkProvider } from './contexts/SdkContext.tsx'
 
 const element = document.getElementById('root')
 if (!element) {
@@ -13,11 +14,13 @@ if (!element) {
 
 createRoot(element).render(
   <StrictMode>
-    <DebugPortalContextProvider>
-      <HashRouter>
-        <App />
-        <DebugMenu />
-      </HashRouter>
-    </DebugPortalContextProvider>
+    <SdkProvider>
+      <DebugPortalContextProvider>
+        <HashRouter>
+          <App />
+          <DebugMenu />
+        </HashRouter>
+      </DebugPortalContextProvider>
+    </SdkProvider>
   </StrictMode>,
 )

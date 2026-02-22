@@ -9,6 +9,7 @@ import { useAppParams } from './features/useAppParams'
 import { useAppQuery } from './features/useAppParams'
 import { useDataset } from './hooks/useDataset'
 import type { ResolvedActivity } from './data/schema'
+import { useSdkContext } from './contexts/SdkContext'
 
 const ActivityScreen: FC<{ activity?: ResolvedActivity; fallbackImg?: string }> = ({ activity, fallbackImg }) => {
   const media = activity?.media
@@ -23,10 +24,12 @@ export const Layout: FC = () => {
   const parameters = useAppParams()
   const query = useAppQuery()
   const { data, helper } = useDataset()
+  const { isConnected, sdkViewName } = useSdkContext()
 
   const screen = helper?.resolveScreen(parameters.screen) ?? (data?.screens[0] ?? undefined)
   const activity = screen && helper?.resolveActivityForScreen(screen, parameters.activity)
 
+  // Navigate to the first activity of the current screen when no activity is selected
   useEffect(() => {
     if (!screen) return
     if (!activity) {
@@ -42,6 +45,23 @@ export const Layout: FC = () => {
       }
     }
   }, [activity, screen, helper, navigate, parameters.mode, query.mode, query.key, query.levels])
+
+  // Navigate to the correct screen when the SDK reports a view change
+  useEffect(() => {
+    if (!isConnected || !sdkViewName || !helper) return
+    const sdkScreen = helper.resolveScreen(sdkViewName)
+    if (!sdkScreen) return
+    // Only navigate if we're on a different screen
+    if (parameters.screen === sdkScreen.id) return
+    const first = helper.activitiesForScreen(sdkScreen)[0]
+    if (!first) return
+    const effectiveMode = query.mode ?? parameters.mode ?? 'min'
+    const qs: string[] = []
+    if (query.levels && query.levels.size > 0) qs.push(`levels=${[...query.levels].sort().join('')}`)
+    if (query.mode) qs.push(`mode=${query.mode}`)
+    const suffix = qs.length ? `?${qs.join('&')}` : ''
+    navigate(`/${sdkScreen.id}/${first.id}/${effectiveMode}${suffix}`, { replace: true })
+  }, [isConnected, sdkViewName, helper, parameters.screen, navigate, query.mode, query.levels, parameters.mode])
 
   return (
     <>
