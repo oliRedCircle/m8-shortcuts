@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@babel/helper-string-parser": "^7.27.1",
+    "post-me": "^0.4.5",
     "@babel/helper-validator-identifier": "^7.28.5",
     "@linaria/core": "^6.3.0",
     "@linaria/react": "^6.3.0",
