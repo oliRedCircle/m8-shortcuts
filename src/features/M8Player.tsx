@@ -2,7 +2,6 @@ import { css } from '@linaria/core'
 import { type FC, useEffect, useState } from 'react'
 import { style } from '../app/style/style'
 import type { GridZone } from '../data/schema'
-import { useSdkContext } from '../contexts/SdkContext'
 
 const containerClass = css`
   z-index: -1;

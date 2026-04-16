@@ -197,8 +197,8 @@ export const Timeline: FC<TimelineProps> = ({ keys, beatWidth = 24 }) => {
     return (
         <div className={timelineClass}>
             <svg width={beatWidth} height={totalHeight} style={{ display: 'block' }}>
-                {rectangles.map((rect, idx) => (
-                    <g key={`${rect.key}-${idx}`}>
+                {rectangles.map((rect) => (
+                    <g key={rect.key}>
                         <rect
                             x={rect.x}
                             y={rect.y}
