@@ -71,6 +71,7 @@ export interface M8HostMethods {
     navigateToView(viewName: string): Promise<boolean>
     navigateTo(x: number, y: number): Promise<void>
     setValueToHex(targetHex: number): Promise<boolean>
+    browseFile(targetText: string, exact?: boolean): Promise<boolean>
     sendKeyPress(keys: M8KeyName[]): Promise<void>
     sendKeyDown(keys: M8KeyName[]): Promise<void>
     sendKeyUp(): Promise<void>

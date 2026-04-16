@@ -28,6 +28,7 @@ export interface M8Client {
     navigateToView(viewName: string): Promise<boolean>
     navigateTo(x: number, y: number): Promise<void>
     setValueToHex(targetHex: number): Promise<boolean>
+    browseFile(targetText: string, exact?: boolean): Promise<boolean>
     sendKeyPress(keys: M8KeyName[]): Promise<void>
     sendKeyDown(keys: M8KeyName[]): Promise<void>
     sendKeyUp(): Promise<void>
@@ -153,6 +154,11 @@ class M8ClientImpl implements M8Client {
         if (!this.remoteHandle) throw new Error('[M8SDK Client] Not connected')
         targetHex = Math.max(0, Math.min(255, Math.floor(targetHex)))
         return this.remoteHandle.call('setValueToHex', targetHex)
+    }
+
+    async browseFile(targetText: string, exact = true): Promise<boolean> {
+        if (!this.remoteHandle) throw new Error('[M8SDK Client] Not connected')
+        return this.remoteHandle.call('browseFile', targetText, exact)
     }
 
     async sendKeyPress(keys: M8KeyName[]): Promise<void> {
