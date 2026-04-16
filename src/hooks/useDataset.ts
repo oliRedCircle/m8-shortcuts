@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { Dataset, ScreenData, ResolvedActivity, Category, ActivityTemplate, ScreenActivityRef } from '../data/schema'
+import type { Dataset, ScreenData, ResolvedActivity, Category, ActivityTemplate, ScreenActivityRef, State } from '../data/schema'
 
 let cached: Dataset | null = null
 
@@ -12,16 +12,24 @@ function resolveRef(
     ref: ScreenActivityRef,
     template: ActivityTemplate,
     screen: ScreenData,
+    stateById: Map<string, State>,
 ): ResolvedActivity {
     const mediaFolder = screen.mediaFolder ?? screen.id
-    const overrides: { name?: string; description?: string; level?: 1 | 2 | 3 } = typeof ref === 'string' ? {} : ref
+    const overrides: { name?: string; description?: string; level?: 1 | 2 | 3; prereqStateIds?: string[]; zones?: ResolvedActivity['zones'] } = typeof ref === 'string' ? {} : ref
     const slug = (typeof ref === 'string' ? undefined : ref.media) ?? template.id
+
+    const prereqIds = overrides.prereqStateIds ?? template.prereqStateIds
+    const prereqStates = prereqIds && prereqIds.length > 0
+        ? prereqIds.flatMap(id => { const s = stateById.get(id); return s ? [s] : [] })
+        : undefined
 
     return {
         ...template,
         name: overrides.name ?? template.name,
         description: overrides.description ?? template.description,
         level: overrides.level ?? template.level,
+        prereqStates,
+        zones: overrides.zones,
         media: {
             video: `/assets/activity/${mediaFolder}/${slug}.mp4`,
             eventsUrl: `/assets/activity/${mediaFolder}/${slug}.json`,
@@ -58,6 +66,9 @@ export const useDataset = () => {
 
         const templateById = new Map<string, ActivityTemplate>()
         for (const a of data.activities) templateById.set(a.id, a)
+
+        const stateById = new Map<string, State>()
+        for (const s of (data.states ?? [])) stateById.set(s.id, s)
 
         const screenCategories: Category[] = []
         const seenSC = new Set<string>()
@@ -97,7 +108,7 @@ export const useDataset = () => {
                 const id = refId(ref)
                 const template = templateById.get(id)
                 if (template) {
-                    result.push(resolveRef(ref, template, screen))
+                    result.push(resolveRef(ref, template, screen, stateById))
                 }
             }
             return result
@@ -110,7 +121,7 @@ export const useDataset = () => {
                 const id = refId(ref)
                 if (id.toLowerCase() === t) {
                     const template = templateById.get(id)
-                    if (template) return resolveRef(ref, template, screen)
+                    if (template) return resolveRef(ref, template, screen, stateById)
                 }
             }
             return undefined

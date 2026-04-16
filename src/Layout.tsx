@@ -16,7 +16,7 @@ const ActivityScreen: FC<{ activity?: ResolvedActivity; fallbackImg?: string }> 
   if (!media) {
     return <M8Player title="" media={{ type: 'image', img: fallbackImg ?? FALLBACK_SCREEN }} description={undefined} />
   }
-  return <M8Player title={activity.name} media={{ type: 'video', video: media.video, eventsUrl: media.eventsUrl }} description={activity.description} />
+  return <M8Player title={activity.name} media={{ type: 'video', video: media.video, eventsUrl: media.eventsUrl }} description={activity.description} zones={activity.zones} />
 }
 
 export const Layout: FC = () => {

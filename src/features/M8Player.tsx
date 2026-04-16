@@ -1,6 +1,8 @@
 import { css } from '@linaria/core'
 import { type FC, useEffect, useState } from 'react'
 import { style } from '../app/style/style'
+import type { GridZone } from '../data/schema'
+import { useSdkContext } from '../contexts/SdkContext'
 
 const containerClass = css`
   z-index: -1;
@@ -75,7 +77,15 @@ const containerClass = css`
     .logo, .button-outline {
       opacity: 0;
     }
+
+    .active-zone {
+    //   fill: #9b9b9b !important;
+    //   fill-opacity: 0.3 !important;
+      background-image: repeating-linear-gradient(315deg, #c9c9c947, #c9c9c947 10px, transparent 10px, transparent 20px);    
+    }
   }
+
+
 `
 
 // const data = (VideoData as [number, number][]).map(([time, value]) => [time / 1000, value])
@@ -90,10 +100,18 @@ const isRight = (frame: number) => !!(frame & 0b00000100)
 const isOpt = (frame: number) => !!(frame & 0b00000010)
 const isEdit = (frame: number) => !!(frame & 0b00000001)
 
+// M8 screen SVG area: origin (11.996, 12.103), size 115.2 × 76.8
+// 40×24 text grid → cell = 2.88 × 3.2 SVG units
+const SCREEN_X = 11.996
+const SCREEN_Y = 12.103
+const CELL_W = 115.42 / 40
+const CELL_H = 76.98 / 24
+
 const SvgComponent: FC<{
   strokeColor: string
   title?: string
   description?: React.ReactNode
+  zones?: GridZone[]
   media:
   | {
     type: 'video'
@@ -105,7 +123,8 @@ const SvgComponent: FC<{
     type: 'image'
     img: string
   }
-}> = ({ strokeColor, title, media, description, ...props }) => {
+}> = ({ strokeColor, title, media, description, zones, ...props }) => {
+  //const { cursorRect, screenWidth, screenHeight, rectOffset } = useSdkContext()
   const [eventsData, setEventsData] = useState<[number, number][]>([])
 
   useEffect(() => {
@@ -238,6 +257,12 @@ const SvgComponent: FC<{
         viewBox="0 0 139 195"
         {...props}
       >
+        {/* <defs>
+          <pattern id="diagonalStripes" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
+            <rect width="3" height="17" fill="#ccb63b47" />
+          </pattern>
+        </defs> */}
+
         <path
           d="M134.858 1a2.6 2.6 0 0 1 2.599 2.6v187.122a2.599 2.599 0 0 1-2.599 2.599H3.6a2.598 2.598 0 0 1-2.6-2.599V3.6A2.6 2.6 0 0 1 3.6 1h131.258Z"
           style={{
@@ -276,7 +301,7 @@ const SvgComponent: FC<{
             strokeWidth: '.3px',
           }}
         />
-        <path
+        {/* <path
           className="screen-background"
           d="M126.894 13.008a2.112 2.112 0 0 0-2.112-2.112H13.788a2.112 2.112 0 0 0-2.112 2.112v74.605a2.114 2.114 0 0 0 2.112 2.112h110.994a2.11 2.11 0 0 0 2.112-2.112V13.008Z"
           style={{
@@ -285,7 +310,7 @@ const SvgComponent: FC<{
             stroke: strokeColor,
             strokeWidth: '.3px',
           }}
-        />
+        /> */}
         <path
           className="logo"
           d="M19.938 107.676v1.363a.071.071 0 0 1-.072.071h-4.251a.07.07 0 0 1-.051-.021l-.759-.759a.074.074 0 0 1-.021-.051v-2.76c0-.039.031-.072.071-.072h2.855c.02 0 .037.009.051.021l2.156 2.157a.074.074 0 0 1 .021.051M24.798 106.278v2.76a.071.071 0 0 1-.071.072h-.517a.078.078 0 0 1-.051-.021l-1.422-1.423a.07.07 0 0 0-.05-.021h-.169c-.004 0-.009.004-.009.007v1.385a.071.071 0 0 1-.071.072h-.566a.078.078 0 0 1-.051-.021l-2.817-2.819a.074.074 0 0 1-.021-.051v-.701c0-.039.032-.071.071-.071h4.914c.02 0 .037.007.05.021l.76.761a.069.069 0 0 1 .021.049M19.323 112.452c.112 0 .163-.056.163-.163v-2.39c0-.107-.051-.163-.163-.163h-.59c-.119 0-.175.053-.227.127l-1.366 2.059h-.009l-1.362-2.059c-.051-.075-.108-.127-.227-.127h-.593c-.112 0-.168.056-.168.163v2.39c0 .107.056.163.168.163h.243c.112 0 .163-.056.163-.163v-2.043h.009l1.378 2.079c.051.076.107.127.227.127h.315c.123 0 .179-.051.23-.127l1.374-2.079h.007v2.043c0 .107.056.163.168.163h.259ZM20.736 112.452h3.342c.478 0 .721-.235.721-.713 0-.354-.172-.577-.53-.661.39-.06.521-.315.521-.645 0-.471-.227-.697-.78-.697h-3.207c-.542 0-.781.227-.781.697 0 .33.18.645.522.645-.358.083-.53.306-.53.661 0 .478.243.713.721.713m3.17-.458h-2.998c-.228 0-.34-.107-.34-.333 0-.232.127-.347.435-.347h2.807c.306 0 .434.115.434.347 0 .227-.112.333-.338.333m-.004-1.799c.227 0 .335.108.335.331 0 .218-.124.33-.418.33h-2.824c-.294 0-.418-.112-.418-.33 0-.223.108-.331.335-.331h2.991Z"
@@ -414,8 +439,74 @@ const SvgComponent: FC<{
           ref={setScreenEdge}
           d="M11.996 12.103h115.2v76.8h-115.2z"
           style={{
-            fill: '#ebebeb',
+            fill: '#fa0202',
             fillOpacity: 0,
+          }}
+        />
+        <defs>
+          <pattern id="diagonalStripes" patternUnits="userSpaceOnUse" width="17" height="17" patternTransform="rotate(45)">
+            <rect width="8" height="20" fill="#ffaf013d" />
+          </pattern>
+        </defs>
+        {zones &&
+
+          <path
+
+            d={
+              "M126.894 13.008a2.112 2.112 0 0 0-2.112-2.112H13.788a2.112 2.112 0 0 0-2.112 2.112v74.605a2.114 2.114 0 0 0 2.112 2.112h110.994a2.11 2.11 0 0 0 2.112-2.112V13.008Z" +
+
+              zones.map(zone =>
+                ` M${SCREEN_X + zone.x * CELL_W - 0.8} ${SCREEN_Y + zone.y * CELL_H + 0.5}` +
+                ` h${zone.w * CELL_W + 0.3}` +
+                ` v${zone.h * CELL_H}` +
+                ` h-${zone.w * CELL_W + 0.3} z`
+              ).join('')
+            }
+            fill="url(#diagonalStripes)"
+            fillRule="evenodd"
+            stroke={"#2bbe06"}
+            strokeWidth={'.3px'}
+            strokeOpacity={1}
+
+          />
+
+          //   zones.map((zone) => (
+          //   <rect
+          //     key={`z-${zone.x}-${zone.y}-${zone.w}-${zone.h}`}
+          //     x={SCREEN_X + zone.x * CELL_W - 0.8}
+          //     y={SCREEN_Y + zone.y * CELL_H + 0.5}
+          //     width={zone.w * CELL_W + 0.3}
+          //     height={zone.h * CELL_H}
+          //     fill="url(#diagonalStripes)"
+          // className='active-zone'
+          // fill={style.colors.teal.primary}
+          // fillOpacity={0.25}
+          // stroke={style.colors.teal.primary}
+          // strokeWidth={0.3}
+          // strokeOpacity={0.8}
+          //   />
+          // ))
+        }
+        {/* {cursorRect && (
+          <rect
+            x={SCREEN_X + cursorRect.x * (115.2 / screenWidth)}
+            y={SCREEN_Y + (cursorRect.y + rectOffset) * (76.8 / screenHeight)}
+            width={cursorRect.w * (115.2 / screenWidth)}
+            height={cursorRect.h * (76.8 / screenHeight)}
+            fill="none"
+            stroke={style.themeColors.text.important}
+            strokeWidth={0.4}
+            strokeOpacity={0.9}
+          />
+        )} */}
+        <path
+          className="screen-background"
+          d="M126.894 13.008a2.112 2.112 0 0 0-2.112-2.112H13.788a2.112 2.112 0 0 0-2.112 2.112v74.605a2.114 2.114 0 0 0 2.112 2.112h110.994a2.11 2.11 0 0 0 2.112-2.112V13.008Z"
+          style={{
+            fill: '#000',
+            fillRule: 'nonzero',
+            stroke: strokeColor,
+            strokeWidth: '.35px',
           }}
         />
       </svg>
@@ -427,6 +518,7 @@ const SvgComponent: FC<{
 export const M8Player: FC<{
   title?: string
   description?: React.ReactNode
+  zones?: GridZone[]
   media:
   | {
     type: 'video'
@@ -438,6 +530,6 @@ export const M8Player: FC<{
     type: 'image'
     img: string
   }
-}> = ({ media, title, description }) => {
-  return <SvgComponent strokeColor={style.themeColors.text.default} title={title} media={media} description={description} />
+}> = ({ media, title, description, zones }) => {
+  return <SvgComponent strokeColor={style.themeColors.text.default} title={title} media={media} description={description} zones={zones} />
 }

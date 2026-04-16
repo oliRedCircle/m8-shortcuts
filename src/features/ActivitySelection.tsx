@@ -5,10 +5,12 @@ import { columnCategoryClass, columnClass } from '../app/style/selectionColumn'
 import { fragments } from '../app/style/fragments'
 import { style } from '../app/style/style'
 import type { Category, ResolvedActivity, ScreenData } from '../data/schema'
+import type { CursorPos } from '../sdk/types'
 import { useDataset } from '../hooks/useDataset'
 import type { Key } from '../components/Keypress'
 import { KeyCombo } from '../components/KeyCombo'
 import { useAppParams, useAppQuery } from './useAppParams'
+import { useSdkContext } from '../contexts/SdkContext'
 
 const entryClass = css`
   cursor: pointer;
@@ -57,6 +59,25 @@ const entryClass = css`
     max-width: 100%;
   }
 
+  > .prereqs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .prereq-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #3dba6a;
+    color: #3dba6a;
+    border-radius: 3px;
+    padding: 0 3px;
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: bold;
+  }
+
   &.active {
     cursor: unset;
     opacity: 1.0;
@@ -88,6 +109,31 @@ const entryClass = css`
   :root[data-sdk-key="shift"] &.has-shift { --keycolor: ${style.colors.raspberry[500]}; }
   :root[data-sdk-key="edit"]  &.has-edit  { --keycolor: ${style.colors.ochre.primary}; }
   :root[data-sdk-key="play"]  &.has-play  { --keycolor: ${style.colors.lime.primary}; }
+
+  /* Selection mode: highlight SM activities, dim others */
+  :root[data-selection-mode="true"] &.has-sm {
+    opacity: 1;
+    box-shadow: inset 3px 0 #3dba6a;
+    border-left: 2px solid #3dba6a;
+    background-image: linear-gradient(to right, ${style.themeColors.background.defaultHover} 0%, transparent 30%);
+    .prereq-badge { background-color: #3dba6a22; }
+  }
+  :root[data-selection-mode="true"] &:not(.has-sm) {
+    opacity: 0.3;
+  }
+
+  /* SDK connected but not in selection mode: dim SM activities */
+  :root[data-sdk-connected="true"]:not([data-selection-mode="true"]) &.has-sm {
+    opacity: 0.3;
+  }
+
+  /* Cursor zone: activity whose zone contains the M8 cursor position */
+  &.cursor-zone {
+    opacity: 1;
+    box-shadow: inset 3px 0 ${style.themeColors.text.important};
+    border-left: 2px solid ${style.themeColors.text.important};
+    background-image: linear-gradient(to right, ${style.themeColors.background.defaultHover} 0%, transparent 30%);
+  }
 `
 
 // const badgeClass = css`
@@ -110,7 +156,7 @@ const entryClass = css`
 //   &.lvl-3 { }
 // `
 
-const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highlightKey?: string; levels?: Set<number>; routedActivityId?: string; modeQuery?: 'min' | 'full' }> = ({ activity, screen, highlightKey, levels, routedActivityId, modeQuery }) => {
+const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highlightKey?: string; levels?: Set<number>; routedActivityId?: string; modeQuery?: 'min' | 'full'; cursorPos?: CursorPos | null }> = ({ activity, screen, highlightKey, levels, routedActivityId, modeQuery, cursorPos }) => {
   const navigate = useNavigate()
   const params = useAppParams()
   const level = activity.level ?? 1
@@ -137,6 +183,18 @@ const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highli
   const hasEdit  = keys.has('edit')
   const hasPlay  = keys.has('play')
 
+  // Whether this activity requires select mode (for SM badge + CSS dimming)
+  const hasSm = activity.prereqStates?.some(s => s.id === 'select-mode') ?? false
+
+  // Whether the M8 cursor is currently inside one of this activity's zones
+  const isCursorZone = useMemo(() => {
+    if (!cursorPos || !activity.zones || activity.zones.length === 0) return false
+    return activity.zones.some(z =>
+      cursorPos.x >= z.x && cursorPos.x < z.x + z.w &&
+      cursorPos.y >= z.y && cursorPos.y < z.y + z.h
+    )
+  }, [cursorPos, activity.zones])
+
   // URL fallback path: matched key class, driven by the highlightKey prop
   const matchedKey = (() => {
     if (!highlightKey) return undefined
@@ -161,6 +219,8 @@ const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highli
         hasShift && 'has-shift',
         hasEdit  && 'has-edit',
         hasPlay  && 'has-play',
+        hasSm    && 'has-sm',
+        isCursorZone && 'cursor-zone',
         matchedKey && `keycolor-${matchedKey}`,
         params.screen === screen.id && routedActivityId === activity.id && 'active',
       )}
@@ -174,6 +234,13 @@ const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highli
         {/* <span className={cx(badgeClass, `lvl-${level}`)} title={`Expertise level ${level}`}>{level}</span> */}
         <span className="title" title={`Expertise level ${level}`}>{activity.name}</span>
         <span className="combo">
+          {activity.prereqStates && activity.prereqStates.length > 0 && (
+            <span className="prereqs">
+              {activity.prereqStates.map(s => (
+                <span key={s.id} className="prereq-badge" title={s.name}>{s.abbr}</span>
+              ))}
+            </span>
+          )}
           <KeyCombo keypress={activity.keypress} id={`${screen.id}-${activity.id}`} />
         </span>
       </h3>
@@ -181,7 +248,7 @@ const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highli
   )
 }
 
-export const ActivityCategory: FC<{ screen: ScreenData; category: Category; activities: ResolvedActivity[]; levels?: Set<number>; routedActivityId?: string; highlightKey?: string; modeQuery?: 'min' | 'full' }> = ({ screen, category, activities, levels, routedActivityId, highlightKey, modeQuery }) => {
+export const ActivityCategory: FC<{ screen: ScreenData; category: Category; activities: ResolvedActivity[]; levels?: Set<number>; routedActivityId?: string; highlightKey?: string; modeQuery?: 'min' | 'full'; cursorPos?: CursorPos | null }> = ({ screen, category, activities, levels, routedActivityId, highlightKey, modeQuery, cursorPos }) => {
   const filtered = activities.filter((x) => {
     const lvl = x.level ?? 1
     if (!levels || levels.size === 0) return true
@@ -202,6 +269,7 @@ export const ActivityCategory: FC<{ screen: ScreenData; category: Category; acti
           levels={levels}
           routedActivityId={routedActivityId}
           modeQuery={modeQuery}
+          cursorPos={cursorPos}
         />
       ))}
     </div>
@@ -212,6 +280,7 @@ export const ActivitySelection: FC = () => {
   const { screen, activity } = useAppParams()
   const { key, levels, mode: modeQuery } = useAppQuery()
   const { helper } = useDataset()
+  const { cursorPos } = useSdkContext()
 
   const usedScreen = useMemo(() => helper?.resolveScreen(screen), [helper, screen])
 
@@ -235,6 +304,7 @@ export const ActivitySelection: FC = () => {
               routedActivityId={routedActivityResolvedId}
               highlightKey={key ?? undefined}
               modeQuery={modeQuery}
+              cursorPos={cursorPos}
             />
           )
         })}

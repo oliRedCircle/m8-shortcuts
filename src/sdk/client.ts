@@ -29,12 +29,14 @@ export interface M8Client {
     navigateTo(x: number, y: number): Promise<void>
     setValueToHex(targetHex: number): Promise<boolean>
     sendKeyPress(keys: M8KeyName[]): Promise<void>
+    sendKeyDown(keys: M8KeyName[]): Promise<void>
+    sendKeyUp(): Promise<void>
     getState(): M8State
     fetchState(): Promise<M8State>
 
     onStateChange(callback: (state: M8State) => void): () => void
     onViewChange(callback: (viewName: string | null, viewTitle: string | null) => void): () => void
-    onCursorMove(callback: (pos: M8State['cursorPos'], rect: M8State['cursorRect']) => void): () => void
+    onCursorMove(callback: (pos: M8State['cursorPos'], rect: M8State['cursorRect'], selectionMode: boolean) => void): () => void
     onTextUpdate(callback: (textUnderCursor: string | null, currentLine: string | null) => void): () => void
     onKeyPress(callback: (keys: number) => void): () => void
 
@@ -49,7 +51,7 @@ class M8ClientImpl implements M8Client {
     private _isConnected = false
     private stateCallbacks: Set<(state: M8State) => void> = new Set()
     private viewChangeCallbacks: Set<(viewName: string | null, viewTitle: string | null) => void> = new Set()
-    private cursorMoveCallbacks: Set<(pos: M8State['cursorPos'], rect: M8State['cursorRect']) => void> = new Set()
+    private cursorMoveCallbacks: Set<(pos: M8State['cursorPos'], rect: M8State['cursorRect'], selectionMode: boolean) => void> = new Set()
     private textUpdateCallbacks: Set<(textUnderCursor: string | null, currentLine: string | null) => void> = new Set()
     private keyPressCallbacks: Set<(keys: number) => void> = new Set()
     private config: M8SdkConfig
@@ -116,10 +118,11 @@ class M8ClientImpl implements M8Client {
             this.viewChangeCallbacks.forEach(cb => { cb(payload.viewName, payload.viewTitle) })
         })
 
-        this.remoteHandle.addEventListener('cursorMoved', (payload: { pos: M8State['cursorPos']; rect: M8State['cursorRect'] }) => {
+        this.remoteHandle.addEventListener('cursorMoved', (payload: { pos: M8State['cursorPos']; rect: M8State['cursorRect']; selectionMode: boolean }) => {
             this._state.cursorPos = payload.pos
             this._state.cursorRect = payload.rect
-            this.cursorMoveCallbacks.forEach(cb => { cb(payload.pos, payload.rect) })
+            this._state.selectionMode = payload.selectionMode
+            this.cursorMoveCallbacks.forEach(cb => { cb(payload.pos, payload.rect, payload.selectionMode) })
         })
 
         this.remoteHandle.addEventListener('textUpdated', (payload: { textUnderCursor: string | null; currentLine: string | null }) => {
@@ -157,6 +160,16 @@ class M8ClientImpl implements M8Client {
         return this.remoteHandle.call('sendKeyPress', keys)
     }
 
+    async sendKeyDown(keys: M8KeyName[]): Promise<void> {
+        if (!this.remoteHandle) throw new Error('[M8SDK Client] Not connected')
+        return this.remoteHandle.call('sendKeyDown', keys)
+    }
+
+    async sendKeyUp(): Promise<void> {
+        if (!this.remoteHandle) throw new Error('[M8SDK Client] Not connected')
+        return this.remoteHandle.call('sendKeyUp')
+    }
+
     getState(): M8State { return this._state }
 
     async fetchState(): Promise<M8State> {
@@ -176,7 +189,7 @@ class M8ClientImpl implements M8Client {
         return () => { this.viewChangeCallbacks.delete(callback) }
     }
 
-    onCursorMove(callback: (pos: M8State['cursorPos'], rect: M8State['cursorRect']) => void): () => void {
+    onCursorMove(callback: (pos: M8State['cursorPos'], rect: M8State['cursorRect'], selectionMode: boolean) => void): () => void {
         this.cursorMoveCallbacks.add(callback)
         return () => { this.cursorMoveCallbacks.delete(callback) }
     }
@@ -213,6 +226,7 @@ function getDefaultState(): M8State {
         minimapKey: null,
         cursorPos: null,
         cursorRect: null,
+        selectionMode: false,
         highlightColor: null,
         titleColor: null,
         backgroundColor: null,

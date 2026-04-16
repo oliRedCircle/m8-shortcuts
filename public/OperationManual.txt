@@ -1,0 +1,1502 @@
+Operation Manual Conventions
+
+The following format is used for describing key combinations:
+Examples
+• [OPTION]+[EDIT] Hold down the option key and press edit.
+• [OPTION, then EDIT] Press and release the option key, then press and 
+release the edit key.
+• [SHIFT]+[OPTION, then EDIT] While holding down the shift key, press and 
+release the option key, then press and release the edit key.
+• [SHIFT]+[UP or DOWN] While holding down the shift key, press and release 
+either the up or down direction keys.
+• [DIRECTION] Use any of the 4 directional keys: left, right, up, or down.
+
+Global Key Shortcuts
+
+There are quite a few key combinations / shortcuts but for the most part they 
+are shared across all views on the M8. A printed card was included with the M8 
+which has a complete list of shortcuts on the reverse side for convenience. Refer 
+to the section on Key Shortcuts in the appendix. Below is a list of common key 
+commands you should familiarize yourself with:
+• [DIRECTION] Move the cursor on the screen.
+• [SHIFT] + [DIRECTION] Navigate between Views
+• [EDIT] Start editing a value; also functions as a “YES” or “ENTER”
+• [OPTION] Varies depending on context; also functions as a “NO” or “EXIT”
+• [EDIT]+[OPTION] Sets a highlighted parameter to the default value, or acts 
+as a “cut” operation on song, chain, phrase, and table “grid” views. 
+• [SHIFT] by itself has no function.
+• [PLAY] Starts/stops the song from the current cursor position on the song 
+view, or plays the current Chain, Phrase, or Instrument when in those views.
+• [SHIFT]+[PLAY] Plays all tracks from the current song cursor position regardless of current view (song, chain, phrase, etc).
+Common Editing Shortcuts
+Quite a few of the views in the M8 use a grid layout. In these views there are 
+common functions such as editing values, cut/copy/paste, and selection mode. 
+It is important to familiarize yourself with the key shortcuts as this makes editing 
+both fast and fun.
+• [EDIT] On an empty cell (“--”): inserts a new value with a default value of the 
+last edited or deleted value.
+• [EDIT]+[UP or DOWN] Edits the selected value in large steps. On a command column: shows the Effect Help/Selection view.
+• [EDIT]+[LEFT or RIGHT] Edits the selected value by small steps.
+• [SHIFT]+[OPTION] On any view with a grid (song, chain, phrase, table, etc): 
+enter selection mode.
+• [OPTION] In selection mode: copies the selection and exits selection mode.
+• [SHIFT]+[EDIT] On any view with a grid: paste the copied contents from 
+selection mode.
+• [EDIT]+[OPTION] Deletes/cuts the selected value. On selection mode: cuts 
+the selection into the copy buffer.
+8
+Hexadecimal
+The M8 uses a number system called hexadecimal where numbers 0-15 are 
+represented as 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, and F. For example, “40” 
+in hexadecimal is 64 in decimal (Refer to the hexadecimal table in the appendix). 
+This is useful for quite a few reasons:
+• Screen real estate: 0 to 255 in decimal is 00 to FF in hexadecimal. With 3 
+command FX columns, it would be cumbersome to fit 3-digit decimal values 
+on the screen. Furthermore, when a value range includes negative and positive numbers (see Absolute and Relative in the appendix), this can add up to 
+4 characters in length: -128 to +127.
+• Parameters and FX commands that represent counts of 16 where the first 
+digit will represent a phrase. Ex: “24” translates to the second phrase on row 
+four.
+• FX commands where the left and right digits control different aspects of the 
+command. Ex: “ARP37” - Plays an arpeggio where the first interval is +3 
+semitones, and the second is +7 semitones while presenting a larger range.
+Where guidance is needed, help text is presented at the bottom of the screen 
+that displays the decimal equivalent and/or useful messages while editing values. 
+Firmware Updates
+Updating the firmware is performed via a USB connection to a computer. To 
+perform the update without issue it is critical that the connection is not hindered 
+by other USB devices on the same hub. Therefore it is highly recommended 
+to use a dedicated USB connection without a hub if possible. You can find the 
+latest firmware, changelog, and instructions at https://github.com/Dirtywave/
+M8Firmware.
+If the firmware fails or the M8 is non-responsive after an update please refer to 
+the section on troubleshooting.
+Additional Help and Resources
+Links and additional resources are available at https://dirtywave.com/support. 
+9
+Loading a Demo Song
+The best way to explore the M8 for the first time is to check out some of the 
+demos included on the SD card. By default the M8 shipped with one of the 
+demo songs already loaded. You can press [PLAY] in the song view and navigate around the views to get comfortable with the layout and watch what is 
+happening during playback.
+Let’s familiarize ourselves with the project view and the file browser. Navigate 
+to the Project which is located above the Song view. If you’re not already in the 
+song view, hold [SHIFT] and keep pressing [LEFT] until you see “SONG” in the 
+title area of the display, then navigate up using [SHIFT]+[UP]. Move the cursor 
+down to highlight “LOAD” and press [EDIT].
+This is the file browser. By default when loading a song the browser is opened to 
+“/Songs” on the SD card. Any entry that starts with a “/” is a directory, and 
+pressing [EDIT] on a directory will display its contents. Pressing [EDIT] on the 
+“/..” entry will take you back to the previous directory. Furthermore there are a 
+few handy shortcuts that can be used in this view:
+• [LEFT] will navigate to the top of the list.
+• [RIGHT] will navigate to the bottom of the list.
+• [OPTION]+[UP or DOWN] will skip over 8 entries in the list.
+• [PLAY] will preview a song, sample, or instrument when browsing for them.
+• [SHIFT]+[OPTION] will sort a directory by name if it is unsorted.
+• [OPTION] will exit the file browser.
+• [OPTION]+[EDIT] to delete a file.
+Highlight “/DEMOS” by pressing [DOWN] and press [EDIT]. Choose a song to 
+load and press [EDIT] to load it. If a song was already playing when you entered 
+the Load Project view, the new song will load and start playing back after the 
+playing song reaches the end of a chain. This is called Queued Song Loading 
+and it is useful for switching songs in a live setting.
+10
+Views
+Song View
+The song view is where you create the structure of your song. It is comprised 
+of 8 tracks from left to right, with a list of chains for each track to play though 
+vertically. When the song is playing, each track’s song position will increment 
+vertically through the list of chains until it reaches an empty column (“--”), at 
+which point the given track will loop back to the beginning of its list of chains. 
+Since each chain can contain 1 to 16 phrases it is possible to have different play 
+lengths for each track, causing individual track play positions to be misaligned. 
+If you do not wish to have this behavior it is recommended to design your chains 
+to all have the same number of phrases. To maintain a track’s play position with 
+other tracks while it remains silent, create a chain that contains empty phrases. 
+It is common to use either chain “00” or “FE” for this purpose. Note that chains 
+which contain no notes are grayed out on the song screen for readability.
+The song can contain up to 256 rows of chains. You may find it useful to use 
+unused rows below the base song structure, “isolating” to experiment or create 
+new arrangements without breaking the existing song (see row “06” in the 
+graphic above).
+Live Mode
+Live mode allows playing, cueing, or stopping each track independently and 
+from anywhere in the song structure. Press [SHIFT]+[LEFT] from the song view 
+to enter or exit live mode playback.
+When a track is cued for playback via [PLAY] the sequencer will wait for the currently playing chain to finish before activating the newly cued chain by default. 
+You can change this behavior on the Project View under “LIVE QUANTIZE”. 
+11
+Song View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION]+[UP or DOWN] Move/scroll the cursor 16 rows up or down.
+Playing
+• [PLAY] Plays/stops all tracks.
+• [LEFT]+[PLAY] Cue the selected song row for playback.
+• [OPTION]+[LEFT or RIGHT] Solo all tracks to the left or right side of the 
+cursor’s position.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT] On an empty column (“--”): inserts a chain with a default value of the 
+last edited or deleted chain.
+• [EDIT]+[DIRECTION] Edits the chain number on the cursor’s position. In 
+selection mode: Selected contents can be moved up or down.
+• [EDIT]+[EDIT] (double tap) Will insert a new unused empty chain.
+• [EDIT]+[OPTION] Deletes/cuts the selected chain. In selection mode, cuts 
+the selection into the copy buffer.
+• [SHIFT]+[OPTION] Enters selection mode for moving, copying, or cutting 
+chains.
+• [OPTION] While playback is stopped, hold option to reveal the current track’s 
+time in min:sec. In selection mode: copies the selection and exits selection 
+mode.
+• [SHIFT]+[EDIT] Pastes the copy buffer that was copied in selection mode.
+• [SHIFT]+[OPTION, then EDIT] Copies the contents of the selected chain 
+into a new chain number. (I.e. “clone”).
+• [SHIFT]+[OPTION, then double tap EDIT] Copies the contents of the selected chain and the contents of all phrases inside the chain into a new chain 
+and phrases. (I.e. “deep clone”).
+• [OPTION]+[OPTION]+[OPTION] Creates or removes a “bookmark” to mark 
+a chain 
+• [UP]+[UP] On ROW “00” enter into track reordering mode. Hold [Edit] and 
+press [LEFT or RIGHT] to move the selected track left or right respectively. 
+Press [Down] to exit.
+• [EDIT]+[EDIT] While playback is stopped and in selection mode, render the 
+selection to a new instrument.
+12
+Chain View
+A chain is a playlist of phrases. This allows easy construction of a musical idea 
+that extends past a single measure without having to copy and paste repetitive 
+sections. You can use up to 16 rows of phrases per chain, allowing up to 256 
+steps.
+In the chain view, the left column “PH” is the phrase number to play, and the 
+right column “TSP” is an optional note transpose in semitones. To insert a new 
+phrase, press [EDIT] on an empty column (“--”). The inserted value will be the 
+last edited phrase. To create a new empty phrase on a given row, double tap 
+the [EDIT] key. Duplicating a phrase to a new empty number is also possible by 
+highlighting the desired phrase number and pressing [SHIFT]+[OPTION, then 
+EDIT].
+Playback behavior is determined by the first empty phrase column that the sequencer encounters in the chain. An empty phrase (“--”) is considered the end of 
+the chain and the song will continue on to the next chain in the song view.
+13
+Chain View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION]+[UP or DOWN] Navigate to previous or next chain in the song.
+• [OPTION]+[LEFT or RIGHT] Navigate to previous or next track.
+Playing
+• [PLAY] Starts/stops playing chain at cursor position.
+• [SHIFT]+[PLAY] Continue song at cursor position.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT] On an empty row (“--”): insert a phrase with a default value of the last 
+edited or deleted phrase.
+• [EDIT]+[DIRECTION] Edits the phrase number on the cursor’s position.
+• [EDIT]+[EDIT] (double tap) Will insert a new unused empty phrase.
+• [EDIT]+[OPTION] Deletes/cuts the selected phrase. In selection mode, cuts 
+the selection into the copy buffer.
+• [SHIFT]+[OPTION] Enters selection mode for moving, copying, or cutting a 
+block of phrases.
+• [OPTION] In selection mode: copies the selection and exits selection mode.
+• [SHIFT]+[EDIT] Pastes the copy buffer that was copied in selection mode.
+• [SHIFT]+[OPTION, then EDIT] Copies the contents of the selected phrase 
+into a new number. (I.e. “clone”).
+14
+Phrase View
+A phrase contains 16 steps of notes with volume, instrument number, and 3 
+command effect columns. By default each step represents a 16th note in time, 
+but can be altered by defining the number of ticks per step in the Groove View.
+The first column “N” is the note with its current octave spanning 11 octaves. It 
+covers the entire 128 MIDI note range. The value can be changed in semitones 
+using [EDIT]+[LEFT or RIGHT] or by octave using [EDIT]+[UP or DOWN]. A 
+note-off can be inserted in the Note column by clearing [OPT]+[EDIT] an empty 
+note “---”. The next column “V” is the volume which determines the loudness of 
+the corresponding note from 00 (silence) to 7F (maximum volume) with a default 
+of 64. The “I” column specifies the instrument number to play. Leaving it empty 
+(“--”) allow notes to be changed without the instrument retriggering. You can 
+press [EDIT] twice on this column to choose a new/unused instrument number, or press [SHIFT]+[OPTION then EDIT] to copy the contents of the current 
+instrument to a new number for editing. 
+The three “FX” columns are for placing commands that affect the sequence, 
+notes, or instruments in different ways. The commands available are determined 
+by the type of instrument that is currently being used. To see a helpful view for 
+selecting and placing commands use [EDIT]+[UP or DOWN] which will launch 
+the Effects Command Help view.
+An asterisk next to the phrase number (“PHRASE 00*”) indicates that the phrase 
+is used elsewhere in the chain or song.
+Phrase View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION]+[UP or DOWN] Navigate to previous or next phrase in the chain. 
+• [OPTION]+[LEFT or RIGHT] Navigate to previous or next track.
+15
+Phrase View Shortcuts (Continued)
+Playing
+• [PLAY] Starts/stops playing phrase.
+• [SHIFT]+[PLAY] Continue song at chain position.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT] On an empty cell: insert a new value with a default value of the last 
+edited or deleted value. 
+• [EDIT]+[UP or DOWN] Edits the selected value on the cursor’s position 
+incrementing by large steps. On a command column: show the Effect Help/
+Selection view. In selection mode: If multiple colums and row are selected the 
+contents can be shifted up or down.
+• [EDIT]+[LEFT or RIGHT] Edits the selected value on the cursor’s position 
+incrementing by small steps.
+• [EDIT]+[EDIT] (double tap) On the instrument column: set the selected 
+instrument value to a new unused instrument. On a command value column 
+where the command is the table or groove command (TBL, TBX, GRV, or 
+GGR): set the value to a new unused table.
+• [EDIT]+[OPTION] Deletes/cuts the selected value. In selection mode: cuts 
+the selection into the copy buffer.
+• [SHIFT]+[OPTION] Enters selection mode for moving, copying, or cutting a 
+block of phrase data.
+• [OPTION] In selection mode: copies the selection and exits selection mode.
+• [OPTION]+[UP or DOWN] In selection mode with note column selected: 
+Randomize the note value up or down, else navigates to the previous or next 
+phrase in the chain.
+• [OPTION]+[LEFT or RIGHT] In selection mode with note column selected: 
+Left to cycle note fill modes, right to randomize note and instrument triggers, 
+else navigates to the previous or next track’s phrase.
+* When exiting selection mode after a fill action, perform a paste to undo.
+• [SHIFT]+[EDIT] Pastes the copy buffer that was copied in selection mode. 
+In selection mode: with a series of rows and a single column highlighted: 
+interpolate the selected range.
+• [SHIFT]+[OPTION, then EDIT] On the instrument column or on a command 
+value column where the command is the table or groove command (TBL, 
+TBX, GRV, or GGR): copy the contents of the selected data into a new number. (I.e. “clone”).
+16
+Instrument View
+Use the instrument view to load, save, or edit the main settings for the sounds 
+used in the song. There are 128 instruments available per song that each contain 
+settings, instrument modulations, and a table. The M8 has 7 instrument types to 
+choose from. Change the “TYPE” parameter to select one of the types currently 
+available: Wavsynth, Macrosynth, Sampler, FM Synth, Hypersynth, MIDI Out, 
+and External Instrument. The default type is set to “NONE” which helps both you 
+and the M8 know when a instrument slot is being used. Use “LOAD” or “SAVE” 
+to load or save an instrument preset from the SD card.
+General Instrument Settings
+• TYPE - Set the instrument type as described above.
+• LOAD / SAVE - Load or save a instrument preset to the SD card.
+• NAME - helps keep your song organized when browsing through instruments, 
+saving an instrument, or exported when “bundling” your song.
+• TRANSP. - Enable or disable all note transpositions from scales, chain 
+transpose columns, or the project view transpose setting. This is useful for 
+selectively disabling transposition on instruments that are used for percussive 
+or effect elements.
+• TABLE TIC - Set the default speed at which the instrument’s table increments 
+through each step. The default is “01” or one tick per table step. “02” will be 
+two ticks per step and so forth. There are a few special modes for incrementing the table position as discussed on the Table View. This setting can be 
+overwritten by the TIC command effect in the phrase or table.
+• EQ - Set the EQ slot number to assign an EQ to the current instrument. Press 
+[EDIT] or navigate right [SHIFT]+[RIGHT] with the EQ highlighted to open 
+the EQ Editor.
+17
+Instrument View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION]+[LEFT or RIGHT] Navigate to previous or next instrument.
+• [OPTION]+[UP or DOWN] Navigate +/- 16 instruments.
+• [SHIFT]+[LEFT or RIGHT] Will navigate to the phrase or table view respectively (from both the Instrument view or Instrument Envelopes view) and set 
+the default FX command value to the instrument parameter that is highlighted. 
+Playing
+• [PLAY] Start/stops playing phrase.
+• [EDIT]+[PLAY] Preview instrument.
+• [SHIFT]+[PLAY] Continue song at chain position.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT]+[UP or DOWN] Edit the selected value on the cursor’s position incrementing by large steps.
+• [EDIT]+[LEFT or RIGHT] Edit the selected value on the cursor’s position 
+incrementing by small steps.
+• [EDIT]+[OPTION] Set the selected value to the default setting.
+• [SHIFT]+[OPTION] Copy current instrument.
+• [SHIFT]+[EDIT] Paste instrument or undo a paste operation.
+• [EDIT+TOUCHSCREEN] Edit selected value with the position of a finger on 
+any value with a visual slider.
+• [OPTION+TOUCHSCREEN] Assign the touchscreen axis to the selected 
+parameter on any value with a visual slider. See the section on the MIDI Mappings view.
+18
+Instrument Modulation View
+This view is accessible above the instrument view ([SHIFT]+[UP]). Modulations 
+alter instrument parameters over time. M8 has 4 configurable modulation slots 
+per instrument, each slot can be assigned to one of the following:
+• AHD ENVELOPE - A simple Attack Hold Decay envelope based on tempo 
+• ADSR ENVELOPE - Traditional Attack Decay Sustain Release envelope 
+• DRUM ENVELOPE - A sharp peak and swelling hold envelope designed for 
+percussive elements 
+• LFO - Traditional tempo-synced low frequency oscillator 
+• TRIG ENVELOPE - AHD envelope that is triggered by another playing track 
+or instrument.
+• TRACKING - Modulate an instrument parameter to Notes or Velocities
+Common Modulation Settings
+• MOD[1-4] - Modulation type. Refer to the section on Modulation Types (page 
+20) for more information.
+• DEST - Destination parameter to be modulated.
+• SRC - Source of the modulation (when available). 
+Modulating Modulators
+By setting “DEST” to “MOD AMT”, “MOD RATE”, or “MOD BOTH”, each modulator can affect the amount or rate of it’s neighboring modulator. Mod 1 affects 
+Mod 2, 2 to 3, 3 to 4, and 4 to 1. 
+• MOD AMT - The amount is a scaling factor from 0% to 100%
+• MOD RATE - The rate is a multiplication factor of time related parameters.
+• MOD BOTH - Enables both amount and rate parameters. 
+19
+Instrument Modulation View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION]+[LEFT or RIGHT] Navigate to previous or next instrument.
+• [OPTION]+[UP or DOWN] Navigate +/- 16 instruments.
+• [SHIFT]+[LEFT or RIGHT] Will navigate to the phrase or table view respectively (from both the Instrument view or Instrument Envelopes view) and set 
+the default FX command value to the instrument parameter that is highlighted. 
+Playing
+• [PLAY] Start/stops playing phrase.
+• [EDIT]+[PLAY] Preview instrument.
+• [SHIFT]+[PLAY] Continue song at chain position.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT]+[UP or DOWN] Edit the selected value on the cursor’s position incrementing by large steps.
+• [EDIT]+[LEFT or RIGHT] Edit the selected value on the cursor’s position 
+incrementing by small steps.
+• [EDIT]+[OPTION] Set the selected value to the default setting.
+• [SHIFT]+[OPTION] Copy currently selected modulation slot.
+• [SHIFT]+[EDIT] Paste modulation slot.
+• [EDIT+TOUCHSCREEN] Edit selected value with the position of a finger on 
+any value with a visual slider.
+• [OPTION+TOUCHSCREEN] Assign the touchscreen axis to the selected 
+parameter on any value with a visual slider. See the section on the MIDI Mappings view.
+20
+Modulation Type: AHD Envelope
+ATTACK HOLD DECAY
+Attack “ATK” is the time it takes to reach the specified amount “AMT”, Hold 
+“HOLD” is the time to wait after the attack is completed before proceeding to 
+decay, and Decay “DEC” is the time it takes to decrease back to zero. All timebased values are in ticks and thus relative to the current song tempo. Refer to 
+the help text at the bottom of the screen while editing a parameter for assistance.
+Modulation Type: ADSR Envelope
+ATTACK DECAY SUSTAIN RELEASE
+Attack “ATK” is the time it takes to reach the specified amount “AMT”, Decay 
+“DEC” is the time it takes to reach the sustain level, Sustain “SUS” is the hold 
+level while the note is playing, and Release “REL” is the time it takes to decrease 
+back to zero. For a note to proceed from sustain to the release stage, the phrase 
+must have a OFF note value or FX command (or a note release via MIDI input).
+Modulation Type: Drum Envelope
+PEAK BODY DECAY
+DUCK
+Peak “PEAK” determines the shape of the initial transient. It modifies two parameters: Duck amount and peak time - Refer to the help text when adjusting 
+the value. Body “BODY” is the time to hold the modulation before proceeding 
+to the decay stage. Decay “DEC” is the time it takes to decrease the modulation 
+back to zero.
+Modulation Type: LFO
+LFO (Low Frequency Oscillator) modulates an instrument parameter over time. 
+Unlike an envelope, it has a static shape that can be configured to repeat in-
+21
+finitely or trigger once like an envelope.
+“OSC” is the oscillator shape - Triangle, sinusoidal, ramp down, ramp up, exponential down, exponential up, square down, square up, random, and drunk. The 
+initial 10 shapes repeat with an additional “T” added to the end which signifies 
+“Tick rate” where the frequency range runs much faster in ticks. 
+TRI RAMP DN
+SQU UP
+SIN
+SQU DN
+RAMP UP
+RANDOM
+EXP DN
+EXP UP DRUNK
+Trigger behavior “TRIG” configures how the LFO will react when the instrument 
+triggers and when the shape reaches the end of a cycle:
+• FREE - Loop the shape and not reset on new notes/instrument triggers.
+• RETRIG - Loop the shape and reset on each new instrument trigger.
+• HOLD - Hold the last value of the shape instead of repeating from the beginning.
+• ONCE - Play through the shape once and reset to the start value.
+Frequency “FREQ” is the rate at which the LFO cycles. The value is represented 
+in steps (16th notes) or in ticks when the OSC is set to one of the tick “T” rate 
+shapes.
+Modulation Type: Trig Envelope
+The Trig Envelope is similar to the AHD Envelope, with the exception that it is 
+bipolar (can have a positive or negative amount applied to the destination) and 
+is designed to be triggered by another source. “SRC” can either be a instrument 
+number (“00” to “7F”) or assigned to all instruments on a given track (“80” to 
+“87” - Tracks 1 to 8).
+Modulation Type: Tracking
+Tracking assigns velocity or note values to a parameter. Select “NOTE”, “VELOCITY”, or “VELOCITY TAKEOVER” (disables velocity affecting instrument 
+volume) in source “SRC”. “LVAL” is the lowest value and “HVAL” is the highest 
+value from source to scale to the assigned parameter. Note “LVAL” and “HVAL” 
+values can be reversed so that the source’s range is inverted.
+22
+Instrument Pool View
+The Instrument Pool view is an overview of all instrument slots in the current song. This view is accessible above the Instrument Modulation View
+([SHIFT]+[UP]), as a shortcut from the Project View, and when selecting an 
+instrument with [EDIT]+[DOWN] on instrument number “00” in phrase. 
+From this view it is possible to quickly adjust mixer related settings per instrument, load instruments or samples by tapping [EDIT] on an empty slot, copy/
+paste values or instruments [SHIFT]+[OPT]/[SHIFT]+[EDIT], and reorder instruments with [EDIT]+[UP or DOWN] on the instrument name column.
+Previewing an instrument is possible by pressing [PLAY] while playback is 
+stopped. 
+Navigating away from the Instrument Pool view to the right [SHIFT]+[RIGHT] 
+navigates to the Instrument view for quickly jumping between the two views 
+while managing instruments.
+23
+Instrument Pool View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION]+[LEFT or RIGHT] Navigate to previous or next instrument.
+• [OPTION]+[UP or DOWN] Navigate +/- 16 instruments.
+• [SHIFT]+[LEFT] Navigate to the phrase view and sets the default inserted 
+note to the highlighted instrument. 
+• [SHIFT]+[RIGHT] Navigate to the Instrument view as a means to quickly 
+jump between the two views.
+Playing
+• [PLAY] If playback is stopped, preview the selected instrument, else stop 
+playback.
+• [SHIFT]+[PLAY] Continue song at chain position.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT]+[UP or DOWN] On the instrument name column, move the current 
+instrument up or down on the instrument list. On mixer-related columns edits 
+the selected value on the cursor’s position incrementing by large steps.
+• [EDIT]+[LEFT or RIGHT] On mixer-related columns edit the selected value 
+on the cursor’s position incrementing by small steps.
+• [EDIT]+[OPTION] Set the selected value to the default setting. On the instrument name column, clears the instrument.
+• [SHIFT]+[OPTION] Copy currently selected value. On the instrument name 
+column, copies the selected instrument.
+• [SHIFT]+[EDIT] Paste value. On the instrument name column, pastes the 
+previously copied instrument.
+24
+Table View
+Tables are little sequencers that play alongside instruments. They are an incredibly powerful tool to transform instruments and compositions, from arpeggios 
+and volume slides to multi-stage envelopes and effects. Every instrument has its 
+own dedicated table with an additional 128 tables freely assignable via the table 
+(“TBL“) FX command. Each table has 16 rows that include a note transpose, 
+volume amount, and 3 FX command columns. Unlike a phrase which runs at 
+the speed of the global tempo and groove, tables run at the user-defined speed 
+that is set by the Table Tic Rate in the Instrument View. By default when the play 
+position reaches the bottom of a table it loops back to the top and continues for 
+as long as the instrument is played.
+The left column “N” is the transpose column. Entering a value here will transpose the instrument for the duration of the step. The “V” column is the volume 
+column. These values are multiplied by the “V” in the Phrase View. The three 
+“FX” columns are identical to the “FX” columns in the phrase screen, however 
+some commands have a different behavior. To see a helpful view for selecting 
+and placing commands use [EDIT]+[UP or DOWN] which will launch the Effects 
+Command Help view. Each command column can run at different speeds by 
+using the tick (“TIC”) command in an FX column. You can place TIC commands 
+at the end of the table to affect all rows to save space. To shorten a table refer to 
+the HOP command in the appendix.
+Table TIC Modes
+• TIC00 - Increments table row each time the instrument is triggered.
+• TIC01 TO TICFB - Number of ticks per row. 
+• TICFC - Octave Map: Maps playing octave to table row.
+• TICFD - Velocity Map: Maps velocity to table row.
+• TICFE - Note Map: Maps note to table row. Note: Use HOP00 on row “0C” to 
+limit table to 12 notes / octave.
+• TICFF - Increments table row at 200 Hz. 
+25
+Table View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION]+[LEFT or RIGHT] Navigate to previous or next table.
+• [OPTION]+[UP or DOWN] Navigate +/- 16 tables.
+Playing
+• [PLAY] Starts/stops playing phrase.
+• [SHIFT]+[PLAY] Continue song at chain position.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT] On an empty cell: insert a new value with a default value of the last 
+edited or deleted value. In selection mode with a single column highlighted: 
+interpolate the selected range. 
+• [EDIT]+[UP or DOWN] Edits the selected value on the cursor’s position 
+incrementing by large steps. On a command column: show the Effect Help/
+Selection view. In selection mode: If multiple columns and row are selected 
+the contents can be shifted up or down.
+• [EDIT]+[LEFT or RIGHT] Edits the selected value on the cursor’s position 
+incrementing by small steps.
+• [EDIT]+[OPTION] Deletes/cuts the selected value. In selection mode, cuts 
+the selection into the copy buffer.
+• [SHIFT]+[OPTION] Enters selection mode for moving, copying, or cutting a 
+block of table data.
+• [OPTION] In selection mode: copies the selection and exits selection mode.
+• [SHIFT]+[EDIT] Pastes the copy buffer that was copied in selection mode.
+• [SHIFT]+[OPTION, then EDIT] On a command value column where the command is the table or groove command (TBL, TBX, GRV, or GGR): copy the 
+contents of the selected data into a new number. (I.e. “clone”).
+26
+Groove View
+Grooves allow defining the speed of each of the 16 steps in a phrase by altering 
+the number of ticks each step consumes. This allows swing, shuffle, triplets, and 
+faster phrases. See the section on common grooves in the appendix.
+Groove “00” is the default groove for all 8 tracks. Each track can use a different 
+groove independently. Assign a groove to a track by using the groove (“GRV”) 
+FX command in a phrase.
+Add swing to a song by navigating to the Groove view that is located above the 
+phrase [SHIFT]+[UP]. Start the song by pressing [SHIFT]+[PLAY] and edit the 
+value in row 0 by using [EDIT]+[UP or DOWN]. Notice that it alters both rows 0 
+and 1 at the same time. A common swing setting is 07,05 or 08,04. 
+The Groove Math/s
+The M8 has a resolution of 24 ticks per quarter note (24PPQ). Since there are 4 
+sixteenth notes in a quarter note and each row in a phrase represents a sixteenth note in time, there are 6 ticks per row (24PPQ / 4 sixteenth notes = 6 
+ticks). Therefore by default all grooves have two rows of “06”. If you want to 
+stick with the same count, the total ticks in a phrase should be equal to 96 (16 
+steps x 6 ticks per step). When editing a groove there is a help message at the 
+bottom of the screen that sums the ticks for your convenience. 
+The groove will loop to the beginning when an empty row (“--”) is encountered, 
+and a row of “00” will skip the phrase step.
+27
+Groove View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION]+[LEFT or RIGHT] Navigate to previous or next groove.
+• [OPTION]+[UP or DOWN] Navigate +/- 16 grooves.
+Playing
+• [PLAY] Starts/stops playing phrase.
+• [SHIFT]+[PLAY] Continue song at chain position.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT] On an empty cell: insert a new value with a default value of the last 
+edited or deleted value.
+• [EDIT]+[UP or DOWN] Edits the selected value and the value above or 
+beneath.
+• [EDIT]+[LEFT or RIGHT] Edits the selected value by small increments.
+• [EDIT]+[OPTION] Deletes/cuts the selected value. In selection mode: cut the 
+selection into the copy buffer.
+• [SHIFT]+[OPTION] Enters selection mode for moving, copying, or cutting a 
+block of table data.
+• [OPTION] In selection mode: copy the selection and exits selection mode.
+• [SHIFT]+[EDIT] In selection mode interpolate the selected range, else pastes 
+contents from the copy buffer.
+28
+Scale View
+Scales allow defining and quantizing note related events in M8. This includes 
+project transpose, chain transpose, note entry, arpeggio (“ARP”) command, 
+pitch (“PIT”) effect command, the “PIT” modulation modifier in FMSynth, and 
+the MIDIOUT instrument chord (“CHD”) and add note (“ADD”) effect commands, 
+respectively.
+There are up to 16 user defined scales available per project. Scale “00” is the 
+default scale for all 8 tracks. Each track can independently use a different scale. 
+Assign a scale and key signature to a track by using the scale (“SCA”) FX command, globally using the global scale (“SCG“) command, or for use in Hypersynth. Enable or disable scales per-instrument by editing the “TRANSP.” option 
+in Instrument view.
+The “Key” is a global setting that defines the root note for the default scale. It 
+can be overwritten on a per-track basis by using the scale “SCA” command as 
+mentioned above.
+For any given scale each of the 12 note intervals can be enabled by setting “EN” 
+to “ON” with an optional detuning offset from -24.00 to +24.00 semitones.
+Name, load and save any of the 16 scales for use in other projects. On power-up 
+M8 pre loads the installed SD card with 92 different scales which can be found 
+in /Scales/Factory
+29
+Scale View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION]+[LEFT or RIGHT] Navigate to previous or next scale.
+• [OPTION]+[UP or DOWN] Navigate to the first or last scale.
+Playing
+• [PLAY] Starts/stops playing phrase.
+• [SHIFT]+[PLAY] Continue song at chain position.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value by large increments.
+• [EDIT]+[LEFT or RIGHT] Edits the selected value by small increments.
+• [EDIT]+[OPTION] Sets the selected value to its default value.
+30
+Mixer View
+The mixer allows you to view and adjust the volume of each of the 8 tracks, the 
+3 send effects (ModFX, delay, and reverb, see Effect Settings View), analog and 
+USB input for monitoring; control the global DJ filter effect; and overall song EQ, 
+volume, and limiter. When an instrument is triggered on a given track, its volume 
+parameters are applied to the given track’s outputs. The track’s volume in the 
+mixer also adjusts its effect send levels. The effect volumes of the 3 send effects 
+can be adjusted under “CH”, “DE”, and “RE”. The analog and USB inputs can 
+be mixed in for live monitoring as well as routed to the 3 send effects. “INPUT” 
+refers to the analog input and “USB” refers to anything the USB host computer 
+is sending to the M8. All of the tracks, inputs, and effects are mixed together 
+and routed through OTT, main EQ, limiter, DJ filter, and finally though the main 
+song volume. Any clipping will appear as a red bar on the graphical meter.
+The limiter (LIM) is the main mix limiter which is engaged when its value is above 
+00. There is a white line drawn on the “MIX” graphical indicator to show the 
+limiters compression activity.
+The DJ filter (DJF) can be one of several mixed modes: low-pass / high-pass, 
+low-pass / band-stop, and band-stop / high-pass. A value of “80” is off with no 
+filtering, below 80 will engage the low-pass (or band-stop) filter, above 80 will 
+engage the high-pass filter. Options are available in the Scope View by tapping 
+[EDIT] while the value is highlighted.
+Over The Top (OTT) is a multi-band upwards/downwards compression effect 
+that is applied in parallel to the mix signal. As the value increases from “00” to 
+“80” it is mixed in. From “80” and above, the main mix volume is faded out.
+Dual-mono input mode can be enabled by setting the “--“ cell to the right of the 
+input volume “00 --”. Clear this value with [EDIT]+[OPTION] to disable it.
+With EQ is selected, [SHIFT]+[RIGHT] or [EDIT] will enter the EQ Editor View.
+With MIX or LIM selected, [SHIFT]+[RIGHT] or [EDIT] will enter the Limiter / Mix 
+Scope View.
+31
+Mixer View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+Playing
+• [PLAY] Plays/stops all tracks.
+• [SHIFT]+[PLAY] Plays/stops all tracks.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps. 
+• [EDIT]+[LEFT or RIGHT] Edits the selected value incrementing by small 
+steps.
+• [EDIT]+[OPTION] Set selected parameter to its default value.
+• [SHIFT]+[OPTION] Creates a song snapshot for temporarily storing entire 
+song to recall at a later point.
+• [SHIFT]+[EDIT] Recall song snapshot. See [SHIFT]+[OPTION]
+• [OPTION+TOUCHSCREEN] Assign the touchscreen axis to the selected 
+parameter. See MIDI Mappings view.
+• [OPTION+MIDI CC] Assign a MIDI CC to the selected parameter. See MIDI 
+Mappings view.
+32
+EQ Editor View
+M8 features a 3 band parametric equalizer per instrument, the main mix, ModFX, 
+Delay, and Reverb global effects. There are 128 assignable Instrument EQ slots 
+to allow multiple instruments to share the same EQ settings by assigning the EQ 
+slot number on the Instrument and Instrument Pool views respectively. The main 
+mix EQ can be accessed from the Mixer View, and the global effect EQs are 
+located on the Effects Settings View. 
+The 3 equalizer bands are labeled as “LOW”, “MID”, and “HIGH” with respect to 
+their default settings. Each band is functionally identical and can be configured 
+to suit your needs.
+EQ Band Parameters
+• GAIN - Amount of boost or cut applied to the band in decibels (dB). Positive 
+values increase volume (boost), while negative values reduce it (cut).
+• FREQ - The center (or corner) frequency around which the band operates. 
+• Q - The quality factor (bandwidth) of the filter. Higher Q values narrow the 
+band (affect a tighter range of frequencies), while lower Q values widen the 
+band.
+• TYPE - The filter shape for the band:
+• LOWCUT - Removes frequencies below the cutoff.
+• LOWSHELF - Boosts or cuts frequencies below the set shelf frequency 
+with a relatively flat response up to that point.
+• BELL - A peaking filter that boosts or cuts around the center frequency 
+with a bell-shaped curve.
+• BANDPASS - Passes frequencies around the center frequency while 
+attenuating frequencies both below and above that range.
+• HI.SHELF - Boosts or cuts frequencies above the set shelf frequency 
+with a relatively flat response beyond that point.
+33
+EQ Band Parameters (Continued) 
+• HI.CUT - Attenuates or removes frequencies above the cutoff, letting 
+lower frequencies pass.
+• ALLPASS - Passes all frequencies at equal gain while shifting their 
+phase, changing timing without affecting amplitude.
+• MODE - How to apply the band to the stereo signal: 
+• STEREO - Processes both left and right channels identically.
+• MID - Affects only the summed “mid” information (common to both left 
+and right).
+• SIDE - Affects only the “side” information (differences between left and 
+right).
+• LEFT - Affects only the left channel.
+• RIGHT - Affects only the right channel.
+EQ Editor View Shortcuts
+Navigating
+• [DIRECTION] Move cursor. 
+• [OPTION] Exits and returns to the Mixer View.
+Playing
+• [EDIT]+[EDIT] (Double tap) Mutes / Unmutes the current EQ
+• [PLAY] Plays/stops all tracks, or previews instrument from the Instrument 
+Pool view.
+• [SHIFT]+[PLAY] Plays/stops all tracks.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps. 
+• [EDIT]+[LEFT or RIGHT] Edits the selected value incrementing by small 
+steps.
+• [EDIT]+[OPTION] Set selected parameter to its default value.
+• [SHIFT]+[OPTION] Copy EQ bank
+• [SHIFT]+[EDIT] Paste EQ bank
+• [OPTION+TOUCHSCREEN] Assign the touchscreen axis to the selected 
+parameter. See MIDI Mappings view.
+• [OPTION+MIDI CC] Assign a MIDI CC to the selected parameter. See MIDI 
+Mappings view.
+34
+Limiter & Mix Scope View
+The Limiter & Mix scope view displays a histogram “scope” of volume 
+and compression over time. This view is accessible by pressing [EDIT] or 
+[SHIFT]+[RIGHT] on the “MIX”, “LIM”, “DJF”, and “OTT” parameters in the 
+Mixer View. Selecting “MIX” will highlight the main mix volume along the bottom 
+with the limiter activity from the top. Selecting “LIM” will display the limiter input 
+signal along the bottom, while highlighting the limiter activity along the top. 
+Scope Parameters
+• ZOOM - Adjusts the lower limit of the scope histogram vertically in decibels.
+• PEAK - Displays the current peak dB of the main mix. This value resets 
+when the MIX and LIM settings change and can be manually cleared with 
+[OPT]+[EDIT] when selected.
+• EQ - Views the main mix EQ (also available from the Mixer view).
+• MIX - Controls the main mix/song volume, applied after the limiter stage (also 
+available from the Mixer view).
+• SOFT CLIP - Applies a gentle saturation after the limiter to prevent harsh 
+clipping. Bring up the MIX amount to exaggerate the effect.
+• LIM - Sets the limiter amount (also available from the Mixer view).
+• ATK - Specifies the limiter attack time, from 0 to 100 ms. See the on-screen 
+help text for the conversion to milliseconds.
+• REL - Specifies the limiter release time, from 4 to 1000 ms. A “00” setting 
+activates “AUTO” mode, which dynamically adjusts the time between 100 
+and 900 ms based on the limiter’s compression amount.
+• DJF - Cutoff control for the DJ filter. 80 = off. 00-80 = low-pass, 80-FF = 
+high-pass. Mode set with TYPE.
+• TYPE - Specifies DJ Filter type - low-pass/high-pass, low-pass/band-stop, 
+band-stop/high-pass
+• RES - Sets the DJ Filter resonance
+35
+Scope Parameters (Continued)
+• OTT - Sets the OTT mix amount. From “80” and above, the main mix volume 
+is faded out.
+• TIME - OTT compressor envelope time as a percentage from 10% to 1000%.
+• COLOR - Adjusts compressor frequency bands and low/high gains. Above 80 
+shifts toward treble, below 80 toward bass.
+Limiter & Mix Scope Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION] Exits and returns to the Mixer View.
+Playing
+• [PLAY] Plays/stops all tracks, or previews instrument from the Instrument 
+Pool view.
+• [SHIFT]+[PLAY] Plays/stops all tracks.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps. 
+• [EDIT]+[LEFT or RIGHT] Edits the selected value incrementing by small 
+steps.
+• [EDIT]+[OPTION] Set selected parameter to its default value. 
+36
+Effect Settings View
+The effect settings view is accessible under the mixer view [SHIFT]+[DOWN].
+The M8 has 3 send effects that are utilized by the instrument settings “MFX”, 
+“DEL” “REV”, as well as on audio and USB input configured in the mixer view.
+ModFX
+Selectable between 3 different stereo modulation effects: Chorus, Phaser, and 
+Flanger.
+• INPUT EQ - Adjust the input EQ settings
+• MOD DEPTH - The amount of modulation that occurs in the stereo signal.
+• MOD FREQ - The speed of the modulation.
+• WIDTH - Stereo width. “00” is mono, “FF” is stereo.
+• REVERB SEND - Adjusts the amount to send to the reverb effect.
+Delay 
+Ping-pong delay where the incoming audio bounces between left and right 
+channels.
+• INPUT EQ - Adjust the input EQ settings
+• TIME L:R - Delay time for left and right channels. First digit is in beats, second digit is in fractions of a beat. Ex: “40” is 4 beats long.
+• FEEDBACK - Adjusts the amount that the signal is fed back into itself.
+• WIDTH - Stereo width. “00” is mono, “FF” is stereo.
+• REVERB SEND - Adjusts the amount to send to the reverb effect.
+37
+Reverb
+Simple reverb with subtle modulation. Particular attention has been given to this 
+model to prevent metallic / ringing feedback.
+• INPUT EQ - Adjust the input EQ settings 
+• SIZE - The size of the room.
+• DECAY - Amount to decay the signal over time.
+• SHIMMER - Adds pitched feedback to the reverb, creating octave-up shimmer effect.
+• MOD DEPTH - The amount of modulation that occurs in the stereo signal.
+• MOD FREQ - The speed of the modulation.
+• WIDTH - Stereo width. “00” is mono, “FF” is stereo.
+Effect Settings View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+Playing
+• [PLAY] Starts/stops all tracks.
+• [SHIFT]+[PLAY] Starts/stops all tracks.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps. 
+• [EDIT]+[LEFT or RIGHT] Edits the selected value incrementing by small 
+steps.
+• [EDIT]+[OPTION] Set selected parameter to its default value.
+• [OPTION+TOUCHSCREEN] Assign the touchscreen axis to the selected 
+parameter. See MIDI Mappings view.
+• [OPTION+MIDI CC] Assign a MIDI CC to the selected parameter. See MIDI 
+Mappings view.
+38
+Project View
+The project view contains settings relevant to the song as a whole. Saving, 
+loading, and exporting can be found here as well as access to MIDI settings, 
+mappings, and theme.
+• TEMPO - Adjust the song’s speed in beats per minute (BPM). Press [EDIT]
+rhythmically to use tap-tempo and set the BPM by tapping.
+• TRANSPOSE - Globally transpose the song in semitones. The transposition 
+only affects instruments that have “TRANSP.” enabled. The transposition 
+occurs when the edit key is released which is useful for live performance.
+• GROOVE - Default groove to be used on song playback. See Groove View. 
+The groove change takes effect when the edit key is released.
+• SCALE - Default scale to be used on song playback. See Scale View.
+The scale change takes effect when the edit key is released.
+• LIVE QUANTIZE - Set the cue-waiting behavior when playing a chain in live 
+mode.
+• MIDI: SETTINGS - See the section on MIDI Settings View.
+• MIDI: MAPPINGS - See the section on MIDI Mappings View. 
+• NAME - Enter a name for the current song for saving.
+• LOAD, SAVE, NEW - Load, save, or create a new song.
+• RENDER - See the section on Render View.
+• BUNDLE - See the next page on Bundles.
+• CLEAR UNUSED - Frees/clears unused chains, phrases, instruments, EQs, 
+and tables not used in the song.
+• INST. POOL - Navigates to the Instrument Pool View.
+• SYSTEM SETTINGS - Navigates to the System Settings View.
+39
+About Project Files
+Project files contain all song data including chains, phrases, instruments, as well 
+as MIDI mappings and settings configurations. Output volume, speaker volume, 
+and theme colors are stored internally on the M8. Samples are not stored in the 
+project file. Moving or deleting samples will result in samples failing to load with 
+the song.
+Bundles
+Since samples are not stored inside the project file, you may want to share your 
+work or archive a song before moving samples around on the SD card. Bundling 
+a song handles this. It creates a sub-folder in the “/Bundles” directory that contains the project file, samples, and instruments.
+Project View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+Playing
+• [PLAY] Plays/stops all tracks.
+• [SHIFT]+[PLAY] Plays/stops all tracks.
+• [OPTION]+[SHIFT] Mute current track (release option first to hold the mute).
+• [OPTION]+[PLAY] Solo current track (release option first to hold the solo).
+• [OPTION]+[SHIFT]+[PLAY] Clears all mute and solos.
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps.
+• [EDIT]+[LEFT or RIGHT] Edits the selected value incrementing by small 
+steps.
+• [EDIT]+[OPTION] Set selected parameter to its default value.
+• [SHIFT]+[OPTION] Creates a song snapshot for temporarily storing entire 
+song to recall at a later point.
+• [SHIFT]+[EDIT] Recall song snapshot. See [SHIFT]+[OPTION]
+• [OPTION+TOUCHSCREEN] On Tempo and Transpose - Assign the touchscreen axis to the selected parameter. See MIDI Mappings view.
+• [OPTION+MIDI CC] On Tempo and Transpose - Assign a MIDI CC to the 
+selected parameter. See MIDI Mappings view.
+40
+System Settings View
+The system settings view contains all system-wide settings. Adjusting the backlight brightness, theme settings, metronome, and various options can be found 
+here.
+• BACKLIGHT - Set the back light LED brightness of the display.
+• FONT OPTIONS - Various font display options, including a larger font mode 
+for increased readability.
+• THEME - See the section on Theme View.
+• NOTE PREVIEW - Enable note preview when editing notes in phrase view.
+• REC. COUNT IN - Number of phrases/measures to count-in a metronome 
+before recording audio either in the Sample Editor (with song playback enabled) or song Selection to Sample (for Realtime and External only modes.) 
+• METRONOME VOL - The volume of the metronome sound. 
+Note: You can edit or replace the metronome sound by editing or saving the 
+/System/Metronome.m8i instrument file.
+• SONG TEMPLATE - Set the currently opened song as the new-song template 
+when creating a new song.
+• USB AUDIO OUT - Change the routing behavior of USB Audio. Refer to the 
+diagram on the following page.
+• LINE-IN GATE - Set the noise gate threshold for the line input. Adjustable 
+from –70 dB through –10 dB.
+• SPLASH SCREEN - Enable / Disable the M8 logo splash screen and sound 
+when turning on the device.
+• HP PROTECTION - Enable / Disable headphone hearing protection - The 
+headphone output volume is limited to a maximum of “F0” when unplugging 
+and reinserting a pack into the headphone output for hearing protection.
+• KEY DELAY:REP - Key delay and repeat settings in milliseconds. Delay is 
+the time it takes for M8 to repeat a key press when holding down a button, 
+Repeat is the time in between each repeated press.
+• BATT. CHARGING - Enable / Disable charging when M8 is turned on and 
+USB is connected to reduce power consumption on connected host device. 
+41
+USB Audio Routing Options
+42
+Theme View
+The theme view is accessible from the System Settings View. Adjust brightness, 
+font settings, interface colors, load presets, and save preset themes for sharing.
+Select either RGB or HSV mode by pressing [EDIT] on “MODE”. When the 
+“<>” icon is highlighted the theme’s overall hue can be adjusted when pressing 
+[EDIT]+[DIRECTION]
+Adjust each property’s color in RGB or HSV format to see what it controls. Minor 
+adjustments may not show due to the display’s color depth. There are a handful of default themes located on the SD card that can be browsed by selecting 
+“LOAD”.
+Theme View Shortcuts
+Navigating
+• [DIRECTION] Move cursor
+• [OPTION] Exits view
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps
+• [EDIT]+[LEFT or RIGHT] Edits the selected value by small steps.
+• [EDIT]+[OPTION] Set selected parameter to its default value.
+43
+MIDI Mapping View
+The MIDI mapping view is accessible from the Project View. MIDI mappings 
+are MIDI CCs (Continuous Control - knobs on an external MIDI controller) or 
+the touchscreen that are assigned to instrument or mixer parameters. Up to 
+128 mappings are available per song. The destination parameter can only be 
+assigned to one mapping, but one control/touchscreen axis can control many 
+parameters. Assign a MIDI CC or touchscreen to a parameter by placing the 
+cursor on the desired parameter, holding down the [OPTION] key, and turning 
+the MIDI CC or touching and sliding vertically or horizontally on the touchscreen. 
+All mappings are stored within the song file.
+This view allows you view and edit the range of the mappings, as well as remove 
+them by pressing [OPTION]+[EDIT].
+MIDI Mapping View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION] Exits view.
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps.
+• [EDIT]+[LEFT or RIGHT] Edits the selected value incrementing by small 
+steps.
+• [EDIT]+[OPTION] Delete a mapping.
+44
+MIDI Settings View
+The MIDI settings view is accessible from the Project View. Edit the MIDI settings for sync input and output, transport control (play, stop, continue), MIDI 
+note recording options, and MIDI channel assignments. All parameters in this 
+page are stored within the song. Save or load the default configuration used 
+when creating a new song.
+MIDI Settings
+• SYNC IN / SYNC OUT
+• CLOCK - Enable MIDI clock for sending/receiving sync.
+• TRANSPORT - Enable song start/stop MIDI transport messages.
+• CLOCK+TRANSP. - Clock and transport
+• TRANSPORT+SPP - Transport & Song position pointer allow control of 
+song position.
+• CLK+TRANSP+SPP - Clock, transport, and SPP
+• CTRL SURFACE - Set the MIDI control surface to be used with M8. Currently 
+only the Novation Launchpad Pro MK3 is supported.
+• RECORD NOTE CHANNEL - MIDI channel for recording incoming MIDI 
+notes. See next section under Recording MIDI Notes.
+• RECORD VELOCITY - Enables recording note velocity when recording MIDI 
+notes.
+• RECORD DELAY/KILL - Record delay (“DEL”) and kill/note off (“KIL“) FX 
+commands when recording incoming MIDI notes into a phrase.
+• CONTROL MAP CHANNEL - MIDI channel for incoming MIDI CCs for MIDI 
+Mapping. Refer to MIDI Mappings View.
+• SONG ROW CUE CHANNEL - MIDI channel for incoming MIDI notes for 
+cueing song rows. 
+45
+Recording MIDI Notes
+Inserting and recording MIDI notes from an external controller can be accomplished by selecting the correct “REC. NOTE CHAN” channel for your controller 
+and highlighting a note column in the phrase view. While the song is playing, 
+notes will be inserted based on the time they were played. Notes and instruments can be previewed when the cursor is outside the note column. 
+Track MIDI Input
+The M8 can act like a sound module, where each of the 8 tracks can be independently controlled by an external sequencer or controller. Changing the instrument can be accomplished by sending a MIDI program change message from 
+the external controller or selecting the instrument number in the MIDI Settings 
+view under the appropriate track number.
+• CHAN - MIDI channel selection for the given track.
+• INST# - Instrument number to be used for the given track.
+• PG CHANGE - Enable instrument selection via MIDI Program change messages.
+• MODE - 3 different modes to choose from: 
+• MONO - Mono mode plays all tracks of the same MIDI channel together in unison.
+• LEGATO - Same as Mono mode but overlapping notes will not cause 
+the instrument to retrigger. 
+• POLY - Poly mode utilizes all tracks of the same MIDI channel to enable 
+polyphonic playback.
+MIDI Settings View Shortcuts
+Navigating
+• [DIRECTION] Move cursor.
+• [OPTION] Exits view.
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps.
+• [EDIT]+[LEFT or RIGHT] Edits the selected value incrementing by small 
+steps.
+• [EDIT]+[OPTION] Delete a mapping.
+46
+Time Stats View
+The time stats view is accessible from the Project View. From this view you can 
+view time statistics as well as set the date and time for saving files. Please note 
+that to conserve battery M8 does not keep track of the date and time while it is 
+powered off.
+• PLAYING - Amount of time elapsed since M8 has started playback.
+• WORK TIME - Amount of time spent working on the current song.
+• SYS. POWERED - Amount of time elapsed since M8 has been powered on
+• SYS. BATTERY - Amount of time elapsed since M8 has had a full battery 
+charge. It may be offset about 30 minutes due to “fullness” detection.
+• SYS. TOTAL - Total power on lifetime.
+• FILE DATE - Set the date and time used when saving files to the SD card.
+Time Stats View Shortcuts
+• [DIRECTION] Move cursor
+• [OPTION] Exits view
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps
+• [EDIT]+[LEFT or RIGHT] Edits the selected value incrementing by small 
+steps.
+47
+Render View
+The render view is accessible from the project view. Rendering allows you to 
+export sections, tracks (“STEMS”), or the entire song (“MIXED”) as a 16-bit 
+44.1kHz stereo wav file located in “/Renders”. 
+• SONG ROW START - The first song row to start rendering from.
+• SONG ROW LAST - The last song row that will be rendered.
+• REPEAT SONG - Repeat the song a given number of times.
+• TRACKS - Selectively choose which tracks to render.
+• MODFX - Enable the ModFX send effect in the render.
+• DELAY - Enable the delay send effect in the render.
+• REVERB - Enable the reverb send effect in the render.
+• LIMITER - Enable the limiter effect in the render.
+• MODE - Set render bit depth to 16 or 32-bit.
+• NAME - Choose a name for the rendering.
+• MIXED STEMS - “MIXED” creates one wav file with all tracks mixed together 
+whereas “STEMS” creates a file for each enabled track that has chains within 
+the selected range.
+Render View Shortcuts
+• [DIRECTION] Move cursor
+• [OPTION] Exits view
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps
+• [EDIT]+[LEFT or RIGHT] Edits the selected value incrementing by small 
+steps.
+• [EDIT]+[OPTION] Deletes / Resets the selected parameter.
+48
+Selection to Sample
+From the Song View, after making a selection ([SHIFT]+[OPT]), double tap 
+[EDIT] to bring up the dialog to create a sample from the selection (cancel by 
+pressing [OPT]). Once rendering is complete a new instrument containing the 
+sample is created. The new instrument will be the default instrument when entering a new note. Below is a description of the available options.
+• QUICK RENDER - Off-line renders the selection to a sample, any sound from 
+the line-in or USB input is not recorded.
+• REALTIME - All selected tracks and Line-in / USB input set from the Mixer 
+View will be recorded.
+• EXTERNAL ONLY - Records the first External Instrument found in the selection. If none is found it will record the Line-Input and USB mixed in from the 
+Mixer View.
+Effect Command Help View
+The effect command help view can be accessed by holding down [EDIT] and 
+pressing [UP or DOWN] on any FX command column on the phrase or table
+view. The view allows you to select an FX command by using any [DIRECTION]
+key. A small description of the highlighted effect is displayed at the top. Insert 
+the selected command by releasing the [EDIT] key.
+49
+(Draw a picture or list your favorite plant species below)
+50
+Instruments
+Wavsynth
+Wavsynth is a wave table synthesizer and noise generator. The wave table is an 
+8-bit sample buffer that is generated in real-time from one of 9 basic shapes that 
+can be repeated, skewed/biased, mirrored, filtered and overdriven.
+After the 9 base shapes there is an additional 61 built-in wave tables. Each wave 
+table consists of 64 individual waveforms that can be smoothly morphed using 
+the “SCAN” parameter. Refer to the Wave table index.
+Wavsynth Parameters
+• SHAPE - This selects from several standard shapes:
+• PULSE 12% TO 75% - 4 Pulse width options. For pulse width modulation (PWM) set the shape to “PULSE 50%” and adjust the “MIRROR” 
+parameter. Smoothness of the PWM is determined by the “SIZE” 
+parameter.
+• SAW - Saw wave.
+• TRIANGLE - Triangle wave.
+• SINE - Sine wave.
+• NOISE PITCHED - Classic LFSR Noise with an in-tune tonal pitch.
+• NOISE - Classic LFSR noise.
+• WT - Wave tables. Refer to the Wave table index.
+• SIZE - Horizontal size of the waveform (number of samples). 
+• MULT - Multiplies the waveform by adding more and more repeats of the 
+selected shape. This can sound like a “hard sync” effect.
+51
+Wavsynth Parameters (Continued)
+• WARP - Push the shape to one side of the wave table.
+• SCAN - On shapes 0 to 8 mirror the waveform at the specified position, the 
+value range is from 0 to 200%. On wave tables scan through the 64 waveforms from the current wave table.
+Multi-mode Filter Parameters
+• FILTER - Filter type - Low-pass, High-pass, Band-pass, Band-stop, and 
+LP>HP (Low-pass with RES controlling the frequency of a 1-pole high-pass 
+filter). ZDF (zero delay feedback) Low-pass, ZDF High-pass.
+Wavsynth has 4 extra modes which apply the filter into the waveform: “WAV 
+LP” - Low-pass, “WAV HP” - High-pass, “WAV BP” - Band-pass, and “WAV 
+BS” Band-stop.
+• CUTOFF - Filter cutoff frequency.
+• RES - Filter resonance amount.
+Amplification Parameters
+• AMP - Amplifies the waveform. Any value higher than the maximum level 
+allowed is handled according to the “LIM” setting.
+• LIM - Set the limit / clipping behavior of the amplified signal. 
+• CLIP - Any value higher than the maximum level is clipped.
+• SIN - The waveform is fed through a sine function. 
+• FOLD - Any value higher than the maximum level is folded back into 
+itself.
+• WRAP - Any value higher than the maximum level is vertically wrapped.
+• POST - The amplification is applied with hard-clipping after the filter 
+stage.
+• POST:AD - Post filter The amplification is applied with soft-clipping
+• POST:W1-W3 - Post filter folding distortions.
+Mixer Parameters 
+• DRY - Dry volume sent to the mixer channel.
+• MFX - ModFX send effect volume.
+• DEL - Delay send effect volume.
+• REV - Reverb send effect volume.
+52
+Macrosynth
+The Macrosynth contains 44 different models or “SHAPES”. From basic analog 
+to 2-op FM, physical modeling, and percussive sounds. The two parameters 
+“TIMBRE” and “COLOR” control the overall characteristics and change depending on the shape selected. Refer to the Macrosynth Models section in the 
+appendix for details.
+Macrosynth Parameters
+• SHAPE - Select one of the 44 different engines. Refer to the Macrosynth 
+Models section in the appendix for details.
+• TIMBRE - First parameter of the Macrosynth shape.
+• COLOR - Second parameter of the Macrosynth shape.
+• DEGRADE - Sample rate reduction effect.
+• REDUX - Bit rate reduction effect.
+Multi-mode Filter Parameters
+• FILTER - Filter type - Low-pass, High-pass, Band-pass, Band-stop, and 
+LP>HP (Low-pass with RES controlling the frequency of a 1-pole high-pass 
+filter). ZDF (zero delay feedback) Low-pass, ZDF High-pass.
+• CUTOFF - Filter cutoff frequency.
+• RES - Filter resonance amount.
+53
+Amplification Parameters
+• AMP - Amplifies the waveform. Any value higher than the maximum level 
+allowed is handled according to the “LIM” setting.
+• LIM - Set the limit / clipping behavior of the amplified signal. 
+• CLIP - Any value higher than the maximum level is clipped.
+• SIN - The waveform is fed through a sine function. 
+• FOLD - Any value higher than the maximum level is folded back into 
+itself.
+• WRAP - Any value higher than the maximum level is vertically wrapped.
+• POST - The amplification is applied with hard-clipping after the filter 
+stage.
+• POST:AD - Post filter The amplification is applied with soft-clipping
+• POST:W1-W3 - Post filter folding distortions.
+Mixer Parameters 
+• DRY - Dry volume sent to the mixer channel.
+• MFX - ModFX send effect volume.
+• DEL - Delay send effect volume.
+• REV - Reverb send effect volume.
+54
+Sampler
+Sampler is a sample player, editor and recorder. Only 1 or 2 channel (stereo) 
+PCM “.wav” files are supported. When a sample is not present, to the right of 
+“SAMPLE” press [EDIT] on “LOAD” to browse for a sample to load, or “REC.” 
+to record a new sample. See the next section on the Sample Editor for sampling 
+and editing files. Due to streaming from the SD card, to prevent issues with playback there is an upper-pitch limitation enforced based on bit-depth and mono/
+stereo samples. You can reduce this limitation by either converting to mono, 
+dropping the bit depth, or downsampling via the Sample Editor.
+Sampler Parameters
+• SLICE - “slices” the sample into equal length sections and maps each slice 
+starting from the lowest octave (C-1).
+• PLAY - Sets the play direction and loop mode.
+• FWD - Forward playback with no loop.
+• REV - Reverse playback with no loop.
+• FWDLOOP - Looping forward playback. 
+• REVLOOP - Looping reverse playback. 
+• FWD PP - Ping-pong looping forward - Plays forward and reverse back 
+and forth.
+• REV PP - Ping-pong looping reverse - Plays reverse and forward back 
+and forth.
+• OSC - Oscillator forward mode - “Oscillator” modes ignore start position and do not start from the beginning when retriggered.
+• OSC REV - Oscillator reverse mode.
+• OSC PP - Oscillator ping-pong mode.
+• REPITCH/BPM - Pitches the sample based on the current song tempo. 
+Use the STEPS/BPM parameter below to adjust the original sample’s 
+pitch/timing.
+55
+Sampler Parameters (Continued)
+• START - Sample start position. This parameter is ignored when in “OSC” play 
+modes.
+• LOOP ST. - Loop start position. When in a looping play mode, sample will 
+loop back to this position after it reaches the end.
+• LEN - Sample length. 
+• DETUNE - Detune sample with “80” being the center frequency. First digit 
+increments semitones, second increments 1/16 semitone.
+• DEGRADE - Sample rate reduction effect. Any value above “00“ disables 
+sample interpolation.
+Multi-mode Filter Parameters
+• FILTER - Filter type - Low-pass, High-pass, Band-pass, Band-stop, and 
+LP>HP (Low-pass with RES controlling the frequency of a 1-pole high-pass 
+filter). ZDF (zero delay feedback) Low-pass, ZDF High-pass.
+• CUTOFF - Filter cutoff frequency.
+• RES - Filter resonance amount.
+Amplification Parameters
+• AMP - Amplifies the waveform. Any value higher than the maximum level 
+allowed is handled according to the “LIM” setting.
+• LIM - Set the limit / clipping behavior of the amplified signal. 
+• CLIP - Any value higher than the maximum level is clipped.
+• SIN - The waveform is fed through a sine function. 
+• FOLD - Any value higher than the maximum level is folded back into 
+itself.
+• WRAP - Any value higher than the maximum level is vertically wrapped.
+• POST - The amplification is applied with hard-clipping after the filter 
+stage.
+• POST:AD - Post filter The amplification is applied with soft-clipping
+• POST:W1-W3 - Post filter folding distortions.
+Mixer Parameters 
+• DRY - Dry volume sent to the mixer channel.
+• MFX - ModFX send effect volume.
+• DEL - Delay send effect volume.
+• REV - Reverb send effect volume.
+56
+Sample Editor
+The sample editor can be accessed in the Instrument View by selecting “SAMPLER” as the instrument type and pressing [EDIT] on “REC.” (or “EDIT” if there 
+is a sample loaded). Exit the sample editor view by pressing [OPTION].
+Recording Audio
+Record by pressing [EDIT] on “START” or use the power button to avoid 
+key-clicking sounds when recording with the Microphone. Once you have 
+finished recording you can process the sample and give it a name. Save the 
+sample before exiting this view.
+• START - Starts recording audio.
+• SRC - Input source - L&R (Line-in), MIC (Model:02 only), USB, INL (Line-in 
+left), INR (Line-in right), U-L (USB left), U-R (USB right), ALL (Line-in and 
+USB), TR[1-8] (Track 1 to 8 for recording External Instruments)
+• VOL - Input volume
+• ARM -Set the threshold to arm and start recording based on input volume
+• PLAY - Start playing the song at the song row position indicated. This is 
+useful for recording external music gear that is being controlled from a MIDI 
+Out Instrument.
+Sample Editor Actions
+• SELECT - Selects a start and end range using the two values provided. Using 
+[EDIT]+[UP or DOWN] in large increments with [EDIT]+[LEFT or RIGHT]
+displaying a zoomed in view for small increments. [OPT]+[UP or DOWN] will 
+snap the marker to the song’s tempo in beats.
+• LOOP REGION - Edits the start and end loop points which are stored 
+57
+within the wav file. Using [EDIT]+[UP or DOWN] in large increments with 
+[EDIT]+[LEFT or RIGHT] displaying a zoomed in view for small increments.
+• SLICE MARKER - Add up to 128 markers that are stored within the wav file. 
+The markers can be played back when “SLICE” is set to “01 FILE” starting 
+from C-1. They can also be cued by using the “SLI” effect command.
+• PROCESS - Choose a process by using [EDIT]+[LEFT or RIGHT] to select 
+and tap [EDIT] once more to perform the selected action: 
+• CROP - Trims the waveform to the selected range
+• DELETE - Deleted the selected range.
+• DUPLICATE - Duplicates the selected range.
+• NORMALIZE - Adjusts the selected range’s overall volume to its maximum without clipping.
+• SILENCE - Silences the selected range.
+• REVERSE - Reverses the selected range.
+• INVERT - Flips the selected range vertically.
+• FADE IN/OUT - Fades in or out the selected range.
+• XFADE LOOP - Creates a cross fade loop inside the selected range.
+• SQUISH(OTT) - OTT multi-band compression effect. The OTT COLOR 
+and TIME settings are derived by the song’s OTT mixer settings.
+• MONO: MIX/LEFT/RIGHT - Converts stereo samples to mono by summing the left or right channels.
+• DOWNSAMPLE - Halves the current sample rate of the sample.
+• 16-BIT/8-BIT - Reduce the sample’s bit rate to 16 or 8-bit.
+• SLICE:AUTO - Sets the slice markers using transient detection.
+• SLICE:SILENC - Sets the slice markers using silence detection.
+• SLICE:[0-128] - Sets the slice markers into evenly distributed divisions.
+• NAME - Give the sample a name before saving.
+• SAVE / OVERWRITE - Save or overwrite the current sample.
+Sample Editor Shortcuts
+Editing
+• [EDIT]+[UP or DOWN] Edits the selected value incrementing by large steps.
+• [EDIT]+[LEFT or RIGHT] Edits the value incrementing by small steps.
+• [EDIT]+[OPTION] Clear / Reset value
+• [OPTION]+[UP or DOWN] Edits the value incrementing by 4 steps (tempo 
+based).
+• [OPTION]+[LEFT or RIGHT] Edits the selected value incrementing by single 
+steps (tempo based).
+• [EDIT or OPTION]+[TOUCHSCREEN] Edits selected value
+• [PLAY]+[EDIT] Tap edit during playback while cursor is on slice to add slice 
+markers at play-head (Lazy chop).
+58
+FM Synth
+FM Synth is a uniquely simple four operator 12 algorithm FM (frequency modulation) synthesizer. Each of the four operators can have one of 12 base shapes 
+with ratio, level, feedback, and two modulation slots for assigning one of the 
+four modulation macros to control the parameters.
+Each set of OP parameters can be copied and pasted using the common copy 
+and paste shortcuts. When the cursor is in an OP region, [SHIFT]+[OPT] to 
+copy, [SHIFT]+[EDIT] to paste.
+FM Synth Parameters
+• ALGO - Select one of 12 algorithm (oscillator routing) configurations. Use the 
+last algorithm to use “additive mode”- 4 oscillator subtractive synth. See the 
+algorithm diagram on the next page.
+• A / B / C / D - The operator letter with optional shape. See the shapes diagram on the next page, for the wavetable shapes “W” and onward, refer to 
+the wavetable index.
+• RATIO - Frequency ratio relative to the currently playing note. Ex: “2.00” will 
+play an octave up, “0.50” will play an octave lower.
+• LEV/FB - Volume and Feedback for each operator.
+• MOD - Two modulation slots that assign MOD[1 to 4] to control a destination 
+on the given operator.
+• LEV - Controls the level from “00” to the currently set level.
+• RAT - Adds 0.00 to +16.00 to the current ratio.
+• PIT - Adds to the note pitch in semitones for the current operator.
+• FBK - Controls the feedback from “00” to the currently set feedback.
+• MOD[1-4] - The modulation source values that are freely assigned to the 
+operators via the “MOD” slots described above.
+59
+FM Synth Algorithms and Shapes
+SIN SW2 SW3 SW4 SW5 SW6
+TRI SAW SQU PUL IMP NOISE
+A>B>C>D [A+B]>C>D
+A
+B
+C
+D
+A B
+C
+D
+00
+[A>B+C]>D
+A
+B C
+D
+02
+[A>B+A>C]>D
+A
+B C
+D
+01 03
+[A>B]+[A>C]+[A>D] [A>B]+[A>C]+D
+A A
+B C D B C
+[A>B]+[C>D]
+A
+B
+C
+D D
+07 08
+[A+B+C]>D [A>B>C]+D
+D D
+A
+A
+B C B
+C
+04 05
+[A>B>C]+[A>B>D]
+D
+A
+B
+C
+06 09
+[A>B]+C+D
+A
+BCD
+0A
+D
+A+B+C+D
+ABCD
+0B
+Multi-mode Filter Parameters
+• FILTER - Filter type - Low-pass, High-pass, Band-pass, Band-stop, and 
+LP>HP (Low-pass with RES controlling the frequency of a 1-pole high-pass 
+filter). ZDF (zero delay feedback) Low-pass, ZDF High-pass.
+• CUTOFF - Filter cutoff frequency.
+• RES - Filter resonance amount.
+Amplification Parameters
+• AMP - Amplifies the waveform. Any value higher than the maximum level 
+allowed is handled according to the “LIM” setting.
+• LIM - Set the limit / clipping behavior of the amplified signal. 
+• CLIP - Any value higher than the maximum level is clipped.
+• SIN - The waveform is fed through a sine function. 
+• FOLD - Any value higher than the maximum level is folded back into 
+itself.
+• WRAP - Any value higher than the maximum level is vertically wrapped.
+• POST - The amplification is applied with hard-clipping after the filter 
+stage.
+• POST:AD - Post filter The amplification is applied with soft-clipping
+• POST:W1-W3 - Post filter folding distortions.
+Mixer Parameters 
+• DRY - Dry volume sent to the mixer channel.
+• MFX - ModFX send effect volume.
+• DEL - Delay send effect volume.
+• REV - Reverb send effect volume.
+60
+Hypersynth
+Hypersynth is a 6 note saw wave chord synthesizer. It features 16 chord banks 
+of up to 6 intervals. Each note/interval is a set of two saw waves that can be 
+detuned using “Swarm” and spread in the stereo field by adjusting “Width”. 
+Along with the 6 intervals is a square wave sub-oscillator that can be tuned 1 or 
+2 octaves below the root note.
+Hypersynth Parameters
+• SCALE - Select one of the song’s scales to use or “00” to use the song/track 
+scale settings.
+• CHORD - The chord bank and intervals for the selected bank. Copy and 
+Paste is possible using the common shortcuts: [SHIFT]+[OPTION] to copy, 
+[SHIFT]+[EDIT] to paste when a value is highlighted.
+• SHIFT - Cross-fade volume between the first 3 intervals and second 3
+• SWARM - Detune oscillators relative to their interval
+• WIDTH - Stereo width of the oscillators from mono “00” to full stereo “FF”.
+• SUBOSC - Mix in sub-oscillator 2 octaves below root (when below “80”), or 1 
+octave below (when above “80”)
+Multi-mode Filter Parameters
+• FILTER - Filter type - Low-pass, High-pass, Band-pass, Band-stop, and 
+LP>HP (Low-pass with RES controlling the frequency of a 1-pole high-pass 
+filter). ZDF (zero delay feedback) Low-pass, ZDF High-pass. 
+• CUTOFF - Filter cutoff frequency.
+• RES - Filter resonance amount.
+61
+Amplification Parameters
+• AMP - Amplifies the waveform. Any value higher than the maximum level 
+allowed is handled according to the “LIM” setting.
+• LIM - Set the limit / clipping behavior of the amplified signal. 
+• CLIP - Any value higher than the maximum level is clipped.
+• SIN - The waveform is fed through a sine function. 
+• FOLD - Any value higher than the maximum level is folded back into 
+itself.
+• WRAP - Any value higher than the maximum level is vertically wrapped.
+• POST - The amplification is applied with hard-clipping after the filter 
+stage.
+• POST:AD - Post filter The amplification is applied with soft-clipping
+• POST:W1-W3 - Post filter folding distortions.
+Mixer Parameters 
+• DRY - Dry volume sent to the mixer channel.
+• MFX - ModFX send effect volume.
+• DEL - Delay send effect volume.
+• REV - Reverb send effect volume.
+62
+External Instrument
+External Instrument is a hybrid MIDI output and audio input device. Notes and 
+MIDI FX commands will be sent out to the selected MIDI port and channel, while 
+audio will come back in through it’s filter and amp stage. 
+Signal Path / Mixer 
+If you have previously set audio input volumes in the Mixer View, you may want 
+to mute them to prevent doubling up the input volume and cause confusion - 
+Audio from this device will be sent to the instrument’s playing track.
+Recording Audio
+Rendering audio input using Song View selection-render or the Render View is 
+not possible due to the real-time input processing. However, you can record the 
+track using the Sample Editor View by selecting the playing track as the input 
+source and setting a song position when sampling. 
+External Instrument Parameters
+• INPUT - Audio input selection: Line-in (Stereo, Left, Right), USB (Stereo, Left, 
+Right), or both line-in and USB.
+• PORT - Set the MIDI Output port: MIDI and USB, MIDI only, USB only, or 
+Internal for use with Track MIDI Input or sending global MIDI CCs configured 
+in the MIDI Settings View.
+• CHANNEL - MIDI Channel selection 1 to 16.
+• BANK:PG - Optional MIDI Bank select and Program change. Program change 
+messages can also be sent as an FX command.
+• CC[A-D] CC:VAL - Up to 4 custom MIDI CC numbers with optional default 
+values can be assigned. If a default value is present, it will be sent with the 
+note on command after program change messages. 
+63
+Multi-mode Filter Parameters
+• FILTER - Filter type - Low-pass, High-pass, Band-pass, Band-stop, and 
+LP>HP (Low-pass with RES controlling the frequency of a 1-pole high-pass 
+filter). ZDF (zero delay feedback) Low-pass, ZDF High-pass. 
+• CUTOFF - Filter cutoff frequency.
+• RES - Filter resonance amount.
+Amplification Parameters
+• AMP - Amplifies the waveform. Any value higher than the maximum level 
+allowed is handled according to the “LIM” setting.
+• LIM - Set the limit / clipping behavior of the amplified signal. 
+• CLIP - Any value higher than the maximum level is clipped.
+• SIN - The waveform is fed through a sine function. 
+• FOLD - Any value higher than the maximum level is folded back into 
+itself.
+• WRAP - Any value higher than the maximum level is vertically wrapped.
+• POST - The amplification is applied with hard-clipping after the filter 
+stage.
+• POST:AD - Post filter The amplification is applied with soft-clipping
+• POST:W1-W3 - Post filter folding distortions.
+Mixer Parameters 
+• DRY - Dry volume sent to the mixer channel.
+• MFX - ModFX send effect volume.
+• DEL - Delay send effect volume.
+• REV - Reverb send effect volume.
+64
+MIDI Out
+Control external devices with the MIDI Out instrument either by USB MIDI or the 
+built-in TRS (type A) MIDI output.
+MIDI Out Parameters
+• PORT - Set the MIDI Output port: MIDI and USB, MIDI only, USB only, or 
+Internal for use with Track MIDI Input or sending global MIDI CCs configured 
+in the MIDI Settings View.
+• CHANNEL - MIDI Channel selection 1 to 16.
+• BANK:PG - Optional MIDI Bank select and Program change. Program change 
+messages can also be sent as an FX command.
+• CC[A-J] CC:VAL - Up to 10 custom MIDI CC numbers with optional default 
+values can be assigned per MIDI instrument. If a default value is present, it 
