@@ -27,6 +27,7 @@
     "vite": "^8.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^8.0.7",
     "@babel/preset-react": "^8.0.1",
     "@babel/preset-typescript": "^8.0.1",
     "@biomejs/biome": "^2.5.15",
@@ -37,7 +38,7 @@
     "@wyw-in-js/vite": "^2.5.1",
     "baseline-browser-mapping": "^2.11.27",
     "globals": "^17.13.0",
-    "typescript": "~7.0.2",
+    "typescript": "~5.9.3",
     "typescript-eslint": "^8.71.1",
     "vite-plugin-checker": "^0.14.5"
   },

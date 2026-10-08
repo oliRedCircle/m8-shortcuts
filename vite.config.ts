@@ -61,9 +61,6 @@ export default defineConfig({
   plugins: [
     wyw({
       include: ['**/*.{ts,tsx}'],
-      babelOptions: {
-        presets: ['@babel/preset-typescript', '@babel/preset-react'],
-      },
     }),
     react(),
     checker({ overlay: { initialIsOpen: false, position: 'br' }, typescript: true, biome: { command: 'lint' } }),
