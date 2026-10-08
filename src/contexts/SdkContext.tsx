@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useRef, useState, type FC, type ReactNode } from 'react'
-import { createM8ClientSync, type M8Client } from '../sdk/client'
-import type { CursorPos, CursorRect } from '../sdk/types'
+import { createM8ClientSync, type CursorPos, type CursorRect, type M8Client } from '@yam8d/m8-sdk'
 
 type SdkState = {
   isConnected: boolean
@@ -31,6 +30,11 @@ const isEdit = (mask: number) => !!(mask & 0x01)
 const isPlay = (mask: number) => !!(mask & 0x08)
 
 const CONNECTION_TIMEOUT_MS = 3000
+
+// SystemInfos values are typed as string | number | boolean | undefined in the SDK —
+// coerce to a finite number with a fallback for the screen geometry fields.
+const toNumber = (value: string | number | boolean | undefined, fallback: number): number =>
+  typeof value === 'number' && Number.isFinite(value) ? value : fallback
 
 // Sets/clears the data-sdk-key attribute on <html> for instant CSS-driven key highlighting.
 // This bypasses React rendering entirely — zero re-renders on key events.
@@ -75,9 +79,9 @@ export const SdkProvider: FC<{ children: ReactNode }> = ({ children }) => {
         const initialCursor = client.state.cursorPos
         const initialRect = client.state.cursorRect
         const initialSelection = client.state.selectionMode
-        const initialScreenW = client.state.systemInfo?.screenWidth ?? 480
-        const initialScreenH = client.state.systemInfo?.screenHeight ?? 320
-        const initialRectOffset = client.state.systemInfo?.rectOffset ?? 0
+        const initialScreenW = toNumber(client.state.systemInfo?.screenWidth, 480)
+        const initialScreenH = toNumber(client.state.systemInfo?.screenHeight, 320)
+        const initialRectOffset = toNumber(client.state.systemInfo?.rectOffset, 0)
         setState({ isConnected: true, sdkViewName: initialView, cursorPos: initialCursor, cursorRect: initialRect, screenWidth: initialScreenW, screenHeight: initialScreenH, rectOffset: initialRectOffset })
         setSdkSelectionMode(initialSelection)
         setSdkConnected(true)

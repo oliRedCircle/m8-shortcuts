@@ -29,7 +29,8 @@ function resolveRef(
         description: overrides.description ?? template.description,
         level: overrides.level ?? template.level,
         prereqStates,
-        zones: overrides.zones,
+        // Zone resolution: per-screen override → template default → screen content area
+        zones: overrides.zones ?? template.zones ?? screen.defaultZones,
         media: {
             video: `/assets/activity/${mediaFolder}/${slug}.mp4`,
             eventsUrl: `/assets/activity/${mediaFolder}/${slug}.json`,

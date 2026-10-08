@@ -15,7 +15,7 @@ const fixSourceMaps = (): Plugin => {
         return
       }
       interval = setInterval(() => {
-        const nodeModulesPath = path.join(__dirname, 'node_modules', '.vite', 'deps')
+        const nodeModulesPath = path.join(import.meta.dirname, 'node_modules', '.vite', 'deps')
         if (fs.existsSync(nodeModulesPath)) {
           clearInterval(interval ?? 0)
           const files = fs.readdirSync(nodeModulesPath)

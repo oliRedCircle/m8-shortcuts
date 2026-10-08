@@ -1,5 +1,5 @@
 import { css } from '@linaria/core'
-import { type FC, useEffect, useState } from 'react'
+import { type FC, useEffect, useRef, useState } from 'react'
 import { style } from '../app/style/style'
 import type { GridZone } from '../data/schema'
 
@@ -23,6 +23,31 @@ const containerClass = css`
   > .video, > .image {
     position: absolute;
     z-index: -1;
+  }
+
+  > .progress-track {
+    position: absolute;
+    z-index: 0;
+    height: 2px;
+    border-radius: 1px;
+    background: rgba(255, 255, 255, 0.14);
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    > .progress-fill {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: rgba(255, 255, 255, 0.55);
+      transform-origin: left center;
+      transform: scaleX(0);
+    }
   }
 
   > .description {
@@ -82,6 +107,19 @@ const containerClass = css`
     //   fill-opacity: 0.3 !important;
       background-image: repeating-linear-gradient(315deg, #c9c9c947, #c9c9c947 10px, transparent 10px, transparent 20px);    
     }
+
+    /* Zone overlay: shown briefly at the beginning of the media, then hidden */
+    > .zone-overlay {
+      animation: zone-hint 2s linear forwards;
+      @keyframes zone-hint {
+        0%, 75% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    }
   }
 
 
@@ -99,12 +137,17 @@ const isRight = (frame: number) => !!(frame & 0b00000100)
 const isOpt = (frame: number) => !!(frame & 0b00000010)
 const isEdit = (frame: number) => !!(frame & 0b00000001)
 
-// M8 screen SVG area: origin (11.996, 12.103), size 115.2 × 76.8
-// 40×24 text grid → cell = 2.88 × 3.2 SVG units
-const SCREEN_X = 11.996
-const SCREEN_Y = 12.103
-const CELL_W = 115.42 / 40
-const CELL_H = 76.98 / 24
+// M8 screen: the rounded screen-background path (SCREEN_D) is the actual M8 screen outline.
+// Its bounding box: origin (11.676, 10.896), size 115.218 × 78.829.
+// 40×23 character grid (12×14 px cells of the 480×320 screen) → cell size in SVG units.
+const SCREEN_D =
+  'M126.894 13.008a2.112 2.112 0 0 0-2.112-2.112H13.788a2.112 2.112 0 0 0-2.112 2.112v74.605a2.114 2.114 0 0 0 2.112 2.112h110.994a2.11 2.11 0 0 0 2.112-2.112V13.008Z'
+const SCREEN_X = 11.676
+const SCREEN_Y = 10.896
+const SCREEN_W = 115.218
+const SCREEN_H = 78.829
+const CELL_W = (SCREEN_W * 12) / 480
+const CELL_H = (SCREEN_H * 14) / 320
 
 const SvgComponent: FC<{
   strokeColor: string
@@ -148,6 +191,9 @@ const SvgComponent: FC<{
   const [video, setVideo] = useState<HTMLVideoElement | null>(null)
   const [image, setImage] = useState<HTMLImageElement | null>(null)
   const [parent, setParent] = useState<HTMLDivElement | null>(null)
+  const progressTrackRef = useRef<HTMLDivElement | null>(null)
+  const progressFillRef = useRef<HTMLDivElement | null>(null)
+  const [progressVisible, setProgressVisible] = useState(false)
 
   const [buttonOpt, setButtonOpt] = useState<SVGPathElement | null>(null)
   const [buttonEdit, setButtonEdit] = useState<SVGPathElement | null>(null)
@@ -177,6 +223,15 @@ const SvgComponent: FC<{
       const right = screenPosition.right - parentPosition.right
 
       element.style = `top: ${top}px; bottom: ${bottom}px; left: ${left}px; right: ${right}px; width: ${screenPosition.width}px; height: ${screenPosition.height}px;`
+
+      // Keep the loop progress bar pinned to the bottom edge of the M8 screen
+      // (inset by 1px so it hugs the screen border without covering content).
+      const track = progressTrackRef.current
+      if (track) {
+        const barHeight = 2
+        const inset = 7
+        track.style = `top: ${top + screenPosition.height - barHeight + 1}px; left: ${left + inset}px; width: ${screenPosition.width - inset * 2}px; height: ${barHeight}px;`
+      }
       num = requestAnimationFrame(fn)
     }
     let num = requestAnimationFrame(fn)
@@ -238,11 +293,56 @@ const SvgComponent: FC<{
     return () => cancelAnimationFrame(num)
   }, [video, media, eventsData, buttonOpt, buttonEdit, buttonPlay, buttonUp, buttonRight, buttonShift, buttonLeft, buttonDown])
 
+  // Subtle loop progress: fills 0 → 1 over each video iteration so loops are visible.
+  // Uses direct DOM writes (no React state per frame) to stay cheap.
+  useEffect(() => {
+    if (!video || media.type !== 'video') {
+      setProgressVisible(false)
+      return
+    }
+
+    const fill = () => progressFillRef.current
+
+    const onLoaded = () => {
+      if (Number.isFinite(video.duration) && video.duration > 0) {
+        setProgressVisible(true)
+      }
+    }
+    if (Number.isFinite(video.duration) && video.duration > 0) {
+      setProgressVisible(true)
+    }
+    video.addEventListener('loadedmetadata', onLoaded)
+    video.addEventListener('durationchange', onLoaded)
+
+    let num = 0
+    const tick = () => {
+      const el = fill()
+      const duration = video.duration
+      if (el && Number.isFinite(duration) && duration > 0) {
+        const ratio = Math.min(1, Math.max(0, video.currentTime / duration))
+        el.style.transform = `scaleX(${ratio})`
+      }
+      num = requestAnimationFrame(tick)
+    }
+    num = requestAnimationFrame(tick)
+
+    return () => {
+      cancelAnimationFrame(num)
+      video.removeEventListener('loadedmetadata', onLoaded)
+      video.removeEventListener('durationchange', onLoaded)
+    }
+  }, [video, media])
+
   return (
     <div ref={setParent} className={containerClass}>
       <h2>{title}</h2>
-      {media.type === 'video' && <video ref={setVideo} src={media.video} muted autoPlay loop className="video" />}
+      {media.type === 'video' && <video ref={setVideo} src={media.video} muted autoPlay loop playsInline className="video" />}
       {media.type === 'image' && <img ref={setImage} src={media.img} className="image" />}
+      {media.type === 'video' && (
+        <div ref={progressTrackRef} className={`progress-track${progressVisible ? ' visible' : ''}`} aria-hidden="true">
+          <div ref={progressFillRef} className="progress-fill" />
+        </div>
+      )}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlSpace="preserve"
@@ -433,59 +533,68 @@ const SvgComponent: FC<{
             strokeWidth: '.3px',
           }}
         />
-        <path
-          className="screen"
-          ref={setScreenEdge}
-          d="M11.996 12.103h115.2v76.8h-115.2z"
-          style={{
-            fill: '#fa0202',
-            fillOpacity: 0,
-          }}
-        />
         <defs>
-          <pattern id="diagonalStripes" patternUnits="userSpaceOnUse" width="17" height="17" patternTransform="rotate(45)">
-            <rect width="8" height="20" fill="#ffaf013d" />
+          <clipPath id="screenClip">
+            <path d={SCREEN_D} />
+          </clipPath>
+          <pattern id="zoneStripes" patternUnits="userSpaceOnUse" width="2" height="2" patternTransform="rotate(45)">
+            <rect width="1" height="4" fill="#c9c9c947" />
           </pattern>
         </defs>
-        {zones &&
-
-          <path
-
-            d={
-              "M126.894 13.008a2.112 2.112 0 0 0-2.112-2.112H13.788a2.112 2.112 0 0 0-2.112 2.112v74.605a2.114 2.114 0 0 0 2.112 2.112h110.994a2.11 2.11 0 0 0 2.112-2.112V13.008Z" +
-
-              zones.map(zone =>
-                ` M${SCREEN_X + zone.x * CELL_W - 0.8} ${SCREEN_Y + zone.y * CELL_H + 0.5}` +
-                ` h${zone.w * CELL_W + 0.3}` +
-                ` v${zone.h * CELL_H}` +
-                ` h-${zone.w * CELL_W + 0.3} z`
-              ).join('')
-            }
-            fill="url(#diagonalStripes)"
-            fillRule="evenodd"
-            stroke={"#2bbe06"}
-            strokeWidth={'.3px'}
-            strokeOpacity={1}
-
-          />
-
-          //   zones.map((zone) => (
-          //   <rect
-          //     key={`z-${zone.x}-${zone.y}-${zone.w}-${zone.h}`}
-          //     x={SCREEN_X + zone.x * CELL_W - 0.8}
-          //     y={SCREEN_Y + zone.y * CELL_H + 0.5}
-          //     width={zone.w * CELL_W + 0.3}
-          //     height={zone.h * CELL_H}
-          //     fill="url(#diagonalStripes)"
-          // className='active-zone'
-          // fill={style.colors.teal.primary}
-          // fillOpacity={0.25}
-          // stroke={style.colors.teal.primary}
-          // strokeWidth={0.3}
-          // strokeOpacity={0.8}
-          //   />
-          // ))
-        }
+        {zones && zones.length > 0 && (
+          // Keyed on the media URL so the hint animation restarts only when the activity changes
+          <g className="zone-overlay" key={media.type === 'video' ? media.video : media.img}>
+            {/* Zebra covers the screen everywhere the shortcut is NOT effective;
+                the zones are clear cutouts in the zebra. */}
+            <path
+              d={
+                SCREEN_D +
+                zones.map((zone) => {
+                  const x = SCREEN_X + zone.x * CELL_W
+                  const y = SCREEN_Y + zone.y * CELL_H
+                  return ` M${x} ${y}h${zone.w * CELL_W}v${zone.h * CELL_H}h${-zone.w * CELL_W}z`
+                }).join('')
+              }
+              clipPath="url(#screenClip)"
+              fill="url(#zoneStripes)"
+              fillRule="evenodd"
+              stroke="#c9c9c9"
+              strokeWidth=".3px"
+              strokeOpacity={0.9}
+            />
+            {/* Zone labels are drawn outside the screen, each with a line pointing to its cutout */}
+            {/* {zones.map((zone, idx) => {
+              if (!zone.label) return null
+              const x = SCREEN_X + zone.x * CELL_W
+              const y = SCREEN_Y + zone.y * CELL_H
+              const w = zone.w * CELL_W
+              const h = zone.h * CELL_H
+              const labelX = Math.min(125, Math.max(14, x + w / 2))
+              const labelY = SCREEN_Y + 76.8 + 4.5 + idx * 5
+              return (
+                <g key={`z-${zone.x}-${zone.y}-${zone.w}-${zone.h}`}>
+                  <path
+                    d={`M${labelX} ${labelY - 2.4}L${x + w / 2} ${y + h}`}
+                    fill="none"
+                    stroke="#c9c9c9"
+                    strokeWidth=".2px"
+                    strokeOpacity={0.8}
+                  />
+                  <text
+                    x={labelX}
+                    y={labelY}
+                    fontSize="0.2"
+                    fill="#e8e8e8"
+                    fillOpacity={0.95}
+                    textAnchor="middle"
+                  >
+                    {zone.label}
+                  </text>
+                </g>
+              )
+            })} */}
+          </g>
+        )}
         {/* {cursorRect && (
           <rect
             x={SCREEN_X + cursorRect.x * (115.2 / screenWidth)}
@@ -500,7 +609,8 @@ const SvgComponent: FC<{
         )} */}
         <path
           className="screen-background"
-          d="M126.894 13.008a2.112 2.112 0 0 0-2.112-2.112H13.788a2.112 2.112 0 0 0-2.112 2.112v74.605a2.114 2.114 0 0 0 2.112 2.112h110.994a2.11 2.11 0 0 0 2.112-2.112V13.008Z"
+          ref={setScreenEdge}
+          d={SCREEN_D}
           style={{
             fill: '#000',
             fillRule: 'nonzero',

@@ -18,6 +18,7 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
         {
           "id": "continue-song",
           "media": "continue-play"
@@ -28,10 +29,6 @@
           "id": "clear-all-mute-solo",
           "media": "clear-mutes"
         },
-        "edit-small",
-        "edit-large",
-        "set-default",
-        "name-project",
         {
           "id": "snapshot-create",
           "media": "store-snapshot"
@@ -40,8 +37,54 @@
           "id": "snapshot-recall",
           "media": "recall-snapshot"
         },
-        "assign-midi",
-        "assign-touch"
+        "edit-large",
+        "edit-small",
+        "set-default",
+        {
+          "id": "name-project",
+          "zones": [
+            {
+              "x": 14,
+              "y": 13,
+              "w": 19,
+              "h": 1,
+              "label": "Name"
+            }
+          ]
+        },
+        {
+          "id": "assign-midi",
+          "zones": [
+            {
+              "x": 14,
+              "y": 5,
+              "w": 12,
+              "h": 2,
+              "label": "Tempo / transpose"
+            }
+          ]
+        },
+        {
+          "id": "assign-touch",
+          "zones": [
+            {
+              "x": 14,
+              "y": 5,
+              "w": 12,
+              "h": 2,
+              "label": "Tempo / transpose"
+            }
+          ]
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 31,
+          "h": 16,
+          "label": "Project settings"
+        }
       ]
     },
     {
@@ -52,7 +95,22 @@
       ],
       "description": "Configures mappings of incoming (through USB, TRS or internal MIDI) messages",
       "img": "/assets/screens/midi-mappings.png",
-      "activities": []
+      "activities": [
+        "navigate-views",
+        "exit",
+        "edit-large",
+        "edit-small",
+        "delete-mapping"
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 21,
+          "h": 17,
+          "label": "Mappings"
+        }
+      ]
     },
     {
       "id": "midi-settings",
@@ -62,7 +120,22 @@
       ],
       "description": "Configures general MIDI settings",
       "img": "/assets/screens/midi-settings.png",
-      "activities": []
+      "activities": [
+        "navigate-views",
+        "exit",
+        "edit-large",
+        "edit-small",
+        "delete-mapping"
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 30,
+          "h": 17,
+          "label": "MIDI settings"
+        }
+      ]
     },
     {
       "id": "file-browser",
@@ -74,10 +147,11 @@
       "categoryIds": [
         "system"
       ],
-      "description": "Loads a projects, samples and instrument",
+      "description": "Loads projects, samples and instruments.",
       "img": "/assets/screens/load-project.png",
       "mediaFolder": "fileBrowser",
       "activities": [
+        "navigate-views",
         {
           "id": "step-slow",
           "media": "navigate-slow"
@@ -90,10 +164,25 @@
           "id": "quick-top",
           "media": "go-top"
         },
+        {
+          "id": "exit",
+          "description": "Exits the file browser."
+        },
+        {
+          "id": "preview-file",
+          "media": "preview"
+        },
         "sort",
-        "preview",
-        "exit",
         "delete"
+      ],
+      "defaultZones": [
+        {
+          "x": 0,
+          "y": 5,
+          "w": 32,
+          "h": 11,
+          "label": "File list"
+        }
       ]
     },
     {
@@ -104,7 +193,26 @@
       ],
       "description": "Export sections, tracks (STEMS), or the entire song (MIXED) as a 16-bit 44.1kHz stereo wav file",
       "img": "/assets/screens/render-audio.png",
-      "activities": []
+      "activities": [
+        "navigate-views",
+        "exit",
+        "edit-large",
+        "edit-small",
+        {
+          "id": "set-default",
+          "name": "Delete / reset parameter",
+          "description": "Deletes / resets the selected parameter."
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 32,
+          "h": 17,
+          "label": "Render options"
+        }
+      ]
     },
     {
       "id": "song",
@@ -118,76 +226,15 @@
       "description": "Song screen",
       "img": "/assets/screens/song.png",
       "activities": [
+        "navigate-views",
         {
           "id": "move-slow",
-          "media": "navigate",
-          "zones": [
-            {
-              "x": 0,
-              "y": 0,
-              "w": 40,
-              "h": 24,
-              "label": "Song grid"
-            }
-          ]
+          "media": "navigate"
         },
         {
           "id": "move-fast",
-          "media": "navigate-quick",
-          "zones": [
-            {
-              "x": 0,
-              "y": 0,
-              "w": 40,
-              "h": 24,
-              "label": "Song grid"
-            }
-          ]
+          "media": "navigate-quick"
         },
-        "insert-new",
-        {
-          "id": "edit-large",
-          "description": "Edits a value in large increments (16 steps, the left, most significant byte)",
-          "level": 1,
-          "zones": [
-            {
-              "x": 4,
-              "y": 6,
-              "w": 23,
-              "h": 17,
-              "label": "Chain values"
-            }
-          ]
-        },
-        {
-          "id": "edit-small",
-          "description": "Edits a value in small increments (1 step)",
-          "level": 1,
-          "zones": [
-            {
-              "x": 4,
-              "y": 6,
-              "w": 23,
-              "h": 17,
-              "label": "Chain values"
-            }
-          ]
-        },
-        "enter-selection",
-        "edit-multiple",
-        "move-selection",
-        {
-          "id": "copy-value",
-          "media": "copy"
-        },
-        "cut",
-        {
-          "id": "paste-value",
-          "media": "paste"
-        },
-        "clone",
-        "deep-clone",
-        "move-track",
         "play",
         {
           "id": "loop-selection-tracks",
@@ -216,7 +263,39 @@
           "name": "Clear all mute and solos"
         },
         "live-mode",
+        "stop-track",
+        "insert-new",
+        {
+          "id": "insert-unused",
+          "name": "Insert unused Chain",
+          "description": "Inserts a new, unused chain into the current cell."
+        },
+        {
+          "id": "edit-large",
+          "description": "Edits a value in large increments (16 steps, the left, most significant byte)",
+          "level": 1
+        },
+        {
+          "id": "edit-small",
+          "description": "Edits a value in small increments (1 step)",
+          "level": 1
+        },
+        "edit-multiple",
+        "move-selection",
+        "move-track",
         "bookmark",
+        "enter-selection",
+        {
+          "id": "copy-value",
+          "media": "copy"
+        },
+        "cut",
+        {
+          "id": "paste-value",
+          "media": "paste"
+        },
+        "clone",
+        "deep-clone",
         {
           "id": "render-selection",
           "media": "quick-render"
@@ -224,6 +303,15 @@
         {
           "id": "show-track-time",
           "media": "track-time"
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 4,
+          "y": 6,
+          "w": 23,
+          "h": 16,
+          "label": "Track chains"
         }
       ]
     },
@@ -243,6 +331,7 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
         {
           "id": "navigate-chain",
           "media": "next-chain"
@@ -279,34 +368,58 @@
         "clear-mutes",
         "insert-new",
         {
-          "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
-          "level": 1
+          "id": "insert-unused",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Phrase"
+            }
+          ]
         },
         {
           "id": "edit-large",
           "description": "Edits a value at the cursor position in large steps.",
           "level": 1
         },
-        "insert-unused",
         {
-          "id": "cut",
-          "description": "Cuts out the value on the cursor or the entire selection."
+          "id": "edit-small",
+          "description": "Edits the value at the cursor position by one step.",
+          "level": 1
         },
         {
           "id": "enter-selection",
           "level": 2
         },
-        "copy",
+        {
+          "id": "copy-value",
+          "media": "copy",
+          "level": 2
+        },
+        {
+          "id": "cut",
+          "description": "Cuts out the value on the cursor or the entire selection."
+        },
         {
           "id": "paste-value",
           "media": "paste",
-          "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo.",
+          "description": "Pastes the copy buffer that was copied in selection mode.",
           "level": 2
         },
         {
           "id": "clone",
           "level": 1
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 3,
+          "y": 6,
+          "w": 5,
+          "h": 16,
+          "label": "Phrase / transpose"
         }
       ]
     },
@@ -326,6 +439,7 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
         {
           "id": "navigate-phrase",
           "media": "next-phrase"
@@ -366,10 +480,72 @@
         },
         "insert-new",
         "insert-note-off",
+        {
+          "id": "create-new-instrument",
+          "media": "new-instrument",
+          "zones": [
+            {
+              "x": 10,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Instrument"
+            }
+          ]
+        },
+        {
+          "id": "create-new-table",
+          "media": "new-table",
+          "zones": [
+            {
+              "x": 16,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX1 value"
+            },
+            {
+              "x": 22,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX2 value"
+            },
+            {
+              "x": 28,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX3 value"
+            }
+          ]
+        },
         "edit-large",
-        "edit-octave",
+        {
+          "id": "edit-octave",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 3,
+              "h": 16,
+              "label": "Note"
+            }
+          ]
+        },
         "edit-small",
-        "edit-note",
+        {
+          "id": "edit-note",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 3,
+              "h": 16,
+              "label": "Note"
+            }
+          ]
+        },
         {
           "id": "show-fx-help",
           "zones": [
@@ -377,37 +553,66 @@
               "x": 13,
               "y": 6,
               "w": 3,
-              "h": 17,
-              "label": "Chain values"
+              "h": 16,
+              "label": "FX1 command"
             },
             {
               "x": 19,
               "y": 6,
               "w": 3,
-              "h": 17,
-              "label": "Chain values"
+              "h": 16,
+              "label": "FX2 command"
             },
             {
               "x": 25,
               "y": 6,
               "w": 3,
-              "h": 17,
-              "label": "Chain values"
+              "h": 16,
+              "label": "FX3 command"
+            }
+          ]
+        },
+        "shift-selection",
+        {
+          "id": "fill-notes",
+          "media": "fill",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 3,
+              "h": 16,
+              "label": "Note"
             }
           ]
         },
         {
-          "id": "create-new-instrument",
-          "media": "new-instrument"
+          "id": "randomize-notes",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 3,
+              "h": 16,
+              "label": "Note"
+            }
+          ]
         },
         {
-          "id": "create-new-table",
-          "media": "new-table"
+          "id": "randomize-pattern",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 3,
+              "h": 16,
+              "label": "Note"
+            }
+          ]
         },
         {
-          "id": "clone",
-          "description": "When the cursor is on an instrument value, instrument command value (NXT) or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table.",
-          "level": 3
+          "id": "interpolate",
+          "media": "interpolate-values"
         },
         "enter-selection",
         {
@@ -423,16 +628,49 @@
           "media": "paste",
           "description": "When there are values in the clipboard, paste the selection and overwrites values."
         },
-        "shift-selection",
         {
-          "id": "fill-notes",
-          "media": "fill"
-        },
-        "randomize-notes",
-        "randomize-pattern",
+          "id": "clone",
+          "description": "When the cursor is on an instrument value, instrument command value (NXT) or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table.",
+          "level": 3,
+          "zones": [
+            {
+              "x": 10,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Instrument"
+            },
+            {
+              "x": 16,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX1 value"
+            },
+            {
+              "x": 22,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX2 value"
+            },
+            {
+              "x": 28,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX3 value"
+            }
+          ]
+        }
+      ],
+      "defaultZones": [
         {
-          "id": "interpolate",
-          "media": "interpolate-values"
+          "x": 3,
+          "y": 6,
+          "w": 27,
+          "h": 16,
+          "label": "Step values"
         }
       ]
     },
@@ -453,11 +691,12 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
+        "next-table",
         {
           "id": "quick-next-table",
           "media": "next-table-quick"
         },
-        "next-table",
         {
           "id": "play",
           "description": "Starts / stops playing phrase, repeats the same phrase endlessly."
@@ -479,9 +718,6 @@
           "media": "clear-mutes"
         },
         "insert-new",
-        "edit-large",
-        "edit-octave",
-        "edit-small",
         {
           "id": "create-new-instrument",
           "media": "new-instrument",
@@ -489,13 +725,62 @@
         },
         {
           "id": "create-new-table",
-          "media": "new-table"
+          "media": "new-table",
+          "zones": [
+            {
+              "x": 12,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX1 value"
+            },
+            {
+              "x": 18,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX2 value"
+            },
+            {
+              "x": 24,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX3 value"
+            }
+          ]
         },
+        "edit-large",
+        "edit-octave",
+        "edit-small",
         {
-          "id": "clone",
-          "description": "When the cursor is on an instrument command (NXT) value or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table.",
-          "level": 3
+          "id": "show-fx-help",
+          "zones": [
+            {
+              "x": 9,
+              "y": 6,
+              "w": 3,
+              "h": 16,
+              "label": "FX1 command"
+            },
+            {
+              "x": 15,
+              "y": 6,
+              "w": 3,
+              "h": 16,
+              "label": "FX2 command"
+            },
+            {
+              "x": 21,
+              "y": 6,
+              "w": 3,
+              "h": 16,
+              "label": "FX3 command"
+            }
+          ]
         },
+        "shift-selection",
+        "interpolate",
         "enter-selection",
         {
           "id": "copy-value",
@@ -510,9 +795,20 @@
           "media": "paste",
           "description": "When there are values in the clipboard, paste the selection and overwrites values."
         },
-        "shift-selection",
-        "show-fx-help",
-        "interpolate"
+        {
+          "id": "clone",
+          "description": "When the cursor is on an instrument command (NXT) value or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table.",
+          "level": 3
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 3,
+          "y": 6,
+          "w": 23,
+          "h": 16,
+          "label": "Table values"
+        }
       ]
     },
     {
@@ -531,11 +827,12 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
+        "next-entry",
         {
           "id": "next-quick-entry",
           "media": "next-entry-quick"
         },
-        "next-entry",
         {
           "id": "play",
           "description": "Plays / stops the current track without the other tracks."
@@ -573,11 +870,16 @@
           "id": "edit-multiple-quick",
           "media": "edit-multiple-fast"
         },
+        "interpolate",
         {
           "id": "enter-selection",
           "level": 2
         },
-        "copy",
+        {
+          "id": "copy-value",
+          "media": "copy",
+          "level": 2
+        },
         {
           "id": "cut",
           "description": "Cuts out the value on the cursor or the entire selection."
@@ -585,10 +887,18 @@
         {
           "id": "paste-value",
           "media": "paste",
-          "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo.",
+          "description": "Pastes the copy buffer that was copied in selection mode.",
           "level": 2
-        },
-        "interpolate"
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 3,
+          "y": 6,
+          "w": 13,
+          "h": 16,
+          "label": "Groove values"
+        }
       ]
     },
     {
@@ -608,6 +918,7 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
         {
           "id": "next-entry",
           "media": "next-scale",
@@ -643,20 +954,60 @@
           "media": "clear-mutes"
         },
         {
-          "id": "change-root-key",
-          "media": "edit-root-key"
-        },
-        "enable-key",
-        {
-          "id": "edit-small",
-          "description": "Edits the scale value (detuning offset) in small steps."
+          "id": "enable-key",
+          "zones": [
+            {
+              "x": 4,
+              "y": 7,
+              "w": 3,
+              "h": 12,
+              "label": "Enable"
+            }
+          ]
         },
         {
           "id": "edit-large",
           "description": "Edits the scale value (detuning offset) in large steps."
         },
+        {
+          "id": "edit-small",
+          "description": "Edits the scale value (detuning offset) in small steps."
+        },
+        {
+          "id": "change-root-key",
+          "media": "edit-root-key",
+          "zones": [
+            {
+              "x": 5,
+              "y": 5,
+              "w": 6,
+              "h": 2,
+              "label": "Root key"
+            }
+          ]
+        },
         "set-default",
-        "name-scale"
+        {
+          "id": "name-scale",
+          "zones": [
+            {
+              "x": 6,
+              "y": 20,
+              "w": 10,
+              "h": 1,
+              "label": "Name"
+            }
+          ]
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 15,
+          "h": 17,
+          "label": "Scale settings"
+        }
       ]
     },
     {
@@ -664,8 +1015,7 @@
       "name": "Instrument",
       "aliases": [
         "inst",
-        "loadinstrument",
-        "instrumentpool"
+        "loadinstrument"
       ],
       "categoryIds": [
         "instrument"
@@ -677,6 +1027,7 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
         "next-instrument",
         "next-instrument-quick",
         {
@@ -698,11 +1049,6 @@
         },
         "clear-mutes",
         {
-          "id": "preview",
-          "description": "Previews the instrument by triggering it once and keeping it on until either key is released.",
-          "name": "Preview Instrument"
-        },
-        {
           "id": "edit-large",
           "description": "Edits a value at the cursor position in large steps.",
           "level": 1
@@ -714,6 +1060,13 @@
         },
         "edit-touch",
         "set-default",
+        "undo-paste",
+        "randomize",
+        "hyper-copy-chord",
+        {
+          "id": "hyper-paste-value",
+          "media": "hyper-paste-chord"
+        },
         "copy",
         {
           "id": "paste-value",
@@ -721,36 +1074,146 @@
           "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo.",
           "level": 2
         },
-        "undo-paste",
-        "randomize",
         "fm-change-algo",
         "fm-change-operator",
         "fm-copy-operator",
         "fm-paste-operator",
         "hyper-add-note",
         "hyper-change-chord",
-        "hyper-copy-chord",
-        {
-          "id": "hyper-paste-value",
-          "media": "hyper-paste-chord"
-        },
         {
           "id": "hyper-remove-note",
           "media": "hyper-remove-chord"
         },
         {
+          "id": "preview",
+          "description": "Previews the instrument by triggering it once and keeping it on until either key is released.",
+          "name": "Preview Instrument"
+        },
+        {
+          "id": "name-instrument",
+          "zones": [
+            {
+              "x": 8,
+              "y": 6,
+              "w": 12,
+              "h": 1,
+              "label": "Name"
+            }
+          ]
+        },
+        {
+          "id": "assign-eq",
+          "zones": [
+            {
+              "x": 25,
+              "y": 7,
+              "w": 5,
+              "h": 1,
+              "label": "EQ slot"
+            }
+          ]
+        },
+        {
           "id": "assign-midi",
-          "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
-          "name": "Assign Touch-Axis to MIDI",
           "level": 2
         },
         {
           "id": "assign-touch",
-          "name": "Assign Touch-Axis as MIDI to Parameter",
+          "level": 2
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 31,
+          "h": 16,
+          "label": "Instrument parameters"
+        }
+      ]
+    },
+    {
+      "id": "instrument-pool",
+      "name": "Instrument Pool",
+      "aliases": [
+        "instrumentpool",
+        "instpool"
+      ],
+      "categoryIds": [
+        "instrument"
+      ],
+      "description": "Overview of all instrument slots in the song: load, copy, paste and reorder instruments and adjust their mixer settings",
+      "img": "/assets/screens/instrument-pool.png",
+      "activities": [
+        {
+          "id": "navigate-screen",
+          "media": "navigate"
+        },
+        "navigate-views",
+        {
+          "id": "next-instrument",
+          "name": "First / last instrument page",
+          "description": "Scrolls to the first or last instrument page."
+        },
+        {
+          "id": "next-instrument-quick",
+          "name": "Next / prev 8 instruments",
+          "description": "Navigates +/- 8 instruments."
+        },
+        {
+          "id": "continue-song",
+          "description": "Continues song at the chain cursor position with all tracks."
+        },
+        {
+          "id": "mute-track",
           "level": 2
         },
-        "name-instrument",
-        "assign-eq"
+        {
+          "id": "solo-track",
+          "level": 2
+        },
+        "clear-mutes",
+        {
+          "id": "edit-large",
+          "name": "Reorder / edit large",
+          "description": "On the instrument name column, moves the instrument up or down the list. On mixer-related columns, edits the value in large steps.",
+          "level": 1
+        },
+        {
+          "id": "edit-small",
+          "description": "On mixer-related columns, edits the value by one step.",
+          "level": 1
+        },
+        {
+          "id": "set-default",
+          "name": "Set default / clear",
+          "description": "Sets the selected value to its default. On the instrument name column, clears the instrument."
+        },
+        {
+          "id": "copy",
+          "name": "Copy value / instrument",
+          "description": "Copies the selected value. On the instrument name column, copies the selected instrument.",
+          "level": 2
+        },
+        {
+          "id": "paste-value",
+          "description": "Pastes the previously copied value or instrument.",
+          "level": 2
+        },
+        {
+          "id": "preview-file",
+          "name": "Preview / Stop",
+          "description": "If playback is stopped, previews the selected instrument, else stops playback."
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 0,
+          "y": 4,
+          "w": 32,
+          "h": 16,
+          "label": "Instrument list"
+        }
       ]
     },
     {
@@ -765,6 +1228,7 @@
       "description": "4 configurable modulation slots per instrument: AHD/ADSR/Drum envelopes, LFO, Trig Envelope, or Tracking",
       "img": "/assets/screens/mod-section.png",
       "activities": [
+        "navigate-views",
         "next-instrument",
         "next-instrument-quick",
         {
@@ -775,11 +1239,6 @@
           "id": "continue-song",
           "media": "continue-track",
           "description": "Continues song at the cursor position with the other tracks."
-        },
-        {
-          "id": "preview",
-          "description": "Previews the instrument by triggering it once.",
-          "name": "Preview Instrument"
         },
         {
           "id": "mute-track",
@@ -800,12 +1259,26 @@
           "description": "Edits the value at the cursor position by one step.",
           "level": 1
         },
+        "edit-touch",
         "set-default",
         "copy-mod-slot",
         "paste-mod-slot",
-        "edit-touch",
-        "assign-touch",
-        "assign-midi"
+        {
+          "id": "preview",
+          "description": "Previews the instrument by triggering it once.",
+          "name": "Preview Instrument"
+        },
+        "assign-midi",
+        "assign-touch"
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 29,
+          "h": 16,
+          "label": "Modulation slots"
+        }
       ]
     },
     {
@@ -820,6 +1293,7 @@
       "description": "Changes, cuts or slices a sample to save it on the SD card.",
       "img": "/assets/screens/sample-editor.png",
       "activities": [
+        "navigate-views",
         {
           "id": "move-small",
           "media": "move-slow"
@@ -838,13 +1312,28 @@
         },
         "move-touch",
         {
-          "id": "preview",
-          "description": "Previews the sample, which can be used for lazy chopping",
-          "name": "Preview Sample"
+          "id": "set-default",
+          "name": "Clear / reset value",
+          "description": "Clears / resets the selected value."
         },
         "lazy-chop",
         "record",
-        "delete-slice"
+        "delete-slice",
+        {
+          "id": "preview-file",
+          "media": "preview",
+          "description": "Previews the sample, which can be used for lazy chopping.",
+          "name": "Preview Sample"
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 4,
+          "w": 38,
+          "h": 18,
+          "label": "Sample editor"
+        }
       ]
     },
     {
@@ -857,7 +1346,7 @@
         "mixer",
         "instrument"
       ],
-      "description": "Setting equalizer per FX, per instrument or for the entire mix",
+      "description": "Configures the three send effects ModFX, delay and reverb, including their input and EQ settings",
       "img": "/assets/screens/fx-settings.png",
       "mediaFolder": "fx",
       "activities": [
@@ -865,6 +1354,7 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
         {
           "id": "continue-song",
           "media": "continue-track",
@@ -880,26 +1370,32 @@
         },
         "clear-mutes",
         {
-          "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
+          "id": "edit-large",
+          "description": "Edits a value at the cursor position in large steps.",
           "level": 1
         },
         {
-          "id": "edit-large",
-          "description": "Edits a value at the cursor position in large steps.",
+          "id": "edit-small",
+          "description": "Edits the value at the cursor position by one step.",
           "level": 1
         },
         "set-default",
         {
           "id": "assign-midi",
-          "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
-          "name": "Assign Touch-Axis to MIDI",
           "level": 2
         },
         {
           "id": "assign-touch",
-          "name": "Assign Touch-Axis as MIDI to Parameter",
           "level": 2
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 30,
+          "h": 17,
+          "label": "Effect settings"
         }
       ]
     },
@@ -919,13 +1415,46 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
         {
           "id": "enter-mix-scope",
-          "media": "edit-small"
+          "media": "enter-mix-scope",
+          "zones": [
+            {
+              "x": 23,
+              "y": 17,
+              "w": 7,
+              "h": 1,
+              "label": "MIX"
+            }
+          ]
         },
         {
           "id": "enter-limiter-scope",
-          "media": "edit-small"
+          "media": "enter-lim-scope",
+          "zones": [
+            {
+              "x": 23,
+              "y": 18,
+              "w": 7,
+              "h": 1,
+              "label": "LIM"
+            },
+            {
+              "x": 23,
+              "y": 19,
+              "w": 7,
+              "h": 1,
+              "label": "DJF"
+            },
+            {
+              "x": 23,
+              "y": 20,
+              "w": 7,
+              "h": 1,
+              "label": "OTT"
+            }
+          ]
         },
         "continue-song",
         {
@@ -940,18 +1469,27 @@
           "id": "clear-all-mute-solo",
           "media": "clear-mutes"
         },
-        "edit-small",
-        "edit-large",
-        "set-default",
         "snapshot-create",
         "snapshot-recall",
-        {
-          "id": "assign-touch",
-          "name": "Assign Touch-Axis as MIDI to Parameter"
-        },
+        "edit-large",
+        "edit-small",
+        "set-default",
         {
           "id": "assign-midi",
           "name": "Assign MIDI CC to Parameter"
+        },
+        {
+          "id": "assign-touch",
+          "name": "Assign Touch-Axis as MIDI to Parameter"
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 29,
+          "h": 17,
+          "label": "Mixer parameters"
         }
       ]
     },
@@ -972,10 +1510,11 @@
           "id": "navigate-screen",
           "media": "navigate"
         },
+        "navigate-views",
         {
           "id": "exit",
           "description": "Exits and returns to the screen it was entered from",
-          "name": "Exit EQ"
+          "name": "Exit Scope"
         },
         {
           "id": "continue-song",
@@ -993,8 +1532,8 @@
           "id": "clear-all-mute-solo",
           "media": "clear-mutes"
         },
-        "edit-small",
         "edit-large",
+        "edit-small",
         "set-default",
         {
           "id": "assign-midi",
@@ -1003,6 +1542,15 @@
         {
           "id": "assign-touch",
           "name": "Assign Touch-Axis as MIDI to Parameter"
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 32,
+          "h": 17,
+          "label": "Scope parameters"
         }
       ]
     },
@@ -1024,12 +1572,12 @@
       "img": "/assets/screens/eq-bank.png",
       "mediaFolder": "eq",
       "activities": [
+        "navigate-views",
         {
           "id": "exit",
           "description": "Exits and returns to the screen it was entered from",
           "name": "Exit EQ"
         },
-        "mute-eq",
         {
           "id": "continue-song",
           "media": "continue-track",
@@ -1045,13 +1593,13 @@
         },
         "clear-mutes",
         {
-          "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
+          "id": "edit-large",
+          "description": "Edits a value at the cursor position in large steps.",
           "level": 1
         },
         {
-          "id": "edit-large",
-          "description": "Edits a value at the cursor position in large steps.",
+          "id": "edit-small",
+          "description": "Edits the value at the cursor position by one step.",
           "level": 1
         },
         "set-default",
@@ -1059,19 +1607,26 @@
         {
           "id": "paste-value",
           "media": "paste",
-          "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo.",
+          "description": "Pastes the previously copied EQ bank onto the current EQ.",
+          "level": 2
+        },
+        "mute-eq",
+        {
+          "id": "assign-midi",
           "level": 2
         },
         {
           "id": "assign-touch",
-          "name": "Assign Touch-Axis as MIDI to Parameter",
           "level": 2
-        },
+        }
+      ],
+      "defaultZones": [
         {
-          "id": "assign-midi",
-          "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
-          "name": "Assign Touch-Axis to MIDI",
-          "level": 2
+          "x": 1,
+          "y": 5,
+          "w": 38,
+          "h": 17,
+          "label": "EQ parameters"
         }
       ]
     },
@@ -1087,6 +1642,7 @@
       "description": "System-wide settings: backlight, font, theme, metronome, USB audio routing, and more",
       "img": "/assets/screens/system-settings.png",
       "activities": [
+        "navigate-views",
         {
           "id": "edit-large",
           "description": "Edits a value at the cursor position in large steps.",
@@ -1098,6 +1654,15 @@
           "level": 1
         },
         "set-default"
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 28,
+          "h": 17,
+          "label": "System settings"
+        }
       ]
     },
     {
@@ -1109,6 +1674,7 @@
       "description": "Adjust brightness, font settings, interface colors, load and save preset themes",
       "img": "/assets/screens/theme-settings.png",
       "activities": [
+        "navigate-views",
         "exit",
         {
           "id": "edit-large",
@@ -1121,6 +1687,15 @@
           "level": 1
         },
         "set-default"
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 5,
+          "w": 28,
+          "h": 14,
+          "label": "Theme settings"
+        }
       ]
     },
     {
@@ -1132,6 +1707,7 @@
       "description": "View time statistics (play time, work time, battery life) and set file date/time",
       "img": "/assets/screens/time-stats.png",
       "activities": [
+        "navigate-views",
         "exit",
         {
           "id": "edit-large",
@@ -1142,6 +1718,15 @@
           "id": "edit-small",
           "description": "Edits the date/time value at the cursor position by one step.",
           "level": 1
+        }
+      ],
+      "defaultZones": [
+        {
+          "x": 1,
+          "y": 4,
+          "w": 30,
+          "h": 14,
+          "label": "Time / date"
         }
       ]
     }
@@ -1163,7 +1748,53 @@
         "right"
       ],
       "description": "Moves the cursor up or down, left or right",
-      "level": 1
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
+    },
+    {
+      "id": "navigate-views",
+      "name": "Navigate views",
+      "categoryIds": [
+        "navigation"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "up"
+        ],
+        "or",
+        [
+          "shift-hold",
+          "down"
+        ],
+        "or",
+        [
+          "shift-hold",
+          "left"
+        ],
+        "or",
+        [
+          "shift-hold",
+          "right"
+        ]
+      ],
+      "description": "Navigates between the M8 views.",
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "continue-song",
@@ -1173,13 +1804,22 @@
       ],
       "keypress": [
         "play",
+        "or",
         [
           "shift-hold",
           "play"
         ]
       ],
       "description": "Continues song at the cursor position.",
-      "level": 1
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "mute-track",
@@ -1225,7 +1865,15 @@
         ]
       ],
       "description": "Clears all mute and solos that are being held by any track.",
-      "level": 2
+      "level": 2,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "edit-small",
@@ -1244,7 +1892,7 @@
           "right-3x-not-first"
         ]
       ],
-      "description": "Edits a all values (notes, volume, instrument, fx command and fx value) in small increments.",
+      "description": "Edits all values (notes, volume, instrument, fx command and fx value) in small increments.",
       "level": 2
     },
     {
@@ -1314,7 +1962,15 @@
         ]
       ],
       "description": "Creates a song snapshot for temporarily storing the entire song to recall at a later point.",
-      "level": 1
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "snapshot-recall",
@@ -1329,24 +1985,32 @@
         ]
       ],
       "description": "Recall the song snapshot previously created.",
-      "level": 1
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "assign-midi",
-      "name": "Assign MIDI CC to Tempo",
+      "name": "Assign MIDI CC to Parameter",
       "categoryIds": [
         "misc"
       ],
       "keypress": [
-        "edit-hold",
+        "opt-hold",
         "midi"
       ],
-      "description": "Assign a MIDI CC to a selected parameter",
+      "description": "Assign a MIDI CC to the selected parameter. See the MIDI Mappings view.",
       "level": 1
     },
     {
       "id": "assign-touch",
-      "name": "Assign Touch-Axis as MIDI to Tempo",
+      "name": "Assign Touch-Axis as MIDI to Parameter",
       "categoryIds": [
         "misc"
       ],
@@ -1422,15 +2086,27 @@
     },
     {
       "id": "preview",
+      "name": "Preview Instrument",
+      "categoryIds": [
+        "misc"
+      ],
+      "keypress": [
+        "edit-hold",
+        "play"
+      ],
+      "description": "Previews the instrument by triggering it once and keeping it on until either key is released.",
+      "level": 1
+    },
+    {
+      "id": "preview-file",
       "name": "Preview",
       "categoryIds": [
         "misc"
       ],
       "keypress": [
-        "hold",
-        "play-hold"
+        "play"
       ],
-      "description": "Previews the song",
+      "description": "Previews the highlighted song, sample, or instrument.",
       "level": 1
     },
     {
@@ -1442,8 +2118,16 @@
       "keypress": [
         "opt"
       ],
-      "description": "Exits the file browser",
-      "level": 1
+      "description": "Exits the view and returns to the previous screen.",
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "delete",
@@ -1458,6 +2142,21 @@
         ]
       ],
       "description": "Deletes the highlighted file",
+      "level": 1
+    },
+    {
+      "id": "delete-mapping",
+      "name": "Delete Mapping",
+      "categoryIds": [
+        "edit"
+      ],
+      "keypress": [
+        [
+          "edit-hold",
+          "opt"
+        ]
+      ],
+      "description": "Deletes the selected mapping.",
       "level": 1
     },
     {
@@ -1505,8 +2204,7 @@
         "edit"
       ],
       "keypress": [
-        "2x",
-        "edit-2x"
+        "edit"
       ],
       "description": "Inserts a new value into an empty cell (--). The value is either the default value (00) or the last picked, edited or deleted value",
       "level": 1
@@ -1687,7 +2385,11 @@
         "after",
         [
           "edit-hold",
-          "left",
+          "left"
+        ],
+        "or",
+        [
+          "edit-hold",
           "right"
         ]
       ],
@@ -1706,7 +2408,15 @@
         ]
       ],
       "description": "Plays / stops all tracks. When in Live Mode, the current selection will be queued.",
-      "level": 1
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "loop-selection-tracks",
@@ -1716,6 +2426,7 @@
       ],
       "keypress": [
         "play",
+        "or",
         [
           "shift-hold",
           "play"
@@ -1723,6 +2434,21 @@
       ],
       "description": "Loops the selected chains with the remaining tracks looping the same chains.",
       "level": 1
+    },
+    {
+      "id": "stop-track",
+      "name": "Stop Track (Live Mode)",
+      "categoryIds": [
+        "play"
+      ],
+      "keypress": [
+        [
+          "shift-hold",
+          "play"
+        ]
+      ],
+      "description": "In Live Mode, stops a cued or playing track.",
+      "level": 2
     },
     {
       "id": "cue-row",
@@ -1772,7 +2498,15 @@
         ]
       ],
       "description": "Enters and exists into live mode. Live mode allows playing, cueing or stopping each track independently and from anywhere in the song structure. When a track is cued for playback via pressing [PLAY] the sequencer will wait for the currently playing chain to finish before activating the newly cued chain by default. You can change this behavior on the Project View under \"Live Quantize\".",
-      "level": 2
+      "level": 2,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "bookmark",
@@ -1838,7 +2572,15 @@
         ]
       ],
       "description": "Navigates to previous or next chain in the song",
-      "level": 3
+      "level": 3,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "navigate-track",
@@ -1858,7 +2600,15 @@
         ]
       ],
       "description": "Navigates to previous or next track",
-      "level": 3
+      "level": 3,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "loop",
@@ -1886,7 +2636,15 @@
         ]
       ],
       "description": "Clears all mute and solos that are being held by any track.",
-      "level": 2
+      "level": 2,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "insert-unused",
@@ -1934,7 +2692,15 @@
         ]
       ],
       "description": "Navigates to previous or next phrase in the chain. The triangle on the side indicates which phrase of a chain it is.",
-      "level": 1
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "edit-octave",
@@ -2130,17 +2896,25 @@
       ],
       "keypress": [
         [
-          "shift-hold",
+          "opt-hold",
           "up"
         ],
         "or",
         [
-          "shift-hold",
+          "opt-hold",
           "down"
         ]
       ],
       "description": "Moves 16 tables at a time.",
-      "level": 2
+      "level": 2,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "next-table",
@@ -2150,17 +2924,25 @@
       ],
       "keypress": [
         [
-          "shift-hold",
+          "opt-hold",
           "left"
         ],
         "or",
         [
-          "shift-hold",
+          "opt-hold",
           "right"
         ]
       ],
       "description": "Navigates to previous or next table",
-      "level": 2
+      "level": 2,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "next-quick-entry",
@@ -2180,7 +2962,15 @@
         ]
       ],
       "description": "Moves 16 grooves at a time.",
-      "level": 1
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "next-entry",
@@ -2200,7 +2990,15 @@
         ]
       ],
       "description": "Navigates to previous or next groove",
-      "level": 1
+      "level": 1,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "edit-related",
@@ -2321,7 +3119,15 @@
         ]
       ],
       "description": "Goes to the next or previous instrument",
-      "level": 2
+      "level": 2,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "next-instrument-quick",
@@ -2341,7 +3147,15 @@
         ]
       ],
       "description": "Steps in large increments to the next instrument (16 instruments)",
-      "level": 2
+      "level": 2,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "edit-touch",
@@ -2616,10 +3430,13 @@
       ],
       "keypress": [
         "edit",
-        "after",
-        "edit"
+        "or",
+        [
+          "shift-hold",
+          "right"
+        ]
       ],
-      "description": "With the cursor on the EQ, assigns an EQ bank to the instrument - which can be edited by pressing edit again",
+      "description": "With the cursor on the EQ slot, assigns an EQ bank to the instrument and opens the EQ Editor.",
       "level": 1
     },
     {
@@ -2679,7 +3496,7 @@
           "right"
         ]
       ],
-      "description": "Moves 4 steps based on the tempo of the project.",
+      "description": "Moves 1 step based on the tempo of the project.",
       "level": 1
     },
     {
@@ -2761,8 +3578,11 @@
       ],
       "keypress": [
         "edit",
-        "after",
-        "edit"
+        "or",
+        [
+          "shift-hold",
+          "right"
+        ]
       ],
       "description": "With the cursor on the MIX parameter, enters the limiter scope. It details how the limiter operates and allows for tuning the limiter parameters.",
       "level": 1
@@ -2775,11 +3595,37 @@
       ],
       "keypress": [
         "edit",
-        "after",
-        "edit"
+        "or",
+        [
+          "shift-hold",
+          "right"
+        ]
       ],
       "description": "With the cursor on the LIM, DJF or OTT parameter, enters the limiter scope. It details how the limiter operates and allows for tuning the limiter parameters.",
-      "level": 1
+      "level": 1,
+      "zones": [
+        {
+          "x": 23,
+          "y": 18,
+          "w": 7,
+          "h": 1,
+          "label": "LIM"
+        },
+        {
+          "x": 23,
+          "y": 19,
+          "w": 7,
+          "h": 1,
+          "label": "DJF"
+        },
+        {
+          "x": 23,
+          "y": 20,
+          "w": 7,
+          "h": 1,
+          "label": "OTT"
+        }
+      ]
     },
     {
       "id": "copy-mod-slot",

@@ -5,7 +5,7 @@ import { columnCategoryClass, columnClass } from '../app/style/selectionColumn'
 import { fragments } from '../app/style/fragments'
 import { style } from '../app/style/style'
 import type { Category, ResolvedActivity, ScreenData } from '../data/schema'
-import type { CursorPos } from '../sdk/types'
+import type { CursorPos } from '@yam8d/m8-sdk'
 import { useDataset } from '../hooks/useDataset'
 import type { Key } from '../components/Keypress'
 import { KeyCombo } from '../components/KeyCombo'
@@ -87,8 +87,24 @@ const entryClass = css`
     }
   }
 
-  /* Highlight visual — shared by both URL and SDK paths */
-  &[class*="keycolor-"],
+  /* Availability: active/inactive via opacity only — no white highlight.
+     Active = cursor in zone AND (not SM-gated OR selection mode on).
+     Otherwise inactive (dimmed). Colored (keycolor) highlight below is
+     reserved for pressed keys only. */
+  :root[data-sdk-connected="true"] & {
+    opacity: 0.3;
+  }
+  :root[data-sdk-connected="true"] &.cursor-zone:not(.has-sm) {
+    opacity: 1;
+  }
+  :root[data-sdk-connected="true"][data-selection-mode="true"] &.cursor-zone.has-sm {
+    opacity: 1;
+  }
+
+  /* Colored key highlight — shared by both URL and SDK paths.
+     Reserved for pressed keys; declared last (and with raised specificity for the URL
+     path) so key colors win over the neutral availability styles above. */
+  :root &&[class*="keycolor-"],
   :root[data-sdk-key="opt"] &.has-opt,
   :root[data-sdk-key="shift"] &.has-shift,
   :root[data-sdk-key="edit"] &.has-edit,
@@ -109,31 +125,6 @@ const entryClass = css`
   :root[data-sdk-key="shift"] &.has-shift { --keycolor: ${style.colors.raspberry[500]}; }
   :root[data-sdk-key="edit"]  &.has-edit  { --keycolor: ${style.colors.ochre.primary}; }
   :root[data-sdk-key="play"]  &.has-play  { --keycolor: ${style.colors.lime.primary}; }
-
-  /* Selection mode: highlight SM activities, dim others */
-  :root[data-selection-mode="true"] &.has-sm {
-    opacity: 1;
-    box-shadow: inset 3px 0 #3dba6a;
-    border-left: 2px solid #3dba6a;
-    background-image: linear-gradient(to right, ${style.themeColors.background.defaultHover} 0%, transparent 30%);
-    .prereq-badge { background-color: #3dba6a22; }
-  }
-  :root[data-selection-mode="true"] &:not(.has-sm) {
-    opacity: 0.3;
-  }
-
-  /* SDK connected but not in selection mode: dim SM activities */
-  :root[data-sdk-connected="true"]:not([data-selection-mode="true"]) &.has-sm {
-    opacity: 0.3;
-  }
-
-  /* Cursor zone: activity whose zone contains the M8 cursor position */
-  &.cursor-zone {
-    opacity: 1;
-    box-shadow: inset 3px 0 ${style.themeColors.text.important};
-    border-left: 2px solid ${style.themeColors.text.important};
-    background-image: linear-gradient(to right, ${style.themeColors.background.defaultHover} 0%, transparent 30%);
-  }
 `
 
 // const badgeClass = css`
