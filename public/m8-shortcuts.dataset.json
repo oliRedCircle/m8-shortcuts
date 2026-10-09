@@ -1965,7 +1965,7 @@
         "down"
       ],
       "description": "Navigates to the next or previous entry",
-      "level": 2
+      "level": 0
     },
     {
       "id": "step-fast",
@@ -1999,7 +1999,7 @@
         "right"
       ],
       "description": "Navigates immediately to the top or bottom of the screen",
-      "level": 2
+      "level": 0
     },
     {
       "id": "sort",
@@ -2107,7 +2107,7 @@
         "right"
       ],
       "description": "Moves the cursor on the screen",
-      "level": 2
+      "level": 0
     },
     {
       "id": "move-fast",
