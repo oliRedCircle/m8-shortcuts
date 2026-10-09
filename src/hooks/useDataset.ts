@@ -15,7 +15,7 @@ function resolveRef(
     stateById: Map<string, State>,
 ): ResolvedActivity {
     const mediaFolder = screen.mediaFolder ?? screen.id
-    const overrides: { name?: string; description?: string; level?: 1 | 2 | 3; prereqStateIds?: string[]; zones?: ResolvedActivity['zones'] } = typeof ref === 'string' ? {} : ref
+    const overrides: { name?: string; description?: string; level?: 0 | 1 | 2 | 3; prereqStateIds?: string[]; zones?: ResolvedActivity['zones'] } = typeof ref === 'string' ? {} : ref
     const slug = (typeof ref === 'string' ? undefined : ref.media) ?? template.id
 
     const prereqIds = overrides.prereqStateIds ?? template.prereqStateIds

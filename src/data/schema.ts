@@ -1,7 +1,12 @@
 // Schema types for dynamic dataset
 import type { Key } from '../components/Keypress'
 
-export type Level = 1 | 2 | 3
+// Scope-based shortcut level:
+// 0 = global (works identically in every view)
+// 1 = grid-common (shared by all grid views)
+// 2 = view/screen-level (only meaningful to some views)
+// 3 = cell/context (requires a cursor column/zone or a context like selection mode)
+export type Level = 0 | 1 | 2 | 3
 
 export interface AssetRef {
     id: string

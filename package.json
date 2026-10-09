@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "refactor:data": "node scripts/refactor-dataset.mjs"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@babel/helper-string-parser": "^8.0.6",

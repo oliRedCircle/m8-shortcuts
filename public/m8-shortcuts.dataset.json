@@ -248,14 +248,12 @@
         {
           "id": "mute-track",
           "description": "Mutes the current track. If you release option first, then you keep the track muted (or remove the mute, if it was being held).",
-          "name": "Mute current track",
-          "level": 2
+          "name": "Mute current track"
         },
         {
           "id": "solo-track",
           "description": "Solos the current track. If you release option first, then you keep the track solo (or remove the solo, if it was being held).",
-          "name": "Solo current track",
-          "level": 2
+          "name": "Solo current track"
         },
         {
           "id": "clear-all-mute-solo",
@@ -272,13 +270,11 @@
         },
         {
           "id": "edit-large",
-          "description": "Edits a value in large increments (16 steps, the left, most significant byte)",
-          "level": 1
+          "description": "Edits a value in large increments (16 steps, the left, most significant byte)"
         },
         {
           "id": "edit-small",
-          "description": "Edits a value in small increments (1 step)",
-          "level": 1
+          "description": "Edits a value in small increments (1 step)"
         },
         "edit-multiple",
         "move-selection",
@@ -358,12 +354,10 @@
           "media": "loop-track"
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         "clear-mutes",
         "insert-new",
@@ -381,22 +375,18 @@
         },
         {
           "id": "edit-large",
-          "description": "Edits a value at the cursor position in large steps.",
-          "level": 1
+          "description": "Edits a value at the cursor position in large steps."
         },
         {
           "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
-          "level": 1
+          "description": "Edits the value at the cursor position by one step."
         },
         {
-          "id": "enter-selection",
-          "level": 2
+          "id": "enter-selection"
         },
         {
           "id": "copy-value",
-          "media": "copy",
-          "level": 2
+          "media": "copy"
         },
         {
           "id": "cut",
@@ -405,12 +395,10 @@
         {
           "id": "paste-value",
           "media": "paste",
-          "description": "Pastes the copy buffer that was copied in selection mode.",
-          "level": 2
+          "description": "Pastes the copy buffer that was copied in selection mode."
         },
         {
-          "id": "clone",
-          "level": 1
+          "id": "clone"
         }
       ],
       "defaultZones": [
@@ -446,8 +434,7 @@
         },
         {
           "id": "navigate-track",
-          "media": "next-track",
-          "level": 1
+          "media": "next-track"
         },
         {
           "id": "play",
@@ -467,12 +454,10 @@
           "description": "Loops the selected steps with the remaining tracks looping the same steps."
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         {
           "id": "clear-all-mute-solo",
@@ -631,7 +616,6 @@
         {
           "id": "clone",
           "description": "When the cursor is on an instrument value, instrument command value (NXT) or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table.",
-          "level": 3,
           "zones": [
             {
               "x": 10,
@@ -706,12 +690,10 @@
           "media": "continue-play"
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         {
           "id": "clear-all-mute-solo",
@@ -797,8 +779,7 @@
         },
         {
           "id": "clone",
-          "description": "When the cursor is on an instrument command (NXT) value or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table.",
-          "level": 3
+          "description": "When the cursor is on an instrument command (NXT) value or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table."
         }
       ],
       "defaultZones": [
@@ -843,19 +824,16 @@
           "description": "Continues song at the cursor position with the other tracks."
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         "clear-mutes",
         "insert-new",
         {
           "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
-          "level": 1
+          "description": "Edits the value at the cursor position by one step."
         },
         {
           "id": "edit-related",
@@ -872,13 +850,11 @@
         },
         "interpolate",
         {
-          "id": "enter-selection",
-          "level": 2
+          "id": "enter-selection"
         },
         {
           "id": "copy-value",
-          "media": "copy",
-          "level": 2
+          "media": "copy"
         },
         {
           "id": "cut",
@@ -887,8 +863,7 @@
         {
           "id": "paste-value",
           "media": "paste",
-          "description": "Pastes the copy buffer that was copied in selection mode.",
-          "level": 2
+          "description": "Pastes the copy buffer that was copied in selection mode."
         }
       ],
       "defaultZones": [
@@ -929,8 +904,7 @@
           "id": "next-quick-entry",
           "media": "next-scale-quick",
           "description": "Moves to the first or last scale",
-          "name": "First / last scale",
-          "level": 2
+          "name": "First / last scale"
         },
         {
           "id": "play",
@@ -942,12 +916,10 @@
           "description": "Continues song at the chain cursor position with all tracks."
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         {
           "id": "clear-all-mute-solo",
@@ -1040,23 +1012,19 @@
           "description": "Continues song at the cursor position with the other tracks."
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         "clear-mutes",
         {
           "id": "edit-large",
-          "description": "Edits a value at the cursor position in large steps.",
-          "level": 1
+          "description": "Edits a value at the cursor position in large steps."
         },
         {
           "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
-          "level": 1
+          "description": "Edits the value at the cursor position by one step."
         },
         "edit-touch",
         "set-default",
@@ -1071,8 +1039,7 @@
         {
           "id": "paste-value",
           "media": "paste",
-          "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo.",
-          "level": 2
+          "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo."
         },
         "fm-change-algo",
         "fm-change-operator",
@@ -1114,12 +1081,10 @@
           ]
         },
         {
-          "id": "assign-midi",
-          "level": 2
+          "id": "assign-midi"
         },
         {
-          "id": "assign-touch",
-          "level": 2
+          "id": "assign-touch"
         }
       ],
       "defaultZones": [
@@ -1165,24 +1130,20 @@
           "description": "Continues song at the chain cursor position with all tracks."
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         "clear-mutes",
         {
           "id": "edit-large",
           "name": "Reorder / edit large",
-          "description": "On the instrument name column, moves the instrument up or down the list. On mixer-related columns, edits the value in large steps.",
-          "level": 1
+          "description": "On the instrument name column, moves the instrument up or down the list. On mixer-related columns, edits the value in large steps."
         },
         {
           "id": "edit-small",
-          "description": "On mixer-related columns, edits the value by one step.",
-          "level": 1
+          "description": "On mixer-related columns, edits the value by one step."
         },
         {
           "id": "set-default",
@@ -1192,13 +1153,11 @@
         {
           "id": "copy",
           "name": "Copy value / instrument",
-          "description": "Copies the selected value. On the instrument name column, copies the selected instrument.",
-          "level": 2
+          "description": "Copies the selected value. On the instrument name column, copies the selected instrument."
         },
         {
           "id": "paste-value",
-          "description": "Pastes the previously copied value or instrument.",
-          "level": 2
+          "description": "Pastes the previously copied value or instrument."
         },
         {
           "id": "preview-file",
@@ -1241,23 +1200,19 @@
           "description": "Continues song at the cursor position with the other tracks."
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         "clear-mutes",
         {
           "id": "edit-large",
-          "description": "Edits a value at the cursor position in large steps.",
-          "level": 1
+          "description": "Edits a value at the cursor position in large steps."
         },
         {
           "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
-          "level": 1
+          "description": "Edits the value at the cursor position by one step."
         },
         "edit-touch",
         "set-default",
@@ -1361,32 +1316,26 @@
           "description": "Continues song at the cursor position with the other tracks."
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         "clear-mutes",
         {
           "id": "edit-large",
-          "description": "Edits a value at the cursor position in large steps.",
-          "level": 1
+          "description": "Edits a value at the cursor position in large steps."
         },
         {
           "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
-          "level": 1
+          "description": "Edits the value at the cursor position by one step."
         },
         "set-default",
         {
-          "id": "assign-midi",
-          "level": 2
+          "id": "assign-midi"
         },
         {
-          "id": "assign-touch",
-          "level": 2
+          "id": "assign-touch"
         }
       ],
       "defaultZones": [
@@ -1458,12 +1407,10 @@
         },
         "continue-song",
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         {
           "id": "clear-all-mute-solo",
@@ -1521,12 +1468,10 @@
           "media": "continue-play"
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         {
           "id": "clear-all-mute-solo",
@@ -1584,40 +1529,33 @@
           "description": "Continues song at the cursor position with the other tracks."
         },
         {
-          "id": "mute-track",
-          "level": 2
+          "id": "mute-track"
         },
         {
-          "id": "solo-track",
-          "level": 2
+          "id": "solo-track"
         },
         "clear-mutes",
         {
           "id": "edit-large",
-          "description": "Edits a value at the cursor position in large steps.",
-          "level": 1
+          "description": "Edits a value at the cursor position in large steps."
         },
         {
           "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
-          "level": 1
+          "description": "Edits the value at the cursor position by one step."
         },
         "set-default",
         "copy",
         {
           "id": "paste-value",
           "media": "paste",
-          "description": "Pastes the previously copied EQ bank onto the current EQ.",
-          "level": 2
+          "description": "Pastes the previously copied EQ bank onto the current EQ."
         },
         "mute-eq",
         {
-          "id": "assign-midi",
-          "level": 2
+          "id": "assign-midi"
         },
         {
-          "id": "assign-touch",
-          "level": 2
+          "id": "assign-touch"
         }
       ],
       "defaultZones": [
@@ -1645,13 +1583,11 @@
         "navigate-views",
         {
           "id": "edit-large",
-          "description": "Edits a value at the cursor position in large steps.",
-          "level": 1
+          "description": "Edits a value at the cursor position in large steps."
         },
         {
           "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
-          "level": 1
+          "description": "Edits the value at the cursor position by one step."
         },
         "set-default"
       ],
@@ -1678,13 +1614,11 @@
         "exit",
         {
           "id": "edit-large",
-          "description": "Edits a value at the cursor position in large steps.",
-          "level": 1
+          "description": "Edits a value at the cursor position in large steps."
         },
         {
           "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step.",
-          "level": 1
+          "description": "Edits the value at the cursor position by one step."
         },
         "set-default"
       ],
@@ -1711,13 +1645,11 @@
         "exit",
         {
           "id": "edit-large",
-          "description": "Edits the date/time value at the cursor position in large steps.",
-          "level": 1
+          "description": "Edits the date/time value at the cursor position in large steps."
         },
         {
           "id": "edit-small",
-          "description": "Edits the date/time value at the cursor position by one step.",
-          "level": 1
+          "description": "Edits the date/time value at the cursor position by one step."
         }
       ],
       "defaultZones": [
@@ -1748,7 +1680,7 @@
         "right"
       ],
       "description": "Moves the cursor up or down, left or right",
-      "level": 1,
+      "level": 0,
       "zones": [
         {
           "x": 0,
@@ -1786,7 +1718,7 @@
         ]
       ],
       "description": "Navigates between the M8 views.",
-      "level": 1,
+      "level": 0,
       "zones": [
         {
           "x": 0,
@@ -1811,7 +1743,7 @@
         ]
       ],
       "description": "Continues song at the cursor position.",
-      "level": 1,
+      "level": 0,
       "zones": [
         {
           "x": 0,
@@ -1834,7 +1766,7 @@
         ]
       ],
       "description": "Mute current track - if you release option first, holds the mute",
-      "level": 1
+      "level": 0
     },
     {
       "id": "solo-track",
@@ -1849,7 +1781,7 @@
         ]
       ],
       "description": "Solo current track, release option first to hold the solo.",
-      "level": 1
+      "level": 0
     },
     {
       "id": "clear-all-mute-solo",
@@ -1865,7 +1797,7 @@
         ]
       ],
       "description": "Clears all mute and solos that are being held by any track.",
-      "level": 2,
+      "level": 1,
       "zones": [
         {
           "x": 0,
@@ -1893,7 +1825,7 @@
         ]
       ],
       "description": "Edits all values (notes, volume, instrument, fx command and fx value) in small increments.",
-      "level": 2
+      "level": 1
     },
     {
       "id": "edit-large",
@@ -1913,7 +1845,7 @@
         ]
       ],
       "description": "Edits a volume, instrument number or FX value in large increments (16 steps, the left, most significant byte)",
-      "level": 2
+      "level": 1
     },
     {
       "id": "set-default",
@@ -1928,7 +1860,7 @@
         ]
       ],
       "description": "Sets the default value for the highlighted setting",
-      "level": 1
+      "level": 0
     },
     {
       "id": "name-project",
@@ -1962,7 +1894,7 @@
         ]
       ],
       "description": "Creates a song snapshot for temporarily storing the entire song to recall at a later point.",
-      "level": 1,
+      "level": 0,
       "zones": [
         {
           "x": 0,
@@ -1985,7 +1917,7 @@
         ]
       ],
       "description": "Recall the song snapshot previously created.",
-      "level": 1,
+      "level": 0,
       "zones": [
         {
           "x": 0,
@@ -2006,7 +1938,7 @@
         "midi"
       ],
       "description": "Assign a MIDI CC to the selected parameter. See the MIDI Mappings view.",
-      "level": 1
+      "level": 0
     },
     {
       "id": "assign-touch",
@@ -2019,7 +1951,7 @@
         "touch"
       ],
       "description": "Assign the touchscreen axis to the selected parameter on any value with a visual slider. This can be leveraged to create assignments, that can be reassigned for internal MIDI.",
-      "level": 1
+      "level": 0
     },
     {
       "id": "step-slow",
@@ -2033,7 +1965,7 @@
         "down"
       ],
       "description": "Navigates to the next or previous entry",
-      "level": 1
+      "level": 2
     },
     {
       "id": "step-fast",
@@ -2053,7 +1985,7 @@
         ]
       ],
       "description": "Skips over 8 entries in the list",
-      "level": 1
+      "level": 2
     },
     {
       "id": "quick-top",
@@ -2067,7 +1999,7 @@
         "right"
       ],
       "description": "Navigates immediately to the top or bottom of the screen",
-      "level": 1
+      "level": 2
     },
     {
       "id": "sort",
@@ -2082,7 +2014,7 @@
         ]
       ],
       "description": "Sorts the directory in lexographic order (by incrementing number and alphabet)",
-      "level": 1
+      "level": 2
     },
     {
       "id": "preview",
@@ -2095,7 +2027,7 @@
         "play"
       ],
       "description": "Previews the instrument by triggering it once and keeping it on until either key is released.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "preview-file",
@@ -2107,7 +2039,7 @@
         "play"
       ],
       "description": "Previews the highlighted song, sample, or instrument.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "exit",
@@ -2119,7 +2051,7 @@
         "opt"
       ],
       "description": "Exits the view and returns to the previous screen.",
-      "level": 1,
+      "level": 0,
       "zones": [
         {
           "x": 0,
@@ -2142,7 +2074,7 @@
         ]
       ],
       "description": "Deletes the highlighted file",
-      "level": 1
+      "level": 2
     },
     {
       "id": "delete-mapping",
@@ -2157,7 +2089,7 @@
         ]
       ],
       "description": "Deletes the selected mapping.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "move-slow",
@@ -2175,7 +2107,7 @@
         "right"
       ],
       "description": "Moves the cursor on the screen",
-      "level": 1
+      "level": 2
     },
     {
       "id": "move-fast",
@@ -2195,7 +2127,7 @@
         ]
       ],
       "description": "Moves / scrolls the cursor 16 rows up or down",
-      "level": 1
+      "level": 2
     },
     {
       "id": "insert-new",
@@ -2222,7 +2154,7 @@
         ]
       ],
       "description": "On an empty note cell (---) in the phrase view, inserts a note-off event to stop a sustained note.",
-      "level": 2
+      "level": 3
     },
     {
       "id": "edit-multiple",
@@ -2242,7 +2174,7 @@
         ]
       ],
       "description": "Edits the current selection by incrementing or decrementing the value by one. Only works when a single row is selected.",
-      "level": 2
+      "level": 1
     },
     {
       "id": "enter-selection",
@@ -2277,7 +2209,7 @@
         ]
       ],
       "description": "Moves the selection up or down",
-      "level": 2,
+      "level": 1,
       "prereqStateIds": [
         "select-mode"
       ]
@@ -2347,7 +2279,7 @@
         ]
       ],
       "description": "Clones the selected chains into new chains, keeping the phrase numbers.",
-      "level": 2,
+      "level": 1,
       "prereqStateIds": [
         "select-mode"
       ]
@@ -2408,7 +2340,7 @@
         ]
       ],
       "description": "Plays / stops all tracks. When in Live Mode, the current selection will be queued.",
-      "level": 1,
+      "level": 0,
       "zones": [
         {
           "x": 0,
@@ -2433,7 +2365,7 @@
         ]
       ],
       "description": "Loops the selected chains with the remaining tracks looping the same chains.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "stop-track",
@@ -2463,7 +2395,7 @@
         ]
       ],
       "description": "Cue the selected song row for playback, regardless of Live Mode.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "solo-tracks",
@@ -2519,7 +2451,7 @@
         "opt-3x"
       ],
       "description": "Bookmarks the chain at the cursor. If the chain is already bookmarked, removes the bookmark.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "render-selection",
@@ -2552,7 +2484,7 @@
         "opt-hold"
       ],
       "description": "Shows the track time of that song island to the cursor. This only works when the song is currently not playing",
-      "level": 1
+      "level": 2
     },
     {
       "id": "navigate-chain",
@@ -2572,7 +2504,7 @@
         ]
       ],
       "description": "Navigates to previous or next chain in the song",
-      "level": 3,
+      "level": 2,
       "zones": [
         {
           "x": 0,
@@ -2600,7 +2532,7 @@
         ]
       ],
       "description": "Navigates to previous or next track",
-      "level": 3,
+      "level": 2,
       "zones": [
         {
           "x": 0,
@@ -2620,7 +2552,7 @@
         "play"
       ],
       "description": "When a few chains are currently selected, loops these chains.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "clear-mutes",
@@ -2636,7 +2568,7 @@
         ]
       ],
       "description": "Clears all mute and solos that are being held by any track.",
-      "level": 2,
+      "level": 1,
       "zones": [
         {
           "x": 0,
@@ -2657,7 +2589,7 @@
         "edit-2x"
       ],
       "description": "Inserts a new, unused phrase into the current cell.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "copy",
@@ -2672,7 +2604,7 @@
         ]
       ],
       "description": "When one or more values are selected, copies the selection into the clipboard",
-      "level": 2
+      "level": 1
     },
     {
       "id": "navigate-phrase",
@@ -2692,7 +2624,7 @@
         ]
       ],
       "description": "Navigates to previous or next phrase in the chain. The triangle on the side indicates which phrase of a chain it is.",
-      "level": 1,
+      "level": 2,
       "zones": [
         {
           "x": 0,
@@ -2720,7 +2652,7 @@
         ]
       ],
       "description": "With the cursor on the note, changes the octave on the note.",
-      "level": 2
+      "level": 3
     },
     {
       "id": "edit-note",
@@ -2740,7 +2672,7 @@
         ]
       ],
       "description": "With the cursor on the note, changes the note based on the scale of that track.",
-      "level": 2
+      "level": 3
     },
     {
       "id": "show-fx-help",
@@ -2760,7 +2692,7 @@
         ]
       ],
       "description": "With the cursor on an FX row, shows the effect help and sections.",
-      "level": 2
+      "level": 3
     },
     {
       "id": "create-new-instrument",
@@ -2773,7 +2705,7 @@
         "edit-2x"
       ],
       "description": "When the cursor is on an instrument row or the NXT command, assigns a new instrument with an unused slot.",
-      "level": 1
+      "level": 3
     },
     {
       "id": "create-new-table",
@@ -2786,7 +2718,7 @@
         "edit-2x"
       ],
       "description": "When the cursor is on an FX Value of TBL, TBX, GRV or GGR, assigns an unassigned table number.",
-      "level": 1
+      "level": 3
     },
     {
       "id": "shift-selection",
@@ -2806,7 +2738,7 @@
         ]
       ],
       "description": "Shifts the selection up or down.",
-      "level": 2,
+      "level": 1,
       "prereqStateIds": [
         "select-mode"
       ]
@@ -2824,7 +2756,7 @@
         ]
       ],
       "description": "When the selection includes notes, cycles through fill mode options to fill the selection with notes.",
-      "level": 2,
+      "level": 3,
       "prereqStateIds": [
         "select-mode"
       ]
@@ -2847,7 +2779,7 @@
         ]
       ],
       "description": "When the selection includes notes, randomizes the note value up or down.",
-      "level": 2,
+      "level": 3,
       "prereqStateIds": [
         "select-mode"
       ]
@@ -2865,7 +2797,7 @@
         ]
       ],
       "description": "When the selection includes notes, randomizes note triggers (on/off).",
-      "level": 2,
+      "level": 3,
       "prereqStateIds": [
         "select-mode"
       ]
@@ -2883,7 +2815,7 @@
         ]
       ],
       "description": "With a single column of values selected, interpolates between the first and last value in the selection. Works for FX columns when rows share the same FX command.",
-      "level": 2,
+      "level": 1,
       "prereqStateIds": [
         "select-mode"
       ]
@@ -2962,7 +2894,7 @@
         ]
       ],
       "description": "Moves 16 grooves at a time.",
-      "level": 1,
+      "level": 2,
       "zones": [
         {
           "x": 0,
@@ -2990,7 +2922,7 @@
         ]
       ],
       "description": "Navigates to previous or next groove",
-      "level": 1,
+      "level": 2,
       "zones": [
         {
           "x": 0,
@@ -3018,7 +2950,7 @@
         ]
       ],
       "description": "Increments or decrements the current value with the next adjacent value, keeping the total tick number even. This helps in making swings without increasing the total ticks of a groove.",
-      "level": 2
+      "level": 1
     },
     {
       "id": "edit-multiple-quick",
@@ -3038,7 +2970,7 @@
         ]
       ],
       "description": "Increments or decrements the selection in large (16) steps",
-      "level": 2
+      "level": 1
     },
     {
       "id": "change-root-key",
@@ -3080,7 +3012,7 @@
         "edit"
       ],
       "description": "When the cursor is on the enable column, enables or disables the key of that row",
-      "level": 1
+      "level": 3
     },
     {
       "id": "name-scale",
@@ -3168,7 +3100,7 @@
         "touch"
       ],
       "description": "Edits the selected parameter by horizontal sliding",
-      "level": 1
+      "level": 2
     },
     {
       "id": "undo-paste",
@@ -3281,7 +3213,7 @@
         ]
       ],
       "description": "Copies the selected FM operator to be pasted into another operator slot",
-      "level": 1
+      "level": 3
     },
     {
       "id": "fm-paste-operator",
@@ -3296,7 +3228,7 @@
         ]
       ],
       "description": "Pastes a prior copied FM operator into the current hovered column.",
-      "level": 1
+      "level": 3
     },
     {
       "id": "hyper-add-note",
@@ -3371,7 +3303,7 @@
         ]
       ],
       "description": "With the cursor on the chord, copies the chord into the clipboard",
-      "level": 1
+      "level": 3
     },
     {
       "id": "hyper-paste-value",
@@ -3386,7 +3318,7 @@
         ]
       ],
       "description": "With the cursor on the chord, pastes the chord from the clipboard.",
-      "level": 1
+      "level": 3
     },
     {
       "id": "hyper-remove-note",
@@ -3401,7 +3333,7 @@
         ]
       ],
       "description": "With the cursor on a hypersynth note, removes the note from the chord.",
-      "level": 1
+      "level": 3
     },
     {
       "id": "name-instrument",
@@ -3437,7 +3369,7 @@
         ]
       ],
       "description": "With the cursor on the EQ slot, assigns an EQ bank to the instrument and opens the EQ Editor.",
-      "level": 1
+      "level": 3
     },
     {
       "id": "move-small",
@@ -3457,7 +3389,7 @@
         ]
       ],
       "description": "Moves the hovered marker slowly by time, independent from phrase length.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "move-large",
@@ -3477,7 +3409,7 @@
         ]
       ],
       "description": "Moves the hovered marker quickly by time, independent from phrase length.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "move-small-steps",
@@ -3497,7 +3429,7 @@
         ]
       ],
       "description": "Moves 1 step based on the tempo of the project.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "move-large-steps",
@@ -3517,7 +3449,7 @@
         ]
       ],
       "description": "Moves 4 steps based on the tempo of the project.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "move-touch",
@@ -3530,7 +3462,7 @@
         "touch"
       ],
       "description": "Moves the selected marker to the position where you touch the screen.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "lazy-chop",
@@ -3544,7 +3476,7 @@
         "edit"
       ],
       "description": "Inserts slice markers at the play head while previewing the sample.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "record",
@@ -3556,7 +3488,7 @@
         "edit"
       ],
       "description": "Records a sample. Use the ARM to set a minimum threshold before a recording starts.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "delete-slice",
@@ -3568,7 +3500,7 @@
         "edit"
       ],
       "description": "Delete a slice.",
-      "level": 1
+      "level": 2
     },
     {
       "id": "enter-mix-scope",
@@ -3585,7 +3517,7 @@
         ]
       ],
       "description": "With the cursor on the MIX parameter, enters the limiter scope. It details how the limiter operates and allows for tuning the limiter parameters.",
-      "level": 1
+      "level": 3
     },
     {
       "id": "enter-limiter-scope",
@@ -3602,7 +3534,7 @@
         ]
       ],
       "description": "With the cursor on the LIM, DJF or OTT parameter, enters the limiter scope. It details how the limiter operates and allows for tuning the limiter parameters.",
-      "level": 1,
+      "level": 3,
       "zones": [
         {
           "x": 23,
@@ -3668,7 +3600,7 @@
         "edit-2x"
       ],
       "description": "Enables / disables the current EQ",
-      "level": 1
+      "level": 2
     }
   ],
   "categories": [

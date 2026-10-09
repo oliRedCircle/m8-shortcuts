@@ -23,7 +23,7 @@ export const useAppQuery = (): { key?: string; levels: Set<number>; mode?: 'min'
   if (levelsParam) {
     for (const ch of levelsParam) {
       const n = Number(ch)
-      if (n === 1 || n === 2 || n === 3) levels.add(n)
+      if (n === 0 || n === 1 || n === 2 || n === 3) levels.add(n)
     }
   }
   return { key, levels, mode }

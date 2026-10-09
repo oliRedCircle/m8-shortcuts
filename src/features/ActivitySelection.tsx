@@ -150,7 +150,7 @@ const entryClass = css`
 const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highlightKey?: string; levels?: Set<number>; routedActivityId?: string; modeQuery?: 'min' | 'full'; cursorPos?: CursorPos | null }> = ({ activity, screen, highlightKey, levels, routedActivityId, modeQuery, cursorPos }) => {
   const navigate = useNavigate()
   const params = useAppParams()
-  const level = activity.level ?? 1
+  const level = activity.level ?? 2
   const keys = useMemo(() => {
     const normalize = (s: string) => s.toLowerCase().split('-')[0]
     const skip = new Set(['or', 'and', 'hold', 'after', 'touch', 'midi'])
@@ -241,7 +241,7 @@ const ActivityEntry: FC<{ activity: ResolvedActivity; screen: ScreenData; highli
 
 export const ActivityCategory: FC<{ screen: ScreenData; category: Category; activities: ResolvedActivity[]; levels?: Set<number>; routedActivityId?: string; highlightKey?: string; modeQuery?: 'min' | 'full'; cursorPos?: CursorPos | null }> = ({ screen, category, activities, levels, routedActivityId, highlightKey, modeQuery, cursorPos }) => {
   const filtered = activities.filter((x) => {
-    const lvl = x.level ?? 1
+    const lvl = x.level ?? 2
     if (!levels || levels.size === 0) return true
     // Always include routed activity
     if (routedActivityId && x.id === routedActivityId) return true
