@@ -46,7 +46,7 @@
             {
               "x": 14,
               "y": 13,
-              "w": 19,
+              "w": 12,
               "h": 1,
               "label": "Name"
             }
@@ -58,9 +58,16 @@
             {
               "x": 14,
               "y": 5,
-              "w": 12,
-              "h": 2,
-              "label": "Tempo / transpose"
+              "w": 7,
+              "h": 1,
+              "label": "Tempo"
+            },
+            {
+              "x": 14,
+              "y": 6,
+              "w": 2,
+              "h": 1,
+              "label": "Transpose"
             }
           ]
         },
@@ -70,20 +77,34 @@
             {
               "x": 14,
               "y": 5,
-              "w": 12,
-              "h": 2,
-              "label": "Tempo / transpose"
+              "w": 7,
+              "h": 1,
+              "label": "Tempo"
+            },
+            {
+              "x": 14,
+              "y": 6,
+              "w": 2,
+              "h": 1,
+              "label": "Transpose"
             }
           ]
         }
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 14,
           "y": 5,
-          "w": 31,
-          "h": 16,
-          "label": "Project settings"
+          "w": 9,
+          "h": 1,
+          "label": "Tempo"
+        },
+        {
+          "x": 14,
+          "y": 6,
+          "w": 2,
+          "h": 4,
+          "label": "Transpose / groove / scale / live quantize"
         }
       ]
     },
@@ -104,10 +125,10 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
-          "y": 5,
-          "w": 21,
-          "h": 17,
+          "x": 4,
+          "y": 6,
+          "w": 15,
+          "h": 16,
           "label": "Mappings"
         }
       ]
@@ -129,11 +150,32 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 16,
           "y": 5,
-          "w": 30,
-          "h": 17,
-          "label": "MIDI settings"
+          "w": 14,
+          "h": 8,
+          "label": "Sync / control surface / record / CC map"
+        },
+        {
+          "x": 7,
+          "y": 16,
+          "w": 23,
+          "h": 2,
+          "label": "Track MIDI input"
+        },
+        {
+          "x": 11,
+          "y": 18,
+          "w": 3,
+          "h": 1,
+          "label": "PG change"
+        },
+        {
+          "x": 24,
+          "y": 18,
+          "w": 6,
+          "h": 1,
+          "label": "Mode"
         }
       ]
     },
@@ -177,10 +219,10 @@
       ],
       "defaultZones": [
         {
-          "x": 0,
+          "x": 1,
           "y": 5,
-          "w": 32,
-          "h": 11,
+          "w": 33,
+          "h": 16,
           "label": "File list"
         }
       ]
@@ -206,11 +248,32 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 17,
           "y": 5,
-          "w": 32,
-          "h": 17,
-          "label": "Render options"
+          "w": 2,
+          "h": 3,
+          "label": "Song rows / repeat"
+        },
+        {
+          "x": 9,
+          "y": 10,
+          "w": 23,
+          "h": 1,
+          "label": "Tracks"
+        },
+        {
+          "x": 9,
+          "y": 11,
+          "w": 3,
+          "h": 5,
+          "label": "Effects / limiter / mix EQ"
+        },
+        {
+          "x": 9,
+          "y": 17,
+          "w": 6,
+          "h": 1,
+          "label": "Mode"
         }
       ]
     },
@@ -278,7 +341,18 @@
         },
         "edit-multiple",
         "move-selection",
-        "move-track",
+        {
+          "id": "move-track",
+          "zones": [
+            {
+              "x": 4,
+              "y": 6,
+              "w": 23,
+              "h": 1,
+              "label": "Row 00"
+            }
+          ]
+        },
         "bookmark",
         "enter-selection",
         {
@@ -398,7 +472,17 @@
           "description": "Pastes the copy buffer that was copied in selection mode."
         },
         {
-          "id": "clone"
+          "id": "clone",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Phrase"
+            }
+          ],
+          "description": "Copies the contents of the selected phrase into a new, unused phrase number (clone)."
         }
       ],
       "defaultZones": [
@@ -464,7 +548,18 @@
           "media": "clear-mutes"
         },
         "insert-new",
-        "insert-note-off",
+        {
+          "id": "insert-note-off",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 3,
+              "h": 16,
+              "label": "Note"
+            }
+          ]
+        },
         {
           "id": "create-new-instrument",
           "media": "new-instrument",
@@ -505,7 +600,46 @@
             }
           ]
         },
-        "edit-large",
+        {
+          "id": "edit-large",
+          "zones": [
+            {
+              "x": 7,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Volume"
+            },
+            {
+              "x": 10,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Instrument"
+            },
+            {
+              "x": 16,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX1 value"
+            },
+            {
+              "x": 22,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX2 value"
+            },
+            {
+              "x": 28,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX3 value"
+            }
+          ]
+        },
         {
           "id": "edit-octave",
           "zones": [
@@ -703,7 +837,30 @@
         {
           "id": "create-new-instrument",
           "media": "new-instrument",
-          "description": "When the cursor is on an instrument row, assigns a new instrument with an unused slot."
+          "description": "When the cursor is on the value of an NXT command, assigns a new instrument with an unused slot.",
+          "zones": [
+            {
+              "x": 12,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX1 value"
+            },
+            {
+              "x": 18,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX2 value"
+            },
+            {
+              "x": 24,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX3 value"
+            }
+          ]
         },
         {
           "id": "create-new-table",
@@ -732,9 +889,64 @@
             }
           ]
         },
-        "edit-large",
-        "edit-octave",
+        {
+          "id": "edit-large",
+          "zones": [
+            {
+              "x": 6,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Volume"
+            },
+            {
+              "x": 12,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX1 value"
+            },
+            {
+              "x": 18,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX2 value"
+            },
+            {
+              "x": 24,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX3 value"
+            }
+          ]
+        },
+        {
+          "id": "edit-octave",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Transpose"
+            }
+          ]
+        },
         "edit-small",
+        {
+          "id": "edit-note",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Transpose"
+            }
+          ]
+        },
         {
           "id": "show-fx-help",
           "zones": [
@@ -779,7 +991,30 @@
         },
         {
           "id": "clone",
-          "description": "When the cursor is on an instrument command (NXT) value or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table."
+          "description": "When the cursor is on an instrument command (NXT) value or a table command (TBL, TBX, GRV, GGR) value, clones the instrument or table into an unassigned instrument or table.",
+          "zones": [
+            {
+              "x": 12,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX1 value"
+            },
+            {
+              "x": 18,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX2 value"
+            },
+            {
+              "x": 24,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "FX3 value"
+            }
+          ]
         }
       ],
       "defaultZones": [
@@ -833,7 +1068,23 @@
         "insert-new",
         {
           "id": "edit-small",
-          "description": "Edits the value at the cursor position by one step."
+          "description": "Edits the value at the cursor position by one step.",
+          "zones": [
+            {
+              "x": 3,
+              "y": 6,
+              "w": 2,
+              "h": 16,
+              "label": "Ticks"
+            },
+            {
+              "x": 7,
+              "y": 6,
+              "w": 3,
+              "h": 1,
+              "label": "PPQ"
+            }
+          ]
         },
         {
           "id": "edit-related",
@@ -870,9 +1121,9 @@
         {
           "x": 3,
           "y": 6,
-          "w": 13,
+          "w": 2,
           "h": 16,
-          "label": "Groove values"
+          "label": "Ticks"
         }
       ]
     },
@@ -939,22 +1190,54 @@
         },
         {
           "id": "edit-large",
-          "description": "Edits the scale value (detuning offset) in large steps."
+          "description": "Edits the scale value (detuning offset) in large steps.",
+          "zones": [
+            {
+              "x": 7,
+              "y": 7,
+              "w": 5,
+              "h": 12,
+              "label": "Offset"
+            },
+            {
+              "x": 7,
+              "y": 19,
+              "w": 6,
+              "h": 1,
+              "label": "Tune"
+            }
+          ]
         },
         {
           "id": "edit-small",
-          "description": "Edits the scale value (detuning offset) in small steps."
+          "description": "Edits the scale value (detuning offset) in small steps.",
+          "zones": [
+            {
+              "x": 7,
+              "y": 7,
+              "w": 5,
+              "h": 12,
+              "label": "Offset"
+            },
+            {
+              "x": 7,
+              "y": 19,
+              "w": 6,
+              "h": 1,
+              "label": "Tune"
+            }
+          ]
         },
         {
           "id": "change-root-key",
           "media": "edit-root-key",
           "zones": [
             {
-              "x": 5,
+              "x": 7,
               "y": 5,
-              "w": 6,
-              "h": 2,
-              "label": "Root key"
+              "w": 2,
+              "h": 1,
+              "label": "Key"
             }
           ]
         },
@@ -963,9 +1246,9 @@
           "id": "name-scale",
           "zones": [
             {
-              "x": 6,
+              "x": 7,
               "y": 20,
-              "w": 10,
+              "w": 16,
               "h": 1,
               "label": "Name"
             }
@@ -974,11 +1257,25 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 7,
           "y": 5,
-          "w": 15,
-          "h": 17,
-          "label": "Scale settings"
+          "w": 2,
+          "h": 1,
+          "label": "Key"
+        },
+        {
+          "x": 4,
+          "y": 7,
+          "w": 8,
+          "h": 12,
+          "label": "Enable / offset"
+        },
+        {
+          "x": 7,
+          "y": 19,
+          "w": 6,
+          "h": 1,
+          "label": "Tune"
         }
       ]
     },
@@ -1029,11 +1326,41 @@
         "edit-touch",
         "set-default",
         "undo-paste",
-        "randomize",
-        "hyper-copy-chord",
+        {
+          "id": "randomize",
+          "zones": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 40,
+              "h": 23
+            }
+          ]
+        },
+        {
+          "id": "hyper-copy-chord",
+          "zones": [
+            {
+              "x": 9,
+              "y": 10,
+              "w": 21,
+              "h": 1,
+              "label": "Chord"
+            }
+          ]
+        },
         {
           "id": "hyper-paste-value",
-          "media": "hyper-paste-chord"
+          "media": "hyper-paste-chord",
+          "zones": [
+            {
+              "x": 9,
+              "y": 10,
+              "w": 21,
+              "h": 1,
+              "label": "Chord"
+            }
+          ]
         },
         "copy",
         {
@@ -1041,15 +1368,153 @@
           "media": "paste",
           "description": "The copied instrument is pasted into the current instrument slot. Release both buttons and repeat to undo."
         },
-        "fm-change-algo",
-        "fm-change-operator",
-        "fm-copy-operator",
-        "fm-paste-operator",
-        "hyper-add-note",
-        "hyper-change-chord",
+        {
+          "id": "fm-change-algo",
+          "zones": [
+            {
+              "x": 9,
+              "y": 9,
+              "w": 2,
+              "h": 1,
+              "label": "Algo"
+            }
+          ]
+        },
+        {
+          "id": "fm-change-operator",
+          "zones": [
+            {
+              "x": 11,
+              "y": 10,
+              "w": 3,
+              "h": 1,
+              "label": "A"
+            },
+            {
+              "x": 17,
+              "y": 10,
+              "w": 3,
+              "h": 1,
+              "label": "B"
+            },
+            {
+              "x": 23,
+              "y": 10,
+              "w": 3,
+              "h": 1,
+              "label": "C"
+            },
+            {
+              "x": 29,
+              "y": 10,
+              "w": 3,
+              "h": 1,
+              "label": "D"
+            }
+          ]
+        },
+        {
+          "id": "fm-copy-operator",
+          "zones": [
+            {
+              "x": 9,
+              "y": 10,
+              "w": 5,
+              "h": 5,
+              "label": "Operator A"
+            },
+            {
+              "x": 15,
+              "y": 10,
+              "w": 5,
+              "h": 5,
+              "label": "Operator B"
+            },
+            {
+              "x": 21,
+              "y": 10,
+              "w": 5,
+              "h": 5,
+              "label": "Operator C"
+            },
+            {
+              "x": 27,
+              "y": 10,
+              "w": 5,
+              "h": 5,
+              "label": "Operator D"
+            }
+          ]
+        },
+        {
+          "id": "fm-paste-operator",
+          "zones": [
+            {
+              "x": 9,
+              "y": 10,
+              "w": 5,
+              "h": 5,
+              "label": "Operator A"
+            },
+            {
+              "x": 15,
+              "y": 10,
+              "w": 5,
+              "h": 5,
+              "label": "Operator B"
+            },
+            {
+              "x": 21,
+              "y": 10,
+              "w": 5,
+              "h": 5,
+              "label": "Operator C"
+            },
+            {
+              "x": 27,
+              "y": 10,
+              "w": 5,
+              "h": 5,
+              "label": "Operator D"
+            }
+          ]
+        },
+        {
+          "id": "hyper-add-note",
+          "zones": [
+            {
+              "x": 13,
+              "y": 10,
+              "w": 17,
+              "h": 1,
+              "label": "Chord notes"
+            }
+          ]
+        },
+        {
+          "id": "hyper-change-chord",
+          "zones": [
+            {
+              "x": 9,
+              "y": 10,
+              "w": 2,
+              "h": 1,
+              "label": "Chord bank"
+            }
+          ]
+        },
         {
           "id": "hyper-remove-note",
-          "media": "hyper-remove-chord"
+          "media": "hyper-remove-chord",
+          "zones": [
+            {
+              "x": 13,
+              "y": 10,
+              "w": 17,
+              "h": 1,
+              "label": "Chord notes"
+            }
+          ]
         },
         {
           "id": "preview",
@@ -1060,7 +1525,7 @@
           "id": "name-instrument",
           "zones": [
             {
-              "x": 8,
+              "x": 9,
               "y": 6,
               "w": 12,
               "h": 1,
@@ -1072,11 +1537,11 @@
           "id": "assign-eq",
           "zones": [
             {
-              "x": 25,
+              "x": 30,
               "y": 7,
-              "w": 5,
+              "w": 2,
               "h": 1,
-              "label": "EQ slot"
+              "label": "EQ"
             }
           ]
         },
@@ -1089,11 +1554,25 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 9,
           "y": 5,
-          "w": 31,
-          "h": 16,
-          "label": "Instrument parameters"
+          "w": 8,
+          "h": 1,
+          "label": "Type"
+        },
+        {
+          "x": 9,
+          "y": 7,
+          "w": 23,
+          "h": 1,
+          "label": "Transp. / table tic / EQ"
+        },
+        {
+          "x": 9,
+          "y": 9,
+          "w": 23,
+          "h": 13,
+          "label": "Parameters"
         }
       ]
     },
@@ -1143,7 +1622,16 @@
         },
         {
           "id": "edit-small",
-          "description": "On mixer-related columns, edits the value by one step."
+          "description": "On mixer-related columns, edits the value by one step.",
+          "zones": [
+            {
+              "x": 17,
+              "y": 6,
+              "w": 14,
+              "h": 16,
+              "label": "Mixer / EQ"
+            }
+          ]
         },
         {
           "id": "set-default",
@@ -1157,21 +1645,37 @@
         },
         {
           "id": "paste-value",
+          "prereqStateIds": [],
           "description": "Pastes the previously copied value or instrument."
         },
         {
           "id": "preview-file",
           "name": "Preview / Stop",
-          "description": "If playback is stopped, previews the selected instrument, else stops playback."
+          "description": "If playback is stopped, previews the selected instrument, else stops playback.",
+          "zones": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 40,
+              "h": 23
+            }
+          ]
         }
       ],
       "defaultZones": [
         {
-          "x": 0,
-          "y": 4,
-          "w": 32,
+          "x": 4,
+          "y": 6,
+          "w": 12,
           "h": 16,
-          "label": "Instrument list"
+          "label": "Instrument"
+        },
+        {
+          "x": 17,
+          "y": 6,
+          "w": 14,
+          "h": 16,
+          "label": "Mixer / EQ"
         }
       ]
     },
@@ -1228,11 +1732,32 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 6,
           "y": 5,
-          "w": 29,
-          "h": 16,
-          "label": "Modulation slots"
+          "w": 10,
+          "h": 6,
+          "label": "Mod 1"
+        },
+        {
+          "x": 22,
+          "y": 5,
+          "w": 10,
+          "h": 6,
+          "label": "Mod 3"
+        },
+        {
+          "x": 6,
+          "y": 13,
+          "w": 10,
+          "h": 6,
+          "label": "Mod 2"
+        },
+        {
+          "x": 22,
+          "y": 13,
+          "w": 10,
+          "h": 6,
+          "label": "Mod 4"
         }
       ]
     },
@@ -1251,43 +1776,145 @@
         "navigate-views",
         {
           "id": "move-small",
-          "media": "move-slow"
+          "media": "move-slow",
+          "zones": [
+            {
+              "x": 14,
+              "y": 14,
+              "w": 17,
+              "h": 3,
+              "label": "Markers"
+            }
+          ]
         },
         {
           "id": "move-large",
-          "media": "move-fast"
+          "media": "move-fast",
+          "zones": [
+            {
+              "x": 14,
+              "y": 14,
+              "w": 17,
+              "h": 3,
+              "label": "Markers"
+            }
+          ]
         },
         {
           "id": "move-small-steps",
-          "media": "move-step-slow"
+          "media": "move-step-slow",
+          "zones": [
+            {
+              "x": 14,
+              "y": 14,
+              "w": 17,
+              "h": 3,
+              "label": "Markers"
+            }
+          ]
         },
         {
           "id": "move-large-steps",
-          "media": "move-step-fast"
+          "media": "move-step-fast",
+          "zones": [
+            {
+              "x": 14,
+              "y": 14,
+              "w": 17,
+              "h": 3,
+              "label": "Markers"
+            }
+          ]
         },
-        "move-touch",
+        {
+          "id": "move-touch",
+          "zones": [
+            {
+              "x": 14,
+              "y": 14,
+              "w": 17,
+              "h": 3,
+              "label": "Markers"
+            }
+          ]
+        },
         {
           "id": "set-default",
           "name": "Clear / reset value",
           "description": "Clears / resets the selected value."
         },
-        "lazy-chop",
-        "record",
-        "delete-slice",
+        {
+          "id": "lazy-chop",
+          "zones": [
+            {
+              "x": 14,
+              "y": 16,
+              "w": 11,
+              "h": 1,
+              "label": "Slice marker"
+            }
+          ]
+        },
+        {
+          "id": "record",
+          "zones": [
+            {
+              "x": 9,
+              "y": 5,
+              "w": 5,
+              "h": 1,
+              "label": "Start"
+            }
+          ]
+        },
+        {
+          "id": "delete-slice",
+          "zones": [
+            {
+              "x": 14,
+              "y": 16,
+              "w": 11,
+              "h": 1,
+              "label": "Slice marker"
+            }
+          ]
+        },
         {
           "id": "preview-file",
           "media": "preview",
           "description": "Previews the sample, which can be used for lazy chopping.",
-          "name": "Preview Sample"
+          "name": "Preview Sample",
+          "zones": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 40,
+              "h": 23
+            }
+          ]
         }
       ],
       "defaultZones": [
         {
-          "x": 1,
-          "y": 4,
-          "w": 38,
-          "h": 18,
-          "label": "Sample editor"
+          "x": 15,
+          "y": 5,
+          "w": 14,
+          "h": 1,
+          "label": "Source / volume / arm / song"
+        },
+        {
+          "x": 14,
+          "y": 14,
+          "w": 17,
+          "h": 3,
+          "label": "Markers"
+        },
+        {
+          "x": 14,
+          "y": 18,
+          "w": 12,
+          "h": 1,
+          "label": "Process"
         }
       ]
     },
@@ -1340,11 +1967,32 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 22,
           "y": 5,
-          "w": 30,
-          "h": 17,
-          "label": "Effect settings"
+          "w": 5,
+          "h": 1,
+          "label": "ModFX type"
+        },
+        {
+          "x": 22,
+          "y": 7,
+          "w": 5,
+          "h": 3,
+          "label": "ModFX"
+        },
+        {
+          "x": 22,
+          "y": 12,
+          "w": 5,
+          "h": 4,
+          "label": "Delay"
+        },
+        {
+          "x": 22,
+          "y": 18,
+          "w": 5,
+          "h": 4,
+          "label": "Reverb"
         }
       ]
     },
@@ -1370,9 +2018,9 @@
           "media": "enter-mix-scope",
           "zones": [
             {
-              "x": 23,
+              "x": 28,
               "y": 17,
-              "w": 7,
+              "w": 2,
               "h": 1,
               "label": "MIX"
             }
@@ -1383,25 +2031,11 @@
           "media": "enter-lim-scope",
           "zones": [
             {
-              "x": 23,
+              "x": 28,
               "y": 18,
-              "w": 7,
-              "h": 1,
-              "label": "LIM"
-            },
-            {
-              "x": 23,
-              "y": 19,
-              "w": 7,
-              "h": 1,
-              "label": "DJF"
-            },
-            {
-              "x": 23,
-              "y": 20,
-              "w": 7,
-              "h": 1,
-              "label": "OTT"
+              "w": 2,
+              "h": 3,
+              "label": "LIM / DJF / OTT"
             }
           ]
         },
@@ -1432,11 +2066,46 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 13,
           "y": 5,
-          "w": 29,
-          "h": 17,
-          "label": "Mixer parameters"
+          "w": 2,
+          "h": 1,
+          "label": "Speaker volume"
+        },
+        {
+          "x": 1,
+          "y": 12,
+          "w": 23,
+          "h": 1,
+          "label": "Track volumes"
+        },
+        {
+          "x": 1,
+          "y": 17,
+          "w": 8,
+          "h": 1,
+          "label": "Effect volumes"
+        },
+        {
+          "x": 13,
+          "y": 17,
+          "w": 8,
+          "h": 1,
+          "label": "Input / USB volume"
+        },
+        {
+          "x": 13,
+          "y": 19,
+          "w": 8,
+          "h": 3,
+          "label": "Input / USB sends"
+        },
+        {
+          "x": 28,
+          "y": 17,
+          "w": 2,
+          "h": 4,
+          "label": "MIX / LIM / DJF / OTT"
         }
       ]
     },
@@ -1491,10 +2160,24 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 6,
           "y": 5,
-          "w": 32,
-          "h": 17,
+          "w": 5,
+          "h": 1,
+          "label": "Zoom"
+        },
+        {
+          "x": 21,
+          "y": 5,
+          "w": 6,
+          "h": 1,
+          "label": "Peak"
+        },
+        {
+          "x": 12,
+          "y": 17,
+          "w": 18,
+          "h": 4,
           "label": "Scope parameters"
         }
       ]
@@ -1518,6 +2201,10 @@
       "mediaFolder": "eq",
       "activities": [
         "navigate-views",
+        {
+          "id": "navigate-screen",
+          "media": "navigate"
+        },
         {
           "id": "exit",
           "description": "Exits and returns to the screen it was entered from",
@@ -1560,11 +2247,25 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
-          "y": 5,
-          "w": 38,
-          "h": 17,
-          "label": "EQ parameters"
+          "x": 7,
+          "y": 17,
+          "w": 8,
+          "h": 5,
+          "label": "Low"
+        },
+        {
+          "x": 18,
+          "y": 17,
+          "w": 8,
+          "h": 5,
+          "label": "Mid"
+        },
+        {
+          "x": 29,
+          "y": 17,
+          "w": 8,
+          "h": 5,
+          "label": "High"
         }
       ]
     },
@@ -1582,6 +2283,10 @@
       "activities": [
         "navigate-views",
         {
+          "id": "exit",
+          "description": "Exits and returns to the Project view."
+        },
+        {
           "id": "edit-large",
           "description": "Edits a value at the cursor position in large steps."
         },
@@ -1593,11 +2298,32 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 16,
           "y": 5,
-          "w": 28,
-          "h": 17,
-          "label": "System settings"
+          "w": 17,
+          "h": 2,
+          "label": "Backlight / font"
+        },
+        {
+          "x": 16,
+          "y": 9,
+          "w": 10,
+          "h": 2,
+          "label": "Note preview / count-in / metronome"
+        },
+        {
+          "x": 16,
+          "y": 13,
+          "w": 17,
+          "h": 3,
+          "label": "USB audio / line-in gate"
+        },
+        {
+          "x": 16,
+          "y": 17,
+          "w": 9,
+          "h": 4,
+          "label": "Splash / HP protection / key repeat / charging"
         }
       ]
     },
@@ -1624,11 +2350,18 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
+          "x": 24,
           "y": 5,
-          "w": 28,
-          "h": 14,
-          "label": "Theme settings"
+          "w": 2,
+          "h": 1,
+          "label": "Hue"
+        },
+        {
+          "x": 15,
+          "y": 6,
+          "w": 8,
+          "h": 13,
+          "label": "Colors"
         }
       ]
     },
@@ -1654,11 +2387,11 @@
       ],
       "defaultZones": [
         {
-          "x": 1,
-          "y": 4,
-          "w": 30,
-          "h": 14,
-          "label": "Time / date"
+          "x": 13,
+          "y": 13,
+          "w": 19,
+          "h": 1,
+          "label": "File date"
         }
       ]
     }
@@ -1766,7 +2499,15 @@
         ]
       ],
       "description": "Mute current track - if you release option first, holds the mute",
-      "level": 0
+      "level": 0,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "solo-track",
@@ -1781,7 +2522,15 @@
         ]
       ],
       "description": "Solo current track, release option first to hold the solo.",
-      "level": 0
+      "level": 0,
+      "zones": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 40,
+          "h": 23
+        }
+      ]
     },
     {
       "id": "clear-all-mute-solo",
@@ -1878,7 +2627,7 @@
           "right"
         ]
       ],
-      "description": "Naming the Project by holding edit, navigating to the letter and releasing the edit key.",
+      "description": "Naming the Project by holding edit, navigating to the letter and releasing the edit key. Hold OPTION and press EDIT to delete the character under the cursor.",
       "level": 2
     },
     {
@@ -2174,7 +2923,10 @@
         ]
       ],
       "description": "Edits the current selection by incrementing or decrementing the value by one. Only works when a single row is selected.",
-      "level": 1
+      "level": 1,
+      "prereqStateIds": [
+        "select-mode"
+      ]
     },
     {
       "id": "enter-selection",
@@ -2365,7 +3117,10 @@
         ]
       ],
       "description": "Loops the selected chains with the remaining tracks looping the same chains.",
-      "level": 2
+      "level": 2,
+      "prereqStateIds": [
+        "select-mode"
+      ]
     },
     {
       "id": "stop-track",
@@ -2552,7 +3307,10 @@
         "play"
       ],
       "description": "When a few chains are currently selected, loops these chains.",
-      "level": 2
+      "level": 2,
+      "prereqStateIds": [
+        "select-mode"
+      ]
     },
     {
       "id": "clear-mutes",
@@ -2970,7 +3728,10 @@
         ]
       ],
       "description": "Increments or decrements the selection in large (16) steps",
-      "level": 1
+      "level": 1,
+      "prereqStateIds": [
+        "select-mode"
+      ]
     },
     {
       "id": "change-root-key",
@@ -3030,7 +3791,7 @@
           "right"
         ]
       ],
-      "description": "Naming the scale by holding edit, navigating to the letter and releasing the edit key.",
+      "description": "Naming the scale by holding edit, navigating to the letter and releasing the edit key. Hold OPTION and press EDIT to delete the character under the cursor.",
       "level": 2
     },
     {
@@ -3351,7 +4112,7 @@
           "right"
         ]
       ],
-      "description": "Naming the instrument by holding edit, navigating to the letter and releasing the edit key.",
+      "description": "Naming the instrument by holding edit, navigating to the letter and releasing the edit key. Hold OPTION and press EDIT to delete the character under the cursor.",
       "level": 3
     },
     {
@@ -3471,9 +4232,10 @@
         "edit"
       ],
       "keypress": [
-        "play",
-        "after",
-        "edit"
+        [
+          "play-hold",
+          "edit"
+        ]
       ],
       "description": "Inserts slice markers at the play head while previewing the sample.",
       "level": 2
@@ -3497,9 +4259,12 @@
         "edit"
       ],
       "keypress": [
-        "edit"
+        [
+          "opt-hold",
+          "edit"
+        ]
       ],
-      "description": "Delete a slice.",
+      "description": "With the cursor on the slice marker, deletes the selected slice.",
       "level": 2
     },
     {
@@ -3516,7 +4281,7 @@
           "right"
         ]
       ],
-      "description": "With the cursor on the MIX parameter, enters the limiter scope. It details how the limiter operates and allows for tuning the limiter parameters.",
+      "description": "With the cursor on the MIX parameter, enters the Mix Scope. It shows the main mix volume over time along with the limiter activity.",
       "level": 3
     },
     {
@@ -3537,25 +4302,11 @@
       "level": 3,
       "zones": [
         {
-          "x": 23,
+          "x": 28,
           "y": 18,
-          "w": 7,
-          "h": 1,
-          "label": "LIM"
-        },
-        {
-          "x": 23,
-          "y": 19,
-          "w": 7,
-          "h": 1,
-          "label": "DJF"
-        },
-        {
-          "x": 23,
-          "y": 20,
-          "w": 7,
-          "h": 1,
-          "label": "OTT"
+          "w": 2,
+          "h": 3,
+          "label": "LIM / DJF / OTT"
         }
       ]
     },

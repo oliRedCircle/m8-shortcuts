@@ -1,0 +1,9292 @@
+{
+ "version": 1,
+ "generatedFrom": "public/m8-shortcuts.dataset.json",
+ "timing": {
+  "tapMs": 108,
+  "leadMs": 120,
+  "tailMs": 80,
+  "gapMs": 176,
+  "dwellMs": 1000,
+  "preRollMs": 600,
+  "postRollMs": 600,
+  "fps": 30,
+  "width": 480,
+  "height": 320
+ },
+ "jobs": [
+  {
+   "id": "midi-mappings/navigate-views",
+   "folder": "midi-mappings",
+   "slug": "navigate-views",
+   "screenId": "midi-mappings",
+   "screenName": "MIDI Mappings",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "midi-mappings/exit",
+   "folder": "midi-mappings",
+   "slug": "exit",
+   "screenId": "midi-mappings",
+   "screenName": "MIDI Mappings",
+   "activityId": "exit",
+   "name": "Exit",
+   "yam8dView": null,
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    "opt"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     107,
+     0
+    ]
+   ],
+   "notes": [
+    "the clip ends on the previous screen, so it will not loop",
+    "other references: scope/exit, eq/exit"
+   ],
+   "reference": {
+    "file": "fileBrowser/exit",
+    "screenId": "file-browser",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      107,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "midi-mappings/edit-large",
+   "folder": "midi-mappings",
+   "slug": "edit-large",
+   "screenId": "midi-mappings",
+   "screenName": "MIDI Mappings",
+   "activityId": "edit-large",
+   "name": "Edit in large increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 11,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 21,
+    "h": 17
+   },
+   "zoneLabel": "Mappings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "up-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "down-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     160,
+     65
+    ],
+    [
+     271,
+     1
+    ],
+    [
+     720,
+     65
+    ],
+    [
+     831,
+     1
+    ],
+    [
+     1360,
+     33
+    ],
+    [
+     1440,
+     1
+    ],
+    [
+     2096,
+     33
+    ],
+    [
+     2192,
+     1
+    ],
+    [
+     2416,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-large, instrument-pool/edit-large, fx/edit-large, project/edit-large, phrase/edit-large, table/edit-large, scale/edit-large, instrument/edit-large, mixer/edit-large, scope/edit-large, eq/edit-large"
+   ],
+   "reference": {
+    "file": "song/edit-large",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      160,
+      65
+     ],
+     [
+      271,
+      1
+     ],
+     [
+      720,
+      65
+     ],
+     [
+      831,
+      1
+     ],
+     [
+      1360,
+      33
+     ],
+     [
+      1440,
+      1
+     ],
+     [
+      2096,
+      33
+     ],
+     [
+      2192,
+      1
+     ],
+     [
+      2416,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "midi-mappings/edit-small",
+   "folder": "midi-mappings",
+   "slug": "edit-small",
+   "screenId": "midi-mappings",
+   "screenName": "MIDI Mappings",
+   "activityId": "edit-small",
+   "name": "Edit in small increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 11,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 21,
+    "h": 17
+   },
+   "zoneLabel": "Mappings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "left-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "right-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     176,
+     5
+    ],
+    [
+     240,
+     1
+    ],
+    [
+     416,
+     5
+    ],
+    [
+     513,
+     1
+    ],
+    [
+     672,
+     5
+    ],
+    [
+     768,
+     1
+    ],
+    [
+     913,
+     5
+    ],
+    [
+     992,
+     1
+    ],
+    [
+     1376,
+     129
+    ],
+    [
+     1456,
+     1
+    ],
+    [
+     1600,
+     129
+    ],
+    [
+     1712,
+     1
+    ],
+    [
+     1841,
+     129
+    ],
+    [
+     1921,
+     1
+    ],
+    [
+     2096,
+     129
+    ],
+    [
+     2176,
+     1
+    ],
+    [
+     2497,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-small, groove/edit-small, scale/edit-small, instrument-pool/edit-small, fx/edit-small, scope/edit-small, eq/edit-small, project/edit-small, phrase/edit-small, table/edit-small, instrument/edit-small, mixer/edit-small"
+   ],
+   "reference": {
+    "file": "song/edit-small",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      176,
+      5
+     ],
+     [
+      240,
+      1
+     ],
+     [
+      416,
+      5
+     ],
+     [
+      513,
+      1
+     ],
+     [
+      672,
+      5
+     ],
+     [
+      768,
+      1
+     ],
+     [
+      913,
+      5
+     ],
+     [
+      992,
+      1
+     ],
+     [
+      1376,
+      129
+     ],
+     [
+      1456,
+      1
+     ],
+     [
+      1600,
+      129
+     ],
+     [
+      1712,
+      1
+     ],
+     [
+      1841,
+      129
+     ],
+     [
+      1921,
+      1
+     ],
+     [
+      2096,
+      129
+     ],
+     [
+      2176,
+      1
+     ],
+     [
+      2497,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "midi-mappings/delete-mapping",
+   "folder": "midi-mappings",
+   "slug": "delete-mapping",
+   "screenId": "midi-mappings",
+   "screenName": "MIDI Mappings",
+   "activityId": "delete-mapping",
+   "name": "Delete Mapping",
+   "yam8dView": null,
+   "cursor": {
+    "x": 11,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 21,
+    "h": 17
+   },
+   "zoneLabel": "Mappings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "edit-hold",
+     "opt"
+    ]
+   ],
+   "setup": [
+    {
+     "op": "ask",
+     "text": "Put the cursor on an existing mapping (one must exist), then click Run."
+    }
+   ],
+   "restore": {
+    "kind": "reload"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     120,
+     3
+    ],
+    [
+     228,
+     1
+    ],
+    [
+     308,
+     0
+    ]
+   ],
+   "notes": []
+  },
+  {
+   "id": "midi-settings/navigate-views",
+   "folder": "midi-settings",
+   "slug": "navigate-views",
+   "screenId": "midi-settings",
+   "screenName": "MIDI Settings",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "midi-settings/exit",
+   "folder": "midi-settings",
+   "slug": "exit",
+   "screenId": "midi-settings",
+   "screenName": "MIDI Settings",
+   "activityId": "exit",
+   "name": "Exit",
+   "yam8dView": null,
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    "opt"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     107,
+     0
+    ]
+   ],
+   "notes": [
+    "the clip ends on the previous screen, so it will not loop",
+    "other references: scope/exit, eq/exit"
+   ],
+   "reference": {
+    "file": "fileBrowser/exit",
+    "screenId": "file-browser",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      107,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "midi-settings/edit-large",
+   "folder": "midi-settings",
+   "slug": "edit-large",
+   "screenId": "midi-settings",
+   "screenName": "MIDI Settings",
+   "activityId": "edit-large",
+   "name": "Edit in large increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 16,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 30,
+    "h": 17
+   },
+   "zoneLabel": "MIDI settings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "up-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "down-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     160,
+     65
+    ],
+    [
+     271,
+     1
+    ],
+    [
+     720,
+     65
+    ],
+    [
+     831,
+     1
+    ],
+    [
+     1360,
+     33
+    ],
+    [
+     1440,
+     1
+    ],
+    [
+     2096,
+     33
+    ],
+    [
+     2192,
+     1
+    ],
+    [
+     2416,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-large, instrument-pool/edit-large, fx/edit-large, project/edit-large, phrase/edit-large, table/edit-large, scale/edit-large, instrument/edit-large, mixer/edit-large, scope/edit-large, eq/edit-large"
+   ],
+   "reference": {
+    "file": "song/edit-large",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      160,
+      65
+     ],
+     [
+      271,
+      1
+     ],
+     [
+      720,
+      65
+     ],
+     [
+      831,
+      1
+     ],
+     [
+      1360,
+      33
+     ],
+     [
+      1440,
+      1
+     ],
+     [
+      2096,
+      33
+     ],
+     [
+      2192,
+      1
+     ],
+     [
+      2416,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "midi-settings/edit-small",
+   "folder": "midi-settings",
+   "slug": "edit-small",
+   "screenId": "midi-settings",
+   "screenName": "MIDI Settings",
+   "activityId": "edit-small",
+   "name": "Edit in small increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 16,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 30,
+    "h": 17
+   },
+   "zoneLabel": "MIDI settings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "left-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "right-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     176,
+     5
+    ],
+    [
+     240,
+     1
+    ],
+    [
+     416,
+     5
+    ],
+    [
+     513,
+     1
+    ],
+    [
+     672,
+     5
+    ],
+    [
+     768,
+     1
+    ],
+    [
+     913,
+     5
+    ],
+    [
+     992,
+     1
+    ],
+    [
+     1376,
+     129
+    ],
+    [
+     1456,
+     1
+    ],
+    [
+     1600,
+     129
+    ],
+    [
+     1712,
+     1
+    ],
+    [
+     1841,
+     129
+    ],
+    [
+     1921,
+     1
+    ],
+    [
+     2096,
+     129
+    ],
+    [
+     2176,
+     1
+    ],
+    [
+     2497,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-small, groove/edit-small, scale/edit-small, instrument-pool/edit-small, fx/edit-small, scope/edit-small, eq/edit-small, project/edit-small, phrase/edit-small, table/edit-small, instrument/edit-small, mixer/edit-small"
+   ],
+   "reference": {
+    "file": "song/edit-small",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      176,
+      5
+     ],
+     [
+      240,
+      1
+     ],
+     [
+      416,
+      5
+     ],
+     [
+      513,
+      1
+     ],
+     [
+      672,
+      5
+     ],
+     [
+      768,
+      1
+     ],
+     [
+      913,
+      5
+     ],
+     [
+      992,
+      1
+     ],
+     [
+      1376,
+      129
+     ],
+     [
+      1456,
+      1
+     ],
+     [
+      1600,
+      129
+     ],
+     [
+      1712,
+      1
+     ],
+     [
+      1841,
+      129
+     ],
+     [
+      1921,
+      1
+     ],
+     [
+      2096,
+      129
+     ],
+     [
+      2176,
+      1
+     ],
+     [
+      2497,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "midi-settings/delete-mapping",
+   "folder": "midi-settings",
+   "slug": "delete-mapping",
+   "screenId": "midi-settings",
+   "screenName": "MIDI Settings",
+   "activityId": "delete-mapping",
+   "name": "Delete Mapping",
+   "yam8dView": null,
+   "cursor": {
+    "x": 16,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 30,
+    "h": 17
+   },
+   "zoneLabel": "MIDI settings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "edit-hold",
+     "opt"
+    ]
+   ],
+   "setup": [
+    {
+     "op": "ask",
+     "text": "Put the cursor on an existing mapping (one must exist), then click Run."
+    }
+   ],
+   "restore": {
+    "kind": "reload"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     120,
+     3
+    ],
+    [
+     228,
+     1
+    ],
+    [
+     308,
+     0
+    ]
+   ],
+   "notes": []
+  },
+  {
+   "id": "fileBrowser/navigate-views",
+   "folder": "fileBrowser",
+   "slug": "navigate-views",
+   "screenId": "file-browser",
+   "screenName": "File Browser",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "render-audio/navigate-views",
+   "folder": "render-audio",
+   "slug": "navigate-views",
+   "screenId": "render-audio",
+   "screenName": "Render",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "render-audio/exit",
+   "folder": "render-audio",
+   "slug": "exit",
+   "screenId": "render-audio",
+   "screenName": "Render",
+   "activityId": "exit",
+   "name": "Exit",
+   "yam8dView": null,
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    "opt"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     107,
+     0
+    ]
+   ],
+   "notes": [
+    "the clip ends on the previous screen, so it will not loop",
+    "other references: scope/exit, eq/exit"
+   ],
+   "reference": {
+    "file": "fileBrowser/exit",
+    "screenId": "file-browser",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      107,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "render-audio/edit-large",
+   "folder": "render-audio",
+   "slug": "edit-large",
+   "screenId": "render-audio",
+   "screenName": "Render",
+   "activityId": "edit-large",
+   "name": "Edit in large increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 17,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 32,
+    "h": 17
+   },
+   "zoneLabel": "Render options",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "up-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "down-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     160,
+     65
+    ],
+    [
+     271,
+     1
+    ],
+    [
+     720,
+     65
+    ],
+    [
+     831,
+     1
+    ],
+    [
+     1360,
+     33
+    ],
+    [
+     1440,
+     1
+    ],
+    [
+     2096,
+     33
+    ],
+    [
+     2192,
+     1
+    ],
+    [
+     2416,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-large, instrument-pool/edit-large, fx/edit-large, project/edit-large, phrase/edit-large, table/edit-large, scale/edit-large, instrument/edit-large, mixer/edit-large, scope/edit-large, eq/edit-large"
+   ],
+   "reference": {
+    "file": "song/edit-large",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      160,
+      65
+     ],
+     [
+      271,
+      1
+     ],
+     [
+      720,
+      65
+     ],
+     [
+      831,
+      1
+     ],
+     [
+      1360,
+      33
+     ],
+     [
+      1440,
+      1
+     ],
+     [
+      2096,
+      33
+     ],
+     [
+      2192,
+      1
+     ],
+     [
+      2416,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "render-audio/edit-small",
+   "folder": "render-audio",
+   "slug": "edit-small",
+   "screenId": "render-audio",
+   "screenName": "Render",
+   "activityId": "edit-small",
+   "name": "Edit in small increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 17,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 32,
+    "h": 17
+   },
+   "zoneLabel": "Render options",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "left-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "right-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     176,
+     5
+    ],
+    [
+     240,
+     1
+    ],
+    [
+     416,
+     5
+    ],
+    [
+     513,
+     1
+    ],
+    [
+     672,
+     5
+    ],
+    [
+     768,
+     1
+    ],
+    [
+     913,
+     5
+    ],
+    [
+     992,
+     1
+    ],
+    [
+     1376,
+     129
+    ],
+    [
+     1456,
+     1
+    ],
+    [
+     1600,
+     129
+    ],
+    [
+     1712,
+     1
+    ],
+    [
+     1841,
+     129
+    ],
+    [
+     1921,
+     1
+    ],
+    [
+     2096,
+     129
+    ],
+    [
+     2176,
+     1
+    ],
+    [
+     2497,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-small, groove/edit-small, scale/edit-small, instrument-pool/edit-small, fx/edit-small, scope/edit-small, eq/edit-small, project/edit-small, phrase/edit-small, table/edit-small, instrument/edit-small, mixer/edit-small"
+   ],
+   "reference": {
+    "file": "song/edit-small",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      176,
+      5
+     ],
+     [
+      240,
+      1
+     ],
+     [
+      416,
+      5
+     ],
+     [
+      513,
+      1
+     ],
+     [
+      672,
+      5
+     ],
+     [
+      768,
+      1
+     ],
+     [
+      913,
+      5
+     ],
+     [
+      992,
+      1
+     ],
+     [
+      1376,
+      129
+     ],
+     [
+      1456,
+      1
+     ],
+     [
+      1600,
+      129
+     ],
+     [
+      1712,
+      1
+     ],
+     [
+      1841,
+      129
+     ],
+     [
+      1921,
+      1
+     ],
+     [
+      2096,
+      129
+     ],
+     [
+      2176,
+      1
+     ],
+     [
+      2497,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "render-audio/set-default",
+   "folder": "render-audio",
+   "slug": "set-default",
+   "screenId": "render-audio",
+   "screenName": "Render",
+   "activityId": "set-default",
+   "name": "Delete / reset parameter",
+   "yam8dView": null,
+   "cursor": {
+    "x": 17,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 32,
+    "h": 17
+   },
+   "zoneLabel": "Render options",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "opt"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     384,
+     3
+    ],
+    [
+     525,
+     2
+    ],
+    [
+     683,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: instrument-pool/set-default, project/set-default, instrument/set-default, fx/set-default, mixer/set-default, scope/set-default, eq/set-default"
+   ],
+   "reference": {
+    "file": "scale/set-default",
+    "screenId": "scale",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      384,
+      3
+     ],
+     [
+      525,
+      2
+     ],
+     [
+      683,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "song/navigate-views",
+   "folder": "song",
+   "slug": "navigate-views",
+   "screenId": "song",
+   "screenName": "Song",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "song",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+up, then Shift+down to come back (song <-> project)"
+   ],
+   "direction": "up",
+   "directionTarget": "project",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "chain/navigate-views",
+   "folder": "chain",
+   "slug": "navigate-views",
+   "screenId": "chain",
+   "screenName": "Chain",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "chain",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+right, then Shift+left to come back (chain <-> phrase)"
+   ],
+   "direction": "right",
+   "directionTarget": "phrase",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "phrase/navigate-views",
+   "folder": "phrase",
+   "slug": "navigate-views",
+   "screenId": "phrase",
+   "screenName": "Phrase",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "phrase",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+right, then Shift+left to come back (phrase <-> inst)"
+   ],
+   "direction": "right",
+   "directionTarget": "inst",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "table/navigate-views",
+   "folder": "table",
+   "slug": "navigate-views",
+   "screenId": "table",
+   "screenName": "Table",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "table",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+left, then Shift+right to come back (table <-> inst)"
+   ],
+   "direction": "left",
+   "directionTarget": "inst",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "groove/navigate-views",
+   "folder": "groove",
+   "slug": "navigate-views",
+   "screenId": "groove",
+   "screenName": "Groove",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "groove",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+up, then Shift+down to come back (groove <-> scale)"
+   ],
+   "direction": "up",
+   "directionTarget": "scale",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "scale/navigate-views",
+   "folder": "scale",
+   "slug": "navigate-views",
+   "screenId": "scale",
+   "screenName": "Scale",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "scale",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+down, then Shift+up to come back (scale <-> groove)"
+   ],
+   "direction": "down",
+   "directionTarget": "groove",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "instrument/navigate-views",
+   "folder": "instrument",
+   "slug": "navigate-views",
+   "screenId": "instrument",
+   "screenName": "Instrument",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "inst",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+right, then Shift+left to come back (inst <-> table)"
+   ],
+   "direction": "right",
+   "directionTarget": "table",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "instrument-pool/navigate-views",
+   "folder": "instrument-pool",
+   "slug": "navigate-views",
+   "screenId": "instrument-pool",
+   "screenName": "Instrument Pool",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "instrumentpool",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+down, then Shift+up to come back (instrumentpool <-> instmods)"
+   ],
+   "direction": "down",
+   "directionTarget": "instmods",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "instrument-pool/copy",
+   "folder": "instrument-pool",
+   "slug": "copy",
+   "screenId": "instrument-pool",
+   "screenName": "Instrument Pool",
+   "activityId": "copy",
+   "name": "Copy value / instrument",
+   "yam8dView": "instrumentpool",
+   "cursor": {
+    "x": 8,
+    "y": 6
+   },
+   "zone": {
+    "x": 4,
+    "y": 6,
+    "w": 12,
+    "h": 1
+   },
+   "zoneLabel": "Instrument name column, first slot",
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "shift-hold",
+     "opt"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     16
+    ],
+    [
+     721,
+     18
+    ],
+    [
+     768,
+     16
+    ],
+    [
+     1152,
+     0
+    ]
+   ],
+   "notes": [
+    "re-recording: the existing clip is overwritten (tick \"Overwrite existing files\")",
+    "other references: eq/copy"
+   ],
+   "redo": true,
+   "reference": {
+    "file": "instrument/copy",
+    "screenId": "instrument",
+    "events": [
+     [
+      0,
+      16
+     ],
+     [
+      721,
+      18
+     ],
+     [
+      768,
+      16
+     ],
+     [
+      1152,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-pool/paste-value",
+   "folder": "instrument-pool",
+   "slug": "paste-value",
+   "screenId": "instrument-pool",
+   "screenName": "Instrument Pool",
+   "activityId": "paste-value",
+   "name": "Paste",
+   "yam8dView": "instrumentpool",
+   "cursor": {
+    "x": 8,
+    "y": 6
+   },
+   "zone": {
+    "x": 4,
+    "y": 6,
+    "w": 12,
+    "h": 1
+   },
+   "zoneLabel": "Instrument name column, first slot",
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "shift-hold",
+     "edit"
+    ]
+   ],
+   "setup": [
+    {
+     "op": "keys",
+     "label": "copy the instrument (Shift+Opt)",
+     "steps": [
+      [
+       0,
+       18
+      ],
+      [
+       108,
+       0
+      ]
+     ]
+    },
+    {
+     "op": "keys",
+     "label": "next slot (Down)",
+     "steps": [
+      [
+       0,
+       32
+      ],
+      [
+       108,
+       0
+      ]
+     ]
+    }
+   ],
+   "restore": {
+    "kind": "reload"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     16
+    ],
+    [
+     701,
+     17
+    ],
+    [
+     768,
+     16
+    ],
+    [
+     1072,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: eq/paste, song/paste, chain/paste, phrase/paste, table/paste, groove/paste"
+   ],
+   "reference": {
+    "file": "instrument/paste",
+    "screenId": "instrument",
+    "events": [
+     [
+      0,
+      16
+     ],
+     [
+      701,
+      17
+     ],
+     [
+      768,
+      16
+     ],
+     [
+      1072,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-pool/preview-file",
+   "folder": "instrument-pool",
+   "slug": "preview-file",
+   "screenId": "instrument-pool",
+   "screenName": "Instrument Pool",
+   "activityId": "preview-file",
+   "name": "Preview / Stop",
+   "yam8dView": "instrumentpool",
+   "cursor": {
+    "x": 16,
+    "y": 12
+   },
+   "zone": {
+    "x": 0,
+    "y": 4,
+    "w": 32,
+    "h": 16
+   },
+   "zoneLabel": "Instrument list",
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    "play"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     8
+    ],
+    [
+     5280,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: sample-editor/preview"
+   ],
+   "reference": {
+    "file": "fileBrowser/preview",
+    "screenId": "file-browser",
+    "events": [
+     [
+      0,
+      8
+     ],
+     [
+      5280,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/navigate-views",
+   "folder": "instrument-mods",
+   "slug": "navigate-views",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "instmods",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+up, then Shift+down to come back (instmods <-> instrumentpool)"
+   ],
+   "direction": "up",
+   "directionTarget": "instrumentpool",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "instrument-mods/next-instrument",
+   "folder": "instrument-mods",
+   "slug": "next-instrument",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "next-instrument",
+   "name": "Next / prev instrument",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "opt-hold",
+     "left"
+    ],
+    "or",
+    [
+     "opt-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": true,
+   "settle": true,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     146,
+     6
+    ],
+    [
+     240,
+     2
+    ],
+    [
+     466,
+     6
+    ],
+    [
+     544,
+     2
+    ],
+    [
+     755,
+     6
+    ],
+    [
+     848,
+     2
+    ],
+    [
+     1058,
+     6
+    ],
+    [
+     1153,
+     2
+    ],
+    [
+     1414,
+     6
+    ],
+    [
+     1488,
+     2
+    ],
+    [
+     1815,
+     130
+    ],
+    [
+     1888,
+     2
+    ],
+    [
+     2099,
+     130
+    ],
+    [
+     2209,
+     2
+    ],
+    [
+     2453,
+     130
+    ],
+    [
+     2562,
+     2
+    ],
+    [
+     2867,
+     130
+    ],
+    [
+     2977,
+     2
+    ],
+    [
+     3315,
+     130
+    ],
+    [
+     3393,
+     2
+    ],
+    [
+     3746,
+     0
+    ]
+   ],
+   "notes": [
+    "the recipe is played once unrecorded first, so the recorded run starts where it ends (paging/clamping keys)",
+    "other references: instrument-pool/next-instrument"
+   ],
+   "reference": {
+    "file": "instrument/next-instrument",
+    "screenId": "instrument",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      146,
+      6
+     ],
+     [
+      240,
+      2
+     ],
+     [
+      466,
+      6
+     ],
+     [
+      544,
+      2
+     ],
+     [
+      755,
+      6
+     ],
+     [
+      848,
+      2
+     ],
+     [
+      1058,
+      6
+     ],
+     [
+      1153,
+      2
+     ],
+     [
+      1414,
+      6
+     ],
+     [
+      1488,
+      2
+     ],
+     [
+      1815,
+      130
+     ],
+     [
+      1888,
+      2
+     ],
+     [
+      2099,
+      130
+     ],
+     [
+      2209,
+      2
+     ],
+     [
+      2453,
+      130
+     ],
+     [
+      2562,
+      2
+     ],
+     [
+      2867,
+      130
+     ],
+     [
+      2977,
+      2
+     ],
+     [
+      3315,
+      130
+     ],
+     [
+      3393,
+      2
+     ],
+     [
+      3746,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/next-instrument-quick",
+   "folder": "instrument-mods",
+   "slug": "next-instrument-quick",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "next-instrument-quick",
+   "name": "Quick next / prev instrument",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "opt-hold",
+     "up"
+    ],
+    "or",
+    [
+     "opt-hold",
+     "down"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": true,
+   "settle": true,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     166,
+     66
+    ],
+    [
+     287,
+     2
+    ],
+    [
+     630,
+     66
+    ],
+    [
+     709,
+     2
+    ],
+    [
+     1114,
+     34
+    ],
+    [
+     1194,
+     2
+    ],
+    [
+     1553,
+     34
+    ],
+    [
+     1627,
+     2
+    ],
+    [
+     1947,
+     0
+    ]
+   ],
+   "notes": [
+    "the recipe is played once unrecorded first, so the recorded run starts where it ends (paging/clamping keys)",
+    "other references: instrument-pool/next-instrument-quick"
+   ],
+   "reference": {
+    "file": "instrument/next-instrument-quick",
+    "screenId": "instrument",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      166,
+      66
+     ],
+     [
+      287,
+      2
+     ],
+     [
+      630,
+      66
+     ],
+     [
+      709,
+      2
+     ],
+     [
+      1114,
+      34
+     ],
+     [
+      1194,
+      2
+     ],
+     [
+      1553,
+      34
+     ],
+     [
+      1627,
+      2
+     ],
+     [
+      1947,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/play",
+   "folder": "instrument-mods",
+   "slug": "play",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "play",
+   "name": "Play",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "play"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     8
+    ],
+    [
+     82,
+     0
+    ],
+    [
+     5712,
+     8
+    ],
+    [
+     5822,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/play, phrase/play, table/play, groove/play, scale/play, instrument/play"
+   ],
+   "reference": {
+    "file": "song/play",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      8
+     ],
+     [
+      82,
+      0
+     ],
+     [
+      5712,
+      8
+     ],
+     [
+      5822,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/continue-track",
+   "folder": "instrument-mods",
+   "slug": "continue-track",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "continue-song",
+   "name": "Continue song",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    "play",
+    "or",
+    [
+     "shift-hold",
+     "play"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     8
+    ],
+    [
+     94,
+     0
+    ],
+    [
+     5615,
+     8
+    ],
+    [
+     5711,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/continue-track, phrase/continue-play, table/continue-play, groove/continue-track, scale/continue-play, instrument/continue-track, instrument-pool/continue-song, fx/continue-track, mixer/continue-song, scope/continue-play, eq/continue-track"
+   ],
+   "reference": {
+    "file": "project/continue-play",
+    "screenId": "project",
+    "events": [
+     [
+      0,
+      8
+     ],
+     [
+      94,
+      0
+     ],
+     [
+      5615,
+      8
+     ],
+     [
+      5711,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/mute-track",
+   "folder": "instrument-mods",
+   "slug": "mute-track",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "mute-track",
+   "name": "Mute Track",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "opt-release-first",
+     "shift"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     112,
+     18
+    ],
+    [
+     192,
+     16
+    ],
+    [
+     224,
+     0
+    ],
+    [
+     1200,
+     4
+    ],
+    [
+     1280,
+     0
+    ],
+    [
+     1616,
+     128
+    ],
+    [
+     1696,
+     0
+    ],
+    [
+     2704,
+     2
+    ],
+    [
+     2816,
+     18
+    ],
+    [
+     2912,
+     16
+    ],
+    [
+     2960,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/mute-track, table/mute-track, groove/mute-track, scale/mute-track, instrument/mute-track, instrument-pool/mute-track, scope/mute-track, eq/mute-track, project/mute-track, phrase/mute-track, fx/mute-track, mixer/mute-track"
+   ],
+   "reference": {
+    "file": "song/mute-track",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      112,
+      18
+     ],
+     [
+      192,
+      16
+     ],
+     [
+      224,
+      0
+     ],
+     [
+      1200,
+      4
+     ],
+     [
+      1280,
+      0
+     ],
+     [
+      1616,
+      128
+     ],
+     [
+      1696,
+      0
+     ],
+     [
+      2704,
+      2
+     ],
+     [
+      2816,
+      18
+     ],
+     [
+      2912,
+      16
+     ],
+     [
+      2960,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/solo-track",
+   "folder": "instrument-mods",
+   "slug": "solo-track",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "solo-track",
+   "name": "Solo Track",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "opt-release-first",
+     "play"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     288,
+     10
+    ],
+    [
+     624,
+     8
+    ],
+    [
+     737,
+     0
+    ],
+    [
+     1010,
+     32
+    ],
+    [
+     1104,
+     0
+    ],
+    [
+     1218,
+     32
+    ],
+    [
+     1329,
+     0
+    ],
+    [
+     1426,
+     32
+    ],
+    [
+     1536,
+     0
+    ],
+    [
+     1681,
+     64
+    ],
+    [
+     1792,
+     0
+    ],
+    [
+     1906,
+     64
+    ],
+    [
+     1985,
+     0
+    ],
+    [
+     2114,
+     64
+    ],
+    [
+     2208,
+     0
+    ],
+    [
+     2848,
+     2
+    ],
+    [
+     3328,
+     10
+    ],
+    [
+     3697,
+     8
+    ],
+    [
+     3921,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/solo-track, phrase/solo-track, table/solo-track, groove/solo-track, scale/solo-track, instrument/solo-track, instrument-pool/solo-track, fx/solo-track, scope/solo-track, eq/solo-track, song/solo-track, mixer/solo-track"
+   ],
+   "reference": {
+    "file": "project/solo-track",
+    "screenId": "project",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      288,
+      10
+     ],
+     [
+      624,
+      8
+     ],
+     [
+      737,
+      0
+     ],
+     [
+      1010,
+      32
+     ],
+     [
+      1104,
+      0
+     ],
+     [
+      1218,
+      32
+     ],
+     [
+      1329,
+      0
+     ],
+     [
+      1426,
+      32
+     ],
+     [
+      1536,
+      0
+     ],
+     [
+      1681,
+      64
+     ],
+     [
+      1792,
+      0
+     ],
+     [
+      1906,
+      64
+     ],
+     [
+      1985,
+      0
+     ],
+     [
+      2114,
+      64
+     ],
+     [
+      2208,
+      0
+     ],
+     [
+      2848,
+      2
+     ],
+     [
+      3328,
+      10
+     ],
+     [
+      3697,
+      8
+     ],
+     [
+      3921,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/clear-mutes",
+   "folder": "instrument-mods",
+   "slug": "clear-mutes",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "clear-mutes",
+   "name": "Clear mutes and solos",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "opt-hold",
+     "shift",
+     "play"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     496,
+     18
+    ],
+    [
+     704,
+     26
+    ],
+    [
+     1220,
+     24
+    ],
+    [
+     1249,
+     8
+    ],
+    [
+     1296,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: groove/clear-mutes, instrument/clear-mutes, instrument-pool/clear-mutes, fx/clear-mutes, eq/clear-mutes"
+   ],
+   "reference": {
+    "file": "chain/clear-mutes",
+    "screenId": "chain",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      496,
+      18
+     ],
+     [
+      704,
+      26
+     ],
+     [
+      1220,
+      24
+     ],
+     [
+      1249,
+      8
+     ],
+     [
+      1296,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/edit-large",
+   "folder": "instrument-mods",
+   "slug": "edit-large",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "edit-large",
+   "name": "Edit in large increments",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "up-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "down-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     160,
+     65
+    ],
+    [
+     271,
+     1
+    ],
+    [
+     720,
+     65
+    ],
+    [
+     831,
+     1
+    ],
+    [
+     1360,
+     33
+    ],
+    [
+     1440,
+     1
+    ],
+    [
+     2096,
+     33
+    ],
+    [
+     2192,
+     1
+    ],
+    [
+     2416,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-large, instrument-pool/edit-large, fx/edit-large, project/edit-large, phrase/edit-large, table/edit-large, scale/edit-large, instrument/edit-large, mixer/edit-large, scope/edit-large, eq/edit-large"
+   ],
+   "reference": {
+    "file": "song/edit-large",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      160,
+      65
+     ],
+     [
+      271,
+      1
+     ],
+     [
+      720,
+      65
+     ],
+     [
+      831,
+      1
+     ],
+     [
+      1360,
+      33
+     ],
+     [
+      1440,
+      1
+     ],
+     [
+      2096,
+      33
+     ],
+     [
+      2192,
+      1
+     ],
+     [
+      2416,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/edit-small",
+   "folder": "instrument-mods",
+   "slug": "edit-small",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "edit-small",
+   "name": "Edit in small increments",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "left-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "right-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     176,
+     5
+    ],
+    [
+     240,
+     1
+    ],
+    [
+     416,
+     5
+    ],
+    [
+     513,
+     1
+    ],
+    [
+     672,
+     5
+    ],
+    [
+     768,
+     1
+    ],
+    [
+     913,
+     5
+    ],
+    [
+     992,
+     1
+    ],
+    [
+     1376,
+     129
+    ],
+    [
+     1456,
+     1
+    ],
+    [
+     1600,
+     129
+    ],
+    [
+     1712,
+     1
+    ],
+    [
+     1841,
+     129
+    ],
+    [
+     1921,
+     1
+    ],
+    [
+     2096,
+     129
+    ],
+    [
+     2176,
+     1
+    ],
+    [
+     2497,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-small, groove/edit-small, scale/edit-small, instrument-pool/edit-small, fx/edit-small, scope/edit-small, eq/edit-small, project/edit-small, phrase/edit-small, table/edit-small, instrument/edit-small, mixer/edit-small"
+   ],
+   "reference": {
+    "file": "song/edit-small",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      176,
+      5
+     ],
+     [
+      240,
+      1
+     ],
+     [
+      416,
+      5
+     ],
+     [
+      513,
+      1
+     ],
+     [
+      672,
+      5
+     ],
+     [
+      768,
+      1
+     ],
+     [
+      913,
+      5
+     ],
+     [
+      992,
+      1
+     ],
+     [
+      1376,
+      129
+     ],
+     [
+      1456,
+      1
+     ],
+     [
+      1600,
+      129
+     ],
+     [
+      1712,
+      1
+     ],
+     [
+      1841,
+      129
+     ],
+     [
+      1921,
+      1
+     ],
+     [
+      2096,
+      129
+     ],
+     [
+      2176,
+      1
+     ],
+     [
+      2497,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/edit-touch",
+   "folder": "instrument-mods",
+   "slug": "edit-touch",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "edit-touch",
+   "name": "Edit with touchscreen",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": null,
+   "mode": "deferred",
+   "source": "manual",
+   "needsReview": false,
+   "keypress": [
+    "edit-hold",
+    "touch"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "touch/MIDI gesture: cannot be produced by key presses (D5)"
+   ],
+   "reference": {
+    "file": "instrument/edit-touch",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      609,
+      0
+     ],
+     [
+      735,
+      1
+     ],
+     [
+      1616,
+      0
+     ],
+     [
+      1890,
+      32
+     ],
+     [
+      2016,
+      0
+     ],
+     [
+      2112,
+      1
+     ],
+     [
+      3280,
+      0
+     ],
+     [
+      3539,
+      32
+     ],
+     [
+      3649,
+      0
+     ],
+     [
+      3681,
+      1
+     ],
+     [
+      4705,
+      0
+     ],
+     [
+      4947,
+      32
+     ],
+     [
+      5089,
+      0
+     ],
+     [
+      5169,
+      1
+     ],
+     [
+      6241,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "instrument-mods/set-default",
+   "folder": "instrument-mods",
+   "slug": "set-default",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "set-default",
+   "name": "Set default value",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "opt"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     384,
+     3
+    ],
+    [
+     525,
+     2
+    ],
+    [
+     683,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: instrument-pool/set-default, project/set-default, instrument/set-default, fx/set-default, mixer/set-default, scope/set-default, eq/set-default"
+   ],
+   "reference": {
+    "file": "scale/set-default",
+    "screenId": "scale",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      384,
+      3
+     ],
+     [
+      525,
+      2
+     ],
+     [
+      683,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/copy-mod-slot",
+   "folder": "instrument-mods",
+   "slug": "copy-mod-slot",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "copy-mod-slot",
+   "name": "Copy Modulation Slot",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": 1,
+   "mode": "auto",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "opt"
+    ]
+   ],
+   "setup": [
+    {
+     "op": "ask",
+     "text": "Put the cursor on a filled modulation slot, then click Run."
+    }
+   ],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     16
+    ],
+    [
+     120,
+     18
+    ],
+    [
+     228,
+     16
+    ],
+    [
+     308,
+     0
+    ]
+   ],
+   "notes": []
+  },
+  {
+   "id": "instrument-mods/paste-mod-slot",
+   "folder": "instrument-mods",
+   "slug": "paste-mod-slot",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "paste-mod-slot",
+   "name": "Paste Modulation Slot",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": 1,
+   "mode": "auto",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "edit"
+    ]
+   ],
+   "setup": [
+    {
+     "op": "ask",
+     "text": "Put the cursor on a filled modulation slot (it will be copied first)."
+    },
+    {
+     "op": "keys",
+     "label": "copy the slot (Shift+Opt)",
+     "steps": [
+      [
+       0,
+       18
+      ],
+      [
+       108,
+       0
+      ]
+     ]
+    },
+    {
+     "op": "ask",
+     "text": "Move the cursor to the slot that should receive the paste, then click Run."
+    }
+   ],
+   "restore": {
+    "kind": "reload"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     16
+    ],
+    [
+     120,
+     17
+    ],
+    [
+     228,
+     16
+    ],
+    [
+     308,
+     0
+    ]
+   ],
+   "notes": []
+  },
+  {
+   "id": "instrument-mods/preview",
+   "folder": "instrument-mods",
+   "slug": "preview",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "preview",
+   "name": "Preview Instrument",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": 1,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    "edit-hold",
+    "play"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     370,
+     9
+    ],
+    [
+     1600,
+     1
+    ],
+    [
+     2064,
+     0
+    ]
+   ],
+   "notes": [],
+   "reference": {
+    "file": "instrument/preview",
+    "screenId": "instrument",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      370,
+      9
+     ],
+     [
+      1600,
+      1
+     ],
+     [
+      2064,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "instrument-mods/assign-midi",
+   "folder": "instrument-mods",
+   "slug": "assign-midi",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "assign-midi",
+   "name": "Assign MIDI CC to Parameter",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": null,
+   "mode": "deferred",
+   "source": "manual",
+   "needsReview": false,
+   "keypress": [
+    "opt-hold",
+    "midi"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "touch/MIDI gesture: cannot be produced by key presses (D5)"
+   ],
+   "reference": {
+    "file": "project/assign-midi",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      1120,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "instrument-mods/assign-touch",
+   "folder": "instrument-mods",
+   "slug": "assign-touch",
+   "screenId": "instrument-mods",
+   "screenName": "Modulators",
+   "activityId": "assign-touch",
+   "name": "Assign Touch-Axis as MIDI to Parameter",
+   "yam8dView": "instmods",
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 29,
+    "h": 16
+   },
+   "zoneLabel": "Modulation slots",
+   "pass": null,
+   "mode": "deferred",
+   "source": "manual",
+   "needsReview": false,
+   "keypress": [
+    "opt-hold",
+    "touch"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "touch/MIDI gesture: cannot be produced by key presses (D5)"
+   ],
+   "reference": {
+    "file": "project/assign-touch",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      1120,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "sample-editor/navigate-views",
+   "folder": "sample-editor",
+   "slug": "navigate-views",
+   "screenId": "sample-editor",
+   "screenName": "Sample Editor",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "sample-editor/set-default",
+   "folder": "sample-editor",
+   "slug": "set-default",
+   "screenId": "sample-editor",
+   "screenName": "Sample Editor",
+   "activityId": "set-default",
+   "name": "Clear / reset value",
+   "yam8dView": null,
+   "cursor": {
+    "x": 20,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 4,
+    "w": 38,
+    "h": 18
+   },
+   "zoneLabel": "Sample editor",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "opt"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     384,
+     3
+    ],
+    [
+     525,
+     2
+    ],
+    [
+     683,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: instrument-pool/set-default, project/set-default, instrument/set-default, fx/set-default, mixer/set-default, scope/set-default, eq/set-default"
+   ],
+   "reference": {
+    "file": "scale/set-default",
+    "screenId": "scale",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      384,
+      3
+     ],
+     [
+      525,
+      2
+     ],
+     [
+      683,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "fx/navigate-views",
+   "folder": "fx",
+   "slug": "navigate-views",
+   "screenId": "fx-settings",
+   "screenName": "FX Settings",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "effectsettings",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+up, then Shift+down to come back (effectsettings <-> mixer)"
+   ],
+   "direction": "up",
+   "directionTarget": "mixer",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "mixer/navigate-views",
+   "folder": "mixer",
+   "slug": "navigate-views",
+   "screenId": "mixer",
+   "screenName": "Mixer",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": "mixer",
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 1,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "pre-filled from the view graph: Shift+down, then Shift+up to come back (mixer <-> effectsettings)"
+   ],
+   "direction": "down",
+   "directionTarget": "effectsettings",
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "scope/navigate-views",
+   "folder": "scope",
+   "slug": "navigate-views",
+   "screenId": "scope",
+   "screenName": "Limiter & Mix Scope",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "eq/navigate-views",
+   "folder": "eq",
+   "slug": "navigate-views",
+   "screenId": "equalizer-bank",
+   "screenName": "Equalizer",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "system-settings/navigate-views",
+   "folder": "system-settings",
+   "slug": "navigate-views",
+   "screenId": "system-settings",
+   "screenName": "System Settings",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "system-settings/edit-large",
+   "folder": "system-settings",
+   "slug": "edit-large",
+   "screenId": "system-settings",
+   "screenName": "System Settings",
+   "activityId": "edit-large",
+   "name": "Edit in large increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 28,
+    "h": 17
+   },
+   "zoneLabel": "System settings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "up-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "down-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     160,
+     65
+    ],
+    [
+     271,
+     1
+    ],
+    [
+     720,
+     65
+    ],
+    [
+     831,
+     1
+    ],
+    [
+     1360,
+     33
+    ],
+    [
+     1440,
+     1
+    ],
+    [
+     2096,
+     33
+    ],
+    [
+     2192,
+     1
+    ],
+    [
+     2416,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-large, instrument-pool/edit-large, fx/edit-large, project/edit-large, phrase/edit-large, table/edit-large, scale/edit-large, instrument/edit-large, mixer/edit-large, scope/edit-large, eq/edit-large"
+   ],
+   "reference": {
+    "file": "song/edit-large",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      160,
+      65
+     ],
+     [
+      271,
+      1
+     ],
+     [
+      720,
+      65
+     ],
+     [
+      831,
+      1
+     ],
+     [
+      1360,
+      33
+     ],
+     [
+      1440,
+      1
+     ],
+     [
+      2096,
+      33
+     ],
+     [
+      2192,
+      1
+     ],
+     [
+      2416,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "system-settings/edit-small",
+   "folder": "system-settings",
+   "slug": "edit-small",
+   "screenId": "system-settings",
+   "screenName": "System Settings",
+   "activityId": "edit-small",
+   "name": "Edit in small increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 28,
+    "h": 17
+   },
+   "zoneLabel": "System settings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "left-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "right-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     176,
+     5
+    ],
+    [
+     240,
+     1
+    ],
+    [
+     416,
+     5
+    ],
+    [
+     513,
+     1
+    ],
+    [
+     672,
+     5
+    ],
+    [
+     768,
+     1
+    ],
+    [
+     913,
+     5
+    ],
+    [
+     992,
+     1
+    ],
+    [
+     1376,
+     129
+    ],
+    [
+     1456,
+     1
+    ],
+    [
+     1600,
+     129
+    ],
+    [
+     1712,
+     1
+    ],
+    [
+     1841,
+     129
+    ],
+    [
+     1921,
+     1
+    ],
+    [
+     2096,
+     129
+    ],
+    [
+     2176,
+     1
+    ],
+    [
+     2497,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-small, groove/edit-small, scale/edit-small, instrument-pool/edit-small, fx/edit-small, scope/edit-small, eq/edit-small, project/edit-small, phrase/edit-small, table/edit-small, instrument/edit-small, mixer/edit-small"
+   ],
+   "reference": {
+    "file": "song/edit-small",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      176,
+      5
+     ],
+     [
+      240,
+      1
+     ],
+     [
+      416,
+      5
+     ],
+     [
+      513,
+      1
+     ],
+     [
+      672,
+      5
+     ],
+     [
+      768,
+      1
+     ],
+     [
+      913,
+      5
+     ],
+     [
+      992,
+      1
+     ],
+     [
+      1376,
+      129
+     ],
+     [
+      1456,
+      1
+     ],
+     [
+      1600,
+      129
+     ],
+     [
+      1712,
+      1
+     ],
+     [
+      1841,
+      129
+     ],
+     [
+      1921,
+      1
+     ],
+     [
+      2096,
+      129
+     ],
+     [
+      2176,
+      1
+     ],
+     [
+      2497,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "system-settings/set-default",
+   "folder": "system-settings",
+   "slug": "set-default",
+   "screenId": "system-settings",
+   "screenName": "System Settings",
+   "activityId": "set-default",
+   "name": "Set default value",
+   "yam8dView": null,
+   "cursor": {
+    "x": 15,
+    "y": 13
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 28,
+    "h": 17
+   },
+   "zoneLabel": "System settings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "opt"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     384,
+     3
+    ],
+    [
+     525,
+     2
+    ],
+    [
+     683,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: instrument-pool/set-default, project/set-default, instrument/set-default, fx/set-default, mixer/set-default, scope/set-default, eq/set-default"
+   ],
+   "reference": {
+    "file": "scale/set-default",
+    "screenId": "scale",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      384,
+      3
+     ],
+     [
+      525,
+      2
+     ],
+     [
+      683,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "theme/navigate-views",
+   "folder": "theme",
+   "slug": "navigate-views",
+   "screenId": "theme",
+   "screenName": "Theme",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "theme/exit",
+   "folder": "theme",
+   "slug": "exit",
+   "screenId": "theme",
+   "screenName": "Theme",
+   "activityId": "exit",
+   "name": "Exit",
+   "yam8dView": null,
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    "opt"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     107,
+     0
+    ]
+   ],
+   "notes": [
+    "the clip ends on the previous screen, so it will not loop",
+    "other references: scope/exit, eq/exit"
+   ],
+   "reference": {
+    "file": "fileBrowser/exit",
+    "screenId": "file-browser",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      107,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "theme/edit-large",
+   "folder": "theme",
+   "slug": "edit-large",
+   "screenId": "theme",
+   "screenName": "Theme",
+   "activityId": "edit-large",
+   "name": "Edit in large increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 15,
+    "y": 12
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 28,
+    "h": 14
+   },
+   "zoneLabel": "Theme settings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "up-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "down-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     160,
+     65
+    ],
+    [
+     271,
+     1
+    ],
+    [
+     720,
+     65
+    ],
+    [
+     831,
+     1
+    ],
+    [
+     1360,
+     33
+    ],
+    [
+     1440,
+     1
+    ],
+    [
+     2096,
+     33
+    ],
+    [
+     2192,
+     1
+    ],
+    [
+     2416,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-large, instrument-pool/edit-large, fx/edit-large, project/edit-large, phrase/edit-large, table/edit-large, scale/edit-large, instrument/edit-large, mixer/edit-large, scope/edit-large, eq/edit-large"
+   ],
+   "reference": {
+    "file": "song/edit-large",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      160,
+      65
+     ],
+     [
+      271,
+      1
+     ],
+     [
+      720,
+      65
+     ],
+     [
+      831,
+      1
+     ],
+     [
+      1360,
+      33
+     ],
+     [
+      1440,
+      1
+     ],
+     [
+      2096,
+      33
+     ],
+     [
+      2192,
+      1
+     ],
+     [
+      2416,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "theme/edit-small",
+   "folder": "theme",
+   "slug": "edit-small",
+   "screenId": "theme",
+   "screenName": "Theme",
+   "activityId": "edit-small",
+   "name": "Edit in small increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 15,
+    "y": 12
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 28,
+    "h": 14
+   },
+   "zoneLabel": "Theme settings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "left-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "right-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     176,
+     5
+    ],
+    [
+     240,
+     1
+    ],
+    [
+     416,
+     5
+    ],
+    [
+     513,
+     1
+    ],
+    [
+     672,
+     5
+    ],
+    [
+     768,
+     1
+    ],
+    [
+     913,
+     5
+    ],
+    [
+     992,
+     1
+    ],
+    [
+     1376,
+     129
+    ],
+    [
+     1456,
+     1
+    ],
+    [
+     1600,
+     129
+    ],
+    [
+     1712,
+     1
+    ],
+    [
+     1841,
+     129
+    ],
+    [
+     1921,
+     1
+    ],
+    [
+     2096,
+     129
+    ],
+    [
+     2176,
+     1
+    ],
+    [
+     2497,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-small, groove/edit-small, scale/edit-small, instrument-pool/edit-small, fx/edit-small, scope/edit-small, eq/edit-small, project/edit-small, phrase/edit-small, table/edit-small, instrument/edit-small, mixer/edit-small"
+   ],
+   "reference": {
+    "file": "song/edit-small",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      176,
+      5
+     ],
+     [
+      240,
+      1
+     ],
+     [
+      416,
+      5
+     ],
+     [
+      513,
+      1
+     ],
+     [
+      672,
+      5
+     ],
+     [
+      768,
+      1
+     ],
+     [
+      913,
+      5
+     ],
+     [
+      992,
+      1
+     ],
+     [
+      1376,
+      129
+     ],
+     [
+      1456,
+      1
+     ],
+     [
+      1600,
+      129
+     ],
+     [
+      1712,
+      1
+     ],
+     [
+      1841,
+      129
+     ],
+     [
+      1921,
+      1
+     ],
+     [
+      2096,
+      129
+     ],
+     [
+      2176,
+      1
+     ],
+     [
+      2497,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "theme/set-default",
+   "folder": "theme",
+   "slug": "set-default",
+   "screenId": "theme",
+   "screenName": "Theme",
+   "activityId": "set-default",
+   "name": "Set default value",
+   "yam8dView": null,
+   "cursor": {
+    "x": 15,
+    "y": 12
+   },
+   "zone": {
+    "x": 1,
+    "y": 5,
+    "w": 28,
+    "h": 14
+   },
+   "zoneLabel": "Theme settings",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "opt"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     384,
+     3
+    ],
+    [
+     525,
+     2
+    ],
+    [
+     683,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: instrument-pool/set-default, project/set-default, instrument/set-default, fx/set-default, mixer/set-default, scope/set-default, eq/set-default"
+   ],
+   "reference": {
+    "file": "scale/set-default",
+    "screenId": "scale",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      384,
+      3
+     ],
+     [
+      525,
+      2
+     ],
+     [
+      683,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "time-stats/navigate-views",
+   "folder": "time-stats",
+   "slug": "navigate-views",
+   "screenId": "time-stats",
+   "screenName": "Time Stats",
+   "activityId": "navigate-views",
+   "name": "Navigate views",
+   "yam8dView": null,
+   "cursor": null,
+   "zone": null,
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "compiled",
+   "needsReview": true,
+   "keypress": [
+    [
+     "shift-hold",
+     "up"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "down"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "left"
+    ],
+    "or",
+    [
+     "shift-hold",
+     "right"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": null,
+   "notes": [
+    "no direction known: read it from the minimap in attended mode"
+   ],
+   "direction": null,
+   "directionTarget": null,
+   "recipeByDirection": {
+    "up": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      80
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      48
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "down": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      48
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      80
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "left": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      144
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      20
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ],
+    "right": [
+     [
+      0,
+      16
+     ],
+     [
+      120,
+      20
+     ],
+     [
+      228,
+      16
+     ],
+     [
+      308,
+      0
+     ],
+     [
+      1308,
+      16
+     ],
+     [
+      1428,
+      144
+     ],
+     [
+      1536,
+      16
+     ],
+     [
+      1616,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "id": "time-stats/exit",
+   "folder": "time-stats",
+   "slug": "exit",
+   "screenId": "time-stats",
+   "screenName": "Time Stats",
+   "activityId": "exit",
+   "name": "Exit",
+   "yam8dView": null,
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    "opt"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     2
+    ],
+    [
+     107,
+     0
+    ]
+   ],
+   "notes": [
+    "the clip ends on the previous screen, so it will not loop",
+    "other references: scope/exit, eq/exit"
+   ],
+   "reference": {
+    "file": "fileBrowser/exit",
+    "screenId": "file-browser",
+    "events": [
+     [
+      0,
+      2
+     ],
+     [
+      107,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "time-stats/edit-large",
+   "folder": "time-stats",
+   "slug": "edit-large",
+   "screenId": "time-stats",
+   "screenName": "Time Stats",
+   "activityId": "edit-large",
+   "name": "Edit in large increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 16,
+    "y": 11
+   },
+   "zone": {
+    "x": 1,
+    "y": 4,
+    "w": 30,
+    "h": 14
+   },
+   "zoneLabel": "Time / date",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "up-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "down-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     160,
+     65
+    ],
+    [
+     271,
+     1
+    ],
+    [
+     720,
+     65
+    ],
+    [
+     831,
+     1
+    ],
+    [
+     1360,
+     33
+    ],
+    [
+     1440,
+     1
+    ],
+    [
+     2096,
+     33
+    ],
+    [
+     2192,
+     1
+    ],
+    [
+     2416,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-large, instrument-pool/edit-large, fx/edit-large, project/edit-large, phrase/edit-large, table/edit-large, scale/edit-large, instrument/edit-large, mixer/edit-large, scope/edit-large, eq/edit-large"
+   ],
+   "reference": {
+    "file": "song/edit-large",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      160,
+      65
+     ],
+     [
+      271,
+      1
+     ],
+     [
+      720,
+      65
+     ],
+     [
+      831,
+      1
+     ],
+     [
+      1360,
+      33
+     ],
+     [
+      1440,
+      1
+     ],
+     [
+      2096,
+      33
+     ],
+     [
+      2192,
+      1
+     ],
+     [
+      2416,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "time-stats/edit-small",
+   "folder": "time-stats",
+   "slug": "edit-small",
+   "screenId": "time-stats",
+   "screenName": "Time Stats",
+   "activityId": "edit-small",
+   "name": "Edit in small increments",
+   "yam8dView": null,
+   "cursor": {
+    "x": 16,
+    "y": 11
+   },
+   "zone": {
+    "x": 1,
+    "y": 4,
+    "w": 30,
+    "h": 14
+   },
+   "zoneLabel": "Time / date",
+   "pass": 2,
+   "mode": "attended",
+   "source": "reference",
+   "needsReview": false,
+   "keypress": [
+    [
+     "edit-hold",
+     "left-3x-not-first"
+    ],
+    "or",
+    [
+     "edit-hold",
+     "right-3x-not-first"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "value"
+   },
+   "syncCheck": true,
+   "settle": false,
+   "recipe": [
+    [
+     0,
+     1
+    ],
+    [
+     176,
+     5
+    ],
+    [
+     240,
+     1
+    ],
+    [
+     416,
+     5
+    ],
+    [
+     513,
+     1
+    ],
+    [
+     672,
+     5
+    ],
+    [
+     768,
+     1
+    ],
+    [
+     913,
+     5
+    ],
+    [
+     992,
+     1
+    ],
+    [
+     1376,
+     129
+    ],
+    [
+     1456,
+     1
+    ],
+    [
+     1600,
+     129
+    ],
+    [
+     1712,
+     1
+    ],
+    [
+     1841,
+     129
+    ],
+    [
+     1921,
+     1
+    ],
+    [
+     2096,
+     129
+    ],
+    [
+     2176,
+     1
+    ],
+    [
+     2497,
+     0
+    ]
+   ],
+   "notes": [
+    "other references: chain/edit-small, groove/edit-small, scale/edit-small, instrument-pool/edit-small, fx/edit-small, scope/edit-small, eq/edit-small, project/edit-small, phrase/edit-small, table/edit-small, instrument/edit-small, mixer/edit-small"
+   ],
+   "reference": {
+    "file": "song/edit-small",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      1
+     ],
+     [
+      176,
+      5
+     ],
+     [
+      240,
+      1
+     ],
+     [
+      416,
+      5
+     ],
+     [
+      513,
+      1
+     ],
+     [
+      672,
+      5
+     ],
+     [
+      768,
+      1
+     ],
+     [
+      913,
+      5
+     ],
+     [
+      992,
+      1
+     ],
+     [
+      1376,
+      129
+     ],
+     [
+      1456,
+      1
+     ],
+     [
+      1600,
+      129
+     ],
+     [
+      1712,
+      1
+     ],
+     [
+      1841,
+      129
+     ],
+     [
+      1921,
+      1
+     ],
+     [
+      2096,
+      129
+     ],
+     [
+      2176,
+      1
+     ],
+     [
+      2497,
+      0
+     ]
+    ],
+    "cursorNet": {
+     "x": 0,
+     "y": 0
+    }
+   }
+  },
+  {
+   "id": "_golden/song/play",
+   "folder": "_golden/song",
+   "slug": "play",
+   "screenId": "song",
+   "screenName": "Song",
+   "activityId": "play",
+   "name": "Play (golden test)",
+   "yam8dView": "song",
+   "cursor": {
+    "x": 20,
+    "y": 11
+   },
+   "zone": {
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 23
+   },
+   "zoneLabel": null,
+   "pass": 0,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": true,
+   "keypress": [
+    [
+     "play"
+    ]
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": false,
+   "golden": {
+    "original": "song/play"
+   },
+   "reference": {
+    "file": "song/play",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      8
+     ],
+     [
+      82,
+      0
+     ],
+     [
+      5712,
+      8
+     ],
+     [
+      5822,
+      0
+     ]
+    ]
+   },
+   "recipe": [
+    [
+     0,
+     8
+    ],
+    [
+     82,
+     0
+    ],
+    [
+     5712,
+     8
+    ],
+    [
+     5822,
+     0
+    ]
+   ],
+   "notes": [
+    "compare with the original clip and timeline (plan section 4.1)"
+   ]
+  },
+  {
+   "id": "_golden/song/navigate",
+   "folder": "_golden/song",
+   "slug": "navigate",
+   "screenId": "song",
+   "screenName": "Song",
+   "activityId": "move-slow",
+   "name": "Navigate (golden test)",
+   "yam8dView": "song",
+   "cursor": {
+    "x": 15,
+    "y": 14
+   },
+   "zone": {
+    "x": 4,
+    "y": 6,
+    "w": 23,
+    "h": 16
+   },
+   "zoneLabel": "Track chains",
+   "pass": 0,
+   "mode": "auto",
+   "source": "reference",
+   "needsReview": true,
+   "keypress": [
+    "up",
+    "or",
+    "down",
+    "or",
+    "left",
+    "or",
+    "right"
+   ],
+   "setup": [],
+   "restore": {
+    "kind": "none"
+   },
+   "syncCheck": true,
+   "golden": {
+    "original": "song/navigate"
+   },
+   "reference": {
+    "file": "song/navigate",
+    "screenId": "song",
+    "events": [
+     [
+      0,
+      4
+     ],
+     [
+      79,
+      0
+     ],
+     [
+      256,
+      4
+     ],
+     [
+      336,
+      0
+     ],
+     [
+      480,
+      4
+     ],
+     [
+      575,
+      0
+     ],
+     [
+      688,
+      4
+     ],
+     [
+      784,
+      0
+     ],
+     [
+      1008,
+      32
+     ],
+     [
+      1119,
+      0
+     ],
+     [
+      1232,
+      32
+     ],
+     [
+      1327,
+      0
+     ],
+     [
+      1442,
+      32
+     ],
+     [
+      1536,
+      0
+     ],
+     [
+      1826,
+      32
+     ],
+     [
+      1906,
+      0
+     ],
+     [
+      2195,
+      128
+     ],
+     [
+      2257,
+      0
+     ],
+     [
+      2418,
+      128
+     ],
+     [
+      2498,
+      0
+     ],
+     [
+      2626,
+      128
+     ],
+     [
+      2721,
+      0
+     ],
+     [
+      2866,
+      128
+     ],
+     [
+      2913,
+      0
+     ],
+     [
+      3218,
+      64
+     ],
+     [
+      3297,
+      0
+     ],
+     [
+      3442,
+      64
+     ],
+     [
+      3537,
+      0
+     ],
+     [
+      3666,
+      64
+     ],
+     [
+      3762,
+      0
+     ],
+     [
+      3890,
+      64
+     ],
+     [
+      3970,
+      0
+     ]
+    ]
+   },
+   "recipe": [
+    [
+     0,
+     4
+    ],
+    [
+     79,
+     0
+    ],
+    [
+     256,
+     4
+    ],
+    [
+     336,
+     0
+    ],
+    [
+     480,
+     4
+    ],
+    [
+     575,
+     0
+    ],
+    [
+     688,
+     4
+    ],
+    [
+     784,
+     0
+    ],
+    [
+     1008,
+     32
+    ],
+    [
+     1119,
+     0
+    ],
+    [
+     1232,
+     32
+    ],
+    [
+     1327,
+     0
+    ],
+    [
+     1442,
+     32
+    ],
+    [
+     1536,
+     0
+    ],
+    [
+     1826,
+     32
+    ],
+    [
+     1906,
+     0
+    ],
+    [
+     2195,
+     128
+    ],
+    [
+     2257,
+     0
+    ],
+    [
+     2418,
+     128
+    ],
+    [
+     2498,
+     0
+    ],
+    [
+     2626,
+     128
+    ],
+    [
+     2721,
+     0
+    ],
+    [
+     2866,
+     128
+    ],
+    [
+     2913,
+     0
+    ],
+    [
+     3218,
+     64
+    ],
+    [
+     3297,
+     0
+    ],
+    [
+     3442,
+     64
+    ],
+    [
+     3537,
+     0
+    ],
+    [
+     3666,
+     64
+    ],
+    [
+     3762,
+     0
+    ],
+    [
+     3890,
+     64
+    ],
+    [
+     3970,
+     0
+    ]
+   ],
+   "notes": [
+    "compare with the original clip and timeline (plan section 4.1)"
+   ]
+  }
+ ]
+}
