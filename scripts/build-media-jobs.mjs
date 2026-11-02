@@ -212,7 +212,7 @@ const copyAndReturn = (c, rows) => c.tap('opt').look(500, 800).taps('up', rows +
 
 // ---------- screens ----------
 
-// m8-shortcuts screen id -> view name known to yam8d's navigateToView (the 12 graph nodes).
+// m8-shortcuts screen id -> view name of the 12 main views (Shift+arrow nodes of yam8d's view graph).
 const YAM8D_VIEW = {
     project: 'project',
     song: 'song',
@@ -776,8 +776,9 @@ const navigatePath = (view, maxDepth = 4) => {
         }
         if (path.length >= maxDepth) return
         const dirs = new Set()
+        // Shift+arrow edges only: the graph also has button and Option (exit) edges, which have no dir
         for (const e of graph[at] ?? []) {
-            if (dirs.has(e.dir)) continue
+            if (!e.dir || dirs.has(e.dir)) continue
             dirs.add(e.dir)
             if (seen.has(e.to) || !reversible(at, e)) continue
             walk(e.to, [...path, { dir: e.dir, to: e.to, weight: e.weight ?? 1 }], new Set([...seen, e.to]))
